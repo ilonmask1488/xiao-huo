@@ -70,6 +70,10 @@
   padding: 0 var(--gutter);
 }
 
+.toasts > * {
+  box-shadow: 0 6px 20px -8px var(--scrim);
+}
+
 .fatal {
   display: grid;
   gap: var(--space-4);

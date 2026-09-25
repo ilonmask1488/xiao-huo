@@ -1,32 +1,145 @@
-# React + TypeScript + Vite
+# 小火 · Сяо Хо — разговорный китайский
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Приложение для ежедневной тренировки разговорного китайского: тоны, произношение, слова, фразы, шэдоуинг, сюжетные диалоги.
+Работает в браузере телефона, ставится на главный экран как обычное приложение и работает без интернета.
+Без аккаунтов, рекламы и аналитики: прогресс хранится только на твоём устройстве.
 
-Currently, two official plugins are available:
+Техническое задание — [docs/SPEC.md](docs/SPEC.md). Сейчас готова **фаза 0 — каркас**: оболочка, навигация, настройки, база прогресса, бэкап, офлайн-режим и автоматическая публикация. Уроков пока нет: они появятся в фазе 1.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 1. Что нужно установить (один раз)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Понадобятся три программы: **Node.js LTS** (собирает и запускает приложение), **Git** (хранит историю и публикует на GitHub) и **Python 3** (нужен с фазы 1 для генерации аудио).
 
-## Expanding the Oxlint configuration
+### Windows (PowerShell)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Открой PowerShell (Пуск → «PowerShell») и выполни:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```powershell
+winget install OpenJS.NodeJS.LTS
+winget install Git.Git
+winget install Python.Python.3.12
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Закрой PowerShell и открой заново, чтобы новые команды стали видны. Проверка:
+
+```powershell
+node -v
+git --version
+python --version
+```
+
+### macOS
+
+```bash
+brew install node git python
+```
+
+Если нет Homebrew, установи его с [brew.sh](https://brew.sh) или скачай установщики с nodejs.org, git-scm.com и python.org.
+
+### Linux (Ubuntu/Debian)
+
+```bash
+sudo apt install git python3
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install nodejs
+```
+
+---
+
+## 2. Первый запуск на компьютере
+
+```powershell
+cd путь\к\папке\xiao-huo
+npm install
+npm run dev
+```
+
+Открой в браузере адрес, который покажет команда (обычно http://localhost:5173). Остановить — `Ctrl+C`.
+
+## 3. Посмотреть на телефоне в той же Wi-Fi сети
+
+```powershell
+npm run dev -- --host
+```
+
+Команда покажет строку `Network: http://192.168.x.x:5173` — открой этот адрес в браузере телефона. Телефон и компьютер должны быть в одной сети. Если Windows спросит про брандмауэр, разреши доступ **для частных сетей**.
+
+> ⚠️ Так приложение открывается по обычному `http://`, а браузеры разрешают установку на главный экран, офлайн-режим и микрофон только на `https://`. Поэтому по Wi-Fi удобно смотреть вёрстку, а «настоящее» приложение живёт на GitHub Pages (раздел 5).
+
+## 4. Проверки
+
+```powershell
+npm test                   # юнит-тесты: пиньинь, база, миграции, бэкап, раскладка занятия
+npm run check:content      # контроль качества учебного контента
+npx playwright install chromium webkit   # один раз: браузеры для e2e (~250 МБ)
+npm run e2e                # сквозные тесты на вьюпортах Android и iPhone
+npm run build              # сборка в папку dist
+```
+
+Скриншоты экранов для проверки дизайна: `$env:SCREENS='phase0'; npx playwright test screens` (Windows) или `SCREENS=phase0 npx playwright test screens` (macOS/Linux) — картинки появятся в `docs/screens/phase0/`.
+
+## 5. Публикация на GitHub Pages (постоянный адрес с https)
+
+Один раз:
+
+1. Заведи аккаунт на [github.com](https://github.com), если его нет.
+2. Создай **новый пустой** репозиторий (кнопка «New»), например `xiao-huo`. Галочки «Add README» и прочие не ставь.
+3. В папке проекта выполни (подставь свой логин):
+   ```powershell
+   git remote add origin https://github.com/ЛОГИН/xiao-huo.git
+   git push -u origin main
+   ```
+   Git попросит войти в GitHub — откроется окно браузера.
+4. На GitHub: репозиторий → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+5. Вкладка **Actions** покажет запуск «Проверка и публикация». Когда он станет зелёным (5–10 минут), приложение будет доступно по адресу `https://ЛОГИН.github.io/xiao-huo/`.
+
+Дальше каждое `git push` в ветку `main` сам прогоняет тесты и, если они зелёные, обновляет сайт.
+
+> Если назовёшь репозиторий `ЛОГИН.github.io`, сайт будет в корне домена; тогда в `.github/workflows/deploy.yml` замени `BASE_PATH: /${{ github.event.repository.name }}/` на `BASE_PATH: /`.
+
+> ⚠️ **Доступность из России.** GitHub Pages (`*.github.io`) обычно открывается, но бывают перебои у отдельных провайдеров. После публикации открой адрес **с телефона через мобильный интернет и через домашний Wi-Fi**. Установленному приложению сеть нужна только для обновлений: оно работает офлайн.
+
+## 6. Установка на телефон
+
+Открой адрес с GitHub Pages:
+
+- **Android (Chrome):** на главном экране приложения появится кнопка «Установить», либо меню ⋮ → «Установить приложение».
+- **iPhone (Safari):** кнопка «Поделиться» → «На экран „Домой“». **Обязательно установи:** Safari стирает данные сайтов, которые не открывались 7 дней и не установлены на главный экран.
+
+## 7. Как проверить фазу 0 на телефоне
+
+1. Открой приложение, установи его на главный экран, запусти с иконки-ракеты.
+2. Пройди по вкладкам внизу: Пуск, Карта, Тоны, Словарь, Ещё.
+3. В «Ещё → Настройки» переключи тему на тёмную и длительность на 30 минут, закрой приложение и открой снова — настройки должны сохраниться.
+4. «Сохранить бэкап» — файл уйдёт в загрузки. Поменяй длительность, нажми «Загрузить бэкап», выбери этот файл — длительность вернётся.
+5. Включи режим полёта и открой приложение с иконки — оно должно открыться.
+
+## 8. Бэкап и перенос прогресса
+
+Весь прогресс живёт только в браузере этого устройства. «Ещё → Настройки → Сохранить бэкап» сохраняет его одним JSON-файлом; «Загрузить бэкап» на другом устройстве переносит всё целиком. Раз в две недели приложение напомнит о бэкапе.
+
+## 9. Обновление
+
+- Код поменялся → `git push` → через несколько минут сайт обновлён. Установленное приложение покажет «Готова новая версия · Обновить».
+- Прогресс при обновлении не теряется: схема базы версионируется, тест `src/lib/db/migrations.test.ts` проверяет, что данные каждой прошлой версии переживают обновление.
+- Обновить библиотеки: `npm outdated`, затем `npm update` и прогнать все проверки из раздела 4.
+
+## 10. Устройство проекта
+
+```
+src/app          оболочка, маршруты, навигация, первый запуск
+src/features     экраны: session (пуск), course (карта), tones, dictionary, settings, more
+src/lib          pinyin (знаки тонов), db (Dexie + схема), backup, settings, session (раскладка занятия), pwa
+src/content      учебный контент в JSON и его типы
+src/i18n/ru.ts   все тексты интерфейса, метафоры, реплики маскота
+src/styles       дизайн-токены (цвета тонов, темы), базовые стили
+scripts          check_content.ts — контроль контента; дальше generate_audio.py и импорт HSK
+e2e              сквозные тесты Playwright
+public           иконки PWA (из icon.svg: `npm run icons`), будущие аудио
+```
+
+## 11. Лицензии
+
+Код приложения — для личного использования. Библиотеки: React, React Router, Workbox, vite-plugin-pwa — MIT; Dexie — Apache-2.0. Шрифты IBM Plex Sans и IBM Plex Mono — SIL Open Font License 1.1, лежат внутри проекта (без загрузки из Google Fonts). Атрибуция аудиозаписей появится вместе со звуком в фазе 1.

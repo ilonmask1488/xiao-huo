@@ -1,6 +1,6 @@
 /* ——— Экран ——— */
 .screen {
-  min-height: 100%;
+  min-height: 100dvh;
   padding: calc(var(--safe-top) + var(--space-5)) calc(var(--gutter) + var(--safe-right))
     calc(var(--nav-h) + var(--safe-bottom) + var(--space-6)) calc(var(--gutter) + var(--safe-left));
 }
