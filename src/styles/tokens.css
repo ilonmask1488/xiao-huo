@@ -1,0 +1,127 @@
+/*
+  Дизайн-токены «小火». Единственная смелая вещь — цвета тонов; остальное сдержанно,
+  чтобы тоны светились. Все пары текст/фон проверены на контраст WCAG AA (≥ 4.5:1).
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Бумага журнала испытаний */
+  --paper: #f5f2ea;
+  --surface: #fcfbf7;
+  --ink: #1a1c20;
+  --ink-2: #565961;
+  --line: #d9d4c7;
+  --line-strong: #b9b2a2;
+  --grid-minor: rgb(60 80 110 / 0.055);
+  --grid-major: rgb(60 80 110 / 0.1);
+  --flame: #b8430f;
+  --danger: #c62828;
+  --flame-soft: #ffc857;
+  --on-ink: #f5f2ea;
+  --scrim: rgb(26 28 32 / 0.45);
+
+  /* Тоны: 1 красный, 2 зелёный, 3 синий, 4 фиолетовый, нейтральный серый */
+  --t1: #c62828;
+  --t2: #1b7a39;
+  --t3: #1d5fcc;
+  --t4: #7a2ec0;
+  --t5: #6b6b6b;
+
+  /* Шрифты. Китайский — только системный стек, без встраивания CJK. */
+  --font-text: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'IBM Plex Sans', ui-monospace, monospace;
+  --font-hanzi: 'PingFang SC', 'Noto Sans SC', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Microsoft YaHei',
+    'Hiragino Sans GB', sans-serif;
+
+  /* Размеры */
+  --fs-caption: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-lead: 1.1875rem;
+  --fs-title: 1.625rem;
+  --fs-hanzi-card: 4.5rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --hairline: 1px;
+  --tap: 48px;
+  --nav-h: 60px;
+
+  --gutter: 16px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-med: 240ms;
+}
+
+/* Тёмная тема: явно выбранная */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #121417;
+  --surface: #1b1e23;
+  --ink: #ece9e2;
+  --ink-2: #a3a6ad;
+  --line: #2e3238;
+  --line-strong: #474c55;
+  --grid-minor: rgb(160 180 210 / 0.05);
+  --grid-major: rgb(160 180 210 / 0.09);
+  --flame: #ff8a4c;
+  --danger: #ff7373;
+  --flame-soft: #ffc857;
+  --on-ink: #121417;
+  --scrim: rgb(0 0 0 / 0.6);
+
+  --t1: #ff7373;
+  --t2: #4fd487;
+  --t3: #72a9ff;
+  --t4: #c597ff;
+  --t5: #9c9c9c;
+}
+
+/* Тёмная тема: системная (если пользователь не выбрал светлую явно) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #121417;
+    --surface: #1b1e23;
+    --ink: #ece9e2;
+    --ink-2: #a3a6ad;
+    --line: #2e3238;
+    --line-strong: #474c55;
+    --grid-minor: rgb(160 180 210 / 0.05);
+    --grid-major: rgb(160 180 210 / 0.09);
+    --flame: #ff8a4c;
+    --danger: #ff7373;
+    --flame-soft: #ffc857;
+    --on-ink: #121417;
+    --scrim: rgb(0 0 0 / 0.6);
+
+    --t1: #ff7373;
+    --t2: #4fd487;
+    --t3: #72a9ff;
+    --t4: #c597ff;
+    --t5: #9c9c9c;
+  }
+}
+
+/* Цвета тонов выключены — остаются знаки тонов, цвет не единственный носитель. */
+:root[data-tone-colors='off'] {
+  --t1: var(--ink);
+  --t2: var(--ink);
+  --t3: var(--ink);
+  --t4: var(--ink);
+  --t5: var(--ink-2);
+}

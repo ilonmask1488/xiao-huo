@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>小火 · Сяо Хо</title>
+    <meta name="description" content="Ежедневная тренировка разговорного китайского: тоны, слова, фразы, шэдоуинг." />
+    <meta name="theme-color" content="#f5f2ea" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Сяо Хо" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="icon" href="./favicon.ico" sizes="48x48" />
+    <link rel="icon" href="./icon.svg" sizes="any" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon-180x180.png" />
+    <script>
+      // Тема до первой отрисовки — без вспышки светлого фона в тёмной теме.
+      try {
+        var a = JSON.parse(localStorage.getItem('xiaohuo:appearance') || '{}')
+        if (a.theme === 'light' || a.theme === 'dark') document.documentElement.dataset.theme = a.theme
+        if (a.toneColors === false) document.documentElement.dataset.toneColors = 'off'
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Для работы приложения нужен JavaScript.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

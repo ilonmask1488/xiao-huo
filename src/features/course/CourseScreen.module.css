@@ -1,0 +1,60 @@
+.stack {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-4);
+  min-height: 128px;
+}
+
+.drawing {
+  display: block;
+  width: 64px;
+  height: 100%;
+  overflow: visible;
+}
+
+.part {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.built .part {
+  fill: var(--surface);
+  stroke: var(--ink);
+  stroke-dasharray: none;
+}
+
+.text {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: var(--space-3) 0;
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.stage:last-child .text {
+  border-bottom: 0;
+}
+
+.num {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
+
+.what {
+  font-size: var(--fs-small);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-3);
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
