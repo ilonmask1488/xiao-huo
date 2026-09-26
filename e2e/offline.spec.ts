@@ -4,6 +4,7 @@ test('после первой загрузки приложение открыв
   test.skip(browserName === 'webkit', 'service worker в WebKit-сборке Playwright под Windows не поддерживается')
 
   await page.goto('./')
+  await page.getByRole('button', { name: 'Пропустить' }).click()
   await expect(page.getByRole('button', { name: 'Начать занятие' })).toBeVisible()
   // Ждём, пока service worker установится и закэширует оболочку.
   await page.evaluate(async () => {

@@ -16,14 +16,92 @@ async function shoot(page: Page, name: string, scheme: string, project: string, 
   await page.screenshot({ path: `docs/screens/${phase}/${project}-${scheme}-${name}.png` })
 }
 
+/* ——— UX, шаг 3: инструкции упражнений, «?», перевод по тапу, счётчики, первый запуск ——— */
+test('UX шаг 3: уроки, счётчики, первый запуск', async ({ page }, info) => {
+  test.skip(phase !== 'ux3')
+  test.setTimeout(420_000)
+  const p = info.project.name
+  const scheme = 'light'
+  await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
+  await page.goto('./')
+  await page.waitForTimeout(5000)
+  const dialog = page.getByRole('dialog', { name: 'Как здесь учиться' })
+  await expect(dialog).toBeVisible()
+  await shoot(page, 'welcome-1', scheme, p)
+  await dialog.getByRole('button', { name: 'Дальше' }).click()
+  await dialog.getByRole('button', { name: 'Дальше' }).click()
+  await dialog.getByRole('button', { name: 'Дальше' }).click()
+  await shoot(page, 'welcome-4', scheme, p)
+  await dialog.getByRole('button', { name: 'Начать' }).click()
+
+  // Счётчик объясняется по тапу
+  await page.getByRole('button', { name: /Дни подряд · на орбите: объяснить/ }).click()
+  await shoot(page, 'term-streak', scheme, p)
+  await page.getByRole('button', { name: 'Понятно' }).click()
+  await page.goto('./#/how')
+  await shoot(page, 'how', scheme, p)
+
+  // Урок 0.1.1: подсказка при первой встрече с упражнением, «Послушай серию» с инструкцией и «?»
+  await markSoundChecked(page)
+  await page.goto('./#/lesson/s0-u1-l1')
+  await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+  await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+  await page.getByRole('button', { name: 'Понятно' }).waitFor()
+  await shoot(page, 'ex-repeat-coach', scheme, p, false)
+  await page.getByRole('button', { name: 'Понятно' }).click()
+  await advanceUntil(page, 'Послушай серию')
+  await shoot(page, 'ex-listen', scheme, p, false)
+  await page.getByRole('button', { name: 'Как работает это упражнение' }).click()
+  await shoot(page, 'ex-listen-help', scheme, p, false)
+  await page.getByRole('button', { name: 'Понятно' }).click()
+  await advanceUntil(page, 'Какой тон прозвучал? Выбери')
+  await page.getByRole('button', { name: 'Понятно' }).click({ timeout: 3000 }).catch(() => {})
+  await shoot(page, 'ex-guess-tone', scheme, p, false)
+
+  // Урок 1.1.3: фраза с переводом по тапу, «угадай значение», сборка
+  await seedCompleted(page, [...STAGE0_BEFORE_BOSS, 's0-u6-l1', 's1-u1-l1', 's1-u1-l2'])
+  await page.goto('./#/lesson/s1-u1-l3')
+  await advanceUntil(page, 'Разбери фразу по словам')
+  await page.getByRole('button', { name: 'Понятно' }).click({ timeout: 3000 }).catch(() => {})
+  await shoot(page, 'ex-sentence', scheme, p, false)
+  await page.locator('button[class*="tokenBtn"]').first().click()
+  await expect(page.getByTestId('word-sheet')).toBeVisible()
+  await shoot(page, 'ex-word-sheet', scheme, p, false)
+  await page.getByRole('button', { name: 'Закрыть' }).click()
+  await advanceUntil(page, 'Собери фразу из слов', 60)
+  await page.getByRole('button', { name: 'Понятно' }).click({ timeout: 3000 }).catch(() => {})
+  await shoot(page, 'ex-assemble', scheme, p, false)
+
+  // Диалог: реплика с переводом и инструкцией
+  await seedCompleted(page, ['s1-u1-l3'])
+  await page.goto('./#/lesson/s1-u1-boss')
+  await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+  await expect(page.getByText('小李', { exact: true }).first()).toBeVisible()
+  await page.getByRole('button', { name: 'Понятно' }).click({ timeout: 3000 }).catch(() => {})
+  await shoot(page, 'ex-line', scheme, p, false)
+  await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+  await page.locator('button[data-sentence]').first().waitFor()
+  await page.getByRole('button', { name: 'Понятно' }).click({ timeout: 3000 }).catch(() => {})
+  await shoot(page, 'ex-reply', scheme, p, false)
+
+  // Профиль и статистика: термины подчёркнуты
+  await page.goto('./#/more')
+  await shoot(page, 'profile', scheme, p)
+  await page.goto('./#/stats')
+  await page.getByRole('button', { name: /Очки · Δv: объяснить/ }).click()
+  await shoot(page, 'stats-term', scheme, p)
+})
+
 for (const scheme of ['light', 'dark'] as const) {
   test(`экраны, тема ${scheme}`, async ({ page }, info) => {
+    test.skip(!!phase?.startsWith('ux'))
     test.setTimeout(420_000)
     const p = info.project.name
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
     await page.goto('./')
     // Уведомление «готово офлайн» при первом запуске исчезает само через 4 с.
     await page.waitForTimeout(5000)
+    await page.getByRole('button', { name: 'Пропустить' }).click()
 
     // Пустые состояния — чистый профиль
     for (const [name, path] of [
@@ -89,9 +167,9 @@ for (const scheme of ['light', 'dark'] as const) {
     // Урок 1.1.3: фраза и «сборка»
     await page.goto('./#/lesson/s1-u1-l3')
     await shoot(page, 'p2-lesson-grammar', scheme, p)
-    await advanceUntil(page, 'Фраза')
+    await advanceUntil(page, 'Разбери фразу по словам')
     await shoot(page, 'p2-sentence', scheme, p, false)
-    await advanceUntil(page, 'Собери фразу', 60)
+    await advanceUntil(page, 'Собери фразу из слов', 60)
     await shoot(page, 'p2-assemble', scheme, p, false)
 
     if (phase === 'phase2') return

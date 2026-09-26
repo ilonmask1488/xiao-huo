@@ -3,6 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { Link } from 'react-router-dom'
 import { IconChevron } from '../../components/Icons'
 import { Mascot } from '../../components/Mascot'
+import { Term } from '../../components/Sheet'
 import { Screen } from '../../components/ui'
 import { ru } from '../../i18n/ru'
 import { manifest } from '../../lib/audio/manifest'
@@ -10,10 +11,11 @@ import { db } from '../../lib/db/db'
 import { computeStreak, localDate } from '../../lib/progress/streak'
 import s from './MoreScreen.module.css'
 
-const ITEMS = ['stats', 'settings', 'soundCheck', 'about'] as const
+const ITEMS = ['stats', 'settings', 'how', 'soundCheck', 'about'] as const
 const PATHS: Record<(typeof ITEMS)[number], string> = {
   stats: '/stats',
   settings: '/settings',
+  how: '/how',
   soundCheck: '/sound-check',
   about: '/about',
 }
@@ -32,17 +34,23 @@ export function MoreScreen() {
     <Screen title={t.title}>
       <dl className={s.summary}>
         <div>
-          <dt>{t.streak}</dt>
+          <dt>
+            <Term k="streak">{t.streak}</Term>
+          </dt>
           <dd className="mono">{summary?.streak ?? 0}</dd>
         </div>
         <div>
           <dt>
-            {t.points} <span className={s.dim}>· {t.pointsNote}</span>
+            <Term k="dv">
+              {t.points} <span className={s.dim}>· {t.pointsNote}</span>
+            </Term>
           </dt>
           <dd className="mono">{summary?.dv ?? 0}</dd>
         </div>
         <div>
-          <dt>{t.words}</dt>
+          <dt>
+            <Term k="retention">{t.words}</Term>
+          </dt>
           <dd className="mono">{summary?.words ?? 0}</dd>
         </div>
       </dl>

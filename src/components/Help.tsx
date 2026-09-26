@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { ru } from '../i18n/ru'
 import s from './Help.module.css'
-import ui from './ui.module.css'
+import { Sheet } from './Sheet'
 
 export function Help({ title, text }: { title: string; text: string[] }) {
   const [open, setOpen] = useState(false)
@@ -12,17 +12,11 @@ export function Help({ title, text }: { title: string; text: string[] }) {
         ?
       </button>
       {open && (
-        <div className={s.scrim} role="dialog" aria-modal="true" aria-label={title} onClick={() => setOpen(false)}>
-          <div className={s.panel} onClick={(e) => e.stopPropagation()}>
-            <h2>{title}</h2>
-            {text.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-            <button type="button" className={ui.primary} onClick={() => setOpen(false)}>
-              {ru.help.ok}
-            </button>
-          </div>
-        </div>
+        <Sheet title={title} onClose={() => setOpen(false)}>
+          {text.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </Sheet>
       )}
     </>
   )

@@ -13,6 +13,7 @@ import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
 import { useSettings } from '../../lib/settings/settings'
 import { cardId, newCard } from '../../lib/srs/srs'
+import { wordRu } from '../../lib/words'
 import { SentenceLine } from '../lesson/phrases'
 import { WordLine } from '../lesson/screens'
 import s from './WordScreen.module.css'
@@ -40,7 +41,7 @@ export function WordScreen() {
     .slice(0, 3)
 
   return (
-    <Screen title={w.hanzi} subtitle={w.ru.join(', ')} back paper>
+    <Screen title={w.hanzi} subtitle={wordRu(w)} back paper>
       <div className={s.wrap}>
         <WordLine id={w.id} showSandhi />
         <p className={s.meta}>

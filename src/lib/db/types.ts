@@ -35,6 +35,8 @@ export type MetaKey =
   | 'micExplained'
   | 'asrExplained'
   | 'cardsExplained'
+  | 'welcomeSeen'
+  | 'seenExercises'
 
 export type MetaRow = { key: MetaKey; value: number | boolean | string }
 

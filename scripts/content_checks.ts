@@ -21,6 +21,27 @@ export function splitSyllable(syl: string): { initial: string; final: string; to
 }
 
 /**
+  Формат перевода (UX §7): значения — отдельными элементами (на экране через «; »), пояснение — в круглых
+  скобках в конце значения, без запятой перед скобкой, без точки в конце.
+*/
+export function checkTranslation(ru: string[]): string[] {
+  const out: string[] = []
+  if (ru.length === 0) out.push('нет перевода')
+  for (const r of ru) {
+    if (r !== r.trim()) out.push(`перевод «${r}»: пробелы по краям`)
+    if (/[.;]$/.test(r)) out.push(`перевод «${r}»: без точки и «;» в конце`)
+    if (/,\s*\(/.test(r)) out.push(`перевод «${r}»: перед скобкой не нужна запятая`)
+    if (r.includes(';')) out.push(`перевод «${r}»: значения — отдельными элементами, не через «;»`)
+    const open = (r.match(/\(/g) ?? []).length
+    const close = (r.match(/\)/g) ?? []).length
+    if (open !== close) out.push(`перевод «${r}»: скобки не закрыты`)
+    else if (open > 1) out.push(`перевод «${r}»: одна пара скобок на значение`)
+    else if (open === 1 && !/\([^()]*\)$/.test(r)) out.push(`перевод «${r}»: пояснение в скобках — в конце значения`)
+  }
+  return out
+}
+
+/**
   Структурные проверки контента.
   hasFile — есть ли файл в public/audio; audio — что есть в манифесте звука.
 */
@@ -116,6 +137,9 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
   }
   for (const w of c.words) {
     if (!w.id.startsWith('w-')) errors.push(`слово ${w.id}: id должен начинаться с «w-»`)
+    for (const e of checkTranslation(w.ru)) errors.push(`слово ${w.id} (${w.hanzi}): ${e}`)
+    if (w.pos && /^(част\.|сч\. сл\.)$/.test(w.pos) && !w.ru.some((r) => r.includes('(')))
+      warnings.push(`слово ${w.id} (${w.hanzi}): служебное слово (${w.pos}) без пометки в скобках — что это и как употребляется`)
     if (audio && !audio.texts.has(w.hanzi)) errors.push(`слово ${w.id} (${w.hanzi}): нет звука — запусти scripts/generate_audio.py`)
     if (w.audio && !hasFile(w.audio)) errors.push(`слово ${w.id}: нет файла ${w.audio}`)
     if (w.example && !sentences.has(w.example)) errors.push(`слово ${w.id}: нет фразы-примера «${w.example}»`)

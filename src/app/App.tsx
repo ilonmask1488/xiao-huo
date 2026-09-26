@@ -4,6 +4,7 @@ import { CourseScreen } from '../features/course/CourseScreen'
 import { UnitScreen } from '../features/course/UnitScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
 import { WordScreen } from '../features/dictionary/WordScreen'
+import { HowScreen } from '../features/more/HowScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
 import { EchoScreen } from '../features/echo/EchoScreen'
 import { StoryScreen } from '../features/story/StoryScreen'
@@ -66,6 +67,7 @@ export function App() {
           <Route path="story" element={<StoryScreen />} />
           <Route path="settings" element={<SettingsScreen />} />
           <Route path="about" element={<AboutScreen />} />
+          <Route path="how" element={<HowScreen />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

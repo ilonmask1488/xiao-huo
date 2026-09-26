@@ -15,6 +15,7 @@ import type { HanziMode } from '../../lib/db/types'
 import type { Screen } from '../../lib/lesson/build'
 import { useSettings } from '../../lib/settings/settings'
 import { voiceFor } from '../../lib/story/story'
+import { ExerciseHead } from './ExerciseHead'
 import s from './lesson.module.css'
 import { SentenceLine } from './phrases'
 import type { ScreenResult } from './screens'
@@ -43,7 +44,7 @@ function Bubble({ speaker, sentenceId, hanziMode, showRu }: { speaker: string; s
     <div className={s.bubbleWrap} data-me={speaker === 'me' || undefined}>
       <Speaker id={speaker} />
       <div className={s.bubble}>
-        <SentenceLine sentence={sen} hanziMode={hanziMode} />
+        <SentenceLine sentence={sen} hanziMode={hanziMode} tappable />
         {showRu && <span className={s.bubbleRu}>{sen.ru}</span>}
       </div>
     </div>
@@ -60,7 +61,7 @@ function Context({ dialogueId, index, hanziMode }: { dialogueId: string; index: 
 export function LineView({ screen, hanziMode, onDone }: Props<'line'>) {
   const settings = useSettings()
   const voice = voiceFor(screen.speaker, settings.voice)
-  const [showRu, setShowRu] = useState(false)
+  const [showRu, setShowRu] = useState(true)
   useEffect(() => {
     const t = setTimeout(() => void playItem(screen.sentenceId, { voice }).catch(() => {}), 300)
     return () => {
@@ -71,6 +72,7 @@ export function LineView({ screen, hanziMode, onDone }: Props<'line'>) {
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.dialogueBody}`}>
+        <ExerciseHead kind="line" />
         <Context dialogueId={screen.dialogueId} index={screen.index} hanziMode={hanziMode} />
         <Bubble speaker={screen.speaker} sentenceId={screen.sentenceId} hanziMode={hanziMode} showRu={showRu} />
         <div className={s.row} style={{ flex: 'none', justifyContent: 'center' }}>
@@ -106,7 +108,7 @@ export function ReplyView({ screen, hanziMode, onDone }: Props<'reply'>) {
     <div className={s.view}>
       <div className={`${s.body} ${s.dialogueBody}`}>
         <Context dialogueId={screen.dialogueId} index={screen.index} hanziMode={hanziMode} />
-        <p className={s.kicker}>{given ? (correct ? ru.dialogue.sayIt : ru.dialogue.rightWas) : ru.dialogue.yourReply}</p>
+        <ExerciseHead kind="reply" title={given ? (correct ? ru.dialogue.sayIt : ru.dialogue.rightWas) : undefined} />
         {!given ? (
           <div className={s.replies} data-dialogue={screen.dialogueId} data-line={screen.index}>
             {screen.options.map((id) => {

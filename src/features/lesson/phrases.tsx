@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Hanzi, MixedText, Pinyin } from '../../components/Chinese'
 import { Help } from '../../components/Help'
 import { PlayButton } from '../../components/Play'
+import { WordTap, useWordSheet } from '../../components/WordSheet'
 import { RecordCompare } from '../../components/RecordCompare'
 import { ToneGlyph } from '../../components/ToneChart'
 import ui from '../../components/ui.module.css'
@@ -24,6 +25,8 @@ import { addToday } from '../../lib/progress/record'
 import { answerCard } from '../../lib/srs/cards'
 import { formatWhen, previewIntervals, type Grade14 } from '../../lib/srs/srs'
 import { useSettings } from '../../lib/settings/settings'
+import { meaningOf, wordRu } from '../../lib/words'
+import { ExerciseHead } from './ExerciseHead'
 import s from './lesson.module.css'
 import type { ScreenResult } from './screens'
 
@@ -51,8 +54,20 @@ function pick<T>(arr: readonly T[]): T {
 
 /* ——— Фраза по словам: иероглифы, под ними пиньинь ——— */
 
-export function SentenceLine({ sentence, hanziMode = 'always', big }: { sentence: Sentence; hanziMode?: HanziMode; big?: boolean }) {
+export function SentenceLine({
+  sentence,
+  hanziMode = 'always',
+  big,
+  tappable,
+}: {
+  sentence: Sentence
+  hanziMode?: HanziMode
+  big?: boolean
+  /** слова нажимаются — тап открывает перевод (UX §1.5); не внутри других кнопок */
+  tappable?: boolean
+}) {
   const showHanzi = hanziMode !== 'never'
+  const open = useWordSheet()
   return (
     <p className={`${s.sentence} ${big ? s.sentenceBig : ''}`}>
       {sentence.tokens.map((t, i) =>
@@ -60,6 +75,11 @@ export function SentenceLine({ sentence, hanziMode = 'always', big }: { sentence
           <span key={i} className={s.punct} lang="zh-CN">
             {showHanzi ? t.hanzi : ''}
           </span>
+        ) : tappable ? (
+          <button key={i} type="button" className={`${s.token} ${s.tokenBtn}`} aria-label={ru.wordSheet.open(t.hanzi)} onClick={() => open({ token: t })}>
+            {showHanzi && <Hanzi className={s.tokenHanzi}>{t.hanzi}</Hanzi>}
+            <Pinyin numeric={t.pinyin} className={s.tokenPinyin} />
+          </button>
         ) : (
           <span key={i} className={s.token}>
             {showHanzi && <Hanzi className={s.tokenHanzi}>{t.hanzi}</Hanzi>}
@@ -75,15 +95,17 @@ export function SentenceLine({ sentence, hanziMode = 'always', big }: { sentence
 export function ItemReveal({ item, hanziMode }: { item: Item; hanziMode: HanziMode }) {
   if (isSentenceItem(item)) {
     const sen = sentenceById.get(item)
-    return sen ? <SentenceLine sentence={sen} hanziMode={hanziMode} big /> : null
+    return sen ? <SentenceLine sentence={sen} hanziMode={hanziMode} big tappable /> : null
   }
   if (isWordItem(item)) {
     const w = wordById.get(item)
     if (!w) return null
     return (
       <div className={s.big}>
-        {hanziMode !== 'never' && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
-        <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+        <WordTap id={item}>
+          {hanziMode !== 'never' && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
+          <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+        </WordTap>
       </div>
     )
   }
@@ -92,7 +114,10 @@ export function ItemReveal({ item, hanziMode }: { item: Item; hanziMode: HanziMo
 
 export function ruOf(item: Item): string {
   if (isSentenceItem(item)) return sentenceById.get(item)?.ru ?? ''
-  if (isWordItem(item)) return wordById.get(item)?.ru.join(', ') ?? ''
+  if (isWordItem(item)) {
+    const w = wordById.get(item)
+    return w ? wordRu(w) : ''
+  }
   return ''
 }
 
@@ -105,8 +130,8 @@ export function SentenceView({ screen, hanziMode, onDone }: Props<'sentence'>) {
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.center}`}>
-        <p className={s.kicker}>{ru.lesson.phraseTitle}</p>
-        <SentenceLine sentence={sen} hanziMode={hanziMode} big />
+        <ExerciseHead kind="sentence" />
+        <SentenceLine sentence={sen} hanziMode={hanziMode} big tappable />
         <p className={s.ruLine}>{sen.ru}</p>
         {sen.literal && (
           <button type="button" className={ui.link} onClick={() => setLiteral((v) => !v)} aria-expanded={literal}>
@@ -150,7 +175,7 @@ export function MeaningView({ screen, hanziMode, onDone }: Props<'meaning'>) {
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.center}`}>
-        <p className={s.kicker}>{screen.prompt === 'audio' ? ru.lesson.meaningAudio : ru.lesson.meaningText}</p>
+        <ExerciseHead kind={screen.prompt === 'audio' ? 'meaningAudio' : 'meaningText'} />
         {screen.prompt === 'audio' && !given ? (
           <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="l" />
         ) : (
@@ -165,15 +190,16 @@ export function MeaningView({ screen, hanziMode, onDone }: Props<'meaning'>) {
             const state = given ? (id === screen.word ? 'right' : id === given ? 'wrong' : 'dim') : undefined
             return (
               <button key={id} type="button" className={s.meaningBtn} data-state={state} disabled={!!given} onClick={() => choose(id)}>
-                {o.ru[0]}
+                {meaningOf(o)}
               </button>
             )
           })}
         </div>
         {given && (
           <div className={s.feedback} data-kind={correct ? 'right' : 'wrong'} role="status">
-            <span className={s.feedbackTitle}>{correct ? ru.lesson.correct : ru.lesson.itMeans(w.ru.join(', '))}</span>
-            {correct && <span className={s.feedbackLine}>{line}</span>}
+            <span className={s.feedbackTitle}>{correct ? ru.lesson.correct : ru.lesson.itMeans(wordRu(w))}</span>
+            {correct ? <span className={s.feedbackLine}>{line}</span> : <span className={s.feedbackLine}>{wordRu(w)}</span>}
+            <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="s" />
           </div>
         )}
       </div>
@@ -232,7 +258,7 @@ export function AssembleView({ screen, hanziMode, onDone }: Props<'assemble'>) {
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.center}`}>
-        <p className={s.kicker}>{ru.lesson.assembleTitle}</p>
+        <ExerciseHead kind="assemble" />
         <p className={s.ruLine}>{sen.ru}</p>
         <div className={s.answerLine} data-state={checked === null ? undefined : checked ? 'right' : 'wrong'} aria-label={ru.lesson.assembleAnswer}>
           {placed.map((i) => chip(i, () => checked === null && setPlaced((p) => p.filter((x) => x !== i)), checked !== null))}
@@ -242,7 +268,7 @@ export function AssembleView({ screen, hanziMode, onDone }: Props<'assemble'>) {
         ) : (
           <div className={s.feedback} data-kind={checked ? 'right' : 'wrong'} role="status">
             <span className={s.feedbackTitle}>{checked ? ru.lesson.correct : ru.lesson.rightOrder}</span>
-            {!checked && <SentenceLine sentence={sen} hanziMode={hanziMode} />}
+            {!checked && <SentenceLine sentence={sen} hanziMode={hanziMode} tappable />}
             <span className={s.feedbackLine}>{ru.lesson.nowRepeat}</span>
             <PlayButton item={screen.id} label={ru.lesson.listenAgain} />
           </div>
@@ -250,10 +276,12 @@ export function AssembleView({ screen, hanziMode, onDone }: Props<'assemble'>) {
       </div>
       <div className={s.actions}>
         {checked === null ? (
-          placed.length > 0 && (
+          placed.length > 0 ? (
             <button type="button" className={ui.secondary} onClick={() => setPlaced([])}>
               {ru.lesson.reset}
             </button>
+          ) : (
+            <p className={s.disabledHint}>{ru.lesson.assembleFirst}</p>
           )
         ) : (
           <button
@@ -285,7 +313,7 @@ export function SayItView({ screen, hanziMode, onDone }: Props<'sayIt'>) {
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.center}`}>
-        <p className={s.kicker}>{ru.lesson.sayItTitle}</p>
+        <ExerciseHead kind="sayIt" />
         <p className={s.ruBig}>{ruOf(screen.item)}</p>
         {revealed ? (
           <>
@@ -390,7 +418,7 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
     <div className={s.cardHead}>
       <div>
         <p className={s.kicker}>{t.instruction[kind]}</p>
-        {kind === 3 && <p className={s.ruBig}>«{w.ru.join(', ')}»</p>}
+        {kind === 3 && <p className={s.ruBig}>«{wordRu(w)}»</p>}
         <p className={s.stepsLine}>{t.steps[kind]}</p>
       </div>
       <Help title={t.explainTitle} text={t.explain} />
@@ -414,7 +442,7 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
       <div className={s.view}>
         <div className={`${s.body} ${s.center}`}>
           {header}
-          {showHanzi ? <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi> : <span className={s.bigRu}>{w.ru[0]}</span>}
+          {showHanzi ? <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi> : <span className={s.bigRu}>{meaningOf(w)}</span>}
           {given ? (
             <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
           ) : (
@@ -494,7 +522,7 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
     <div className={s.big}>
       {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
       <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
-      <span className={s.bigRu}>{w.ru.join(', ')}</span>
+      <span className={s.bigRu}>{wordRu(w)}</span>
       <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="s" />
       {(kind === 2 || kind === 5) && w.mnemonic && (
         <p className={s.mnemonic}>

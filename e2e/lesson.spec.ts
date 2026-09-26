@@ -38,6 +38,7 @@ test('урок можно прервать и продолжить с того �
   await page.getByRole('button', { name: 'Дальше', exact: true }).click()
   await page.getByRole('button', { name: 'Дальше', exact: true }).click()
   await expect(page.getByText('3 из 28')).toBeVisible()
+  await page.getByRole('button', { name: 'Понятно', exact: true }).click() // первая встреча с «Повтори вслух»
   await page.getByRole('button', { name: 'Выйти из урока' }).click()
   await expect(page.getByText('Прогресс сохранён — продолжишь с этого места. Выйти?')).toBeVisible()
   await page.getByRole('button', { name: 'Выйти', exact: true }).click()
@@ -54,7 +55,7 @@ test('ошибка в «Угадай тон»: показывает оба ва�
   test.setTimeout(120_000)
   await markSoundChecked(page)
   await page.goto('./#/lesson/s0-u1-l1')
-  await advanceUntil(page, 'Какой тон?')
+  await advanceUntil(page, 'Какой тон прозвучал? Выбери')
   // Первый вопрос — ma1 (1-й тон): отвечаем «4-й»
   await page.getByRole('button', { name: '4-й тон' }).click()
   await expect(page.getByText('Ты выбрал 4-й, а это был 1-й.')).toBeVisible()

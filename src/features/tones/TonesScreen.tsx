@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Hanzi, Pinyin } from '../../components/Chinese'
 import { PlayButton } from '../../components/Play'
 import { ToneChart } from '../../components/ToneChart'
+import { Term } from '../../components/Sheet'
 import { Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
 import { content } from '../../content'
@@ -11,6 +12,7 @@ import type { Tone, Word } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
 import { buildHeatmap, heatmapHasData, PAIR_TONES } from '../../lib/progress/heatmap'
+import { wordRu } from '../../lib/words'
 import s from './TonesScreen.module.css'
 
 /**
@@ -69,7 +71,7 @@ export function TonesScreen() {
       </ul>
 
       <h2 className={s.heatTitle} id="heatmap" ref={heatRef}>
-        {t.heatmapTitle}
+        <Term k="heatmap">{t.heatmapTitle}</Term>
       </h2>
       <p className={s.hint}>{t.heatmapWhat}</p>
 
@@ -121,7 +123,7 @@ export function TonesScreen() {
               <div>
                 <Hanzi className={s.exampleHanzi}>{example.hanzi}</Hanzi> <Pinyin numeric={example.pinyin} className={s.exampleSyl} />
                 <div className={s.shape}>
-                  {example.ru.join(', ')} ·{' '}
+                  {wordRu(example)} ·{' '}
                   {selected.errorRate === null ? t.heatmapEmpty : t.errorsOf(selected.attempts, Math.round(selected.errorRate * 100))}
                 </div>
               </div>

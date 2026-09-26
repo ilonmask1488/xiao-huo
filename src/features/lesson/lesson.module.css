@@ -380,6 +380,21 @@
   line-height: 1.15;
 }
 
+.tokenBtn {
+  min-height: 0;
+  padding: 0 2px;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tokenBtn:active {
+  background: var(--paper-2);
+}
+
 .tokenHanzi {
   font-size: 1.5rem;
 }

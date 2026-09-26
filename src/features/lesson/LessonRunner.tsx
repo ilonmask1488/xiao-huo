@@ -5,6 +5,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { IconClose } from '../../components/Icons'
 import { Mascot } from '../../components/Mascot'
+import { Term } from '../../components/Sheet'
 import ui from '../../components/ui.module.css'
 import { ru } from '../../i18n/ru'
 import { preloadItems, stopAudio } from '../../lib/audio/audio'
@@ -253,7 +254,9 @@ function Summary({
           </div>
           <div className={s.stat}>
             <span className={s.statValue}>+{r.dv}</span>
-            <span className={s.statLabel}>{t.dv}, м/с</span>
+            <span className={s.statLabel}>
+              <Term k="dv">{t.dv}</Term>
+            </span>
           </div>
           <div className={s.stat}>
             <span className={s.statValue}>{r.spoken}</span>

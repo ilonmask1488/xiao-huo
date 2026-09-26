@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test'
 test('iPhone: подсказка «Установи на главный экран», закрывается и не возвращается', async ({ page }, info) => {
   test.skip(info.project.name !== 'iphone', 'только iOS')
   await page.goto('./')
+  await page.getByRole('button', { name: 'Пропустить' }).click()
   const banner = page.getByRole('status').filter({ hasText: 'Установи на главный экран' })
   await expect(banner).toBeVisible()
   await banner.getByRole('button', { name: 'Закрыть' }).click()

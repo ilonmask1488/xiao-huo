@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test'
 test('первый запуск: главный экран и кнопка занятия в зоне большого пальца', async ({ page }) => {
   await page.goto('./')
   await expect(page).toHaveTitle(/Сяо Хо/)
+  await page.getByRole('button', { name: 'Пропустить' }).click()
   const start = page.getByRole('button', { name: 'Начать занятие' })
   await expect(start).toBeVisible()
   const box = (await start.boundingBox())!
@@ -18,6 +19,7 @@ test('первый запуск: главный экран и кнопка за�
 
 test('навигация по всем разделам', async ({ page }) => {
   await page.goto('./')
+  await page.getByRole('button', { name: 'Пропустить' }).click()
   const nav = page.getByRole('navigation', { name: 'Разделы' })
   for (const [tab, heading] of [
     ['Курс', 'Курс'],
@@ -36,6 +38,7 @@ test('навигация по всем разделам', async ({ page }) => {
     ['Тренировка', 'Командировка', 'Командировка'],
     ['Профиль', 'Статистика', 'Статистика'],
     ['Профиль', 'Настройки', 'Настройки'],
+    ['Профиль', 'Как устроено приложение', 'Как устроено приложение'],
     ['Профиль', 'О приложении', 'О приложении'],
   ]) {
     await nav.getByRole('link', { name: tab }).click()
@@ -51,7 +54,7 @@ test('навигация по всем разделам', async ({ page }) => {
 })
 
 test('ни на одном экране нет горизонтальной прокрутки, иероглифы помечены zh-CN', async ({ page }) => {
-  for (const path of ['/', '/map', '/train', '/tones', '/games', '/dictionary', '/more', '/settings', '/about']) {
+  for (const path of ['/', '/map', '/train', '/tones', '/games', '/dictionary', '/more', '/settings', '/how', '/about']) {
     await page.goto(`./#${path}`)
     await expect(page.getByRole('heading', { level: 1 })).toBeAttached()
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)
@@ -64,6 +67,7 @@ test('ни на одном экране нет горизонтальной пр
 
 test('цели касания в навигации не меньше 44×44', async ({ page }) => {
   await page.goto('./')
+  await page.getByRole('button', { name: 'Пропустить' }).click()
   for (const link of await page.getByRole('navigation').getByRole('link').all()) {
     const b = (await link.boundingBox())!
     expect(b.width).toBeGreaterThanOrEqual(44)

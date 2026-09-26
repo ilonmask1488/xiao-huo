@@ -119,3 +119,27 @@
 .dim {
   opacity: 0.7;
 }
+
+/* «Как устроено приложение» */
+.how {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.howSection {
+  display: grid;
+  gap: var(--space-1);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.howSection h2 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+
+.howSection p {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}

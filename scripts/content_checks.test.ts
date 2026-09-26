@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Content } from '../src/content/types.ts'
-import { checkContent, splitSyllable } from './content_checks.ts'
+import { checkContent, checkTranslation, splitSyllable } from './content_checks.ts'
 
 const base = (): Content => ({
   units: [
@@ -88,6 +88,20 @@ describe('проверка контента', () => {
       items: [{ answer: 'lv4', options: ['lv4', 'lu4'] }],
     })
     expect(checkContent(c, () => true, audio).errors).toEqual([])
+  })
+
+  it('формат перевода: точка, запятая перед скобкой, скобка не в конце — ошибки; служебное без пометки — предупреждение', () => {
+    expect(checkTranslation(['один (штука)', 'быть', '(частица вопроса)'])).toEqual([])
+    expect(checkTranslation(['есть.']).join()).toMatch(/без точки/)
+    expect(checkTranslation(['есть, (кушать)']).join()).toMatch(/запятая/)
+    expect(checkTranslation(['(кушать) есть']).join()).toMatch(/в конце значения/)
+    expect(checkTranslation(['да; ага']).join()).toMatch(/отдельными элементами/)
+    const c = base()
+    c.words.push({ id: 'w-ma', hanzi: '吗', pinyin: 'ma5', ru: ['ли'], pos: 'част.', tags: [], reviewed: false })
+    c.words.push({ id: 'w-hao', hanzi: '好', pinyin: 'hao3', ru: ['хорошо.'], tags: [], reviewed: false })
+    const r = checkContent(c, () => true, audio)
+    expect(r.errors.join()).toMatch(/слово w-hao \(好\): перевод «хорошо\.»: без точки/)
+    expect(r.warnings.join()).toMatch(/слово w-ma \(吗\): служебное слово/)
   })
 
   it('слово в ячейке тоновой пары обязано иметь эти тоны', () => {

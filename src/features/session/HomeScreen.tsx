@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Hanzi, Pinyin } from '../../components/Chinese'
 import { Mascot } from '../../components/Mascot'
+import { Term } from '../../components/Sheet'
 import { Banner } from '../../components/ui'
 import ui from '../../components/ui.module.css'
 import { lessonById, unitById } from '../../content'
@@ -75,7 +76,7 @@ export function HomeScreen() {
       <header className={s.head}>
         <h1>{t.title}</h1>
         <p className={s.where}>
-          {nextUnit ? t.atUnit(nextUnit.code, nextUnit.title) : t.courseDone} · {t.streak(state?.streak ?? 0)}
+          {nextUnit ? t.atUnit(nextUnit.code, nextUnit.title) : t.courseDone} · <Term k="streak">{t.streak(state?.streak ?? 0)}</Term>
         </p>
       </header>
 

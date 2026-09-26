@@ -11,6 +11,7 @@ export async function markSoundChecked(page: Page): Promise<void> {
         const db = req.result
         const tx = db.transaction('meta', 'readwrite')
         tx.objectStore('meta').put({ key: 'soundChecked', value: true })
+        tx.objectStore('meta').put({ key: 'welcomeSeen', value: true })
         tx.oncomplete = () => resolve()
         tx.onerror = () => reject(tx.error)
       }
@@ -86,8 +87,18 @@ async function advance(page: Page, before: string, act: () => Promise<void>): Pr
 export async function advanceUntil(page: Page, text: string, maxSteps = 40): Promise<void> {
   const good = page.getByRole('button', { name: 'Получилось', exact: true })
   const next = page.getByRole('button', { name: 'Дальше', exact: true })
+  const ok = page.getByRole('button', { name: 'Понятно', exact: true })
   for (let i = 0; i < maxSteps; i++) {
-    if (await page.getByText(text, { exact: true }).isVisible()) return
+    // Подсказка при первой встрече с упражнением закрывает экран — сначала «Понятно»
+    if (await ok.isVisible()) {
+      await ok.click()
+      continue
+    }
+    if (await page.getByText(text, { exact: true }).isVisible()) {
+      // Подсказка нового упражнения появляется на кадр позже заголовка — закрываем, если пришла
+      if (await ok.waitFor({ timeout: 700 }).then(() => true, () => false)) await ok.click()
+      return
+    }
     const pos = await position(page)
     const reply = page.locator('button[data-sentence]').first()
     // Вопрос с вариантами («угадай значение», «какой тон»): «Дальше» появляется только после выбора.

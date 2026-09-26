@@ -3,6 +3,8 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useRegisterSW } from 'virtual:pwa-register/react'
 import { IconCourse, IconDictionary, IconProfile, IconToday, IconTrain } from '../components/Icons'
 import { Banner } from '../components/ui'
+import { WordSheetProvider } from '../components/WordSheet'
+import { Welcome } from '../features/onboarding/Welcome'
 import ui from '../components/ui.module.css'
 import { ru } from '../i18n/ru'
 import { player } from '../lib/audio/player'
@@ -27,9 +29,12 @@ export function Shell() {
   return (
     <div className={s.app}>
       <ErrorBoundary>
-        <Outlet />
+        <WordSheetProvider>
+          <Outlet />
+        </WordSheetProvider>
       </ErrorBoundary>
       <UpdateToasts audioError={audioError} />
+      {pathname === '/' && <Welcome />}
       {!fullscreen && (
         <nav className={s.nav} aria-label="Разделы">
           <ul className={s.navList}>

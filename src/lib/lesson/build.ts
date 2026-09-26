@@ -6,6 +6,7 @@ import { content, dialogueById, isPunct, sentenceById, unitOfWord, units, wordBy
 import type { Contrast, Item, Lesson, LessonPart, SentenceId, Syllable, WordId } from '../../content/types'
 import type { Tone } from '../pinyin/marks'
 import { tonesOf } from '../pinyin/normalize'
+import { meaningOf } from '../words'
 
 export const MAX_RUN = 3
 
@@ -122,7 +123,7 @@ export function meaningOptions(word: WordId, seed: number): WordId[] {
   const order = units.map((u) => u.id)
   const limit = myUnit ? order.indexOf(myUnit) : order.length
   const pool = content.words.filter((x) => {
-    if (x.id === word || x.ru[0] === w.ru[0]) return false
+    if (x.id === word || meaningOf(x) === meaningOf(w)) return false
     const u = unitOfWord.get(x.id)
     return u !== undefined && order.indexOf(u) <= limit
   })

@@ -42,6 +42,7 @@ import { evaluateAchievements, type AchievementId } from '../../lib/progress/ach
 import { comboMultiplier, dvForGame } from '../../lib/progress/dv'
 import { pairWeights } from '../../lib/progress/heatmap'
 import { addToday, recordAnswer } from '../../lib/progress/record'
+import { meaningOf } from '../../lib/words'
 import { SentenceLine } from '../lesson/phrases'
 import s from './games.module.css'
 
@@ -434,11 +435,11 @@ function Speed({
               onClick={() => onAnswer(id)}
             >
               {q.mode === 'text' ? (
-                <span className={s.speedRu}>{o.ru[0]}</span>
+                <span className={s.speedRu}>{meaningOf(o)}</span>
               ) : (
                 <>
                   <Hanzi className={s.revealHanzi}>{o.hanzi}</Hanzi>
-                  <span className={s.optionLabel}>{o.ru[0]}</span>
+                  <span className={s.optionLabel}>{meaningOf(o)}</span>
                 </>
               )}
             </button>

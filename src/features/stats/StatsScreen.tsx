@@ -1,7 +1,8 @@
 /* Статистика (ТЗ §5.7): минуты по дням, серия, слова, удержание FSRS, тоновые пары, прогноз до HSK. */
 import { useLiveQuery } from 'dexie-react-hooks'
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { Term } from '../../components/Sheet'
 import { Screen } from '../../components/ui'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
@@ -46,9 +47,9 @@ export function StatsScreen() {
   return (
     <Screen title={t.title} back>
       <div className={s.tiles}>
-        <Tile value={data.streak.days} label={t.orbit} note={data.streak.reserveUsed ? t.reserveUsed : undefined} />
+        <Tile value={data.streak.days} label={<Term k="streak">{t.orbit}</Term>} note={data.streak.reserveUsed ? t.reserveUsed : undefined} />
         <Tile value={data.minutes} label={t.minutes} />
-        <Tile value={`${data.dv}`} label={`${t.dv}, м/с`} />
+        <Tile value={String(data.dv)} label={<Term k="dv">{t.dv}</Term>} />
         <Tile value={data.spoken} label={t.spoken} />
       </div>
 
@@ -146,7 +147,7 @@ export function StatsScreen() {
   )
 }
 
-function Tile({ value, label, note }: { value: number | string; label: string; note?: string }) {
+function Tile({ value, label, note }: { value: number | string; label: ReactNode; note?: string }) {
   return (
     <div className={s.tile}>
       <span className={`${s.tileValue} mono`}>{value}</span>
