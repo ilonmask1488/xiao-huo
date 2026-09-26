@@ -1,0 +1,278 @@
+.groupTitle {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--fs-lead);
+}
+
+.note {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.ahead {
+  margin-top: var(--space-5);
+}
+
+.ahead summary {
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ahead .note {
+  margin-bottom: var(--space-3);
+}
+
+.tracks {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-3);
+  width: 100%;
+  min-height: var(--tap);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.track:active {
+  background: var(--paper);
+}
+
+.trackLabel {
+  grid-row: span 2;
+  align-self: center;
+  min-width: 2.5em;
+  color: var(--flame);
+  font-size: var(--fs-small);
+}
+
+.track[data-kind='episode'] .trackLabel {
+  min-width: 5.5em;
+}
+
+.trackTitle {
+  font-weight: 600;
+}
+
+.trackMeta {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
+
+/* Плеер */
+.player {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.options {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.toggle {
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.toggle[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.toggle:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.lines {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-margin-bottom: 220px;
+}
+
+.line {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline) solid transparent;
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-s);
+  background: transparent;
+  color: var(--ink-2);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.line[data-current] {
+  border-color: var(--line-strong);
+  border-left-color: var(--flame);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.speaker {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+.line[data-me] .speaker {
+  color: var(--flame);
+}
+
+.text {
+  display: grid;
+  gap: 2px;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 0.35em;
+  row-gap: 2px;
+}
+
+.token {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokenHanzi {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.tokenPinyin {
+  font-size: var(--fs-small);
+}
+
+.punct {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.ru {
+  font-size: var(--fs-small);
+}
+
+.audioOnly {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  border: var(--hairline) dashed var(--line-strong);
+  border-radius: var(--radius-m);
+  text-align: center;
+}
+
+.bigCount {
+  font-size: var(--fs-title);
+}
+
+.turn {
+  display: grid;
+  gap: var(--space-1);
+  min-height: 2.5em;
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+.turnBar {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.turnFill {
+  display: block;
+  height: 100%;
+  background: var(--flame);
+  transform-origin: left;
+  animation: fill linear forwards;
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turnFill {
+    animation: none;
+    transform: scaleX(1);
+    opacity: 0.5;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.playBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: auto;
+  min-width: 8.5em;
+}
+
+/* Кнопки плеера всегда под большим пальцем — над нижней навигацией */
+.dock {
+  position: sticky;
+  bottom: calc(var(--nav-h) + var(--safe-bottom));
+  z-index: 5;
+  display: grid;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * var(--gutter)) calc(-1 * var(--space-6));
+  padding: var(--space-2) var(--gutter) var(--space-3);
+  border-top: var(--hairline) solid var(--line-strong);
+  background: var(--paper);
+}

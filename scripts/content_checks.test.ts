@@ -6,7 +6,7 @@ const base = (): Content => ({
   units: [
     {
       id: 'u1',
-      stage: 1,
+      stage: 0,
       order: 1,
       code: '1.1',
       title: 'Знакомство',
@@ -109,5 +109,54 @@ describe('проверка контента', () => {
     expect(checkContent(c, () => true, audio).warnings).toHaveLength(1)
     c.sentences[0]!.newWordIds = ['w-hao']
     expect(checkContent(c, () => true, audio).warnings).toHaveLength(0)
+  })
+
+  it('диалог-босс: персонажи, ловушки, голоса, эпизод', () => {
+    const c = base()
+    const u = c.units[0]!
+    u.stage = 1
+    c.words.push({ id: 'w-hao', hanzi: '好', pinyin: 'hao3', ru: ['хорошо'], tags: [], reviewed: false })
+    c.sentences.push({ id: 's-2', tokens: [{ hanzi: '好', pinyin: 'hao3', wordId: 'w-hao' }], ru: 'хорошо', unitId: 'u1', newWordIds: ['w-hao'], reviewed: false })
+    c.characters = [
+      { id: 'me', hanzi: '萨沙', pinyin: 'sa4 sha1', ru: 'Саша', voice: 'me' },
+      { id: 'li', hanzi: '小李', pinyin: 'xiao3 li3', ru: 'Сяо Ли', voice: 'male' },
+    ]
+    c.dialogues.push({
+      id: 'd-1',
+      unitId: 'u1',
+      title: 'Встреча',
+      characters: ['me', 'li'],
+      lines: [
+        { speaker: 'li', sentenceId: 's-1' },
+        { speaker: 'me', sentenceId: 's-2', choices: ['s-1'] },
+      ],
+    })
+    c.lessons.push({ id: 'u1-boss', unitId: 'u1', order: 2, title: 'Босс', newWords: [], parts: [{ type: 'dialogue', id: 'd-1' }], boss: { passPercent: 80 } })
+    u.lessons.push('u1-boss')
+    u.boss = 'u1-boss'
+    u.dialogues = ['d-1']
+    c.lessons.push({ id: 'story-1', unitId: 'story', order: 1, title: 'Эпизод', newWords: [], parts: [{ type: 'dialogue', id: 'd-1' }] })
+    c.episodes = [{ id: 'ep1', n: 1, title: 'Прилёт', blurb: '', unlockAfter: 'u1', lessonId: 'story-1', dialogueId: 'd-1' }]
+    const voices = new Map([
+      ['你', new Set(['male'])],
+      ['好', new Set(['female', 'male2'])],
+    ])
+    const full = { ...audio, voices }
+    const ok = checkContent(c, () => true, full)
+    expect(ok.errors).toEqual([])
+    expect(ok.warnings).toEqual([])
+
+    // Нет голоса персонажа, ловушка совпадает с ответом, реплика у неизвестного.
+    c.dialogues[0]!.lines[1]!.choices = ['s-2']
+    c.dialogues[0]!.lines.push({ speaker: 'boss', sentenceId: 's-1' })
+    const bad = checkContent(c, () => true, { ...audio, voices: new Map([['你', new Set(['female'])]]) }).errors.join('\n')
+    expect(bad).toMatch(/варианты ответа повторяются/)
+    expect(bad).toMatch(/нет персонажа «boss»/)
+    expect(bad).toMatch(/нет звука голосом male/)
+    expect(bad).toMatch(/нет звука голосом male2/)
+
+    // Босс без диалога.
+    c.lessons.find((l) => l.id === 'u1-boss')!.parts = [{ type: 'sentences', items: ['s-1'] }]
+    expect(checkContent(c, () => true, full).errors.join()).toMatch(/босс u1-boss без диалога/)
   })
 })

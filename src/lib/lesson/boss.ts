@@ -1,14 +1,15 @@
 /*
-  Итог «босса» (предстартового теста): точность по навыкам и самое слабое место.
+  Итог «босса» (предстартового теста или диалога этапа): точность по навыкам и самое слабое место.
 */
 import type { Screen } from './build'
 
-export type Skill = 'tones' | 'initials' | 'finals' | 'pairs'
+export type Skill = 'tones' | 'initials' | 'finals' | 'pairs' | 'replies'
 export type SkillScore = { skill: Skill; correct: number; total: number }
 
 export function skillOf(s: Screen): Skill | null {
   if (s.kind === 'guessTone') return 'tones'
   if (s.kind === 'guessPair') return 'pairs'
+  if (s.kind === 'reply') return 'replies'
   if (s.kind === 'whichSyllable') return s.contrast.skill === 'initial' ? 'initials' : s.contrast.skill === 'final' ? 'finals' : 'tones'
   return null
 }
@@ -23,7 +24,7 @@ export function bossBreakdown(screens: Screen[], results: Record<string, boolean
     if (results[i]) cur.correct++
     by.set(skill, cur)
   })
-  const order: Skill[] = ['tones', 'initials', 'finals', 'pairs']
+  const order: Skill[] = ['tones', 'initials', 'finals', 'pairs', 'replies']
   return order.map((k) => by.get(k)).filter((x): x is SkillScore => !!x)
 }
 
@@ -40,5 +41,6 @@ export function weakest(scores: SkillScore[]): Skill | null {
 export function trainingFor(skill: Skill): string {
   if (skill === 'tones') return '/game/shooter'
   if (skill === 'pairs') return '/game/pingpong'
+  if (skill === 'replies') return '/echo'
   return '/game/twins'
 }

@@ -2,7 +2,12 @@ import type { Content, LessonPart } from '../src/content/types.ts'
 
 export type ContentReport = { errors: string[]; warnings: string[]; unreviewed: number; total: number }
 
-type AudioIndex = { syllables: Set<string>; texts: Set<string> }
+type AudioIndex = { syllables: Set<string>; texts: Set<string>; /** голоса по тексту — для реплик персонажей */ voices?: Map<string, Set<string>> }
+
+/** Уроки сюжета живут вне этапов: unitId = «story», эпизод ссылается на урок. */
+export const STORY_UNIT = 'story'
+/** Голоса «me» (стажёр — это ты): женский или мужской из настроек. */
+const ME_VOICES = ['female', 'male2']
 
 const SYL = /^[a-zv]+[1-5]$/
 const INITIALS = ['zh', 'ch', 'sh', 'b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h', 'j', 'q', 'x', 'r', 'z', 'c', 's', 'y', 'w']
@@ -66,9 +71,48 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
         errors.push(`фраза ${s.id}: «${t.hanzi}» — ${t.pinyin}, а в словаре ${dict}`)
     }
   }
+  const characters = new Map((c.characters ?? []).map((ch) => [ch.id, ch]))
+  const sentenceText = new Map(c.sentences.map((s) => [s.id, s.tokens.map((t) => t.hanzi).join('')]))
   for (const d of c.dialogues) {
     if (!units.has(d.unitId)) errors.push(`диалог ${d.id}: нет этапа «${d.unitId}»`)
-    for (const l of d.lines) if (!sentences.has(l.sentenceId)) errors.push(`диалог ${d.id}: нет фразы «${l.sentenceId}»`)
+    let run = 0
+    d.lines.forEach((l, i) => {
+      const where = `диалог ${d.id}, реплика ${i + 1}`
+      if (!sentences.has(l.sentenceId)) errors.push(`${where}: нет фразы «${l.sentenceId}»`)
+      if (characters.size && !characters.has(l.speaker)) errors.push(`${where}: нет персонажа «${l.speaker}»`)
+      if (characters.size && !d.characters.includes(l.speaker)) errors.push(`${where}: «${l.speaker}» не в списке персонажей диалога`)
+      run = i > 0 && d.lines[i - 1]!.speaker === l.speaker ? run + 1 : 1
+      if (run > 3) errors.push(`${where}: больше 3 реплик одного персонажа подряд`)
+      if (l.choices) {
+        if (l.speaker !== 'me') errors.push(`${where}: варианты ответа бывают только у реплик «me»`)
+        if (l.choices.length < 1 || l.choices.length > 3) errors.push(`${where}: ловушек должно быть 1–3`)
+        for (const ch of l.choices) if (!sentences.has(ch)) errors.push(`${where}: нет фразы-ловушки «${ch}»`)
+        const texts = [l.sentenceId, ...l.choices].map((x) => sentenceText.get(x))
+        if (new Set(texts).size !== texts.length) errors.push(`${where}: варианты ответа повторяются`)
+      }
+      // Звук реплики — голосом персонажа.
+      const text = sentenceText.get(l.sentenceId)
+      const need = l.speaker === 'me' ? ME_VOICES : [characters.get(l.speaker)?.voice].filter((v): v is string => !!v)
+      const have = text ? audio?.voices?.get(text) : undefined
+      if (audio?.voices && text)
+        for (const v of need) if (!have?.has(v)) errors.push(`${where}: нет звука голосом ${v} — запусти scripts/generate_audio.py`)
+    })
+  }
+  for (const ep of c.episodes ?? []) {
+    const lesson = c.lessons.find((l) => l.id === ep.lessonId)
+    if (!lesson) errors.push(`эпизод ${ep.id}: нет урока «${ep.lessonId}»`)
+    if (!dialogues.has(ep.dialogueId)) errors.push(`эпизод ${ep.id}: нет диалога «${ep.dialogueId}»`)
+    if (!units.has(ep.unlockAfter)) errors.push(`эпизод ${ep.id}: нет этапа «${ep.unlockAfter}»`)
+    if (lesson && !lesson.parts.some((p) => p.type === 'dialogue' && p.id === ep.dialogueId))
+      errors.push(`эпизод ${ep.id}: урок ${lesson.id} не показывает диалог ${ep.dialogueId}`)
+  }
+  // Фаза 3: каждый этап первой ступени и дальше заканчивается диалогом-боссом.
+  for (const u of c.units) {
+    if (u.stage < 1) continue
+    const boss = c.lessons.find((l) => l.id === u.boss)
+    if (!boss?.boss) errors.push(`этап ${u.id}: нет урока-босса`)
+    else if (!boss.parts.some((p) => p.type === 'dialogue')) errors.push(`этап ${u.id}: босс ${boss.id} без диалога`)
+    if (boss && u.lessons[u.lessons.length - 1] !== boss.id) errors.push(`этап ${u.id}: босс должен быть последним уроком`)
   }
   for (const w of c.words) {
     if (!w.id.startsWith('w-')) errors.push(`слово ${w.id}: id должен начинаться с «w-»`)
@@ -98,13 +142,14 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
     else if (audio && !audio.syllables.has(item)) errors.push(`${where}: нет звука слога ${item}`)
   }
   for (const l of c.lessons) {
-    if (!units.has(l.unitId)) errors.push(`урок ${l.id}: нет этапа «${l.unitId}»`)
+    const storyLesson = l.unitId === STORY_UNIT && (c.episodes ?? []).some((e) => e.lessonId === l.id)
+    if (!units.has(l.unitId) && !storyLesson) errors.push(`урок ${l.id}: нет этапа «${l.unitId}»`)
     for (const id of l.newWords) if (!words.has(id)) errors.push(`урок ${l.id}: нет слова «${id}»`)
     l.parts.forEach((p, i) => checkPart(`урок ${l.id}, часть ${i + 1} (${p.type})`, p, checkItem, errors, c))
   }
   if (c.lessons.length) {
     const inUnits = new Set(c.units.flatMap((u) => u.lessons))
-    for (const l of c.lessons) if (!inUnits.has(l.id)) warnings.push(`урок ${l.id} не входит ни в один этап`)
+    for (const l of c.lessons) if (!inUnits.has(l.id) && l.unitId !== STORY_UNIT) warnings.push(`урок ${l.id} не входит ни в один этап`)
   }
 
   // Правило i+1: фраза этапа использует только слова этого и предыдущих этапов.
@@ -192,6 +237,9 @@ function checkPart(
         if (s && n < 2) errors.push(`${where}: во фразе ${id} меньше 2 слов — собирать нечего`)
         if (s && n > 8) errors.push(`${where}: во фразе ${id} ${n} слов — для сборки слишком длинно`)
       }
+      break
+    case 'dialogue':
+      if (!c.dialogues.some((d) => d.id === p.id)) errors.push(`${where}: нет диалога «${p.id}»`)
       break
     case 'guessPair':
       for (const w of p.items) {

@@ -1,0 +1,82 @@
+[
+ {
+  "id": "w-huanying",
+  "hanzi": "欢迎",
+  "pinyin": "huan1 ying2",
+  "ru": [
+   "добро пожаловать"
+  ],
+  "pos": "гл.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nimen",
+  "hanzi": "你们",
+  "pinyin": "ni3 men5",
+  "ru": [
+   "вы (много людей)"
+  ],
+  "pos": "мест.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-binguan",
+  "hanzi": "宾馆",
+  "pinyin": "bin1 guan3",
+  "ru": [
+   "гостиница"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tian",
+  "hanzi": "天",
+  "pinyin": "tian1",
+  "ru": [
+   "день",
+   "небо"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fangjian",
+  "hanzi": "房间",
+  "pinyin": "fang2 jian1",
+  "ru": [
+   "комната",
+   "номер"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-la",
+  "hanzi": "辣",
+  "pinyin": "la4",
+  "ru": [
+   "острый (о еде)"
+  ],
+  "pos": "прил.",
+  "tags": [
+   "story"
+  ],
+  "reviewed": false
+ }
+]

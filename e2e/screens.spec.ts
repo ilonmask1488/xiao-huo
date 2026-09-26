@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { advanceUntil, markSoundChecked, seedCompleted, STAGE0_BEFORE_BOSS } from './helpers.ts'
+import { advanceUntil, markSoundChecked, passLesson, seedCompleted, STAGE0_BEFORE_BOSS } from './helpers.ts'
 
 /*
   Скриншоты ключевых экранов для проверки дизайна глазами (ТЗ §14).
@@ -18,7 +18,7 @@ async function shoot(page: Page, name: string, scheme: string, project: string, 
 
 for (const scheme of ['light', 'dark'] as const) {
   test(`экраны, тема ${scheme}`, async ({ page }, info) => {
-    test.setTimeout(240_000)
+    test.setTimeout(420_000)
     const p = info.project.name
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
     await page.goto('./')
@@ -92,5 +92,46 @@ for (const scheme of ['light', 'dark'] as const) {
     await shoot(page, 'p2-sentence', scheme, p, false)
     await advanceUntil(page, 'Собери фразу', 60)
     await shoot(page, 'p2-assemble', scheme, p, false)
+
+    if (phase === 'phase2') return
+    // ——— Фаза 3: «Эхо», «Командировка», диалог-босс ———
+    await seedCompleted(page, ['s1-u1-l3'])
+    for (const [name, path] of [
+      ['p3-story', '/story'],
+      ['p3-echo', '/echo'],
+      ['p3-unit', '/unit/s1-u1'],
+    ] as const) {
+      await page.goto(`./#${path}`)
+      await shoot(page, name, scheme, p)
+    }
+    await page.goto('./#/echo/dialogue-d-s1-u1-boss')
+    await shoot(page, 'p3-echo-player', scheme, p)
+    await page.getByRole('button', { name: 'Только звук' }).click()
+    await shoot(page, 'p3-echo-audio-only', scheme, p)
+    await page.getByRole('button', { name: 'Только звук' }).click()
+
+    // Босс этапа 1.1: реплика персонажа, выбор ответа, ответ с записью
+    await page.goto('./#/lesson/s1-u1-boss')
+    await shoot(page, 'p3-boss-intro', scheme, p)
+    await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+    await expect(page.getByText('小李', { exact: true }).first()).toBeVisible()
+    await shoot(page, 'p3-boss-line', scheme, p, false)
+    await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+    await page.locator('button[data-sentence]').first().waitFor()
+    await shoot(page, 'p3-boss-reply', scheme, p, false)
+    await page.locator('button[data-sentence]').first().click()
+    await shoot(page, 'p3-boss-answered', scheme, p, false)
+    await passLesson(page, 60, 'right')
+    await shoot(page, 'p3-boss-postponed', scheme, p) // первый ответ нарочно неверный
+    await page.getByRole('button', { name: 'Ещё раз' }).click()
+    await expect(page.getByText('1 из 9')).toBeVisible()
+    await passLesson(page, 60, 'right')
+    await page.waitForTimeout(3000) // анимация пуска
+    await shoot(page, 'p3-boss-passed', scheme, p)
+
+    // Эпизод 1: культурная вставка
+    await page.goto('./#/lesson/story-1')
+    await advanceUntil(page, 'Культура: Как обращаться к коллегам')
+    await shoot(page, 'p3-culture', scheme, p)
   })
 }

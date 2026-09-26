@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { expect, type Page } from '@playwright/test'
 
 /** Пропустить проверку звука перед первым уроком (она проверяется отдельно). */
@@ -56,6 +57,13 @@ export const STAGE0_BEFORE_BOSS = [
 
 const SUMMARY = /^(Урок пройден|Раунд окончен|Пуск!|Пуск перенесён)$/
 
+type DialogueJson = { id: string; lines: { sentenceId: string; choices?: string[] }[] }
+const dialogues = ['src/content/stage1/dialogues.json', 'src/content/story/dialogues.json'].flatMap(
+  (f) => JSON.parse(readFileSync(f, 'utf8')) as DialogueJson[],
+)
+/** Верный ответ реплики: «диалог:номер» → id фразы. */
+const rightReply = (dialogue: string, line: number) => dialogues.find((d) => d.id === dialogue)?.lines[line]?.sentenceId
+
 /** Текущий номер экрана («5 из 28») или «итоги». */
 async function position(page: Page): Promise<string> {
   if (await page.getByRole('heading', { name: SUMMARY }).isVisible()) return 'summary'
@@ -77,8 +85,13 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
   for (let i = 0; i < maxSteps; i++) {
     if (await page.getByText(text, { exact: true }).isVisible()) return
     const pos = await position(page)
+    const reply = page.locator('button[data-sentence]').first()
     if (await good.isVisible()) await advance(page, pos, () => good.click())
     else if (await next.isVisible()) await advance(page, pos, () => next.click())
+    else if (await reply.isVisible()) {
+      await reply.click()
+      await advance(page, pos, () => page.getByRole('button', { name: 'Сказал — дальше', exact: true }).click())
+    }
     else await good.waitFor({ timeout: 10_000 })
   }
   await expect(page.getByText(text, { exact: true })).toBeVisible()
@@ -88,7 +101,7 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
   Пройти открытый урок до итогов: на вопросах выбирается первый вариант,
   на самооценке — «Получилось». Возвращает текст итогов.
 */
-export async function passLesson(page: Page, maxSteps = 80): Promise<string> {
+export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | 'wrong' = 'right'): Promise<string> {
   const good = page.getByRole('button', { name: 'Получилось', exact: true })
   const check = page.getByRole('button', { name: 'Проверить', exact: true })
   const next = page.getByRole('button', { name: 'Дальше', exact: true })
@@ -98,6 +111,7 @@ export async function passLesson(page: Page, maxSteps = 80): Promise<string> {
   const choice = page.locator('button[class*="choice"]:not([disabled])').first()
   const meaning = page.locator('button[class*="meaningBtn"]:not([disabled])').first()
   const poolChip = page.locator('[class*="pool"] button[class*="chipWord"]').first()
+  const reply = page.locator('button[data-sentence]').first()
   for (let i = 0; i < maxSteps; i++) {
     const pos = await position(page)
     if (pos === 'summary') break
@@ -113,6 +127,16 @@ export async function passLesson(page: Page, maxSteps = 80): Promise<string> {
     } else if (await poolChip.isVisible()) {
       // «Сборка»: переносим слова по одному, пока не кончатся, потом «Сказал — дальше»
       while (await poolChip.isVisible()) await poolChip.click()
+      await advance(page, pos, () => said.click())
+    } else if (await said.isVisible()) {
+      await advance(page, pos, () => said.click())
+    } else if (await reply.isVisible()) {
+      // Диалог: выбрать верную (или нарочно неверную) реплику, потом «Сказал — дальше»
+      const box = page.locator('[data-dialogue]')
+      const right = rightReply((await box.getAttribute('data-dialogue')) ?? '', Number(await box.getAttribute('data-line')))
+      const ids = await page.locator('button[data-sentence]').evaluateAll((els) => els.map((e) => e.getAttribute('data-sentence') ?? ''))
+      const pick = ids.find((id) => (id === right) === (replies === 'right'))!
+      await page.locator(`button[data-sentence="${pick}"]`).click()
       await advance(page, pos, () => said.click())
     } else if (await meaning.isVisible()) {
       await meaning.click()

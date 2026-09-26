@@ -46,6 +46,24 @@ SOURCES = {
         "license": "синтез для личного использования",
         "credit": "Microsoft",
     },
+    "edge-xiaoyi": {
+        "name": "Синтез речи Microsoft Edge, голос zh-CN-XiaoyiNeural",
+        "url": "https://github.com/rany2/edge-tts",
+        "license": "синтез для личного использования",
+        "credit": "Microsoft",
+    },
+    "edge-yunjian": {
+        "name": "Синтез речи Microsoft Edge, голос zh-CN-YunjianNeural",
+        "url": "https://github.com/rany2/edge-tts",
+        "license": "синтез для личного использования",
+        "credit": "Microsoft",
+    },
+    "edge-yunyang": {
+        "name": "Синтез речи Microsoft Edge, голос zh-CN-YunyangNeural",
+        "url": "https://github.com/rany2/edge-tts",
+        "license": "синтез для личного использования",
+        "credit": "Microsoft",
+    },
 }
 
 
@@ -119,7 +137,7 @@ def safe_stem(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
 
 
-CONTENT_DIRS = [CONTENT, CONTENT / "stage1"]
+CONTENT_DIRS = [CONTENT, CONTENT / "stage1", CONTENT / "story"]
 
 
 def load_all(name: str) -> list:

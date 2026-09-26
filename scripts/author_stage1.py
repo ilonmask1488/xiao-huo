@@ -15,6 +15,8 @@ import json
 import re
 from pathlib import Path
 
+from content_lib import CHARACTERS, make_dialogue
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "src" / "content" / "stage1"
 HSK = ROOT / "scripts" / ".cache" / "hsk-complete.json"
@@ -393,6 +395,143 @@ UNITS = [
 ]
 
 
+# ——— Диалоги-«боссы»: финал каждого этапа (ТЗ §6.1 «Обратный отсчёт») ———
+# (кто, текст, перевод или None для уже заведённой фразы[, ловушки: текст или (текст, перевод)])
+SASHA = "[萨沙:sa4 sha1]"
+LI = "[小李:xiao3 li3]"
+WG = "[王工:wang2 gong1]"
+
+BOSSES = {
+    "1.1": {
+        "title": "Знакомство на заводе",
+        "intro": "Первый день на заводе. Коллега Сяо Ли подходит познакомиться. Отвечай — выбери реплику и скажи её вслух.",
+        "lines": [
+            ("xiaoli", f"你好！我叫{LI}。", "Привет! Меня зовут Сяо Ли."),
+            ("me", f"你好！我叫{SASHA}。", "Привет! Меня зовут Саша.", [("我是中国人。", "Я китаец."), "他是老师吗？"]),
+            ("xiaoli", "你是哪国人？", None),
+            ("me", "我是俄罗斯人。", "Я русский.", ["我很|好，你呢？", "他是老师吗？"]),
+            ("xiaoli", "你是老师吗？", "Ты учитель?"),
+            ("me", "我不是老师，我是工程师。", "Я не учитель, я инженер.", ["我们是朋友。", "你叫什么名字？"]),
+            ("xiaoli", "我们是朋友！", "Мы друзья!"),
+            ("me", "认识你很高兴。", None, ["你是中国人吗？", "李小姐，你好！"]),
+        ],
+    },
+    "1.2": {
+        "title": "Сколько лет и сколько нас",
+        "intro": "Перекур с Сяо Ли: он расспрашивает про возраст и рассказывает про команду.",
+        "lines": [
+            ("xiaoli", f"{SASHA}，你多大？", "Саша, сколько тебе лет?"),
+            ("me", "我二十二岁。你呢？", "Мне двадцать два. А тебе?", ["三个人。", "中国很大。"]),
+            ("xiaoli", "我二十五岁。", "Мне двадцать пять."),
+            ("me", "小[王:wang2]多大？", "А сколько лет Сяо Вану?", ["你叫什么名字？", ("我是俄罗斯人。", None)]),
+            ("xiaoli", "小[王:wang2]十九岁。", "Сяо Вану девятнадцать."),
+            ("me", "他很小！", "Он совсем молодой!", ["多少人？", "我二十岁。"]),
+            ("xiaoli", "我们十个人，八个工程师。", "Нас десять человек, восемь инженеров."),
+            ("me", "八个工程师！", "Восемь инженеров!", ["一个人。", "你几岁？"]),
+        ],
+    },
+    "1.3": {
+        "title": "Встреча с инженером Ваном",
+        "intro": "Главный инженер Ван назначает встречу. Он говорит коротко — отвечай так же.",
+        "lines": [
+            ("wanggong", f"{SASHA}，你明天工作吗？", "Саша, ты завтра работаешь?"),
+            ("me", "我明天工作。", "Завтра я работаю.", ["现在三点。", "昨天是星期四。"]),
+            ("wanggong", "明天上午九点。", "Завтра в девять утра."),
+            ("me", "九点？好！", "В девять? Хорошо!", ["一年十二个月。", "我上午工作，下午学习。"]),
+            ("wanggong", "现在几点？", None),
+            ("me", "现在八点。", "Сейчас восемь.", ["今天星期几？", "你什么时候工作？"]),
+            ("wanggong", "好，明天九点。", "Хорошо, завтра в девять."),
+            ("me", "好，明天九点，再见！", "Хорошо, завтра в девять, до свидания!", ["今天是九月二十六日。", "十分钟。"]),
+        ],
+    },
+    "1.4": {
+        "title": "Фото семьи",
+        "intro": "Сяо Ли увидел у тебя в телефоне фото и расспрашивает.",
+        "lines": [
+            ("xiaoli", "这是谁？", "Кто это?"),
+            ("me", "这是我妈妈。", "Это моя мама.", ["我没有儿子。", "你有狗吗？"]),
+            ("xiaoli", "你妈妈是医生吗？", "Твоя мама — врач?"),
+            ("me", "不是，她是老师。", "Нет, она учитель.", ["我们都是学生。", "这是谁的狗？"]),
+            ("xiaoli", "那是你的狗吗？", "А это твоя собака?"),
+            ("me", "是的，那是我的狗。", "Да, это моя собака.", ["我爱我的猫。", "他是我的同学。"]),
+            ("xiaoli", "你家有几个人？", None),
+            ("me", "我家有三个人。", "Нас в семье трое.", ["她有一个女儿。", "我们都是学生。"]),
+        ],
+    },
+    "1.5": {
+        "title": "Обед в столовой",
+        "intro": "Заводская столовая. Тётушка на раздаче спрашивает, что тебе положить.",
+        "lines": [
+            ("ayi", "你想吃什么？", None),
+            ("me", "我想吃米饭。", None, ["你喝茶吗？", "这个杯子是我的。"]),
+            ("ayi", "你喝什么？", "Что будешь пить?"),
+            ("me", "我喝茶。", "Я буду чай.", ["我妈妈做中国菜。", "那些苹果很|好吃。"]),
+            ("ayi", "你喜欢中国菜吗？", "Тебе нравится китайская еда?"),
+            ("me", "我很喜欢中国菜。", None, ["我想吃一些水果。", "中午你想吃什么？"]),
+            ("ayi", "这些菜很|好吃！", "Эти блюда очень вкусные!"),
+            ("me", "谢谢！", "Спасибо!", [("我不喝茶，我喝水。", None), "你喝茶吗？"]),
+        ],
+    },
+    "1.6": {
+        "title": "На рынке",
+        "intro": "Рынок у гостиницы. Продавщица фруктов называет цену — поторгуйся!",
+        "lines": [
+            ("ayi", "你想买什么？", "Что хочешь купить?"),
+            ("me", "我想买苹果。", "Хочу купить яблоки.", ["我去商店买东西。", "你的衣服很漂亮。"]),
+            ("ayi", "苹果十块钱。", "Яблоки — десять юаней."),
+            ("me", "太贵了！", None, ["太|好|了！", "我买了三本书。"]),
+            ("ayi", "好，五块。", "Ладно, пять."),
+            ("me", "太|好|了！", None, ["太贵了！", "十块钱。"]),
+            ("ayi", "你买多少？", "Сколько берёшь?"),
+            ("me", "我买三个。", "Возьму три.", ["这个多少钱？", "你的衣服很漂亮。"]),
+        ],
+    },
+    "1.7": {
+        "title": "Такси до вокзала",
+        "intro": "Садишься в такси. Таксист не прочь поболтать.",
+        "lines": [
+            ("siji", "你好！你去哪|里？", "Здравствуйте! Куда едем?"),
+            ("me", "我去火车站。", "На вокзал.", ["我在北京。", "我住在北京。"]),
+            ("siji", "火车站？好！", "На вокзал? Хорошо!"),
+            ("siji", "你住在北京吗？", "Ты живёшь в Пекине?"),
+            ("me", "我不住在北京。", "Нет, я не живу в Пекине.", ["我在医院工作。", "医院在学校后面。"]),
+            ("siji", "你什么时候回来？", None),
+            ("me", "我明天回来。", "Вернусь завтра.", ["书在桌子上。", "他开出租车。"]),
+            ("siji", "火车站在前面。", None),
+            ("me", "谢谢！", None, ["你来我家吗？", "我坐出租车回家。"]),
+        ],
+    },
+    "1.8": {
+        "title": "Погода перед совещанием",
+        "intro": "До совещания пять минут. Инженер Ван начинает с погоды — и заодно проверяет твой китайский.",
+        "lines": [
+            ("wanggong", "今天天气怎么样？", None),
+            ("me", "今天很热。", None, ["我想睡觉。", "我喜欢看电影。"]),
+            ("wanggong", "明天会下雨。", None),
+            ("me", "明天冷吗？", "А завтра холодно?", ["他在看电视。", "我没看见他。"]),
+            ("wanggong", "不冷。你会说汉语吗？", "Нет. Ты говоришь по-китайски?"),
+            ("me", "我会说汉语。", None, ["我想睡觉。", "他在看电视。"]),
+            ("wanggong", "你会写这个字吗？", None),
+            ("me", "我不会写。", "Нет, писать не умею.", ["今天很热。", "我喜欢看电影。"]),
+        ],
+    },
+    "1.9": {
+        "title": "Звонок инженера Вана",
+        "intro": "Звонит инженер Ван. Ответь вежливо — он это ценит.",
+        "lines": [
+            ("wanggong", f"喂，是{SASHA}吗？", "Алло, это Саша?"),
+            ("me", f"是，我是{SASHA}。", "Да, я Саша.", ["不客气。", "请喝茶。"]),
+            ("wanggong", "你下午来吗？", "Ты придёшь днём?"),
+            ("me", "对不起，我下午不能来。", "Извините, днём я не смогу прийти.", ["没关系。", "谢谢你！"]),
+            ("wanggong", "没关系，你明天来。", "Ничего, приходи завтра."),
+            ("me", f"好，谢谢{WG}！", "Хорошо, спасибо, инженер Ван!", ["喂，你好！", "这个字怎么读？"]),
+            ("wanggong", "不客气。", None),
+            ("me", "再见！", "До свидания!", ["请坐。", "对不起！"]),
+        ],
+    },
+}
+
+
 def load_hsk() -> dict[str, dict]:
     if not HSK.exists():
         raise SystemExit("Нет scripts/.cache/hsk-complete.json — скачай complete.json из drkameleon/complete-hsk-vocabulary")
@@ -446,7 +585,8 @@ def build() -> None:
     hsk = load_hsk()
     stage0 = json.loads((ROOT / "src/content/words.json").read_text(encoding="utf-8"))
     dictionary = {w["hanzi"]: (w["id"], w["pinyin"]) for w in stage0}
-    words_out, sentences_out, lessons_out, units_out = [], [], [], []
+    words_out, sentences_out, lessons_out, units_out, dialogues_out = [], [], [], [], []
+    known: dict[str, str] = {}
     ids = set()
 
     for u in UNITS:
@@ -490,19 +630,62 @@ def build() -> None:
 
         grammar = [{"title": t, "ru": r, "examples": ex} for t, r, ex in u["grammar"]]
         lessons = make_lessons(uid, u, unit_words, sents, grammar, by_id)
+
+        # Финал этапа — диалог-«босс». Новые фразы диалога принадлежат этому этапу.
+        for s in sentences_out:
+            known[plain_text(s)] = s["id"]
+        boss_n = [0]
+
+        def new_sentence(text: str, unit_id: str, ru_: str, code=u["code"]) -> str:
+            boss_n[0] += 1
+            sid = f"s-{code}-b{boss_n[0]:02d}"
+            s = {"id": sid, "tokens": tokenize(text, dictionary), "ru": ru_, "unitId": unit_id, "reviewed": False}
+            sentences_out.append(s)
+            sents.append(s)
+            return sid
+
+        boss = BOSSES[u["code"]]
+        did = f"d-{uid}-boss"
+        dialogues_out.append(make_dialogue(did, uid, boss["title"], boss["lines"], known, new_sentence))
+        boss_lesson = {
+            "id": f"{uid}-boss", "unitId": uid, "order": 4, "title": f"Обратный отсчёт: {boss['title']}", "newWords": [],
+            "boss": {"passPercent": 80},
+            "parts": [
+                {"type": "explain", "title": boss["title"], "body": [boss["intro"], ru_boss_rule], "mascot": "celebrate"},
+                {"type": "dialogue", "id": did},
+            ],
+        }
+        lessons.append(boss_lesson)
         lessons_out += lessons
         units_out.append(
             {
                 "id": uid, "stage": 1, "order": n, "code": u["code"], "title": u["title"], "situation": u["situation"],
                 "goals": u["goals"], "lessons": [l["id"] for l in lessons], "newWords": unit_words,
-                "sentences": [s["id"] for s in sents], "dialogues": [], "grammarNotes": grammar, "boss": "",
+                "sentences": [s["id"] for s in sents], "dialogues": [did], "grammarNotes": grammar, "boss": boss_lesson["id"],
             }
         )
 
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, data in (("units", units_out), ("words", words_out), ("sentences", sentences_out), ("lessons", lessons_out)):
+    for name, data in (
+        ("units", units_out),
+        ("words", words_out),
+        ("sentences", sentences_out),
+        ("lessons", lessons_out),
+        ("dialogues", dialogues_out),
+    ):
         (OUT / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"Этапов {len(units_out)}, уроков {len(lessons_out)}, слов {len(words_out)}, фраз {len(sentences_out)}")
+    (ROOT / "src/content/characters.json").write_text(json.dumps(CHARACTERS, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(
+        f"Этапов {len(units_out)}, уроков {len(lessons_out)}, слов {len(words_out)}, фраз {len(sentences_out)}, "
+        f"диалогов {len(dialogues_out)}"
+    )
+
+
+ru_boss_rule = "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+
+
+def plain_text(s: dict) -> str:
+    return "".join(t["hanzi"] for t in s["tokens"])
 
 
 def split_body(text: str) -> list[str]:

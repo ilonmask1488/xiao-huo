@@ -14,7 +14,15 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: 'android', use: { ...devices['Pixel 7'] } },
+    {
+      name: 'android',
+      use: {
+        ...devices['Pixel 7'],
+        // Поддельный микрофон: проверка записи «образец → я → образец» без живого звука.
+        permissions: ['microphone'],
+        launchOptions: { args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'] },
+      },
+    },
     { name: 'iphone', use: { ...devices['iPhone 15'] } },
   ],
   webServer: {

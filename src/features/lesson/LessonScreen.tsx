@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Placeholder, Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
-import { lessonById } from '../../content'
+import { lessonById, unitById } from '../../content'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
 import type { LessonProgressRow } from '../../lib/db/types'
@@ -72,7 +72,13 @@ export function LessonScreen() {
     )
   }
 
-  const back = () => navigate(from === 'launch' ? '/session' : '/map')
+  const back = () => navigate(from === 'launch' ? '/session' : from === 'story' ? '/story' : '/map')
+  const unit = unitById.get(lesson.unitId)
+  // Надпись пуска: у ступени 0 — «стартовый стол», у этапов — номер этапа.
+  const bossTexts =
+    unit && unit.stage > 0
+      ? { launchTitle: ru.boss.unitLaunch(unit.code), passedText: ru.boss.unitPassed(unit.code, unit.title), postponedText: ru.boss.postponedDialog }
+      : undefined
   const p = state.progress
   const startAt = p && p.step > 0 && p.step < screens.length ? p.step : 0
 
@@ -88,7 +94,7 @@ export function LessonScreen() {
       initialResults={startAt ? p?.results : {}}
       onExit={back}
       onRestart={() => void resetLessonRun(lesson.id).then(() => setRunKey((k) => k + 1))}
-      boss={lesson.boss}
+      boss={lesson.boss ? { ...lesson.boss, ...bossTexts } : undefined}
       onFinish={async (r) => {
         // «Босс» засчитывается только при успехе; неудача — без штрафов, время и Δv всё равно идут в зачёт.
         if (!lesson.boss || r.passed) {
@@ -107,12 +113,23 @@ export function LessonScreen() {
           const weak = weakest(r.breakdown ?? [])
           return (
             <>
-              {weak && (
-                <button type="button" className={ui.primary} onClick={() => navigate(trainingFor(weak))}>
+              {weak === 'replies' && unit?.dialogues[0] ? (
+                <button type="button" className={ui.secondary} onClick={() => navigate(`/echo/dialogue-${unit.dialogues[0]}`)}>
+                  {ru.boss.listenDialog}
+                </button>
+              ) : weak ? (
+                <button type="button" className={ui.secondary} onClick={() => navigate(trainingFor(weak))}>
                   {ru.boss.train(ru.boss.skills[weak]!.toLowerCase())}
                 </button>
+              ) : (
+                unit &&
+                unit.stage > 0 && (
+                  <button type="button" className={ui.secondary} onClick={() => navigate(`/unit/${unit.id}`)}>
+                    {ru.boss.reviewUnit}
+                  </button>
+                )
               )}
-              <button type="button" className={weak ? ui.secondary : ui.primary} onClick={restart}>
+              <button type="button" className={ui.primary} onClick={restart}>
                 {ru.boss.again}
               </button>
               <button type="button" className={ui.link} onClick={back}>
@@ -124,7 +141,7 @@ export function LessonScreen() {
         return (
           <>
             <button type="button" className={ui.primary} onClick={back}>
-              {from === 'launch' ? ru.lesson.summary.toLaunch : ru.lesson.summary.toMap}
+              {from === 'launch' ? ru.lesson.summary.toLaunch : from === 'story' ? ru.story.back : ru.lesson.summary.toMap}
             </button>
             <button type="button" className={ui.secondary} onClick={restart}>
               {ru.lesson.summary.repeat}

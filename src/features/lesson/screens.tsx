@@ -3,10 +3,11 @@
   Звук образца стартует сам при появлении экрана; кнопки «ещё раз» — всегда рядом.
 */
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { Hanzi, Pinyin } from '../../components/Chinese'
+import { Hanzi, MixedText, Pinyin } from '../../components/Chinese'
 import { Mascot } from '../../components/Mascot'
 import { PlayButton, PlayChip } from '../../components/Play'
 import { ToneChart, ToneGlyph } from '../../components/ToneChart'
+import { RecordCompare } from '../../components/RecordCompare'
 import ui from '../../components/ui.module.css'
 import { sentenceById, wordById } from '../../content'
 import type { Item, WordId } from '../../content/types'
@@ -20,6 +21,7 @@ import { pairOf } from '../../lib/lesson/build'
 import { markSyllable, toMarked, type Tone } from '../../lib/pinyin/marks'
 import { applySandhi, spokenMarked } from '../../lib/pinyin/sandhi'
 import s from './lesson.module.css'
+import { LineView, ReplyView } from './dialogue'
 import { AssembleView, CardView, MeaningView, SayItView, SentenceLine, SentenceView } from './phrases'
 
 export type ScreenResult = {
@@ -115,7 +117,9 @@ export function ExplainView({ screen, onDone }: Props<'explain'>) {
         )}
         <div className={s.paragraphs}>
           {p.body.map((t, i) => (
-            <p key={i}>{t}</p>
+            <p key={i}>
+              <MixedText text={t} />
+            </p>
           ))}
         </div>
         {p.examples && (
@@ -294,6 +298,7 @@ export function RepeatView({ screen, hanziMode, onDone }: Props<'repeat'>) {
           </div>
         )}
         {meh && <p className={s.feedbackLine}>{ru.lesson.notReallyHint}</p>}
+        {phase === 'assess' && <RecordCompare item={screen.item} compact />}
       </div>
       <Actions>
         {phase === 'assess' ? (
@@ -603,5 +608,9 @@ export function ScreenView(props: { screen: Screen; hanziMode: HanziMode; onDone
       return <SayItView {...props} screen={screen} />
     case 'card':
       return <CardView {...props} screen={screen} />
+    case 'line':
+      return <LineView {...props} screen={screen} />
+    case 'reply':
+      return <ReplyView {...props} screen={screen} />
   }
 }

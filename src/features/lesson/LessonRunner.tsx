@@ -44,7 +44,7 @@ type Props = {
   onFinish: (r: RunResult) => Promise<AchievementId[]>
   summaryActions: (r: RunResult) => React.ReactNode
   onRestart?: () => void
-  boss?: { passPercent: number }
+  boss?: { passPercent: number; launchTitle?: string; passedText?: string; postponedText?: string }
 }
 
 export function LessonRunner(props: Props) {
@@ -122,7 +122,7 @@ export function LessonRunner(props: Props) {
 
   const progress = useMemo(() => (screens.length ? Math.min(index, screens.length) / screens.length : 0), [index, screens.length])
 
-  if (finished) return <Summary {...finished} actions={props.summaryActions(finished.r)} />
+  if (finished) return <Summary {...finished} boss={props.boss} actions={props.summaryActions(finished.r)} />
 
   return (
     <div className={s.runner} data-run={runId} data-start-at={props.startAt ?? 0}>
@@ -148,7 +148,17 @@ export function LessonRunner(props: Props) {
   )
 }
 
-function Summary({ r, fresh, actions }: { r: RunResult; fresh: AchievementId[]; actions: React.ReactNode }) {
+function Summary({
+  r,
+  fresh,
+  actions,
+  boss,
+}: {
+  r: RunResult
+  fresh: AchievementId[]
+  actions: React.ReactNode
+  boss?: { launchTitle?: string; passedText?: string; postponedText?: string }
+}) {
   const t = ru.lesson.summary
   const pool = r.accuracy === null || r.accuracy >= 0.85 ? ru.lines.summaryHigh : r.accuracy >= 0.6 ? ru.lines.summaryMid : ru.lines.summaryLow
   const [line] = useState(() => pool[Math.floor(Math.random() * pool.length)]!)
@@ -157,15 +167,15 @@ function Summary({ r, fresh, actions }: { r: RunResult; fresh: AchievementId[]; 
   const title = isBoss ? (r.passed ? ru.boss.passed : ru.boss.postponed) : t.title
   return (
     <div className={s.runner}>
-      {launching && <LaunchAnimation title={ru.boss.launchTitle} onDone={() => setLaunching(false)} />}
+      {launching && <LaunchAnimation title={boss?.launchTitle ?? ru.boss.launchTitle} onDone={() => setLaunching(false)} />}
       <div className={`${s.body} ${s.summary}`}>
         <Mascot mood={r.passed || fresh.length || (!isBoss && (r.accuracy ?? 1) >= 0.85) ? 'celebrate' : isBoss ? 'thinking' : 'happy'} size={96} />
         <h1>{title}</h1>
-        <p>{isBoss ? (r.passed ? ru.boss.passedText : ru.boss.postponedText) : line}</p>
+        <p>{isBoss ? (r.passed ? (boss?.passedText ?? ru.boss.passedText) : (boss?.postponedText ?? ru.boss.postponedText)) : line}</p>
         {r.breakdown && (
           <div className={s.words} style={{ width: '100%' }}>
             {r.breakdown.map((b) => (
-              <div key={b.skill} className={s.lesson} style={{ gridTemplateColumns: '1fr auto' }}>
+              <div key={b.skill} className={s.skillRow}>
                 <span>{ru.boss.skills[b.skill]}</span>
                 <span className="mono" data-weak={b.correct / b.total < 0.8 || undefined}>
                   {b.correct} / {b.total}

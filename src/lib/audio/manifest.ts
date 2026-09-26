@@ -6,7 +6,8 @@ import manifestJson from '../../../public/audio/manifest.json'
 import { sentenceById, sentenceText, wordById } from '../../content'
 import type { Item } from '../../content/types'
 
-export type Voice = 'native' | 'female' | 'male'
+/** native — носитель; female/male — голоса из настроек; female2/male2/male3 — голоса персонажей. */
+export type Voice = 'native' | 'female' | 'male' | 'female2' | 'male2' | 'male3'
 export type AudioEntry = { file: string; source: string; ms: number; voice?: Voice; tts?: string }
 export type AudioSource = { name: string; url: string; license: string; credit: string }
 

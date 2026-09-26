@@ -1,0 +1,38 @@
+[
+ {
+  "id": "ep1",
+  "n": 1,
+  "title": "Прилёт",
+  "blurb": "Аэропорт Пекина. Тебя встречает коллега Сяо Ли.",
+  "unlockAfter": "s1-u1",
+  "lessonId": "story-1",
+  "dialogueId": "d-ep1"
+ },
+ {
+  "id": "ep2",
+  "n": 2,
+  "title": "Такси из аэропорта",
+  "blurb": "Сяо Ли везёт тебя в гостиницу. Таксист хочет всё знать.",
+  "unlockAfter": "s1-u7",
+  "lessonId": "story-2",
+  "dialogueId": "d-ep2"
+ },
+ {
+  "id": "ep3",
+  "n": 3,
+  "title": "Гостиница",
+  "blurb": "Заселение. Администратор очень вежлива — будь и ты.",
+  "unlockAfter": "s1-u9",
+  "lessonId": "story-3",
+  "dialogueId": "d-ep3"
+ },
+ {
+  "id": "ep4",
+  "n": 4,
+  "title": "Столовая: 辣不辣？",
+  "blurb": "Обед на заводе. Главный вопрос — остро или нет.",
+  "unlockAfter": "s1-u6",
+  "lessonId": "story-4",
+  "dialogueId": "d-ep4"
+ }
+]

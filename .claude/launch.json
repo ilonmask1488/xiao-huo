@@ -8,6 +8,13 @@
       "port": 5173
     },
     {
+      "name": "dev-ip",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--host", "127.0.0.1", "--port", "5173", "--strictPort"],
+      "port": 5173,
+      "url": "http://127.0.0.1:5173"
+    },
+    {
       "name": "preview",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview", "--", "--port", "4173", "--strictPort"],

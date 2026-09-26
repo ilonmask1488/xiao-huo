@@ -32,6 +32,7 @@ export type MetaKey =
   | 'installHintDismissedAt'
   | 'storagePersisted'
   | 'soundChecked'
+  | 'micExplained'
 
 export type MetaRow = { key: MetaKey; value: number | boolean | string }
 
@@ -90,7 +91,7 @@ export type UnitProgressRow = { unitId: string; lessonsDone: number; completedAt
 
 /* ——— Схема v2 (фаза 1) ——— */
 
-export type AnswerKind = 'tone' | 'syllable' | 'pair' | 'self' | 'meaning' | 'order'
+export type AnswerKind = 'tone' | 'syllable' | 'pair' | 'self' | 'meaning' | 'order' | 'reply'
 export type AnswerSource = 'lesson' | 'game' | 'launch'
 
 /** Один ответ в уроке или игре — источник статистики и тепловой карты. */

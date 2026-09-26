@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Hanzi, Pinyin } from '../../components/Chinese'
 import { PlayButton } from '../../components/Play'
+import { RecordCompare } from '../../components/RecordCompare'
 import { ToneGlyph } from '../../components/ToneChart'
 import ui from '../../components/ui.module.css'
 import { isPunct, sentenceById, wordById } from '../../content'
@@ -289,6 +290,7 @@ export function SayItView({ screen, hanziMode, onDone }: Props<'sayIt'>) {
             <ItemReveal item={screen.item} hanziMode={hanziMode} />
             <PlayButton item={screen.item} label={ru.lesson.listenAgain} />
             <p className={s.phase}>{ru.lesson.selfCheck}</p>
+            <RecordCompare item={screen.item} compact />
           </>
         ) : (
           <p className={s.phase}>{ru.lesson.sayItHint}</p>

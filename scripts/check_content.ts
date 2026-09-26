@@ -15,7 +15,7 @@ const root = join(import.meta.dirname, '..')
 const load = <T>(file: string): T => JSON.parse(readFileSync(join(root, file), 'utf8')) as T
 
 const content: Content = loadContent(root)
-const manifest = load<{ syllables: Record<string, { file: string }>; texts: Record<string, { file: string }[]> }>(
+const manifest = load<{ syllables: Record<string, { file: string }>; texts: Record<string, { file: string; voice?: string }[]> }>(
   'public/audio/manifest.json',
 )
 
@@ -23,6 +23,7 @@ const hasFile = (file: string) => existsSync(join(root, 'public/audio', file))
 const report = checkContent(content, hasFile, {
   syllables: new Set(Object.keys(manifest.syllables)),
   texts: new Set(Object.keys(manifest.texts)),
+  voices: new Map(Object.entries(manifest.texts).map(([k, es]) => [k, new Set(es.map((e) => e.voice ?? ''))])),
 })
 
 // Все файлы из манифеста существуют.
@@ -62,7 +63,7 @@ for (const s of content.sentences) {
 
 console.log(
   `Контент: ${content.units.length} этапов, ${content.lessons.length} уроков, ${content.words.length} слов, ` +
-    `${content.sentences.length} фраз, ${content.dialogues.length} диалогов; звук: ${Object.keys(manifest.syllables).length} слогов, ${Object.keys(manifest.texts).length} слов`,
+    `${content.sentences.length} фраз, ${content.dialogues.length} диалогов, ${content.episodes?.length ?? 0} эпизодов; звук: ${Object.keys(manifest.syllables).length} слогов, ${Object.keys(manifest.texts).length} слов`,
 )
 for (const m of mismatches) console.log(`  пиньинь расходится с pinyin-pro (проверь вручную): ${m}`)
 for (const m of neutral) console.log(`  нейтральный тон там, где у pinyin-pro полный (норма речи, проверено): ${m}`)

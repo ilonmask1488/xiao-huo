@@ -49,8 +49,23 @@ export type Dialogue = {
   unitId: string
   title: string
   characters: string[]
-  lines: { speaker: string; sentenceId: SentenceId }[]
+  /** choices — ловушки для реплик «me»: выбери верный ответ, потом скажи его вслух */
+  lines: { speaker: string; sentenceId: SentenceId; choices?: SentenceId[] }[]
   cultureNote?: string
+}
+
+/** Персонаж «Командировки». voice — голос синтеза; «me» (стажёр, это ты) — голос из настроек. */
+export type Character = { id: string; hanzi: string; pinyin: string; ru: string; voice: string }
+
+/** Эпизод сюжета: открывается после этапа unlockAfter. */
+export type Episode = {
+  id: string
+  n: number
+  title: string
+  blurb: string
+  unlockAfter: string
+  lessonId: LessonId
+  dialogueId: string
 }
 
 /** Пример в объяснении: слог + иероглиф + перевод (妈 mā — мама). */
@@ -89,6 +104,8 @@ export type LessonPart =
   | { type: 'assemble'; items: SentenceId[] }
   /** Скажи сам: по-русски → сказать по-китайски → сверить с образцом */
   | { type: 'sayIt'; items: (WordId | SentenceId)[] }
+  /** Диалог: реплики персонажей их голосами, на своих — выбрать ответ и сказать вслух */
+  | { type: 'dialogue'; id: string }
 
 export type Lesson = {
   id: LessonId
@@ -126,4 +143,6 @@ export type Content = {
   words: Word[]
   sentences: Sentence[]
   dialogues: Dialogue[]
+  characters?: Character[]
+  episodes?: Episode[]
 }

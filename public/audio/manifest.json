@@ -24,6 +24,24 @@
    "url": "https://github.com/rany2/edge-tts",
    "license": "синтез для личного использования",
    "credit": "Microsoft"
+  },
+  "edge-xiaoyi": {
+   "name": "Синтез речи Microsoft Edge, голос zh-CN-XiaoyiNeural",
+   "url": "https://github.com/rany2/edge-tts",
+   "license": "синтез для личного использования",
+   "credit": "Microsoft"
+  },
+  "edge-yunjian": {
+   "name": "Синтез речи Microsoft Edge, голос zh-CN-YunjianNeural",
+   "url": "https://github.com/rany2/edge-tts",
+   "license": "синтез для личного использования",
+   "credit": "Microsoft"
+  },
+  "edge-yunyang": {
+   "name": "Синтез речи Microsoft Edge, голос zh-CN-YunyangNeural",
+   "url": "https://github.com/rany2/edge-tts",
+   "license": "синтез для личного использования",
+   "credit": "Microsoft"
   }
  },
  "syllables": {
@@ -1142,6 +1160,26 @@
     "ms": 610
    }
   ],
+  "宾馆": [
+   {
+    "voice": "native",
+    "file": "w/9b0ac79476-n-032fbfb0.mp3",
+    "source": "yue-tan",
+    "ms": 920
+   },
+   {
+    "voice": "female",
+    "file": "w/9b0ac79476-f-c7e4e3e5.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 660
+   },
+   {
+    "voice": "male",
+    "file": "w/9b0ac79476-m-d744922b.mp3",
+    "source": "edge-yunxi",
+    "ms": 560
+   }
+  ],
   "不": [
    {
     "voice": "native",
@@ -1618,6 +1656,26 @@
     "ms": 450
    }
   ],
+  "房间": [
+   {
+    "voice": "native",
+    "file": "w/dab2ced927-n-97c05610.mp3",
+    "source": "yue-tan",
+    "ms": 940
+   },
+   {
+    "voice": "female",
+    "file": "w/dab2ced927-f-96c78781.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 590
+   },
+   {
+    "voice": "male",
+    "file": "w/dab2ced927-m-889a9240.mp3",
+    "source": "edge-yunxi",
+    "ms": 550
+   }
+  ],
   "饭馆": [
    {
     "voice": "native",
@@ -1972,6 +2030,26 @@
     "ms": 640
    }
   ],
+  "欢迎": [
+   {
+    "voice": "native",
+    "file": "w/45557f52bf-n-4ea255f3.mp3",
+    "source": "yue-tan",
+    "ms": 960
+   },
+   {
+    "voice": "female",
+    "file": "w/45557f52bf-f-fc05eb67.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 630
+   },
+   {
+    "voice": "male",
+    "file": "w/45557f52bf-m-3126c33d.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
+   }
+  ],
   "回": [
    {
     "voice": "native",
@@ -2244,6 +2322,26 @@
     "file": "w/e44b48e089-m-39967c29.mp3",
     "source": "edge-yunxi",
     "ms": 560
+   }
+  ],
+  "辣": [
+   {
+    "voice": "native",
+    "file": "w/e50be909f3-n-a9be7e79.mp3",
+    "source": "yue-tan",
+    "ms": 560
+   },
+   {
+    "voice": "female",
+    "file": "w/e50be909f3-f-a354866a.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 440
+   },
+   {
+    "voice": "male",
+    "file": "w/e50be909f3-m-c32477fa.mp3",
+    "source": "edge-yunxi",
+    "ms": 550
    }
   ],
   "来": [
@@ -2718,6 +2816,26 @@
     "file": "w/440ee0853a-m-4bf388ad.mp3",
     "source": "edge-yunxi",
     "ms": 440
+   }
+  ],
+  "你们": [
+   {
+    "voice": "native",
+    "file": "w/2fda3d6ec6-n-129f4225.mp3",
+    "source": "yue-tan",
+    "ms": 720
+   },
+   {
+    "voice": "female",
+    "file": "w/2fda3d6ec6-f-7575c5d2.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 570
+   },
+   {
+    "voice": "male",
+    "file": "w/2fda3d6ec6-m-19a9f17f.mp3",
+    "source": "edge-yunxi",
+    "ms": 480
    }
   ],
   "女儿": [
@@ -3432,6 +3550,26 @@
     "file": "w/d2ff8f7020-m-68ccd0e2.mp3",
     "source": "edge-yunxi",
     "ms": 420
+   }
+  ],
+  "天": [
+   {
+    "voice": "native",
+    "file": "w/c3304d1e49-n-d0d92c53.mp3",
+    "source": "yue-tan",
+    "ms": 610
+   },
+   {
+    "voice": "female",
+    "file": "w/c3304d1e49-f-4c36a956.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 460
+   },
+   {
+    "voice": "male",
+    "file": "w/c3304d1e49-m-1a617349.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
    }
   ],
   "天气": [
@@ -4460,6 +4598,12 @@
     "file": "s/84452a07d0-m-e60d9b8d.mp3",
     "source": "edge-yunxi",
     "ms": 970
+   },
+   {
+    "voice": "male2",
+    "file": "s/84452a07d0-male2-b6366dd3.mp3",
+    "source": "edge-yunjian",
+    "ms": 1230
    }
   ],
   "他是老师吗？": [
@@ -4670,6 +4814,12 @@
     "file": "s/a02e6892e9-m-4320a89c.mp3",
     "source": "edge-yunxi",
     "ms": 850
+   },
+   {
+    "voice": "male2",
+    "file": "s/a02e6892e9-male2-0289f89f.mp3",
+    "source": "edge-yunjian",
+    "ms": 980
    }
   ],
   "他是小王。": [
@@ -4712,6 +4862,12 @@
     "file": "s/7af2e1a07b-m-dceaff9b.mp3",
     "source": "edge-yunxi",
     "ms": 760
+   },
+   {
+    "voice": "male3",
+    "file": "s/7af2e1a07b-male3-7b03d130.mp3",
+    "source": "edge-yunyang",
+    "ms": 770
    }
   ],
   "现在三点。": [
@@ -5076,6 +5232,12 @@
     "file": "s/55410cae71-m-aed97f8f.mp3",
     "source": "edge-yunxi",
     "ms": 960
+   },
+   {
+    "voice": "male2",
+    "file": "s/55410cae71-male2-2c09df67.mp3",
+    "source": "edge-yunjian",
+    "ms": 1120
    }
   ],
   "你喝茶吗？": [
@@ -5118,6 +5280,12 @@
     "file": "s/3c6690d38f-m-d6cc98bc.mp3",
     "source": "edge-yunxi",
     "ms": 1220
+   },
+   {
+    "voice": "male2",
+    "file": "s/3c6690d38f-male2-1978ee8a.mp3",
+    "source": "edge-yunjian",
+    "ms": 1530
    }
   ],
   "这个饭馆的菜很好吃。": [
@@ -5258,6 +5426,12 @@
     "file": "s/72e649f5c7-m-143cd35e.mp3",
     "source": "edge-yunxi",
     "ms": 660
+   },
+   {
+    "voice": "male2",
+    "file": "s/72e649f5c7-male2-a1cacb3e.mp3",
+    "source": "edge-yunjian",
+    "ms": 800
    }
   ],
   "我想买一本书。": [
@@ -5356,6 +5530,12 @@
     "file": "s/83b25912f0-m-90748837.mp3",
     "source": "edge-yunxi",
     "ms": 610
+   },
+   {
+    "voice": "male2",
+    "file": "s/83b25912f0-male2-65f34c61.mp3",
+    "source": "edge-yunjian",
+    "ms": 790
    }
   ],
   "苹果多少钱？": [
@@ -5468,6 +5648,12 @@
     "file": "s/5bb4b15786-m-2270c6d8.mp3",
     "source": "edge-yunxi",
     "ms": 1010
+   },
+   {
+    "voice": "male2",
+    "file": "s/5bb4b15786-male2-2485bf4a.mp3",
+    "source": "edge-yunjian",
+    "ms": 1320
    }
   ],
   "你什么时候回来？": [
@@ -5482,6 +5668,12 @@
     "file": "s/aa62139293-m-9a956841.mp3",
     "source": "edge-yunxi",
     "ms": 890
+   },
+   {
+    "voice": "male2",
+    "file": "s/aa62139293-male2-61a684da.mp3",
+    "source": "edge-yunjian",
+    "ms": 1320
    }
   ],
   "书在桌子上。": [
@@ -5580,6 +5772,12 @@
     "file": "s/3214b65a0b-m-83457704.mp3",
     "source": "edge-yunxi",
     "ms": 990
+   },
+   {
+    "voice": "male3",
+    "file": "s/3214b65a0b-male3-62051043.mp3",
+    "source": "edge-yunyang",
+    "ms": 1080
    }
   ],
   "今天很热。": [
@@ -5594,6 +5792,12 @@
     "file": "s/825c0edeee-m-47c32bde.mp3",
     "source": "edge-yunxi",
     "ms": 770
+   },
+   {
+    "voice": "male2",
+    "file": "s/825c0edeee-male2-2ac86cba.mp3",
+    "source": "edge-yunjian",
+    "ms": 990
    }
   ],
   "明天会下雨。": [
@@ -5608,6 +5812,12 @@
     "file": "s/ebda6d841b-m-9c404596.mp3",
     "source": "edge-yunxi",
     "ms": 830
+   },
+   {
+    "voice": "male3",
+    "file": "s/ebda6d841b-male3-adc4caa3.mp3",
+    "source": "edge-yunyang",
+    "ms": 1040
    }
   ],
   "北京冷吗？": [
@@ -5636,6 +5846,12 @@
     "file": "s/9815953f89-m-5079b753.mp3",
     "source": "edge-yunxi",
     "ms": 830
+   },
+   {
+    "voice": "male2",
+    "file": "s/9815953f89-male2-1703a189.mp3",
+    "source": "edge-yunjian",
+    "ms": 1030
    }
   ],
   "你会写这个字吗？": [
@@ -5650,6 +5866,12 @@
     "file": "s/57a4eadcd1-m-cc0ebc0b.mp3",
     "source": "edge-yunxi",
     "ms": 1020
+   },
+   {
+    "voice": "male3",
+    "file": "s/57a4eadcd1-male3-a7daf6c0.mp3",
+    "source": "edge-yunyang",
+    "ms": 1160
    }
   ],
   "我喜欢看电影。": [
@@ -5846,6 +6068,18 @@
     "file": "s/ef70158e07-m-d36f1c96.mp3",
     "source": "edge-yunxi",
     "ms": 590
+   },
+   {
+    "voice": "male3",
+    "file": "s/ef70158e07-male3-9a9f0b54.mp3",
+    "source": "edge-yunyang",
+    "ms": 640
+   },
+   {
+    "voice": "female2",
+    "file": "s/ef70158e07-female2-632613fc.mp3",
+    "source": "edge-xiaoyi",
+    "ms": 650
    }
   ],
   "请坐。": [
@@ -5916,6 +6150,1604 @@
     "file": "s/debcbe198c-m-9d968483.mp3",
     "source": "edge-yunxi",
     "ms": 1890
+   }
+  ],
+  "你好！我叫小李。": [
+   {
+    "voice": "female",
+    "file": "s/0c27bc5bbc-f-a86341ee.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2040
+   },
+   {
+    "voice": "male",
+    "file": "s/0c27bc5bbc-m-43e84c03.mp3",
+    "source": "edge-yunxi",
+    "ms": 1950
+   }
+  ],
+  "你好！我叫萨沙。": [
+   {
+    "voice": "female",
+    "file": "s/0618bd5c57-f-2824b4a5.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2009
+   },
+   {
+    "voice": "male",
+    "file": "s/0618bd5c57-m-ba48eb62.mp3",
+    "source": "edge-yunxi",
+    "ms": 1990
+   },
+   {
+    "voice": "male2",
+    "file": "s/0618bd5c57-male2-64d02793.mp3",
+    "source": "edge-yunjian",
+    "ms": 2009
+   }
+  ],
+  "我是中国人。": [
+   {
+    "voice": "female",
+    "file": "s/6e38d936fa-f-2209550b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1140
+   },
+   {
+    "voice": "male",
+    "file": "s/6e38d936fa-m-3a0a41b9.mp3",
+    "source": "edge-yunxi",
+    "ms": 950
+   }
+  ],
+  "我是俄罗斯人。": [
+   {
+    "voice": "female",
+    "file": "s/5ec54ae1a0-f-c70e25c1.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1220
+   },
+   {
+    "voice": "male",
+    "file": "s/5ec54ae1a0-m-afef7604.mp3",
+    "source": "edge-yunxi",
+    "ms": 980
+   },
+   {
+    "voice": "male2",
+    "file": "s/5ec54ae1a0-male2-cf4b37c7.mp3",
+    "source": "edge-yunjian",
+    "ms": 1090
+   }
+  ],
+  "你是老师吗？": [
+   {
+    "voice": "female",
+    "file": "s/20506bb191-f-d15cec0a.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1030
+   },
+   {
+    "voice": "male",
+    "file": "s/20506bb191-m-6f855347.mp3",
+    "source": "edge-yunxi",
+    "ms": 890
+   }
+  ],
+  "我不是老师，我是工程师。": [
+   {
+    "voice": "female",
+    "file": "s/0fcf58b42c-f-96ef1773.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2240
+   },
+   {
+    "voice": "male",
+    "file": "s/0fcf58b42c-m-82041850.mp3",
+    "source": "edge-yunxi",
+    "ms": 2090
+   },
+   {
+    "voice": "male2",
+    "file": "s/0fcf58b42c-male2-1cdbc7ec.mp3",
+    "source": "edge-yunjian",
+    "ms": 2210
+   }
+  ],
+  "我们是朋友！": [
+   {
+    "voice": "female",
+    "file": "s/97a1deac67-f-3a538d38.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 950
+   },
+   {
+    "voice": "male",
+    "file": "s/97a1deac67-m-c2157961.mp3",
+    "source": "edge-yunxi",
+    "ms": 850
+   }
+  ],
+  "萨沙，你多大？": [
+   {
+    "voice": "female",
+    "file": "s/70092571bd-f-1c159de7.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1440
+   },
+   {
+    "voice": "male",
+    "file": "s/70092571bd-m-c8d32de7.mp3",
+    "source": "edge-yunxi",
+    "ms": 1450
+   }
+  ],
+  "我二十二岁。你呢？": [
+   {
+    "voice": "female",
+    "file": "s/223dfca7c4-f-915def36.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2110
+   },
+   {
+    "voice": "male",
+    "file": "s/223dfca7c4-m-cc722a42.mp3",
+    "source": "edge-yunxi",
+    "ms": 2029
+   },
+   {
+    "voice": "male2",
+    "file": "s/223dfca7c4-male2-e3fe4f46.mp3",
+    "source": "edge-yunjian",
+    "ms": 2100
+   }
+  ],
+  "我二十五岁。": [
+   {
+    "voice": "female",
+    "file": "s/af7ff8c621-f-494085f8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1060
+   },
+   {
+    "voice": "male",
+    "file": "s/af7ff8c621-m-83829d49.mp3",
+    "source": "edge-yunxi",
+    "ms": 860
+   }
+  ],
+  "小王多大？": [
+   {
+    "voice": "female",
+    "file": "s/ed4732b120-f-b938c64b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 950
+   },
+   {
+    "voice": "male",
+    "file": "s/ed4732b120-m-34d3e52e.mp3",
+    "source": "edge-yunxi",
+    "ms": 870
+   },
+   {
+    "voice": "male2",
+    "file": "s/ed4732b120-male2-bbb84a83.mp3",
+    "source": "edge-yunjian",
+    "ms": 1030
+   }
+  ],
+  "小王十九岁。": [
+   {
+    "voice": "female",
+    "file": "s/c7788c210a-f-7114d308.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1180
+   },
+   {
+    "voice": "male",
+    "file": "s/c7788c210a-m-86f82d18.mp3",
+    "source": "edge-yunxi",
+    "ms": 1080
+   }
+  ],
+  "他很小！": [
+   {
+    "voice": "female",
+    "file": "s/11bb156306-f-9b007259.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 770
+   },
+   {
+    "voice": "male",
+    "file": "s/11bb156306-m-e0961ca3.mp3",
+    "source": "edge-yunxi",
+    "ms": 760
+   },
+   {
+    "voice": "male2",
+    "file": "s/11bb156306-male2-105cfa76.mp3",
+    "source": "edge-yunjian",
+    "ms": 850
+   }
+  ],
+  "我们十个人，八个工程师。": [
+   {
+    "voice": "female",
+    "file": "s/3cd9f942aa-f-01a09942.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2160
+   },
+   {
+    "voice": "male",
+    "file": "s/3cd9f942aa-m-a52fa72a.mp3",
+    "source": "edge-yunxi",
+    "ms": 1970
+   }
+  ],
+  "八个工程师！": [
+   {
+    "voice": "female",
+    "file": "s/0767c1b9ce-f-908d08fa.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1100
+   },
+   {
+    "voice": "male",
+    "file": "s/0767c1b9ce-m-464c7673.mp3",
+    "source": "edge-yunxi",
+    "ms": 940
+   },
+   {
+    "voice": "male2",
+    "file": "s/0767c1b9ce-male2-ea2e0628.mp3",
+    "source": "edge-yunjian",
+    "ms": 1130
+   }
+  ],
+  "萨沙，你明天工作吗？": [
+   {
+    "voice": "female",
+    "file": "s/23f801d186-f-971f5db0.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1850
+   },
+   {
+    "voice": "male",
+    "file": "s/23f801d186-m-d649eabc.mp3",
+    "source": "edge-yunxi",
+    "ms": 1830
+   },
+   {
+    "voice": "male3",
+    "file": "s/23f801d186-male3-67836f2c.mp3",
+    "source": "edge-yunyang",
+    "ms": 1590
+   }
+  ],
+  "我明天工作。": [
+   {
+    "voice": "female",
+    "file": "s/51d5fa16b8-f-2639242b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1090
+   },
+   {
+    "voice": "male",
+    "file": "s/51d5fa16b8-m-dbb849ca.mp3",
+    "source": "edge-yunxi",
+    "ms": 840
+   },
+   {
+    "voice": "male2",
+    "file": "s/51d5fa16b8-male2-4dbd7b81.mp3",
+    "source": "edge-yunjian",
+    "ms": 1150
+   }
+  ],
+  "明天上午九点。": [
+   {
+    "voice": "female",
+    "file": "s/cf462593e2-f-6ea9b111.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1340
+   },
+   {
+    "voice": "male",
+    "file": "s/cf462593e2-m-924cbb68.mp3",
+    "source": "edge-yunxi",
+    "ms": 960
+   },
+   {
+    "voice": "male3",
+    "file": "s/cf462593e2-male3-deee3119.mp3",
+    "source": "edge-yunyang",
+    "ms": 1110
+   }
+  ],
+  "九点？好！": [
+   {
+    "voice": "female",
+    "file": "s/bd87b6b4f5-f-17fd101b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1600
+   },
+   {
+    "voice": "male",
+    "file": "s/bd87b6b4f5-m-7574e62e.mp3",
+    "source": "edge-yunxi",
+    "ms": 1880
+   },
+   {
+    "voice": "male2",
+    "file": "s/bd87b6b4f5-male2-dc06246d.mp3",
+    "source": "edge-yunjian",
+    "ms": 1560
+   }
+  ],
+  "现在八点。": [
+   {
+    "voice": "female",
+    "file": "s/fb36885865-f-9c31e94c.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1040
+   },
+   {
+    "voice": "male",
+    "file": "s/fb36885865-m-50d0a8cc.mp3",
+    "source": "edge-yunxi",
+    "ms": 790
+   },
+   {
+    "voice": "male2",
+    "file": "s/fb36885865-male2-0f862cf0.mp3",
+    "source": "edge-yunjian",
+    "ms": 930
+   }
+  ],
+  "好，明天九点。": [
+   {
+    "voice": "female",
+    "file": "s/60409e8dcc-f-de3e40f0.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1530
+   },
+   {
+    "voice": "male",
+    "file": "s/60409e8dcc-m-83e93113.mp3",
+    "source": "edge-yunxi",
+    "ms": 1340
+   },
+   {
+    "voice": "male3",
+    "file": "s/60409e8dcc-male3-d82ef656.mp3",
+    "source": "edge-yunyang",
+    "ms": 1180
+   }
+  ],
+  "好，明天九点，再见！": [
+   {
+    "voice": "female",
+    "file": "s/6723f92a2a-f-3c4a4ae6.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2180
+   },
+   {
+    "voice": "male",
+    "file": "s/6723f92a2a-m-b56071e1.mp3",
+    "source": "edge-yunxi",
+    "ms": 2100
+   },
+   {
+    "voice": "male2",
+    "file": "s/6723f92a2a-male2-942ad7ca.mp3",
+    "source": "edge-yunjian",
+    "ms": 2080
+   }
+  ],
+  "这是谁？": [
+   {
+    "voice": "female",
+    "file": "s/eb1a5bd221-f-b05fb5c7.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 750
+   },
+   {
+    "voice": "male",
+    "file": "s/eb1a5bd221-m-8cb9c01f.mp3",
+    "source": "edge-yunxi",
+    "ms": 730
+   }
+  ],
+  "这是我妈妈。": [
+   {
+    "voice": "female",
+    "file": "s/e88712794d-f-1a8712f6.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1030
+   },
+   {
+    "voice": "male",
+    "file": "s/e88712794d-m-65fdd431.mp3",
+    "source": "edge-yunxi",
+    "ms": 860
+   },
+   {
+    "voice": "male2",
+    "file": "s/e88712794d-male2-abf953be.mp3",
+    "source": "edge-yunjian",
+    "ms": 1060
+   }
+  ],
+  "你妈妈是医生吗？": [
+   {
+    "voice": "female",
+    "file": "s/19b48c8a47-f-2758f1e8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1340
+   },
+   {
+    "voice": "male",
+    "file": "s/19b48c8a47-m-50330a0b.mp3",
+    "source": "edge-yunxi",
+    "ms": 1050
+   }
+  ],
+  "不是，她是老师。": [
+   {
+    "voice": "female",
+    "file": "s/d9c98044f1-f-a358596b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1650
+   },
+   {
+    "voice": "male",
+    "file": "s/d9c98044f1-m-b5784acc.mp3",
+    "source": "edge-yunxi",
+    "ms": 1560
+   },
+   {
+    "voice": "male2",
+    "file": "s/d9c98044f1-male2-2b340b83.mp3",
+    "source": "edge-yunjian",
+    "ms": 1530
+   }
+  ],
+  "那是你的狗吗？": [
+   {
+    "voice": "female",
+    "file": "s/718fe47d06-f-fc98136f.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1180
+   },
+   {
+    "voice": "male",
+    "file": "s/718fe47d06-m-0d598fe7.mp3",
+    "source": "edge-yunxi",
+    "ms": 1030
+   }
+  ],
+  "是的，那是我的狗。": [
+   {
+    "voice": "female",
+    "file": "s/23655783d3-f-782f2b2d.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1720
+   },
+   {
+    "voice": "male",
+    "file": "s/23655783d3-m-1fd323da.mp3",
+    "source": "edge-yunxi",
+    "ms": 1920
+   },
+   {
+    "voice": "male2",
+    "file": "s/23655783d3-male2-b5aff54a.mp3",
+    "source": "edge-yunjian",
+    "ms": 1820
+   }
+  ],
+  "我家有三个人。": [
+   {
+    "voice": "female",
+    "file": "s/05e08e51e1-f-ddc99c82.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1250
+   },
+   {
+    "voice": "male",
+    "file": "s/05e08e51e1-m-1ca3db32.mp3",
+    "source": "edge-yunxi",
+    "ms": 960
+   },
+   {
+    "voice": "male2",
+    "file": "s/05e08e51e1-male2-1018602f.mp3",
+    "source": "edge-yunjian",
+    "ms": 1210
+   }
+  ],
+  "你喝什么？": [
+   {
+    "voice": "female",
+    "file": "s/0709fc98e0-f-294d6aea.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 880
+   },
+   {
+    "voice": "male",
+    "file": "s/0709fc98e0-m-123e077c.mp3",
+    "source": "edge-yunxi",
+    "ms": 630
+   }
+  ],
+  "我喝茶。": [
+   {
+    "voice": "female",
+    "file": "s/6a5dc9ef6a-f-f21909ce.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 810
+   },
+   {
+    "voice": "male",
+    "file": "s/6a5dc9ef6a-m-a8b730eb.mp3",
+    "source": "edge-yunxi",
+    "ms": 660
+   },
+   {
+    "voice": "male2",
+    "file": "s/6a5dc9ef6a-male2-019190b0.mp3",
+    "source": "edge-yunjian",
+    "ms": 800
+   }
+  ],
+  "你喜欢中国菜吗？": [
+   {
+    "voice": "female",
+    "file": "s/78a5cb9457-f-88ea26a7.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1440
+   },
+   {
+    "voice": "male",
+    "file": "s/78a5cb9457-m-4d519d00.mp3",
+    "source": "edge-yunxi",
+    "ms": 1320
+   }
+  ],
+  "这些菜很好吃！": [
+   {
+    "voice": "female",
+    "file": "s/4c4bcadb8c-f-f4a6f917.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1390
+   },
+   {
+    "voice": "male",
+    "file": "s/4c4bcadb8c-m-2017c712.mp3",
+    "source": "edge-yunxi",
+    "ms": 1140
+   }
+  ],
+  "谢谢！": [
+   {
+    "voice": "female",
+    "file": "s/a940fdbe08-f-8882adab.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 630
+   },
+   {
+    "voice": "male",
+    "file": "s/a940fdbe08-m-a85e2325.mp3",
+    "source": "edge-yunxi",
+    "ms": 460
+   },
+   {
+    "voice": "male2",
+    "file": "s/a940fdbe08-male2-82e96f4e.mp3",
+    "source": "edge-yunjian",
+    "ms": 640
+   }
+  ],
+  "你想买什么？": [
+   {
+    "voice": "female",
+    "file": "s/bc7bac6e5d-f-59e32961.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1040
+   },
+   {
+    "voice": "male",
+    "file": "s/bc7bac6e5d-m-ad326afd.mp3",
+    "source": "edge-yunxi",
+    "ms": 780
+   }
+  ],
+  "我想买苹果。": [
+   {
+    "voice": "female",
+    "file": "s/98568b5eda-f-405ca4aa.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1170
+   },
+   {
+    "voice": "male",
+    "file": "s/98568b5eda-m-16846441.mp3",
+    "source": "edge-yunxi",
+    "ms": 940
+   },
+   {
+    "voice": "male2",
+    "file": "s/98568b5eda-male2-ff418c9c.mp3",
+    "source": "edge-yunjian",
+    "ms": 1220
+   }
+  ],
+  "苹果十块钱。": [
+   {
+    "voice": "female",
+    "file": "s/ece32afb27-f-f2fa6a26.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1290
+   },
+   {
+    "voice": "male",
+    "file": "s/ece32afb27-m-fc3011de.mp3",
+    "source": "edge-yunxi",
+    "ms": 1270
+   }
+  ],
+  "好，五块。": [
+   {
+    "voice": "female",
+    "file": "s/6fb3970334-f-8452399d.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1070
+   },
+   {
+    "voice": "male",
+    "file": "s/6fb3970334-m-61e4354f.mp3",
+    "source": "edge-yunxi",
+    "ms": 1180
+   }
+  ],
+  "你买多少？": [
+   {
+    "voice": "female",
+    "file": "s/0212e9ba57-f-56ac4f77.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 950
+   },
+   {
+    "voice": "male",
+    "file": "s/0212e9ba57-m-6cae88c2.mp3",
+    "source": "edge-yunxi",
+    "ms": 730
+   }
+  ],
+  "我买三个。": [
+   {
+    "voice": "female",
+    "file": "s/7f686c7707-f-b881963e.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 910
+   },
+   {
+    "voice": "male",
+    "file": "s/7f686c7707-m-9706244a.mp3",
+    "source": "edge-yunxi",
+    "ms": 770
+   },
+   {
+    "voice": "male2",
+    "file": "s/7f686c7707-male2-41450089.mp3",
+    "source": "edge-yunjian",
+    "ms": 1060
+   }
+  ],
+  "你好！你去哪里？": [
+   {
+    "voice": "female",
+    "file": "s/acd1083cf5-f-1917c092.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1950
+   },
+   {
+    "voice": "male",
+    "file": "s/acd1083cf5-m-e2c8b2f4.mp3",
+    "source": "edge-yunxi",
+    "ms": 1950
+   },
+   {
+    "voice": "male2",
+    "file": "s/acd1083cf5-male2-a50ddb76.mp3",
+    "source": "edge-yunjian",
+    "ms": 2029
+   }
+  ],
+  "我去火车站。": [
+   {
+    "voice": "female",
+    "file": "s/718751a4e9-f-45fc9cc9.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1090
+   },
+   {
+    "voice": "male",
+    "file": "s/718751a4e9-m-ee373f54.mp3",
+    "source": "edge-yunxi",
+    "ms": 820
+   },
+   {
+    "voice": "male2",
+    "file": "s/718751a4e9-male2-45c7f334.mp3",
+    "source": "edge-yunjian",
+    "ms": 1020
+   }
+  ],
+  "火车站？好！": [
+   {
+    "voice": "female",
+    "file": "s/3809b04c0a-f-76bc076a.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1720
+   },
+   {
+    "voice": "male",
+    "file": "s/3809b04c0a-m-1fb7293d.mp3",
+    "source": "edge-yunxi",
+    "ms": 1810
+   },
+   {
+    "voice": "male2",
+    "file": "s/3809b04c0a-male2-3e7cba6d.mp3",
+    "source": "edge-yunjian",
+    "ms": 1670
+   }
+  ],
+  "你住在北京吗？": [
+   {
+    "voice": "female",
+    "file": "s/5cfa1ed259-f-24c39130.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1220
+   },
+   {
+    "voice": "male",
+    "file": "s/5cfa1ed259-m-b340310b.mp3",
+    "source": "edge-yunxi",
+    "ms": 1030
+   },
+   {
+    "voice": "male2",
+    "file": "s/5cfa1ed259-male2-72fbda76.mp3",
+    "source": "edge-yunjian",
+    "ms": 1260
+   }
+  ],
+  "我不住在北京。": [
+   {
+    "voice": "female",
+    "file": "s/d7b91c577a-f-633a347b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1230
+   },
+   {
+    "voice": "male",
+    "file": "s/d7b91c577a-m-c88970ca.mp3",
+    "source": "edge-yunxi",
+    "ms": 1070
+   },
+   {
+    "voice": "male2",
+    "file": "s/d7b91c577a-male2-13562084.mp3",
+    "source": "edge-yunjian",
+    "ms": 1320
+   }
+  ],
+  "我明天回来。": [
+   {
+    "voice": "female",
+    "file": "s/05e7eac0dc-f-234847a8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1070
+   },
+   {
+    "voice": "male",
+    "file": "s/05e7eac0dc-m-cf8aa76f.mp3",
+    "source": "edge-yunxi",
+    "ms": 800
+   },
+   {
+    "voice": "male2",
+    "file": "s/05e7eac0dc-male2-79d9e1ab.mp3",
+    "source": "edge-yunjian",
+    "ms": 1120
+   }
+  ],
+  "明天冷吗？": [
+   {
+    "voice": "female",
+    "file": "s/fa7f613dfc-f-48dfcd01.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 940
+   },
+   {
+    "voice": "male",
+    "file": "s/fa7f613dfc-m-805ae73a.mp3",
+    "source": "edge-yunxi",
+    "ms": 800
+   },
+   {
+    "voice": "male2",
+    "file": "s/fa7f613dfc-male2-4f00e8b7.mp3",
+    "source": "edge-yunjian",
+    "ms": 980
+   }
+  ],
+  "不冷。你会说汉语吗？": [
+   {
+    "voice": "female",
+    "file": "s/7fc5efdad8-f-7c3651cc.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2320
+   },
+   {
+    "voice": "male",
+    "file": "s/7fc5efdad8-m-f30459b0.mp3",
+    "source": "edge-yunxi",
+    "ms": 2160
+   },
+   {
+    "voice": "male3",
+    "file": "s/7fc5efdad8-male3-985cb603.mp3",
+    "source": "edge-yunyang",
+    "ms": 2120
+   }
+  ],
+  "我不会写。": [
+   {
+    "voice": "female",
+    "file": "s/0c40b5c513-f-1b2d68a8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 900
+   },
+   {
+    "voice": "male",
+    "file": "s/0c40b5c513-m-31da0d01.mp3",
+    "source": "edge-yunxi",
+    "ms": 780
+   },
+   {
+    "voice": "male2",
+    "file": "s/0c40b5c513-male2-f84c0f7b.mp3",
+    "source": "edge-yunjian",
+    "ms": 920
+   }
+  ],
+  "喂，是萨沙吗？": [
+   {
+    "voice": "female",
+    "file": "s/b404b975e7-f-97be187e.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1480
+   },
+   {
+    "voice": "male",
+    "file": "s/b404b975e7-m-4f7fdea5.mp3",
+    "source": "edge-yunxi",
+    "ms": 1770
+   },
+   {
+    "voice": "male3",
+    "file": "s/b404b975e7-male3-1b33cbc3.mp3",
+    "source": "edge-yunyang",
+    "ms": 1250
+   }
+  ],
+  "是，我是萨沙。": [
+   {
+    "voice": "female",
+    "file": "s/b14c525fd7-f-f502864f.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1530
+   },
+   {
+    "voice": "male",
+    "file": "s/b14c525fd7-m-7f043365.mp3",
+    "source": "edge-yunxi",
+    "ms": 1520
+   },
+   {
+    "voice": "male2",
+    "file": "s/b14c525fd7-male2-24e1d8dc.mp3",
+    "source": "edge-yunjian",
+    "ms": 1630
+   }
+  ],
+  "你下午来吗？": [
+   {
+    "voice": "female",
+    "file": "s/0b6eac28c6-f-02e91953.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1030
+   },
+   {
+    "voice": "male",
+    "file": "s/0b6eac28c6-m-7bb1e58a.mp3",
+    "source": "edge-yunxi",
+    "ms": 820
+   },
+   {
+    "voice": "male3",
+    "file": "s/0b6eac28c6-male3-765ca3ac.mp3",
+    "source": "edge-yunyang",
+    "ms": 830
+   }
+  ],
+  "对不起，我下午不能来。": [
+   {
+    "voice": "female",
+    "file": "s/f3418dbfe1-f-e8d638ed.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1920
+   },
+   {
+    "voice": "male",
+    "file": "s/f3418dbfe1-m-2ea24943.mp3",
+    "source": "edge-yunxi",
+    "ms": 1760
+   },
+   {
+    "voice": "male2",
+    "file": "s/f3418dbfe1-male2-bdc18ba2.mp3",
+    "source": "edge-yunjian",
+    "ms": 1860
+   }
+  ],
+  "没关系，你明天来。": [
+   {
+    "voice": "female",
+    "file": "s/f17157a27f-f-669c719b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1790
+   },
+   {
+    "voice": "male",
+    "file": "s/f17157a27f-m-ec79b608.mp3",
+    "source": "edge-yunxi",
+    "ms": 1670
+   },
+   {
+    "voice": "male3",
+    "file": "s/f17157a27f-male3-57442052.mp3",
+    "source": "edge-yunyang",
+    "ms": 1410
+   }
+  ],
+  "好，谢谢王工！": [
+   {
+    "voice": "female",
+    "file": "s/da37ef1c2e-f-5c4480e8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1440
+   },
+   {
+    "voice": "male",
+    "file": "s/da37ef1c2e-m-52ce18c1.mp3",
+    "source": "edge-yunxi",
+    "ms": 1290
+   },
+   {
+    "voice": "male2",
+    "file": "s/da37ef1c2e-male2-698079d8.mp3",
+    "source": "edge-yunjian",
+    "ms": 1590
+   }
+  ],
+  "再见！": [
+   {
+    "voice": "female",
+    "file": "s/de1edbfd42-f-a4a16920.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 590
+   },
+   {
+    "voice": "male",
+    "file": "s/de1edbfd42-m-e0fabda3.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
+   },
+   {
+    "voice": "male2",
+    "file": "s/de1edbfd42-male2-05d56aba.mp3",
+    "source": "edge-yunjian",
+    "ms": 610
+   }
+  ],
+  "你好！你是萨沙吗？": [
+   {
+    "voice": "female",
+    "file": "s/442c1c8d4c-f-10f1ec17.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2170
+   },
+   {
+    "voice": "male",
+    "file": "s/442c1c8d4c-m-84871aa0.mp3",
+    "source": "edge-yunxi",
+    "ms": 2020
+   }
+  ],
+  "欢迎！我叫小李，我是工程师。": [
+   {
+    "voice": "female",
+    "file": "s/d0436680d0-f-cde501c4.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 3280
+   },
+   {
+    "voice": "male",
+    "file": "s/d0436680d0-m-aaddabe4.mp3",
+    "source": "edge-yunxi",
+    "ms": 3080
+   }
+  ],
+  "你好，小李！认识你很高兴。": [
+   {
+    "voice": "female",
+    "file": "s/a4cef68a87-f-76655210.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 3080
+   },
+   {
+    "voice": "male",
+    "file": "s/a4cef68a87-m-513d7ad5.mp3",
+    "source": "edge-yunxi",
+    "ms": 2670
+   },
+   {
+    "voice": "male2",
+    "file": "s/a4cef68a87-male2-c40662c6.mp3",
+    "source": "edge-yunjian",
+    "ms": 2990
+   }
+  ],
+  "认识你很高兴！你是俄罗斯人吗？": [
+   {
+    "voice": "female",
+    "file": "s/a1860aafb5-f-24418f52.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 3050
+   },
+   {
+    "voice": "male",
+    "file": "s/a1860aafb5-m-39706049.mp3",
+    "source": "edge-yunxi",
+    "ms": 2710
+   }
+  ],
+  "是，我是俄罗斯人。": [
+   {
+    "voice": "female",
+    "file": "s/199d2b759b-f-c2774d2b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1770
+   },
+   {
+    "voice": "male",
+    "file": "s/199d2b759b-m-69d15ced.mp3",
+    "source": "edge-yunxi",
+    "ms": 1710
+   },
+   {
+    "voice": "male2",
+    "file": "s/199d2b759b-male2-bec21f95.mp3",
+    "source": "edge-yunjian",
+    "ms": 1810
+   }
+  ],
+  "好！我们是朋友！": [
+   {
+    "voice": "female",
+    "file": "s/e0db79ea22-f-8534c3a6.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1880
+   },
+   {
+    "voice": "male",
+    "file": "s/e0db79ea22-m-8c5f85b8.mp3",
+    "source": "edge-yunxi",
+    "ms": 1960
+   }
+  ],
+  "你们去哪里？": [
+   {
+    "voice": "female",
+    "file": "s/af063eaa45-f-955c9751.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1000
+   },
+   {
+    "voice": "male",
+    "file": "s/af063eaa45-m-64a4c71c.mp3",
+    "source": "edge-yunxi",
+    "ms": 720
+   },
+   {
+    "voice": "male2",
+    "file": "s/af063eaa45-male2-c455890d.mp3",
+    "source": "edge-yunjian",
+    "ms": 1040
+   }
+  ],
+  "我们去北京宾馆。": [
+   {
+    "voice": "female",
+    "file": "s/c4ba8167f4-f-b23748d0.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1390
+   },
+   {
+    "voice": "male",
+    "file": "s/c4ba8167f4-m-d3b15fc2.mp3",
+    "source": "edge-yunxi",
+    "ms": 1230
+   }
+  ],
+  "好！你是中国人吗？": [
+   {
+    "voice": "female",
+    "file": "s/2b13c6fb99-f-022c7f97.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2090
+   },
+   {
+    "voice": "male",
+    "file": "s/2b13c6fb99-m-2a15985b.mp3",
+    "source": "edge-yunxi",
+    "ms": 2130
+   },
+   {
+    "voice": "male2",
+    "file": "s/2b13c6fb99-male2-5ea042cb.mp3",
+    "source": "edge-yunjian",
+    "ms": 2120
+   }
+  ],
+  "不是，我是俄罗斯人。": [
+   {
+    "voice": "female",
+    "file": "s/6e7814d06a-f-652233b2.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1880
+   },
+   {
+    "voice": "male",
+    "file": "s/6e7814d06a-m-e83a8207.mp3",
+    "source": "edge-yunxi",
+    "ms": 1630
+   },
+   {
+    "voice": "male2",
+    "file": "s/6e7814d06a-male2-62fcc429.mp3",
+    "source": "edge-yunjian",
+    "ms": 1820
+   }
+  ],
+  "俄罗斯很大！": [
+   {
+    "voice": "female",
+    "file": "s/e611db6f47-f-d21ee6ba.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1090
+   },
+   {
+    "voice": "male",
+    "file": "s/e611db6f47-m-83a18888.mp3",
+    "source": "edge-yunxi",
+    "ms": 960
+   },
+   {
+    "voice": "male2",
+    "file": "s/e611db6f47-male2-3943a5eb.mp3",
+    "source": "edge-yunjian",
+    "ms": 1070
+   }
+  ],
+  "你是工程师吗？": [
+   {
+    "voice": "female",
+    "file": "s/10597ec359-f-1927ce2c.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1240
+   },
+   {
+    "voice": "male",
+    "file": "s/10597ec359-m-b3835efe.mp3",
+    "source": "edge-yunxi",
+    "ms": 1120
+   },
+   {
+    "voice": "male2",
+    "file": "s/10597ec359-male2-04474301.mp3",
+    "source": "edge-yunjian",
+    "ms": 1260
+   }
+  ],
+  "是，我是工程师。": [
+   {
+    "voice": "female",
+    "file": "s/f9a0a8a40f-f-cf069eba.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1650
+   },
+   {
+    "voice": "male",
+    "file": "s/f9a0a8a40f-m-d881d093.mp3",
+    "source": "edge-yunxi",
+    "ms": 1700
+   },
+   {
+    "voice": "male2",
+    "file": "s/f9a0a8a40f-male2-bf5f1f5b.mp3",
+    "source": "edge-yunjian",
+    "ms": 1810
+   }
+  ],
+  "宾馆在前面。": [
+   {
+    "voice": "female",
+    "file": "s/4f3f1872db-f-847b8cbe.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1230
+   },
+   {
+    "voice": "male",
+    "file": "s/4f3f1872db-m-89c8eb82.mp3",
+    "source": "edge-yunxi",
+    "ms": 1090
+   },
+   {
+    "voice": "male2",
+    "file": "s/4f3f1872db-male2-f005c468.mp3",
+    "source": "edge-yunjian",
+    "ms": 1210
+   }
+  ],
+  "谢谢！多少钱？": [
+   {
+    "voice": "female",
+    "file": "s/fcdb02334f-f-bd761ed9.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1980
+   },
+   {
+    "voice": "male",
+    "file": "s/fcdb02334f-m-5dfb868b.mp3",
+    "source": "edge-yunxi",
+    "ms": 1790
+   },
+   {
+    "voice": "male2",
+    "file": "s/fcdb02334f-male2-31752969.mp3",
+    "source": "edge-yunjian",
+    "ms": 1970
+   }
+  ],
+  "五十块。": [
+   {
+    "voice": "female",
+    "file": "s/dd537d7fd8-f-2e88b6ae.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 770
+   },
+   {
+    "voice": "male",
+    "file": "s/dd537d7fd8-m-ed77bbc3.mp3",
+    "source": "edge-yunxi",
+    "ms": 670
+   },
+   {
+    "voice": "male2",
+    "file": "s/dd537d7fd8-male2-36e83233.mp3",
+    "source": "edge-yunjian",
+    "ms": 720
+   }
+  ],
+  "你好！欢迎！": [
+   {
+    "voice": "female",
+    "file": "s/7c2423f98a-f-ab8d9bbb.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1730
+   },
+   {
+    "voice": "male",
+    "file": "s/7c2423f98a-m-0243b5d1.mp3",
+    "source": "edge-yunxi",
+    "ms": 1710
+   },
+   {
+    "voice": "female2",
+    "file": "s/7c2423f98a-female2-8000a85a.mp3",
+    "source": "edge-xiaoyi",
+    "ms": 1560
+   }
+  ],
+  "你好！我叫萨沙，我是俄罗斯人。": [
+   {
+    "voice": "female",
+    "file": "s/aa40207941-f-f3a59730.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 3320
+   },
+   {
+    "voice": "male",
+    "file": "s/aa40207941-m-2544e42a.mp3",
+    "source": "edge-yunxi",
+    "ms": 2990
+   },
+   {
+    "voice": "male2",
+    "file": "s/aa40207941-male2-be291555.mp3",
+    "source": "edge-yunjian",
+    "ms": 3220
+   }
+  ],
+  "你住几天？": [
+   {
+    "voice": "female",
+    "file": "s/61fcdd7db2-f-d1275718.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 940
+   },
+   {
+    "voice": "male",
+    "file": "s/61fcdd7db2-m-60291b9e.mp3",
+    "source": "edge-yunxi",
+    "ms": 820
+   },
+   {
+    "voice": "female2",
+    "file": "s/61fcdd7db2-female2-772d22a8.mp3",
+    "source": "edge-xiaoyi",
+    "ms": 870
+   }
+  ],
+  "我住五天。": [
+   {
+    "voice": "female",
+    "file": "s/8090f115bc-f-e2abb865.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 940
+   },
+   {
+    "voice": "male",
+    "file": "s/8090f115bc-m-15f05e60.mp3",
+    "source": "edge-yunxi",
+    "ms": 820
+   },
+   {
+    "voice": "male2",
+    "file": "s/8090f115bc-male2-356fa973.mp3",
+    "source": "edge-yunjian",
+    "ms": 980
+   }
+  ],
+  "这是你的房间。": [
+   {
+    "voice": "female",
+    "file": "s/61e2165eaa-f-7b0a5f42.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1210
+   },
+   {
+    "voice": "male",
+    "file": "s/61e2165eaa-m-594f74f6.mp3",
+    "source": "edge-yunxi",
+    "ms": 920
+   },
+   {
+    "voice": "female2",
+    "file": "s/61e2165eaa-female2-1a4f0a9e.mp3",
+    "source": "edge-xiaoyi",
+    "ms": 1060
+   }
+  ],
+  "房间里有电视吗？": [
+   {
+    "voice": "female",
+    "file": "s/6d1c9e6d6f-f-e750e81b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1360
+   },
+   {
+    "voice": "male",
+    "file": "s/6d1c9e6d6f-m-8ec4df54.mp3",
+    "source": "edge-yunxi",
+    "ms": 1440
+   },
+   {
+    "voice": "male2",
+    "file": "s/6d1c9e6d6f-male2-7e139d0f.mp3",
+    "source": "edge-yunjian",
+    "ms": 1340
+   }
+  ],
+  "有。你的房间很大！": [
+   {
+    "voice": "female",
+    "file": "s/5affcf31f1-f-8803ea2d.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 2140
+   },
+   {
+    "voice": "male",
+    "file": "s/5affcf31f1-m-ef27ad72.mp3",
+    "source": "edge-yunxi",
+    "ms": 2150
+   },
+   {
+    "voice": "female2",
+    "file": "s/5affcf31f1-female2-04e9c241.mp3",
+    "source": "edge-xiaoyi",
+    "ms": 1990
+   }
+  ],
+  "太好了！谢谢！": [
+   {
+    "voice": "female",
+    "file": "s/5bb9cb56dc-f-84ffe539.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1890
+   },
+   {
+    "voice": "male",
+    "file": "s/5bb9cb56dc-m-b7a25ba5.mp3",
+    "source": "edge-yunxi",
+    "ms": 1730
+   },
+   {
+    "voice": "male2",
+    "file": "s/5bb9cb56dc-male2-027c1499.mp3",
+    "source": "edge-yunjian",
+    "ms": 1970
+   }
+  ],
+  "中午我们去饭馆。": [
+   {
+    "voice": "female",
+    "file": "s/a5c618ed6d-f-147d6861.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1370
+   },
+   {
+    "voice": "male",
+    "file": "s/a5c618ed6d-m-1b1faa5c.mp3",
+    "source": "edge-yunxi",
+    "ms": 1290
+   }
+  ],
+  "这个菜辣不辣？": [
+   {
+    "voice": "female",
+    "file": "s/36de8f6da2-f-fd860894.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1110
+   },
+   {
+    "voice": "male",
+    "file": "s/36de8f6da2-m-9e868074.mp3",
+    "source": "edge-yunxi",
+    "ms": 970
+   },
+   {
+    "voice": "male2",
+    "file": "s/36de8f6da2-male2-c103d4e7.mp3",
+    "source": "edge-yunjian",
+    "ms": 1150
+   }
+  ],
+  "很辣！": [
+   {
+    "voice": "female",
+    "file": "s/afa3124a35-f-7533a616.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 580
+   },
+   {
+    "voice": "male",
+    "file": "s/afa3124a35-m-30dbf5bb.mp3",
+    "source": "edge-yunxi",
+    "ms": 690
+   }
+  ],
+  "我不吃辣的。": [
+   {
+    "voice": "female",
+    "file": "s/6b21f40bed-f-92be8e21.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1020
+   },
+   {
+    "voice": "male",
+    "file": "s/6b21f40bed-m-0b03b5af.mp3",
+    "source": "edge-yunxi",
+    "ms": 840
+   },
+   {
+    "voice": "male2",
+    "file": "s/6b21f40bed-male2-59e8da84.mp3",
+    "source": "edge-yunjian",
+    "ms": 990
+   }
+  ],
+  "那你吃米饭和这个菜。": [
+   {
+    "voice": "female",
+    "file": "s/0283933627-f-a0732bed.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1720
+   },
+   {
+    "voice": "male",
+    "file": "s/0283933627-m-19146f29.mp3",
+    "source": "edge-yunxi",
+    "ms": 1470
+   }
+  ],
+  "我喝水。": [
+   {
+    "voice": "female",
+    "file": "s/4b4101dc4a-f-d059e97b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 860
+   },
+   {
+    "voice": "male",
+    "file": "s/4b4101dc4a-m-404d9f9d.mp3",
+    "source": "edge-yunxi",
+    "ms": 640
+   },
+   {
+    "voice": "male2",
+    "file": "s/4b4101dc4a-male2-3ace8b8a.mp3",
+    "source": "edge-yunjian",
+    "ms": 730
+   }
+  ],
+  "中国菜好吃吗？": [
+   {
+    "voice": "female",
+    "file": "s/3e95715ba8-f-ea468c81.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 1260
+   },
+   {
+    "voice": "male",
+    "file": "s/3e95715ba8-m-82a1ba95.mp3",
+    "source": "edge-yunxi",
+    "ms": 1230
+   }
+  ],
+  "很好吃！": [
+   {
+    "voice": "female",
+    "file": "s/8a9dd78ce5-f-a32a747d.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 810
+   },
+   {
+    "voice": "male",
+    "file": "s/8a9dd78ce5-m-b85faf5a.mp3",
+    "source": "edge-yunxi",
+    "ms": 710
+   },
+   {
+    "voice": "male2",
+    "file": "s/8a9dd78ce5-male2-44627e91.mp3",
+    "source": "edge-yunjian",
+    "ms": 840
    }
   ]
  }

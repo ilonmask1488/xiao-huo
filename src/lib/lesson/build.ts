@@ -2,7 +2,7 @@
   Урок = последовательность коротких экранов. Части урока (LessonPart) разворачиваются в экраны,
   а между объяснениями экраны перемешиваются так, чтобы одного типа шло не больше 3 подряд.
 */
-import { content, isPunct, sentenceById, unitOfWord, units, wordById } from '../../content'
+import { content, dialogueById, isPunct, sentenceById, unitOfWord, units, wordById } from '../../content'
 import type { Contrast, Item, Lesson, LessonPart, SentenceId, Syllable, WordId } from '../../content/types'
 import type { Tone } from '../pinyin/marks'
 import { tonesOf } from '../pinyin/normalize'
@@ -25,6 +25,10 @@ export type Screen =
   | { kind: 'sayIt'; item: Item }
   /** карточка повторения FSRS */
   | { kind: 'card'; cardId: string; word: WordId; cardKind: 1 | 2 | 3 | 4; options?: string[] }
+  /** реплика персонажа в диалоге (или твоя — без выбора) */
+  | { kind: 'line'; dialogueId: string; index: number; speaker: string; sentenceId: SentenceId }
+  /** твой ответ в диалоге: выбрать верную реплику, потом сказать вслух */
+  | { kind: 'reply'; dialogueId: string; index: number; sentenceId: SentenceId; options: SentenceId[] }
 
 export type ScreenKind = Screen['kind']
 
@@ -36,13 +40,21 @@ export function isQuestion(s: Screen): boolean {
     s.kind === 'guessPair' ||
     s.kind === 'meaning' ||
     s.kind === 'assemble' ||
-    s.kind === 'card'
+    s.kind === 'card' ||
+    s.kind === 'reply'
   )
 }
 
 /** Экраны, где пользователь говорит вслух. */
 export function isSpoken(s: Screen): boolean {
-  return s.kind === 'repeat' || s.kind === 'read' || s.kind === 'sayIt' || s.kind === 'assemble' || (s.kind === 'card' && s.cardKind === 3)
+  return (
+    s.kind === 'repeat' ||
+    s.kind === 'read' ||
+    s.kind === 'sayIt' ||
+    s.kind === 'assemble' ||
+    s.kind === 'reply' ||
+    (s.kind === 'card' && s.cardKind === 3)
+  )
 }
 
 /** Формат экрана для правила «не больше 3 подряд»: у карточек формат зависит от типа. */
@@ -84,7 +96,20 @@ export function expandPart(part: LessonPart, seed = 1): Screen[] {
       return part.items.map((id, i) => ({ kind: 'assemble', id, order: assembleOrder(id, seed + i) }))
     case 'sayIt':
       return part.items.map((item) => ({ kind: 'sayIt', item }))
+    case 'dialogue':
+      return dialogueScreens(part.id, seed)
   }
+}
+
+/** Диалог → экраны: реплики по порядку, на ответах «me» — выбор из верного и ловушек. */
+export function dialogueScreens(id: string, seed = 1): Screen[] {
+  const d = dialogueById.get(id)
+  if (!d) return []
+  return d.lines.map((l, index): Screen =>
+    l.speaker === 'me' && l.choices?.length
+      ? { kind: 'reply', dialogueId: id, index, sentenceId: l.sentenceId, options: shuffle([l.sentenceId, ...l.choices], seed + index) }
+      : { kind: 'line', dialogueId: id, index, speaker: l.speaker, sentenceId: l.sentenceId },
+  )
 }
 
 /* ——— Варианты ответов ——— */
@@ -199,9 +224,10 @@ export function buildLesson(lesson: Lesson): Screen[] {
     section = []
   }
   lesson.parts.forEach((part, i) => {
-    if (part.type === 'explain') {
+    // Объяснение и диалог — отдельные разделы: их экраны идут строго по порядку.
+    if (part.type === 'explain' || part.type === 'dialogue') {
       flush()
-      out.push(...expandPart(part))
+      out.push(...expandPart(part, seed + i * 31))
     } else section.push(expandPart(part, seed + i * 31))
   })
   flush()
@@ -248,6 +274,9 @@ export function itemsOf(screen: Screen): Item[] {
     case 'sentence':
     case 'assemble':
       return [screen.id]
+    case 'line':
+    case 'reply':
+      return [screen.sentenceId]
   }
 }
 

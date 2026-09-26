@@ -4,7 +4,8 @@ import { CourseScreen } from '../features/course/CourseScreen'
 import { UnitScreen } from '../features/course/UnitScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
-import { EchoScreen, StoryScreen } from '../features/more/PlaceholderScreens'
+import { EchoScreen } from '../features/echo/EchoScreen'
+import { StoryScreen } from '../features/story/StoryScreen'
 import { StatsScreen } from '../features/stats/StatsScreen'
 import { GameRoute } from '../features/games/GameScreen'
 import { LessonScreen } from '../features/lesson/LessonScreen'
@@ -55,6 +56,7 @@ export function App() {
           <Route path="more" element={<MoreScreen />} />
           <Route path="stats" element={<StatsScreen />} />
           <Route path="echo" element={<EchoScreen />} />
+          <Route path="echo/:id" element={<EchoScreen />} />
           <Route path="story" element={<StoryScreen />} />
           <Route path="settings" element={<SettingsScreen />} />
           <Route path="about" element={<AboutScreen />} />

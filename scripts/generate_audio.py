@@ -16,10 +16,19 @@ import json
 import shutil
 import sys
 
-from audio_lib import AUDIO, CACHE, MANIFEST, ROOT, SOURCES, collect_needs, decode, encode, load_json, process, safe_stem, sentence_texts
+from audio_lib import AUDIO, CACHE, MANIFEST, ROOT, SOURCES, collect_needs, decode, encode, load_all, load_json, process, safe_stem, sentence_texts
 from prepare_syllables import native_syllable, native_word
 
 VOICES = {"female": ("zh-CN-XiaoxiaoNeural", "edge-xiaoxiao"), "male": ("zh-CN-YunxiNeural", "edge-yunxi")}
+# Голоса персонажей «Командировки» — только для реплик диалогов.
+CHARACTER_VOICES = {
+    "female2": ("zh-CN-XiaoyiNeural", "edge-xiaoyi"),
+    "male2": ("zh-CN-YunjianNeural", "edge-yunjian"),
+    "male3": ("zh-CN-YunyangNeural", "edge-yunyang"),
+}
+ALL_VOICES = {**VOICES, **CHARACTER_VOICES}
+# «me» — стажёр (это ты): оба варианта голоса из настроек.
+ME_VOICES = ["female", "male2"]
 RATE = "+0%"
 
 # Многозвучные иероглифы: TTS может выбрать не то чтение — такие слова в отчёт для проверки на слух.
@@ -54,7 +63,7 @@ async def tts(text: str, voice: str) -> bytes:
 
 
 def tts_entry(text: str, voice_key: str, stem: str, sub: str) -> dict:
-    voice, source = VOICES[voice_key]
+    voice, source = ALL_VOICES[voice_key]
     raw = asyncio.run(tts(text, voice))
     tmp = CACHE / "tmp.mp3"
     tmp.write_bytes(raw)
@@ -111,6 +120,19 @@ def main() -> int:
             risky = sorted({c for c in text if c in SENTENCE_RISKY})
             if risky:
                 review.append(f"| фраза {text} ({sid}) | {''.join(risky)} | TTS оба голоса | проверить чтение |")
+
+        # Реплики диалогов — голосом персонажа (у «me» — оба голоса из настроек).
+        chars = {c["id"]: c["voice"] for c in load_json(ROOT / "src/content/characters.json")}
+        texts = sentence_texts()
+        for d in load_all("dialogues"):
+            for line in d["lines"]:
+                text = texts[line["sentenceId"]]
+                need = ME_VOICES if line["speaker"] == "me" else [chars[line["speaker"]]]
+                have = {e.get("voice") for e in manifest["texts"].setdefault(text, [])}
+                for v in need:
+                    if v not in have:
+                        manifest["texts"][text].append(tts_entry(text, v, f"{safe_stem(text)}-{v}", "s"))
+                        have.add(v)
     except Exception as e:  # сеть, edge-tts недоступен и т.п. — не молчим
         print(f"\nОШИБКА: {e}", file=sys.stderr)
         print(
