@@ -18,7 +18,43 @@ export async function markSoundChecked(page: Page): Promise<void> {
   })
 }
 
-const SUMMARY = /^(Урок пройден|Раунд окончен)$/
+/** Отметить уроки пройденными напрямую в базе — чтобы тест не проходил их заново. */
+export async function seedCompleted(page: Page, lessonIds: string[]): Promise<void> {
+  await page.evaluate(async (ids) => {
+    await new Promise<void>((resolve, reject) => {
+      const req = indexedDB.open('xiaohuo')
+      req.onsuccess = () => {
+        const tx = req.result.transaction('lessonProgress', 'readwrite')
+        const now = Date.now()
+        for (const lessonId of ids)
+          tx.objectStore('lessonProgress').put({
+            lessonId,
+            step: 0,
+            results: {},
+            startedAt: now,
+            updatedAt: now,
+            seconds: 60,
+            completedAt: now,
+            timesCompleted: 1,
+            bestAccuracy: 1,
+          })
+        tx.oncomplete = () => resolve()
+        tx.onerror = () => reject(tx.error)
+      }
+      req.onerror = () => reject(req.error)
+    })
+  }, lessonIds)
+}
+
+export const STAGE0_BEFORE_BOSS = [
+  's0-u1-l1', 's0-u1-l2', 's0-u1-l3',
+  's0-u2-l1', 's0-u2-l2', 's0-u2-l3',
+  's0-u3-l1', 's0-u3-l2', 's0-u3-l3',
+  's0-u4-l1', 's0-u4-l2',
+  's0-u5-l1', 's0-u5-l2',
+]
+
+const SUMMARY = /^(Урок пройден|Раунд окончен|Пуск!|Пуск перенесён)$/
 
 /** Текущий номер экрана («5 из 28») или «итоги». */
 async function position(page: Page): Promise<string> {

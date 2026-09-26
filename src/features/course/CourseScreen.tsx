@@ -24,16 +24,19 @@ const PARTS: Record<number, string> = {
 type Status = 'built' | 'partial' | 'none'
 
 export function CourseScreen() {
-  const progress = useLiveQuery(() => db.lessonProgress.toArray(), [], [] as LessonProgressRow[])
+  // Ждём прогресс из базы: иначе раскрылся бы «первый» этап вместо текущего.
+  const loaded = useLiveQuery(() => db.lessonProgress.toArray(), [])
+  const progress: LessonProgressRow[] = loaded ?? []
   const byLesson = new Map(progress.map((p) => [p.lessonId, p]))
   const completed = new Set(progress.filter((p) => p.completedAt).map((p) => p.lessonId))
   const current = nextLessonId(completed)
   const stages = [...ru.stages].reverse()
   const currentRef = useRef<HTMLLIElement>(null)
   useEffect(() => {
-    currentRef.current?.scrollIntoView({ block: 'start' })
-  }, [])
+    if (loaded) currentRef.current?.scrollIntoView({ block: 'start' })
+  }, [loaded])
 
+  if (!loaded) return null
   return (
     <Screen title={ru.map.title} subtitle={ru.map.subtitle} paper>
       <ol className={s.stack}>

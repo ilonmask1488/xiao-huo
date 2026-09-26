@@ -127,5 +127,388 @@
       { "type": "listen", "series": [["w-wo", "w-ni", "w-shi", "w-bu"]] },
       { "type": "repeat", "items": ["w-nihao", "w-zaijian"] }
     ]
+  },
+
+  {
+    "id": "s0-u2-l1", "unitId": "s0-u2", "order": 1, "title": "Простые финали: a o e i u ü", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "Шесть простых гласных",
+        "body": [
+          "a — как русское «а», только шире. o — округлённое «о», чуть похожее на «уо».",
+          "i — «и», u — «у». Без согласной впереди они пишутся yi и wu.",
+          "ü — губы как для «у», язык как для «и». Отдельно пишется yu."
+        ],
+        "examples": [{ "syl": "a1" }, { "syl": "o1" }, { "syl": "e1" }, { "syl": "yi1" }, { "syl": "wu1" }, { "syl": "yu1" }]
+      },
+      { "type": "listen", "series": [["a1", "o1", "e1"], ["yi1", "wu1", "yu1"]] },
+      { "type": "repeat", "items": ["a1", "o1"] },
+      {
+        "type": "explain", "title": "e — это не «е»", "mascot": "thinking",
+        "body": [
+          "Русское «е» звучит как «йэ». Китайское e — ближе к «ы» с оттенком «э», губы расслаблены, не улыбайся.",
+          "饿 è — «голодный», 喝 hē — «пить», 哥 gē — «старший брат»."
+        ],
+        "examples": [{ "syl": "e4", "hanzi": "饿", "ru": "голодный" }, { "syl": "he1", "hanzi": "喝", "ru": "пить" }, { "syl": "ge1", "hanzi": "哥", "ru": "брат" }]
+      },
+      { "type": "repeat", "items": ["e4", "he1"] },
+      {
+        "type": "explain", "title": "ü и пропавшие точки",
+        "body": [
+          "ü звучит в 女 nǚ — «женщина» и 绿 lǜ — «зелёный».",
+          "После j, q, x и y точки не пишут: ju, qu, xu, yu — это всё равно ü, а не u."
+        ],
+        "examples": [{ "syl": "nv3", "hanzi": "女", "ru": "женщина" }, { "syl": "lv4", "hanzi": "绿", "ru": "зелёный" }, { "syl": "ju1" }, { "syl": "qu4" }, { "syl": "xu1" }]
+      },
+      { "type": "whichSyllable", "contrast": { "label": "ü/u", "skill": "final" }, "items": [
+        { "answer": "lv4", "options": ["lv4", "lu4"] },
+        { "answer": "nu3", "options": ["nv3", "nu3"] },
+        { "answer": "lv3", "options": ["lu3", "lv3"] },
+        { "answer": "lu2", "options": ["lv2", "lu2"] }
+      ] },
+      { "type": "read", "items": ["yu2", "ju1", "nv3", "e4"] },
+      { "type": "guessTone", "items": ["yu2", "e4", "wu3", "yi1", "a4", "o2"], "choices": [1, 2, 3, 4] },
+      { "type": "repeat", "items": ["nv3", "lv4"] }
+    ]
+  },
+  {
+    "id": "s0-u2-l2", "unitId": "s0-u2", "order": 2, "title": "Двойные гласные: ai ei ao ou и другие", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "Два звука — один слог",
+        "body": [
+          "ai — «ай», ei — «эй», ao — почти «ау», ou — «оу».",
+          "Произносятся слитно, одним движением, первый звук чуть сильнее."
+        ],
+        "examples": [{ "syl": "ai4", "hanzi": "爱", "ru": "любить" }, { "syl": "mei2", "hanzi": "没", "ru": "нет" }, { "syl": "hao3", "hanzi": "好", "ru": "хорошо" }, { "syl": "dou1", "hanzi": "都", "ru": "все" }]
+      },
+      { "type": "listen", "series": [["ai4", "mei2", "hao3", "dou1"]] },
+      { "type": "whichSyllable", "contrast": { "label": "ai/ei", "skill": "final" }, "items": [
+        { "answer": "bai1", "options": ["bai1", "bei1"] },
+        { "answer": "mei3", "options": ["mai3", "mei3"] },
+        { "answer": "lai2", "options": ["lei2", "lai2"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "ao/ou", "skill": "final" }, "items": [
+        { "answer": "dou4", "options": ["dao4", "dou4"] },
+        { "answer": "gao1", "options": ["gao1", "gou1"] },
+        { "answer": "lou2", "options": ["lao2", "lou2"] }
+      ] },
+      { "type": "repeat", "items": ["hao3", "dou1"] },
+      {
+        "type": "explain", "title": "С i-, u- и ü- впереди",
+        "body": [
+          "ia — «я», ie — «е» как в «ель», iao — «яо», iu — «ю» (пишется iu, звучит iou).",
+          "ua — «уа», uo — «уо», uai — «уай», ui — «уэй» (пишется ui).",
+          "üe — «юэ»: 月 yuè — «луна», «месяц»."
+        ],
+        "examples": [{ "syl": "jia1", "hanzi": "家", "ru": "дом" }, { "syl": "xie4" }, { "syl": "liu4", "hanzi": "六", "ru": "шесть" }, { "syl": "hua1", "hanzi": "花", "ru": "цветок" }, { "syl": "guo2", "hanzi": "国", "ru": "страна" }, { "syl": "kuai4", "hanzi": "快", "ru": "быстро" }, { "syl": "dui4", "hanzi": "对", "ru": "верно" }, { "syl": "yue4", "hanzi": "月", "ru": "луна" }]
+      },
+      { "type": "listen", "series": [["jia1", "xie4", "liu4"], ["hua1", "guo2", "kuai4", "dui4"], ["yue4"]] },
+      { "type": "repeat", "items": ["jia1", "liu4", "dui4", "yue4"] },
+      { "type": "read", "items": ["hao3", "mei2", "yue4", "kuai4"] },
+      { "type": "guessTone", "items": ["jia1", "guo2", "hao3", "xie4", "liu4", "hua1"], "choices": [1, 2, 3, 4] }
+    ]
+  },
+  {
+    "id": "s0-u2-l3", "unitId": "s0-u2", "order": 3, "title": "Носовые -n и -ng, er и особое -i", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "-n и -ng",
+        "body": [
+          "-n — кончик языка упирается в зубы, как в русском «н».",
+          "-ng — язык уходит назад, звук идёт в нос, как в английском sing. Рот в конце открыт."
+        ],
+        "examples": [{ "syl": "shan1", "hanzi": "山", "ru": "гора" }, { "syl": "shang1", "hanzi": "商", "ru": "торговля" }, { "syl": "xin1", "hanzi": "心", "ru": "сердце" }, { "syl": "xing1", "hanzi": "星", "ru": "звезда" }]
+      },
+      { "type": "listen", "series": [["an1", "ang1"], ["ben1", "beng1"], ["yin1", "ying1"], ["shan1", "shang1"], ["xin1", "xing1"]] },
+      { "type": "whichSyllable", "contrast": { "label": "-n/-ng", "skill": "final" }, "items": [
+        { "answer": "shang1", "options": ["shan1", "shang1"] },
+        { "answer": "xin1", "options": ["xin1", "xing1"] },
+        { "answer": "fang4", "options": ["fan4", "fang4"] },
+        { "answer": "chen2", "options": ["chen2", "cheng2"] },
+        { "answer": "ying1", "options": ["yin1", "ying1"] }
+      ] },
+      { "type": "repeat", "items": ["shang1", "xing1"] },
+      {
+        "type": "explain", "title": "ong, üan, ün и er",
+        "body": [
+          "ong — «унг»: 中 zhōng. iong — «юнг»: 用 yòng.",
+          "üan и ün пишутся yuan и yun: 远 yuǎn — «далеко», 云 yún — «облако».",
+          "er — «эр» с загнутым языком: 二 èr — «два»."
+        ],
+        "examples": [{ "syl": "zhong1" }, { "syl": "yong4" }, { "syl": "yuan3" }, { "syl": "yun2" }, { "syl": "er4", "hanzi": "二", "ru": "два" }]
+      },
+      { "type": "repeat", "items": ["yuan3", "er4"] },
+      { "type": "read", "items": ["zhong1", "yun2", "er2", "xing1"] },
+      {
+        "type": "explain", "title": "i, которое не «и»", "mascot": "oops",
+        "body": [
+          "В zi, ci, si буква i — не «и»: язык остаётся там же, где для z, и тянется жужжащий звук.",
+          "В zhi, chi, shi, ri — то же, но с загнутым кончиком языка. Не говори «жи», «чи», «ши» с русским «и»."
+        ],
+        "examples": [{ "syl": "zi4", "hanzi": "字", "ru": "иероглиф" }, { "syl": "si4", "hanzi": "四", "ru": "четыре" }, { "syl": "zhi1", "hanzi": "知", "ru": "знать" }, { "syl": "shi4", "hanzi": "是", "ru": "быть" }, { "syl": "ri4", "hanzi": "日", "ru": "солнце" }]
+      },
+      { "type": "repeat", "items": ["zi4", "zhi1"] },
+      { "type": "guessTone", "items": ["zi4", "shi2", "ci2", "ri4", "zhi1", "si3"], "choices": [1, 2, 3, 4] },
+      { "type": "read", "items": ["si4", "shi4", "ri4"] }
+    ]
+  },
+
+  {
+    "id": "s0-u3-l1", "unitId": "s0-u3", "order": 1, "title": "Выдох решает: b/p, d/t, g/k", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "Ладонь у рта",
+        "body": [
+          "Поднеси ладонь ко рту и скажи pa: ладонь чувствует сильный выдох. Скажи ba — выдоха почти нет.",
+          "b, d, g — глухие, как русские «п», «т», «к», но без выдоха. p, t, k — те же звуки с сильным выдохом."
+        ],
+        "examples": [{ "syl": "ba4" }, { "syl": "pa4" }, { "syl": "da1" }, { "syl": "ta1" }, { "syl": "ge1" }, { "syl": "ke1" }]
+      },
+      {
+        "type": "explain", "title": "Не голос, а воздух", "mascot": "oops",
+        "body": [
+          "Русское ухо слышит b и p как «б» и «п». Но в китайском разница не в голосе, а в воздухе.",
+          "Скажешь звонкое «б» — поймут, но с акцентом. Цель — глухое «п» без выдоха. Листок бумаги перед ртом на pa должен колыхнуться."
+        ]
+      },
+      { "type": "listen", "series": [["ba4", "pa4"], ["du4", "tu4"], ["ge1", "ke1"]] },
+      { "type": "whichSyllable", "contrast": { "label": "b/p", "skill": "initial" }, "items": [
+        { "answer": "pa4", "options": ["ba4", "pa4"] },
+        { "answer": "bao3", "options": ["bao3", "pao3"] },
+        { "answer": "pu4", "options": ["bu4", "pu4"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "d/t", "skill": "initial" }, "items": [
+        { "answer": "du4", "options": ["du4", "tu4"] },
+        { "answer": "ta1", "options": ["da1", "ta1"] },
+        { "answer": "tian1", "options": ["dian1", "tian1"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "g/k", "skill": "initial" }, "items": [
+        { "answer": "ke1", "options": ["ge1", "ke1"] },
+        { "answer": "gua1", "options": ["gua1", "kua1"] },
+        { "answer": "kou3", "options": ["gou3", "kou3"] }
+      ] },
+      { "type": "repeat", "items": ["pa4", "tu4", "ke1"] },
+      { "type": "read", "items": ["bao3", "pao3", "da1", "ta1"] }
+    ]
+  },
+  {
+    "id": "s0-u3-l2", "unitId": "s0-u3", "order": 2, "title": "j q x и zh ch sh r", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "j, q, x — в улыбке",
+        "body": [
+          "Кончик языка за нижними зубами, губы в улыбке. j — мягкое «цз», q — то же с сильным выдохом, x — мягкое «сь».",
+          "После них всегда i или ü: ji, qi, xi, ju, qu, xu."
+        ],
+        "examples": [{ "syl": "ji1", "hanzi": "鸡", "ru": "курица" }, { "syl": "qi1", "hanzi": "七", "ru": "семь" }, { "syl": "xi1", "hanzi": "西", "ru": "запад" }]
+      },
+      {
+        "type": "explain", "title": "zh, ch, sh, r — язык назад",
+        "body": [
+          "Кончик языка загибается к нёбу. zh — твёрдое «дж», ch — то же с выдохом, sh — твёрдое «ш», r — что-то между «ж» и «р».",
+          "Звучат глубже и твёрже, чем русские «ж», «ч», «ш»."
+        ],
+        "examples": [{ "syl": "zhi1", "hanzi": "知", "ru": "знать" }, { "syl": "chi1", "hanzi": "吃", "ru": "есть" }, { "syl": "shi1", "hanzi": "师", "ru": "учитель" }, { "syl": "ri4", "hanzi": "日", "ru": "солнце" }]
+      },
+      { "type": "listen", "series": [["ji1", "zhi1"], ["qi1", "chi1"], ["xi1", "shi1"]] },
+      { "type": "whichSyllable", "contrast": { "label": "zh ch sh / j q x", "skill": "initial" }, "items": [
+        { "answer": "zhi1", "options": ["zhi1", "ji1"] },
+        { "answer": "qu1", "options": ["chu1", "qu1"] },
+        { "answer": "shi1", "options": ["xi1", "shi1"] },
+        { "answer": "xu1", "options": ["shu1", "xu1"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "zh/ch, j/q", "skill": "initial" }, "items": [
+        { "answer": "chi1", "options": ["zhi1", "chi1"] },
+        { "answer": "ji1", "options": ["ji1", "qi1"] },
+        { "answer": "zhu1", "options": ["zhu1", "chu1"] },
+        { "answer": "qian4", "options": ["jian4", "qian4"] }
+      ] },
+      { "type": "repeat", "items": ["zhi1", "chi1", "shi1", "ri4"] },
+      { "type": "read", "items": ["xi1", "shi1", "ji1", "zhi1"] }
+    ]
+  },
+  {
+    "id": "s0-u3-l3", "unitId": "s0-u3", "order": 3, "title": "z c s против zh ch sh; r и l", "newWords": [],
+    "parts": [
+      {
+        "type": "explain", "title": "Кончик языка у зубов",
+        "body": [
+          "z — «дз», c — «ц» с сильным выдохом, s — «с». Язык у зубов и не загибается.",
+          "Сравни: 早 zǎo — «рано» и 找 zhǎo — «искать», 四 sì — «четыре» и 是 shì — «быть»."
+        ],
+        "examples": [{ "syl": "zao3", "hanzi": "早", "ru": "рано" }, { "syl": "zhao3", "hanzi": "找", "ru": "искать" }, { "syl": "si4", "hanzi": "四", "ru": "четыре" }, { "syl": "shi4", "hanzi": "是", "ru": "быть" }]
+      },
+      { "type": "listen", "series": [["zao3", "zhao3"], ["cu1", "chu1"], ["si4", "shi4"], ["zai4", "cai4"]] },
+      { "type": "whichSyllable", "contrast": { "label": "z c s / zh ch sh", "skill": "initial" }, "items": [
+        { "answer": "zao3", "options": ["zhao3", "zao3"] },
+        { "answer": "chu1", "options": ["chu1", "cu1"] },
+        { "answer": "si4", "options": ["shi4", "si4"] },
+        { "answer": "shan1", "options": ["shan1", "san1"] },
+        { "answer": "zi1", "options": ["zhi1", "zi1"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "z/c", "skill": "initial" }, "items": [
+        { "answer": "cai4", "options": ["zai4", "cai4"] },
+        { "answer": "zuo4", "options": ["zuo4", "cuo4"] }
+      ] },
+      {
+        "type": "explain", "title": "r — не русское «р»",
+        "body": [
+          "r — язык загнут, как для sh, но звук звонкий, почти «ж». Язык не дрожит!",
+          "热 rè — «жарко» и 乐 lè — «радость»: не перепутай."
+        ],
+        "examples": [{ "syl": "re4", "hanzi": "热", "ru": "жарко" }, { "syl": "le4", "hanzi": "乐", "ru": "радость" }, { "syl": "ri4", "hanzi": "日", "ru": "солнце" }]
+      },
+      { "type": "whichSyllable", "contrast": { "label": "r/l", "skill": "initial" }, "items": [
+        { "answer": "re4", "options": ["re4", "le4"] },
+        { "answer": "lu4", "options": ["ru4", "lu4"] },
+        { "answer": "rou4", "options": ["rou4", "lou4"] }
+      ] },
+      { "type": "repeat", "items": ["si4", "shi4", "re4"] },
+      { "type": "read", "items": ["cai4", "zao3", "rou4", "chu1"] }
+    ]
+  },
+
+  {
+    "id": "s0-u4-l1", "unitId": "s0-u4", "order": 1, "title": "Пары с 1-м и 2-м тоном впереди",
+    "newWords": ["w-feiji", "w-zhongguo", "w-qianbi", "w-gongzuo", "w-zhuozi", "w-mingtian", "w-xuexi", "w-cidian", "w-tongshi", "w-pengyou"],
+    "parts": [
+      {
+        "type": "explain", "title": "Тоны в двух слогах",
+        "body": [
+          "В словах из двух слогов тоны встречаются в 20 сочетаниях. Их стоит выучить как мелодии.",
+          "Начнём с тех, где первый слог 1-го тона: высоко и ровно — а дальше второй слог по своему тону."
+        ],
+        "chart": [1],
+        "words": ["w-feiji", "w-zhongguo", "w-qianbi", "w-gongzuo", "w-zhuozi"]
+      },
+      { "type": "listen", "series": [["w-feiji", "w-zhongguo", "w-qianbi", "w-gongzuo", "w-zhuozi"]] },
+      { "type": "guessPair", "items": ["w-feiji", "w-gongzuo", "w-zhongguo", "w-zhuozi", "w-qianbi"] },
+      { "type": "repeat", "items": ["w-zhongguo", "w-gongzuo"] },
+      {
+        "type": "explain", "title": "Первый слог 2-го тона",
+        "body": ["Первый слог поднимается снизу вверх — и с этой высоты начинается второй."],
+        "chart": [2],
+        "words": ["w-mingtian", "w-xuexi", "w-cidian", "w-tongshi", "w-pengyou"]
+      },
+      { "type": "listen", "series": [["w-mingtian", "w-xuexi", "w-cidian", "w-tongshi", "w-pengyou"]] },
+      { "type": "guessPair", "items": ["w-xuexi", "w-pengyou", "w-mingtian", "w-tongshi", "w-cidian"] },
+      { "type": "repeat", "items": ["w-xuexi", "w-pengyou"] },
+      { "type": "read", "items": ["w-feiji", "w-mingtian", "w-cidian"] }
+    ]
+  },
+  {
+    "id": "s0-u4-l2", "unitId": "s0-u4", "order": 2, "title": "Пары с 3-м и 4-м тоном впереди",
+    "newWords": ["w-laoshi", "w-meiguo", "w-kaoshi", "w-women", "w-qiche", "w-wenti", "w-diannao"],
+    "parts": [
+      {
+        "type": "explain", "title": "Первый слог 3-го тона",
+        "body": [
+          "Перед другим слогом 3-й тон не делает «ямку», а просто звучит низко: lǎoshī — низко, потом высоко.",
+          "3 + 3 — особый случай: 你好 пишется nǐ hǎo, а звучит ní hǎo. Подробно — на следующем этапе."
+        ],
+        "chart": [3],
+        "words": ["w-laoshi", "w-meiguo", "w-nihao", "w-kaoshi", "w-women"],
+        "sandhi": ["w-nihao"]
+      },
+      { "type": "listen", "series": [["w-laoshi", "w-meiguo", "w-nihao", "w-kaoshi", "w-women"]] },
+      { "type": "guessPair", "items": ["w-laoshi", "w-kaoshi", "w-women", "w-meiguo"] },
+      { "type": "repeat", "items": ["w-laoshi", "w-women"] },
+      {
+        "type": "explain", "title": "Первый слог 4-го тона",
+        "body": ["Резко вниз на первом слоге — и второй начинается уже со своей высоты. Два 4-х подряд: второй чуть ниже первого."],
+        "chart": [4],
+        "words": ["w-qiche", "w-wenti", "w-diannao", "w-zaijian", "w-xiexie"]
+      },
+      { "type": "listen", "series": [["w-qiche", "w-wenti", "w-diannao", "w-zaijian", "w-xiexie"]] },
+      { "type": "guessPair", "items": ["w-wenti", "w-qiche", "w-xiexie", "w-diannao", "w-zaijian"] },
+      { "type": "repeat", "items": ["w-diannao", "w-wenti"] },
+      { "type": "read", "items": ["w-kaoshi", "w-qiche", "w-meiguo"] }
+    ]
+  },
+
+  {
+    "id": "s0-u5-l1", "unitId": "s0-u5", "order": 1, "title": "3 + 3 → 2 + 3",
+    "newWords": ["w-henhao", "w-keyi"],
+    "parts": [
+      {
+        "type": "explain", "title": "Два третьих подряд", "chart": [2, 3],
+        "body": [
+          "Два 3-х тона подряд выговаривать неудобно, поэтому первый становится 2-м. Пишется как было, а звучит иначе.",
+          "你好 nǐ hǎo звучит ní hǎo, 很好 hěn hǎo — hén hǎo, 可以 kěyǐ — kéyǐ."
+        ],
+        "words": ["w-nihao", "w-henhao", "w-keyi"],
+        "sandhi": ["w-nihao", "w-henhao", "w-keyi"]
+      },
+      { "type": "listen", "series": [["w-nihao", "w-henhao", "w-keyi"]] },
+      { "type": "repeat", "items": ["w-nihao", "w-henhao", "w-keyi"] },
+      { "type": "guessTone", "items": ["hen3", "ke3", "hao3", "ni3"], "choices": [1, 2, 3, 4] },
+      { "type": "read", "items": ["w-henhao", "w-keyi", "w-nihao"] },
+      {
+        "type": "explain", "title": "А если три подряд?", "mascot": "wink",
+        "body": [
+          "我很好 wǒ hěn hǎo — «у меня всё хорошо». Обычно звучит wó hén hǎo: все, кроме последнего, становятся 2-м.",
+          "Не заучивай правило — слушай и повторяй, ухо само привыкнет."
+        ]
+      },
+      { "type": "repeat", "items": ["w-henhao", "w-nihao"] }
+    ]
+  },
+  {
+    "id": "s0-u5-l2", "unitId": "s0-u5", "order": 2, "title": "不 и 一 меняют тон",
+    "newWords": ["w-bushi", "w-buyao", "w-yi", "w-yige", "w-yitian"],
+    "parts": [
+      {
+        "type": "explain", "title": "不 перед 4-м тоном",
+        "body": [
+          "不 bù — «не». Перед 4-м тоном он становится 2-м: 不是 bú shì, 不要 bú yào.",
+          "Перед остальными тонами остаётся bù: 不好 bù hǎo, 不来 bù lái."
+        ],
+        "words": ["w-bu", "w-bushi", "w-buyao"],
+        "sandhi": ["w-bushi", "w-buyao"]
+      },
+      { "type": "listen", "series": [["w-bu", "w-bushi", "w-buyao"]] },
+      { "type": "repeat", "items": ["w-bushi", "w-buyao"] },
+      {
+        "type": "explain", "title": "一 — три звучания",
+        "body": [
+          "一 yī — «один» — отдельно и в конце звучит 1-м тоном.",
+          "Перед 4-м тоном — 2-м: 一个 yí ge. Перед 1-м, 2-м и 3-м — 4-м: 一天 yì tiān."
+        ],
+        "words": ["w-yi", "w-yige", "w-yitian"],
+        "sandhi": ["w-yige", "w-yitian"]
+      },
+      { "type": "listen", "series": [["w-yi", "w-yige", "w-yitian"]] },
+      { "type": "repeat", "items": ["w-yige", "w-yitian"] },
+      { "type": "read", "items": ["w-bushi", "w-yige", "w-yitian", "w-buyao"] },
+      { "type": "guessTone", "items": ["yi1", "bu4", "yi4", "bu2"], "choices": [1, 2, 3, 4] }
+    ]
+  },
+
+  {
+    "id": "s0-u6-l1", "unitId": "s0-u6", "order": 1, "title": "Предстартовый тест", "newWords": [],
+    "boss": { "passPercent": 80 },
+    "parts": [
+      {
+        "type": "explain", "title": "Обратный отсчёт", "mascot": "celebrate",
+        "body": [
+          "Три-четыре минуты: тоны, звуки и пары вперемешку. Наберёшь 80% — пуск! Не наберёшь — перенесём, без штрафов, и потренируем слабые места."
+        ]
+      },
+      { "type": "guessTone", "items": ["ma3", "da2", "yi4", "wu1", "ba5", "shi2", "yue4", "xing1"], "choices": [1, 2, 3, 4, 5] },
+      { "type": "whichSyllable", "contrast": { "label": "инициали", "skill": "initial" }, "items": [
+        { "answer": "pao3", "options": ["bao3", "pao3"] },
+        { "answer": "zhao3", "options": ["zhao3", "zao3"] },
+        { "answer": "qi1", "options": ["chi1", "qi1"] },
+        { "answer": "le4", "options": ["re4", "le4"] }
+      ] },
+      { "type": "whichSyllable", "contrast": { "label": "финали", "skill": "final" }, "items": [
+        { "answer": "shan1", "options": ["shan1", "shang1"] },
+        { "answer": "lv4", "options": ["lu4", "lv4"] },
+        { "answer": "dou4", "options": ["dao4", "dou4"] },
+        { "answer": "xing1", "options": ["xin1", "xing1"] }
+      ] },
+      { "type": "guessPair", "items": ["w-feiji", "w-pengyou", "w-laoshi", "w-diannao", "w-xuexi", "w-kaoshi"] }
+    ]
   }
 ]

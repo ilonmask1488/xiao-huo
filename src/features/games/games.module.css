@@ -1,0 +1,302 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: calc(var(--safe-top) + var(--space-2)) calc(var(--gutter) + var(--safe-right)) calc(var(--safe-bottom) + var(--space-4))
+    calc(var(--gutter) + var(--safe-left));
+}
+
+.intro {
+  display: grid;
+  flex: 1;
+  align-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.rules {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  max-width: 30em;
+}
+
+.focus {
+  padding: var(--space-2) var(--space-3);
+  border: 1.5px dashed var(--flame);
+  border-radius: var(--radius-s);
+  font-size: var(--fs-small);
+}
+
+.actions {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: center;
+}
+
+.actions > button:first-child {
+  width: 100%;
+}
+
+.bigScore {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.badge {
+  padding: var(--space-1) var(--space-3);
+  border: 1.5px solid var(--flame);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.hardest {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: center;
+  width: 100%;
+  padding: var(--space-3);
+  border-left: 3px solid var(--t3);
+  background: var(--surface);
+}
+
+/* ——— Раунд ——— */
+.hud {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--tap);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  margin-left: calc(var(--space-3) * -1);
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+}
+
+.timer {
+  font-size: var(--fs-lead);
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.combo {
+  min-width: 2.5em;
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-align: center;
+}
+
+.combo[data-mult='2'] {
+  background: var(--flame-soft);
+  color: #1a1c20;
+}
+
+.combo[data-mult='3'] {
+  background: var(--flame);
+  color: #fff;
+  animation: pop var(--dur-med) var(--ease-out);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(1.4);
+  }
+}
+
+.timeBar {
+  height: 4px;
+  margin-top: var(--space-1);
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timeFill {
+  height: 100%;
+  background: var(--ink);
+  transition: width 250ms linear;
+}
+
+.play {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.limit {
+  width: 100%;
+  height: 6px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.limitFill {
+  height: 100%;
+  background: var(--flame);
+  transform-origin: left;
+  animation: shrink linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.pad {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  flex: 1;
+  min-height: 220px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius-m);
+  background-color: var(--surface);
+  touch-action: none;
+  user-select: none;
+  transition: background-color var(--dur-fast);
+}
+
+.pad[data-feedback='ok'] {
+  background-color: color-mix(in srgb, var(--t2) 18%, var(--surface));
+}
+
+.pad[data-feedback='bad'] {
+  background-color: color-mix(in srgb, var(--danger) 16%, var(--surface));
+}
+
+.trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.trail polyline {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.padHint {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.padFeedback {
+  display: grid;
+  gap: var(--space-1);
+  justify-items: center;
+}
+
+.padPinyin {
+  font-size: 2.75rem;
+  font-weight: 600;
+}
+
+.toneButtons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.toneBtn {
+  display: grid;
+  place-items: center;
+  min-height: 56px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+}
+
+.toneBtn[data-state='right'],
+.option[data-state='right'] {
+  border-color: var(--t2);
+  box-shadow: inset 0 0 0 2px var(--t2);
+}
+
+.toneBtn[data-state='wrong'],
+.option[data-state='wrong'] {
+  border-color: var(--danger);
+  box-shadow: inset 0 0 0 2px var(--danger);
+}
+
+.reveal {
+  display: grid;
+  justify-items: center;
+  min-height: 4.5rem;
+  font-size: var(--fs-lead);
+  font-weight: 600;
+}
+
+.revealHanzi {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.contrast {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.option {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--space-1);
+  min-height: 84px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.optionLabel {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+}
+
+.twinPinyin {
+  font-size: 2rem;
+  font-weight: 600;
+}

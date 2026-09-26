@@ -12,7 +12,9 @@ import type { AnswerSource, HanziMode } from '../../lib/db/types'
 import { isQuestion, itemsOf, type Screen } from '../../lib/lesson/build'
 import { saveLessonStep } from '../../lib/lesson/progress'
 import { type AchievementId } from '../../lib/progress/achievements'
-import { dvForLesson } from '../../lib/progress/dv'
+import { LaunchAnimation } from '../../components/LaunchAnimation'
+import { bossBreakdown, type SkillScore } from '../../lib/lesson/boss'
+import { DV, dvForLesson } from '../../lib/progress/dv'
 import { recordAnswer } from '../../lib/progress/record'
 import s from './lesson.module.css'
 import { ScreenView, type ScreenResult } from './screens'
@@ -24,6 +26,9 @@ export type RunResult = {
   spoken: number
   accuracy: number | null
   dv: number
+  /** только для «босса»: разбор по навыкам и прошёл ли порог */
+  breakdown?: SkillScore[]
+  passed?: boolean
 }
 
 type Props = {
@@ -39,6 +44,7 @@ type Props = {
   onFinish: (r: RunResult) => Promise<AchievementId[]>
   summaryActions: (r: RunResult) => React.ReactNode
   onRestart?: () => void
+  boss?: { passPercent: number }
 }
 
 export function LessonRunner(props: Props) {
@@ -101,6 +107,11 @@ export function LessonRunner(props: Props) {
         accuracy: vals.length ? correct / vals.length : null,
         dv: dvForLesson({ seconds: totalSeconds.current, correct, wrong, spoken: spokenAll }),
       }
+      if (props.boss) {
+        result.breakdown = bossBreakdown(screens, nextResults)
+        result.passed = (result.accuracy ?? 0) * 100 >= props.boss.passPercent
+        if (result.passed) result.dv += DV.bossPassed
+      }
       const fresh = await props.onFinish(result).catch((e) => (console.error(e), [] as AchievementId[]))
       setFinished({ r: result, fresh })
     }
@@ -141,12 +152,28 @@ function Summary({ r, fresh, actions }: { r: RunResult; fresh: AchievementId[]; 
   const t = ru.lesson.summary
   const pool = r.accuracy === null || r.accuracy >= 0.85 ? ru.lines.summaryHigh : r.accuracy >= 0.6 ? ru.lines.summaryMid : ru.lines.summaryLow
   const [line] = useState(() => pool[Math.floor(Math.random() * pool.length)]!)
+  const isBoss = r.passed !== undefined
+  const [launching, setLaunching] = useState(!!r.passed)
+  const title = isBoss ? (r.passed ? ru.boss.passed : ru.boss.postponed) : t.title
   return (
     <div className={s.runner}>
+      {launching && <LaunchAnimation title={ru.boss.launchTitle} onDone={() => setLaunching(false)} />}
       <div className={`${s.body} ${s.summary}`}>
-        <Mascot mood={fresh.length || (r.accuracy ?? 1) >= 0.85 ? 'celebrate' : 'happy'} size={96} />
-        <h1>{t.title}</h1>
-        <p>{line}</p>
+        <Mascot mood={r.passed || fresh.length || (!isBoss && (r.accuracy ?? 1) >= 0.85) ? 'celebrate' : isBoss ? 'thinking' : 'happy'} size={96} />
+        <h1>{title}</h1>
+        <p>{isBoss ? (r.passed ? ru.boss.passedText : ru.boss.postponedText) : line}</p>
+        {r.breakdown && (
+          <div className={s.words} style={{ width: '100%' }}>
+            {r.breakdown.map((b) => (
+              <div key={b.skill} className={s.lesson} style={{ gridTemplateColumns: '1fr auto' }}>
+                <span>{ru.boss.skills[b.skill]}</span>
+                <span className="mono" data-weak={b.correct / b.total < 0.8 || undefined}>
+                  {b.correct} / {b.total}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
         <div className={s.stats}>
           <div className={s.stat}>
             <span className={s.statValue}>{t.minutes(r.seconds)}</span>

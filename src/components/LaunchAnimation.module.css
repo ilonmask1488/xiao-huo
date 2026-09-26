@@ -1,0 +1,92 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(to top, #2b2e33, #0b0d12 70%);
+  color: #ece9e2;
+  cursor: pointer;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, #fff8, transparent),
+    radial-gradient(1.5px 1.5px at 70% 20%, #fff9, transparent),
+    radial-gradient(1px 1px at 40% 70%, #fff7, transparent),
+    radial-gradient(1.5px 1.5px at 85% 55%, #fff8, transparent),
+    radial-gradient(1px 1px at 10% 80%, #fff6, transparent),
+    radial-gradient(1px 1px at 55% 45%, #fff9, transparent);
+  animation: drift 3s linear forwards;
+}
+
+.rocket {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  animation:
+    shake 0.12s linear 6,
+    lift 2.4s cubic-bezier(0.5, 0, 0.8, 0.3) 0.7s forwards;
+}
+
+.smoke {
+  width: 140px;
+  height: 60px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, #ffc857cc, #ff8a4c55, transparent);
+  filter: blur(4px);
+}
+
+.title {
+  position: absolute;
+  bottom: calc(var(--safe-bottom) + 15%);
+  padding: 0 var(--gutter);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  animation: fade 0.6s ease-out 1.6s forwards;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes lift {
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocket,
+  .stars {
+    animation: none;
+  }
+  .title {
+    opacity: 1;
+    animation: none;
+  }
+}

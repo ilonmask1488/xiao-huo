@@ -10,6 +10,7 @@
 import { lessonById, lessonOrder } from '../../content'
 import type { Item, Syllable } from '../../content/types'
 import { db } from '../db/db'
+import { gameAvailable, gameMaterial } from '../games/games'
 import type { LaunchBlockState, LaunchRow } from '../db/types'
 import { hash, interleave, shuffle, type Screen } from '../lesson/build'
 import { completedLessonIds, nextLessonId } from '../lesson/progress'
@@ -73,8 +74,11 @@ export function blockScreens(block: LaunchBlockId, learned: Learned, date: strin
 export function planLaunch(completed: Set<string>, date: string): LaunchBlockState[] {
   const learned = learnedMaterial(completed)
   const next = nextLessonId(completed)
+  const games = gameMaterial(completed)
   return LAUNCH_ORDER.map((id): LaunchBlockState => {
     if (id === 'review') return { id, status: 'skipped', auto: true }
+    // Разминка — раунд «Тон-тира» по пройденным тонам.
+    if (id === 'warmup') return gameAvailable('shooter', games) ? { id, status: 'pending' } : { id, status: 'skipped', auto: true }
     if (id === 'new') return next ? { id, status: 'pending', lessonId: next } : { id, status: 'skipped', auto: true }
     return blockScreens(id, learned, date).length ? { id, status: 'pending' } : { id, status: 'skipped', auto: true }
   })

@@ -61,11 +61,11 @@ export function HomeScreen() {
         </div>
         <ol className={s.rows}>
           {plan.map((b) => (
-            <li key={b.id} className={s.row}>
+            <li key={b.id} className={s.row} data-later={b.id === 'review' || undefined}>
               <span className={`${s.t} mono`}>T+{String(b.startsAt).padStart(2, '0')}</span>
               <span>
                 <span className={s.blockTitle}>{ru.blocks[b.id].title}</span>
-                <span className={s.blockWhat}>{ru.blocks[b.id].what}</span>
+                <span className={s.blockWhat}>{b.id === 'review' ? ru.launch.skipped.review : ru.blocks[b.id].what}</span>
               </span>
               <span className={`${s.min} mono`}>{b.minutes} мин</span>
             </li>

@@ -52,10 +52,39 @@
   margin-bottom: var(--space-6);
 }
 
-.gameButtons {
+.gameList {
   display: grid;
   gap: var(--space-2);
-  margin-top: var(--space-3);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  min-height: 64px;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  text-align: left;
+}
+
+.game[data-locked] {
+  border-style: dashed;
+  border-color: var(--line-strong);
+  background: transparent;
+}
+
+.gameTitle {
+  font-weight: 600;
+}
+
+.gameWhat {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
 }
 
 .heatTitle {

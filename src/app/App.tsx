@@ -4,6 +4,7 @@ import { CourseScreen } from '../features/course/CourseScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
 import { EchoScreen, StatsScreen, StoryScreen } from '../features/more/PlaceholderScreens'
+import { GameScreen } from '../features/games/GameScreen'
 import { LessonScreen } from '../features/lesson/LessonScreen'
 import { SoundCheckScreen } from '../features/lesson/SoundCheck'
 import { HomeScreen } from '../features/session/HomeScreen'
@@ -44,6 +45,7 @@ export function App() {
           <Route path="lesson/:id" element={<LessonScreen />} />
           <Route path="launch/:block" element={<LaunchBlockScreen />} />
           <Route path="sound-check" element={<SoundCheckScreen />} />
+          <Route path="game/:id" element={<GameScreen />} />
           <Route path="map" element={<CourseScreen />} />
           <Route path="tones" element={<TonesScreen />} />
           <Route path="dictionary" element={<DictionaryScreen />} />

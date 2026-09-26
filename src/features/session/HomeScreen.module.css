@@ -115,6 +115,14 @@
   border-bottom: 0;
 }
 
+.row[data-later] {
+  color: var(--ink-2);
+}
+
+.row[data-later] .blockTitle {
+  font-weight: 400;
+}
+
 .t {
   color: var(--ink-2);
   font-size: var(--fs-caption);

@@ -160,11 +160,13 @@
 }
 
 .wordPinyin {
+  display: block;
   font-size: var(--fs-lead);
   font-weight: 600;
 }
 
 .wordRu {
+  display: block;
   color: var(--ink-2);
   font-size: var(--fs-small);
 }
@@ -181,16 +183,24 @@
 
 .voices {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-1);
+  margin-top: var(--space-1);
 }
 
 .voiceBtn {
-  min-height: 36px;
+  min-height: 32px;
   padding: 0 var(--space-2);
   border: var(--hairline) solid var(--line-strong);
-  border-radius: 18px;
+  border-radius: 16px;
   background: none;
+  color: var(--ink-2);
   font-size: var(--fs-caption);
+}
+
+.voiceBtn[aria-pressed='true'] {
+  border-color: var(--ink);
+  color: var(--ink);
 }
 
 /* ——— Большой слог ——— */

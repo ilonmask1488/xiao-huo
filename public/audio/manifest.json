@@ -27,6 +27,41 @@
   }
  },
  "syllables": {
+  "a1": {
+   "file": "syl/a1-7b547885.mp3",
+   "source": "chen-wang",
+   "ms": 440
+  },
+  "a2": {
+   "file": "syl/a2-85b90f71.mp3",
+   "source": "chen-wang",
+   "ms": 984
+  },
+  "a3": {
+   "file": "syl/a3-9dbae6a1.mp3",
+   "source": "chen-wang",
+   "ms": 840
+  },
+  "a4": {
+   "file": "syl/a4-4cdb1576.mp3",
+   "source": "chen-wang",
+   "ms": 410
+  },
+  "ai4": {
+   "file": "syl/ai4-c375b5a3.mp3",
+   "source": "chen-wang",
+   "ms": 420
+  },
+  "an1": {
+   "file": "syl/an1-02854004.mp3",
+   "source": "chen-wang",
+   "ms": 480
+  },
+  "ang1": {
+   "file": "syl/ang1-0347e45d.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
   "ba1": {
    "file": "syl/ba1-a6124a38.mp3",
    "source": "chen-wang",
@@ -54,6 +89,31 @@
    "ms": 420,
    "tts": "吧"
   },
+  "bai1": {
+   "file": "syl/bai1-48fbf3d9.mp3",
+   "source": "chen-wang",
+   "ms": 880
+  },
+  "bao3": {
+   "file": "syl/bao3-b6bf5be7.mp3",
+   "source": "chen-wang",
+   "ms": 700
+  },
+  "bei1": {
+   "file": "syl/bei1-14d99e92.mp3",
+   "source": "chen-wang",
+   "ms": 960
+  },
+  "ben1": {
+   "file": "syl/ben1-bcfb80c8.mp3",
+   "source": "chen-wang",
+   "ms": 370
+  },
+  "beng1": {
+   "file": "syl/beng1-08c74cfb.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
   "bu1": {
    "file": "syl/bu1-8b1146ab.mp3",
    "source": "chen-wang",
@@ -74,6 +134,61 @@
    "source": "chen-wang",
    "ms": 310
   },
+  "cai4": {
+   "file": "syl/cai4-b81ddc4c.mp3",
+   "source": "chen-wang",
+   "ms": 500
+  },
+  "chen2": {
+   "file": "syl/chen2-ea498faa.mp3",
+   "source": "chen-wang",
+   "ms": 850
+  },
+  "cheng2": {
+   "file": "syl/cheng2-4ead17c7.mp3",
+   "source": "chen-wang",
+   "ms": 1000
+  },
+  "chi1": {
+   "file": "syl/chi1-126572c1.mp3",
+   "source": "chen-wang",
+   "ms": 970
+  },
+  "chu1": {
+   "file": "syl/chu1-32c431cb.mp3",
+   "source": "chen-wang",
+   "ms": 850
+  },
+  "ci1": {
+   "file": "syl/ci1-99ab0cb7.mp3",
+   "source": "chen-wang",
+   "ms": 1080
+  },
+  "ci2": {
+   "file": "syl/ci2-98f90a6c.mp3",
+   "source": "chen-wang",
+   "ms": 1128
+  },
+  "ci3": {
+   "file": "syl/ci3-a2f232fc.mp3",
+   "source": "chen-wang",
+   "ms": 840
+  },
+  "ci4": {
+   "file": "syl/ci4-9b3c778b.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "cu1": {
+   "file": "syl/cu1-4f2780f6.mp3",
+   "source": "chen-wang",
+   "ms": 812
+  },
+  "cuo4": {
+   "file": "syl/cuo4-0b5163a7.mp3",
+   "source": "chen-wang",
+   "ms": 410
+  },
   "da1": {
    "file": "syl/da1-8e815161.mp3",
    "source": "chen-wang",
@@ -93,6 +208,336 @@
    "file": "syl/da4-f637cd6b.mp3",
    "source": "chen-wang",
    "ms": 350
+  },
+  "dao4": {
+   "file": "syl/dao4-fcb9dbcc.mp3",
+   "source": "chen-wang",
+   "ms": 400
+  },
+  "dian1": {
+   "file": "syl/dian1-1dca3f63.mp3",
+   "source": "chen-wang",
+   "ms": 580
+  },
+  "dou1": {
+   "file": "syl/dou1-756d81f0.mp3",
+   "source": "chen-wang",
+   "ms": 710
+  },
+  "dou4": {
+   "file": "syl/dou4-1b0a140e.mp3",
+   "source": "chen-wang",
+   "ms": 400
+  },
+  "du4": {
+   "file": "syl/du4-3b2ec59d.mp3",
+   "source": "chen-wang",
+   "ms": 540
+  },
+  "dui4": {
+   "file": "syl/dui4-6ffb18b9.mp3",
+   "source": "chen-wang",
+   "ms": 440
+  },
+  "e1": {
+   "file": "syl/e1-0cae87f2.mp3",
+   "source": "chen-wang",
+   "ms": 370
+  },
+  "e2": {
+   "file": "syl/e2-b2f45224.mp3",
+   "source": "chen-wang",
+   "ms": 860
+  },
+  "e3": {
+   "file": "syl/e3-42295033.mp3",
+   "source": "chen-wang",
+   "ms": 700
+  },
+  "e4": {
+   "file": "syl/e4-6c194e72.mp3",
+   "source": "chen-wang",
+   "ms": 400
+  },
+  "er2": {
+   "file": "syl/er2-788630f9.mp3",
+   "source": "chen-wang",
+   "ms": 530
+  },
+  "er4": {
+   "file": "syl/er4-70ffbe7f.mp3",
+   "source": "chen-wang",
+   "ms": 350
+  },
+  "fan4": {
+   "file": "syl/fan4-9b0eac93.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "fang4": {
+   "file": "syl/fang4-7441248e.mp3",
+   "source": "chen-wang",
+   "ms": 500
+  },
+  "gao1": {
+   "file": "syl/gao1-fbf10840.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "ge1": {
+   "file": "syl/ge1-9b8a923e.mp3",
+   "source": "chen-wang",
+   "ms": 670
+  },
+  "gou1": {
+   "file": "syl/gou1-867b285a.mp3",
+   "source": "chen-wang",
+   "ms": 480
+  },
+  "gou3": {
+   "file": "syl/gou3-41884781.mp3",
+   "source": "chen-wang",
+   "ms": 650
+  },
+  "gua1": {
+   "file": "syl/gua1-a2fb0aa1.mp3",
+   "source": "chen-wang",
+   "ms": 770
+  },
+  "guo1": {
+   "file": "syl/guo1-16aa716b.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "guo2": {
+   "file": "syl/guo2-e738bf6b.mp3",
+   "source": "chen-wang",
+   "ms": 920
+  },
+  "guo3": {
+   "file": "syl/guo3-5b17e73d.mp3",
+   "source": "chen-wang",
+   "ms": 790
+  },
+  "guo4": {
+   "file": "syl/guo4-2c3ddc26.mp3",
+   "source": "chen-wang",
+   "ms": 310
+  },
+  "hao1": {
+   "file": "syl/hao1-8382730d.mp3",
+   "source": "chen-wang",
+   "ms": 540
+  },
+  "hao2": {
+   "file": "syl/hao2-daa7c8b6.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
+  "hao3": {
+   "file": "syl/hao3-2694467a.mp3",
+   "source": "chen-wang",
+   "ms": 890
+  },
+  "hao4": {
+   "file": "syl/hao4-04b5a448.mp3",
+   "source": "chen-wang",
+   "ms": 480
+  },
+  "he1": {
+   "file": "syl/he1-5e851afd.mp3",
+   "source": "chen-wang",
+   "ms": 670
+  },
+  "hen1": {
+   "file": "syl/hen1-8fb005a0.mp3",
+   "source": "chen-wang",
+   "ms": 530
+  },
+  "hen2": {
+   "file": "syl/hen2-af27effb.mp3",
+   "source": "chen-wang",
+   "ms": 840
+  },
+  "hen3": {
+   "file": "syl/hen3-7d48ae1f.mp3",
+   "source": "chen-wang",
+   "ms": 710
+  },
+  "hen4": {
+   "file": "syl/hen4-32a9b5fc.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
+  "hua1": {
+   "file": "syl/hua1-6bb97c13.mp3",
+   "source": "chen-wang",
+   "ms": 580
+  },
+  "hua2": {
+   "file": "syl/hua2-010706f9.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "hua3": {
+   "file": "syl/hua3-01b40f5d.mp3",
+   "source": "chen-wang",
+   "ms": 930
+  },
+  "hua4": {
+   "file": "syl/hua4-fccc0c34.mp3",
+   "source": "chen-wang",
+   "ms": 450
+  },
+  "ji1": {
+   "file": "syl/ji1-5990b782.mp3",
+   "source": "chen-wang",
+   "ms": 962
+  },
+  "jia1": {
+   "file": "syl/jia1-a707e277.mp3",
+   "source": "chen-wang",
+   "ms": 970
+  },
+  "jia2": {
+   "file": "syl/jia2-558a3730.mp3",
+   "source": "chen-wang",
+   "ms": 906
+  },
+  "jia3": {
+   "file": "syl/jia3-3378dba5.mp3",
+   "source": "chen-wang",
+   "ms": 990
+  },
+  "jia4": {
+   "file": "syl/jia4-2fc3137f.mp3",
+   "source": "chen-wang",
+   "ms": 520
+  },
+  "jian4": {
+   "file": "syl/jian4-650515c0.mp3",
+   "source": "chen-wang",
+   "ms": 520
+  },
+  "ju1": {
+   "file": "syl/ju1-942784da.mp3",
+   "source": "chen-wang",
+   "ms": 1002
+  },
+  "ke1": {
+   "file": "syl/ke1-f3ca475a.mp3",
+   "source": "chen-wang",
+   "ms": 740
+  },
+  "ke2": {
+   "file": "syl/ke2-66caeed8.mp3",
+   "source": "chen-wang",
+   "ms": 560
+  },
+  "ke3": {
+   "file": "syl/ke3-9232e78c.mp3",
+   "source": "chen-wang",
+   "ms": 810
+  },
+  "ke4": {
+   "file": "syl/ke4-c202e3fd.mp3",
+   "source": "chen-wang",
+   "ms": 710
+  },
+  "kou3": {
+   "file": "syl/kou3-768aa71a.mp3",
+   "source": "chen-wang",
+   "ms": 640
+  },
+  "kua1": {
+   "file": "syl/kua1-95706d34.mp3",
+   "source": "chen-wang",
+   "ms": 800
+  },
+  "kuai4": {
+   "file": "syl/kuai4-2db56513.mp3",
+   "source": "chen-wang",
+   "ms": 540
+  },
+  "lai2": {
+   "file": "syl/lai2-4a8e26b3.mp3",
+   "source": "chen-wang",
+   "ms": 978
+  },
+  "lao2": {
+   "file": "syl/lao2-0845927f.mp3",
+   "source": "chen-wang",
+   "ms": 890
+  },
+  "le4": {
+   "file": "syl/le4-77902f93.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
+  "lei2": {
+   "file": "syl/lei2-e8c26837.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "liu1": {
+   "file": "syl/liu1-bb6c0aeb.mp3",
+   "source": "chen-wang",
+   "ms": 970
+  },
+  "liu2": {
+   "file": "syl/liu2-0b534560.mp3",
+   "source": "chen-wang",
+   "ms": 420
+  },
+  "liu3": {
+   "file": "syl/liu3-2e0a5a1c.mp3",
+   "source": "chen-wang",
+   "ms": 890
+  },
+  "liu4": {
+   "file": "syl/liu4-3d61d293.mp3",
+   "source": "chen-wang",
+   "ms": 540
+  },
+  "lou2": {
+   "file": "syl/lou2-68047fb0.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "lou4": {
+   "file": "syl/lou4-933ad44f.mp3",
+   "source": "chen-wang",
+   "ms": 530
+  },
+  "lu2": {
+   "file": "syl/lu2-aca5e059.mp3",
+   "source": "chen-wang",
+   "ms": 780
+  },
+  "lu3": {
+   "file": "syl/lu3-4bb40980.mp3",
+   "source": "chen-wang",
+   "ms": 720
+  },
+  "lu4": {
+   "file": "syl/lu4-82ddd72f.mp3",
+   "source": "chen-wang",
+   "ms": 480
+  },
+  "lv2": {
+   "file": "syl/lv2-2629ce3e.mp3",
+   "source": "chen-wang",
+   "ms": 800
+  },
+  "lv3": {
+   "file": "syl/lv3-87a7f390.mp3",
+   "source": "chen-wang",
+   "ms": 900
+  },
+  "lv4": {
+   "file": "syl/lv4-27b3a35f.mp3",
+   "source": "chen-wang",
+   "ms": 500
   },
   "ma1": {
    "file": "syl/ma1-61f24d60.mp3",
@@ -121,6 +566,21 @@
    "ms": 410,
    "tts": "吗"
   },
+  "mai3": {
+   "file": "syl/mai3-46ff8a3d.mp3",
+   "source": "chen-wang",
+   "ms": 820
+  },
+  "mei2": {
+   "file": "syl/mei2-6d9ac297.mp3",
+   "source": "chen-wang",
+   "ms": 690
+  },
+  "mei3": {
+   "file": "syl/mei3-af035d61.mp3",
+   "source": "chen-wang",
+   "ms": 790
+  },
   "ni1": {
    "file": "syl/ni1-ccf760f0.mp3",
    "source": "chen-wang",
@@ -141,6 +601,121 @@
    "source": "chen-wang",
    "ms": 480
   },
+  "nu3": {
+   "file": "syl/nu3-f5e2f12d.mp3",
+   "source": "chen-wang",
+   "ms": 760
+  },
+  "nv3": {
+   "file": "syl/nv3-49104383.mp3",
+   "source": "chen-wang",
+   "ms": 950
+  },
+  "o1": {
+   "file": "syl/o1-b1d579db.mp3",
+   "source": "chen-wang",
+   "ms": 330
+  },
+  "o2": {
+   "file": "syl/o2-fa17359c.mp3",
+   "source": "chen-wang",
+   "ms": 650
+  },
+  "o3": {
+   "file": "syl/o3-1b191818.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "o4": {
+   "file": "syl/o4-148599c4.mp3",
+   "source": "chen-wang",
+   "ms": 370
+  },
+  "pa4": {
+   "file": "syl/pa4-6a2cd8eb.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "pao3": {
+   "file": "syl/pao3-dac9ef27.mp3",
+   "source": "chen-wang",
+   "ms": 860
+  },
+  "pu4": {
+   "file": "syl/pu4-e1b7117a.mp3",
+   "source": "chen-wang",
+   "ms": 750
+  },
+  "qi1": {
+   "file": "syl/qi1-62b9eb81.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "qian4": {
+   "file": "syl/qian4-d2691cd8.mp3",
+   "source": "chen-wang",
+   "ms": 640
+  },
+  "qu1": {
+   "file": "syl/qu1-af251578.mp3",
+   "source": "chen-wang",
+   "ms": 710
+  },
+  "qu4": {
+   "file": "syl/qu4-b4f60e1e.mp3",
+   "source": "chen-wang",
+   "ms": 470
+  },
+  "re4": {
+   "file": "syl/re4-b6e2a619.mp3",
+   "source": "chen-wang",
+   "ms": 370
+  },
+  "ri1": {
+   "file": "syl/ri1-b1c79228.mp3",
+   "source": "chen-wang",
+   "ms": 710
+  },
+  "ri2": {
+   "file": "syl/ri2-b4a89b12.mp3",
+   "source": "chen-wang",
+   "ms": 1128
+  },
+  "ri3": {
+   "file": "syl/ri3-18083d0a.mp3",
+   "source": "chen-wang",
+   "ms": 1076
+  },
+  "ri4": {
+   "file": "syl/ri4-7d10a28b.mp3",
+   "source": "chen-wang",
+   "ms": 550
+  },
+  "rou4": {
+   "file": "syl/rou4-35bce916.mp3",
+   "source": "chen-wang",
+   "ms": 530
+  },
+  "ru4": {
+   "file": "syl/ru4-f5635f5a.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "san1": {
+   "file": "syl/san1-3a1a8983.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "shan1": {
+   "file": "syl/shan1-fc5ecc28.mp3",
+   "source": "chen-wang",
+   "ms": 700
+  },
+  "shang1": {
+   "file": "syl/shang1-cb0a6186.mp3",
+   "source": "chen-wang",
+   "ms": 700
+  },
   "shi1": {
    "file": "syl/shi1-a80d3823.mp3",
    "source": "chen-wang",
@@ -160,6 +735,46 @@
    "file": "syl/shi4-39c8ef1f.mp3",
    "source": "chen-wang",
    "ms": 610
+  },
+  "shu1": {
+   "file": "syl/shu1-d801d32a.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "si1": {
+   "file": "syl/si1-4ecfdf18.mp3",
+   "source": "chen-wang",
+   "ms": 1176
+  },
+  "si2": {
+   "file": "syl/si2-eb5fc764.mp3",
+   "source": "chen-wang",
+   "ms": 1128
+  },
+  "si3": {
+   "file": "syl/si3-2160c4b6.mp3",
+   "source": "chen-wang",
+   "ms": 1010
+  },
+  "si4": {
+   "file": "syl/si4-523761ea.mp3",
+   "source": "chen-wang",
+   "ms": 650
+  },
+  "ta1": {
+   "file": "syl/ta1-69e25bb9.mp3",
+   "source": "chen-wang",
+   "ms": 936
+  },
+  "tian1": {
+   "file": "syl/tian1-f945cabc.mp3",
+   "source": "chen-wang",
+   "ms": 640
+  },
+  "tu4": {
+   "file": "syl/tu4-e5678256.mp3",
+   "source": "chen-wang",
+   "ms": 400
   },
   "wo1": {
    "file": "syl/wo1-80053cb5.mp3",
@@ -201,6 +816,61 @@
    "source": "chen-wang",
    "ms": 550
   },
+  "xi1": {
+   "file": "syl/xi1-69650a90.mp3",
+   "source": "chen-wang",
+   "ms": 830
+  },
+  "xie1": {
+   "file": "syl/xie1-822d4c61.mp3",
+   "source": "chen-wang",
+   "ms": 890
+  },
+  "xie2": {
+   "file": "syl/xie2-b40c1cc1.mp3",
+   "source": "chen-wang",
+   "ms": 800
+  },
+  "xie3": {
+   "file": "syl/xie3-b72ea852.mp3",
+   "source": "chen-wang",
+   "ms": 850
+  },
+  "xie4": {
+   "file": "syl/xie4-5a73349c.mp3",
+   "source": "chen-wang",
+   "ms": 680
+  },
+  "xin1": {
+   "file": "syl/xin1-e680facb.mp3",
+   "source": "chen-wang",
+   "ms": 780
+  },
+  "xing1": {
+   "file": "syl/xing1-38fb8f77.mp3",
+   "source": "chen-wang",
+   "ms": 750
+  },
+  "xing2": {
+   "file": "syl/xing2-b4822d64.mp3",
+   "source": "chen-wang",
+   "ms": 1038
+  },
+  "xing3": {
+   "file": "syl/xing3-e7ba3d8b.mp3",
+   "source": "chen-wang",
+   "ms": 1120
+  },
+  "xing4": {
+   "file": "syl/xing4-925b10e5.mp3",
+   "source": "chen-wang",
+   "ms": 760
+  },
+  "xu1": {
+   "file": "syl/xu1-0b546f10.mp3",
+   "source": "chen-wang",
+   "ms": 740
+  },
   "yi1": {
    "file": "syl/yi1-0cedbc9a.mp3",
    "source": "chen-wang",
@@ -218,6 +888,141 @@
   },
   "yi4": {
    "file": "syl/yi4-5c19e203.mp3",
+   "source": "chen-wang",
+   "ms": 440
+  },
+  "yin1": {
+   "file": "syl/yin1-fad1264b.mp3",
+   "source": "chen-wang",
+   "ms": 450
+  },
+  "ying1": {
+   "file": "syl/ying1-d4da58b1.mp3",
+   "source": "chen-wang",
+   "ms": 620
+  },
+  "yong4": {
+   "file": "syl/yong4-9fcfccd0.mp3",
+   "source": "chen-wang",
+   "ms": 560
+  },
+  "yu1": {
+   "file": "syl/yu1-eca6b7b7.mp3",
+   "source": "chen-wang",
+   "ms": 876
+  },
+  "yu2": {
+   "file": "syl/yu2-661701df.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "yu3": {
+   "file": "syl/yu3-05394fbc.mp3",
+   "source": "chen-wang",
+   "ms": 660
+  },
+  "yu4": {
+   "file": "syl/yu4-19c3b498.mp3",
+   "source": "chen-wang",
+   "ms": 550
+  },
+  "yuan3": {
+   "file": "syl/yuan3-b3a04e36.mp3",
+   "source": "chen-wang",
+   "ms": 910
+  },
+  "yue1": {
+   "file": "syl/yue1-1c90b83a.mp3",
+   "source": "chen-wang",
+   "ms": 746
+  },
+  "yue2": {
+   "file": "syl/yue2-61ada790.mp3",
+   "source": "chen-wang",
+   "ms": 610
+  },
+  "yue3": {
+   "file": "syl/yue3-f2e2ea46.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "yue4": {
+   "file": "syl/yue4-7e20aaee.mp3",
+   "source": "chen-wang",
+   "ms": 530
+  },
+  "yun2": {
+   "file": "syl/yun2-3b831db1.mp3",
+   "source": "chen-wang",
+   "ms": 930
+  },
+  "zai4": {
+   "file": "syl/zai4-6afccdb0.mp3",
+   "source": "chen-wang",
+   "ms": 490
+  },
+  "zao3": {
+   "file": "syl/zao3-18c79bcc.mp3",
+   "source": "chen-wang",
+   "ms": 820
+  },
+  "zhao3": {
+   "file": "syl/zhao3-1e8cad13.mp3",
+   "source": "chen-wang",
+   "ms": 920
+  },
+  "zhi1": {
+   "file": "syl/zhi1-fad66d94.mp3",
+   "source": "chen-wang",
+   "ms": 600
+  },
+  "zhi2": {
+   "file": "syl/zhi2-1c9b58ad.mp3",
+   "source": "chen-wang",
+   "ms": 560
+  },
+  "zhi3": {
+   "file": "syl/zhi3-149c1e2f.mp3",
+   "source": "chen-wang",
+   "ms": 870
+  },
+  "zhi4": {
+   "file": "syl/zhi4-fb68de89.mp3",
+   "source": "chen-wang",
+   "ms": 420
+  },
+  "zhong1": {
+   "file": "syl/zhong1-0b54b4a5.mp3",
+   "source": "chen-wang",
+   "ms": 590
+  },
+  "zhu1": {
+   "file": "syl/zhu1-2b5aaed3.mp3",
+   "source": "chen-wang",
+   "ms": 724
+  },
+  "zi1": {
+   "file": "syl/zi1-0cba0b31.mp3",
+   "source": "chen-wang",
+   "ms": 1032
+  },
+  "zi2": {
+   "file": "syl/zi2-ba14806a.mp3",
+   "source": "chen-wang",
+   "ms": 930
+  },
+  "zi3": {
+   "file": "syl/zi3-1a254e4f.mp3",
+   "source": "chen-wang",
+   "ms": 940
+  },
+  "zi4": {
+   "file": "syl/zi4-feb1a022.mp3",
+   "source": "chen-wang",
+   "ms": 580
+  },
+  "zuo4": {
+   "file": "syl/zuo4-3370b699.mp3",
    "source": "chen-wang",
    "ms": 440
   }
@@ -241,6 +1046,240 @@
     "file": "w/8fa7401e90-m-3ea183b5.mp3",
     "source": "edge-yunxi",
     "ms": 340
+   }
+  ],
+  "不是": [
+   {
+    "voice": "native",
+    "file": "w/e5d9c6c8a8-n-903621e6.mp3",
+    "source": "yue-tan",
+    "ms": 740
+   },
+   {
+    "voice": "female",
+    "file": "w/e5d9c6c8a8-f-f6c22aac.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 630
+   },
+   {
+    "voice": "male",
+    "file": "w/e5d9c6c8a8-m-0a5b7259.mp3",
+    "source": "edge-yunxi",
+    "ms": 490
+   }
+  ],
+  "不要": [
+   {
+    "voice": "native",
+    "file": "w/adbe246844-n-acef251a.mp3",
+    "source": "yue-tan",
+    "ms": 690
+   },
+   {
+    "voice": "female",
+    "file": "w/adbe246844-f-814bb6cc.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 560
+   },
+   {
+    "voice": "male",
+    "file": "w/adbe246844-m-61fdb0d9.mp3",
+    "source": "edge-yunxi",
+    "ms": 490
+   }
+  ],
+  "词典": [
+   {
+    "voice": "native",
+    "file": "w/51bdb46bc2-n-ed35e77a.mp3",
+    "source": "yue-tan",
+    "ms": 1100
+   },
+   {
+    "voice": "female",
+    "file": "w/51bdb46bc2-f-14add1b8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 680
+   },
+   {
+    "voice": "male",
+    "file": "w/51bdb46bc2-m-06caaf16.mp3",
+    "source": "edge-yunxi",
+    "ms": 660
+   }
+  ],
+  "电脑": [
+   {
+    "voice": "native",
+    "file": "w/ec87a4b867-n-114511be.mp3",
+    "source": "yue-tan",
+    "ms": 860
+   },
+   {
+    "voice": "female",
+    "file": "w/ec87a4b867-f-a2fe9ced.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 580
+   },
+   {
+    "voice": "male",
+    "file": "w/ec87a4b867-m-2fe45e80.mp3",
+    "source": "edge-yunxi",
+    "ms": 600
+   }
+  ],
+  "飞机": [
+   {
+    "voice": "native",
+    "file": "w/0cb0206b42-n-e4d400bb.mp3",
+    "source": "yue-tan",
+    "ms": 1030
+   },
+   {
+    "voice": "female",
+    "file": "w/0cb0206b42-f-08352844.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 620
+   },
+   {
+    "voice": "male",
+    "file": "w/0cb0206b42-m-a19e72f6.mp3",
+    "source": "edge-yunxi",
+    "ms": 550
+   }
+  ],
+  "工作": [
+   {
+    "voice": "native",
+    "file": "w/dd9fc2c0a1-n-20cd57b1.mp3",
+    "source": "yue-tan",
+    "ms": 1000
+   },
+   {
+    "voice": "female",
+    "file": "w/dd9fc2c0a1-f-ec3b5507.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 600
+   },
+   {
+    "voice": "male",
+    "file": "w/dd9fc2c0a1-m-e84cdf41.mp3",
+    "source": "edge-yunxi",
+    "ms": 480
+   }
+  ],
+  "很好": [
+   {
+    "voice": "female",
+    "file": "w/77833b3f8c-f-bdb1df7b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 630
+   },
+   {
+    "voice": "male",
+    "file": "w/77833b3f8c-m-5fb71394.mp3",
+    "source": "edge-yunxi",
+    "ms": 590
+   }
+  ],
+  "考试": [
+   {
+    "voice": "native",
+    "file": "w/e53aad0f9c-n-8f7bf70b.mp3",
+    "source": "yue-tan",
+    "ms": 880
+   },
+   {
+    "voice": "female",
+    "file": "w/e53aad0f9c-f-fd4e3f1e.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 660
+   },
+   {
+    "voice": "male",
+    "file": "w/e53aad0f9c-m-940c136d.mp3",
+    "source": "edge-yunxi",
+    "ms": 600
+   }
+  ],
+  "可以": [
+   {
+    "voice": "native",
+    "file": "w/79176103e6-n-d1e99af3.mp3",
+    "source": "yue-tan",
+    "ms": 880
+   },
+   {
+    "voice": "female",
+    "file": "w/79176103e6-f-650469ad.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 590
+   },
+   {
+    "voice": "male",
+    "file": "w/79176103e6-m-c347f14f.mp3",
+    "source": "edge-yunxi",
+    "ms": 590
+   }
+  ],
+  "老师": [
+   {
+    "voice": "native",
+    "file": "w/494f23d624-n-40fe4bb5.mp3",
+    "source": "yue-tan",
+    "ms": 840
+   },
+   {
+    "voice": "female",
+    "file": "w/494f23d624-f-17b06534.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 660
+   },
+   {
+    "voice": "male",
+    "file": "w/494f23d624-m-9e3e2506.mp3",
+    "source": "edge-yunxi",
+    "ms": 570
+   }
+  ],
+  "美国": [
+   {
+    "voice": "native",
+    "file": "w/2d10935506-n-5660257d.mp3",
+    "source": "yue-tan",
+    "ms": 1040
+   },
+   {
+    "voice": "female",
+    "file": "w/2d10935506-f-043e4cab.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 660
+   },
+   {
+    "voice": "male",
+    "file": "w/2d10935506-m-f0e98e5b.mp3",
+    "source": "edge-yunxi",
+    "ms": 700
+   }
+  ],
+  "明天": [
+   {
+    "voice": "native",
+    "file": "w/b76ce230d3-n-193708d0.mp3",
+    "source": "yue-tan",
+    "ms": 930
+   },
+   {
+    "voice": "female",
+    "file": "w/b76ce230d3-f-e62f5954.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 680
+   },
+   {
+    "voice": "male",
+    "file": "w/b76ce230d3-m-073bb40b.mp3",
+    "source": "edge-yunxi",
+    "ms": 610
    }
   ],
   "你": [
@@ -277,6 +1316,66 @@
     "ms": 440
    }
   ],
+  "朋友": [
+   {
+    "voice": "native",
+    "file": "w/d490b5fd60-n-a12c3752.mp3",
+    "source": "yue-tan",
+    "ms": 740
+   },
+   {
+    "voice": "female",
+    "file": "w/d490b5fd60-f-d01d95cd.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 600
+   },
+   {
+    "voice": "male",
+    "file": "w/d490b5fd60-m-54e80ff6.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
+   }
+  ],
+  "铅笔": [
+   {
+    "voice": "native",
+    "file": "w/cd52d6c26e-n-3523872c.mp3",
+    "source": "yue-tan",
+    "ms": 1010
+   },
+   {
+    "voice": "female",
+    "file": "w/cd52d6c26e-f-d2af40d8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 680
+   },
+   {
+    "voice": "male",
+    "file": "w/cd52d6c26e-m-9344a787.mp3",
+    "source": "edge-yunxi",
+    "ms": 660
+   }
+  ],
+  "汽车": [
+   {
+    "voice": "native",
+    "file": "w/70025cb40a-n-2d7f00f1.mp3",
+    "source": "yue-tan",
+    "ms": 980
+   },
+   {
+    "voice": "female",
+    "file": "w/70025cb40a-f-6c1c24dd.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 690
+   },
+   {
+    "voice": "male",
+    "file": "w/70025cb40a-m-9b84590b.mp3",
+    "source": "edge-yunxi",
+    "ms": 590
+   }
+  ],
   "是": [
    {
     "voice": "native",
@@ -295,6 +1394,46 @@
     "file": "w/30160a21b9-m-2f2a677b.mp3",
     "source": "edge-yunxi",
     "ms": 490
+   }
+  ],
+  "同事": [
+   {
+    "voice": "native",
+    "file": "w/92d8d1a505-n-62610565.mp3",
+    "source": "yue-tan",
+    "ms": 900
+   },
+   {
+    "voice": "female",
+    "file": "w/92d8d1a505-f-04b97f53.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 640
+   },
+   {
+    "voice": "male",
+    "file": "w/92d8d1a505-m-4600b842.mp3",
+    "source": "edge-yunxi",
+    "ms": 520
+   }
+  ],
+  "问题": [
+   {
+    "voice": "native",
+    "file": "w/2fb49eec39-n-5d11bcb6.mp3",
+    "source": "yue-tan",
+    "ms": 1060
+   },
+   {
+    "voice": "female",
+    "file": "w/2fb49eec39-f-1574bd01.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 640
+   },
+   {
+    "voice": "male",
+    "file": "w/2fb49eec39-m-06920308.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
    }
   ],
   "我": [
@@ -317,6 +1456,26 @@
     "ms": 530
    }
   ],
+  "我们": [
+   {
+    "voice": "native",
+    "file": "w/0805949359-n-688a3b60.mp3",
+    "source": "yue-tan",
+    "ms": 710
+   },
+   {
+    "voice": "female",
+    "file": "w/0805949359-f-831f74c0.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 540
+   },
+   {
+    "voice": "male",
+    "file": "w/0805949359-m-df2c95ec.mp3",
+    "source": "edge-yunxi",
+    "ms": 490
+   }
+  ],
   "谢谢": [
    {
     "voice": "native",
@@ -337,6 +1496,74 @@
     "ms": 470
    }
   ],
+  "学习": [
+   {
+    "voice": "native",
+    "file": "w/aa89dd63b3-n-fcd2b211.mp3",
+    "source": "yue-tan",
+    "ms": 940
+   },
+   {
+    "voice": "female",
+    "file": "w/aa89dd63b3-f-cf51304f.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 710
+   },
+   {
+    "voice": "male",
+    "file": "w/aa89dd63b3-m-084d23e6.mp3",
+    "source": "edge-yunxi",
+    "ms": 670
+   }
+  ],
+  "一": [
+   {
+    "voice": "native",
+    "file": "w/d274eee8a1-n-28b8e689.mp3",
+    "source": "yue-tan",
+    "ms": 690
+   },
+   {
+    "voice": "female",
+    "file": "w/d274eee8a1-f-59a729e4.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 410
+   },
+   {
+    "voice": "male",
+    "file": "w/d274eee8a1-m-338dcbcf.mp3",
+    "source": "edge-yunxi",
+    "ms": 460
+   }
+  ],
+  "一个": [
+   {
+    "voice": "female",
+    "file": "w/d8e3ae229f-f-ae81a5d6.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 590
+   },
+   {
+    "voice": "male",
+    "file": "w/d8e3ae229f-m-c31447e5.mp3",
+    "source": "edge-yunxi",
+    "ms": 460
+   }
+  ],
+  "一天": [
+   {
+    "voice": "female",
+    "file": "w/e99c431b70-f-fb56235b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 620
+   },
+   {
+    "voice": "male",
+    "file": "w/e99c431b70-m-dd3e17e1.mp3",
+    "source": "edge-yunxi",
+    "ms": 560
+   }
+  ],
   "再见": [
    {
     "voice": "native",
@@ -355,6 +1582,40 @@
     "file": "w/82202bb725-m-40e43954.mp3",
     "source": "edge-yunxi",
     "ms": 550
+   }
+  ],
+  "中国": [
+   {
+    "voice": "female",
+    "file": "w/101806f57c-f-65e5185e.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 640
+   },
+   {
+    "voice": "male",
+    "file": "w/101806f57c-m-c4faaef5.mp3",
+    "source": "edge-yunxi",
+    "ms": 660
+   }
+  ],
+  "桌子": [
+   {
+    "voice": "native",
+    "file": "w/22b263f45c-n-494f0ff5.mp3",
+    "source": "yue-tan",
+    "ms": 700
+   },
+   {
+    "voice": "female",
+    "file": "w/22b263f45c-f-c92e8297.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 600
+   },
+   {
+    "voice": "male",
+    "file": "w/22b263f45c-m-451677c7.mp3",
+    "source": "edge-yunxi",
+    "ms": 510
    }
   ]
  }

@@ -6,7 +6,9 @@ import { PlayButton } from '../../components/Play'
 import { ToneChart } from '../../components/ToneChart'
 import { Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
-import { content } from '../../content'
+import { content, lessonById } from '../../content'
+import { gameAvailable, gameMaterial, UNLOCKED_BY } from '../../lib/games/games'
+import { completedLessonIds } from '../../lib/lesson/progress'
 import type { Tone } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
@@ -25,6 +27,7 @@ export function TonesScreen() {
   const t = ru.tones
   const navigate = useNavigate()
   const stats = useLiveQuery(() => db.toneStats.toArray(), [], [])
+  const material = useLiveQuery(async () => gameMaterial(await completedLessonIds()), [])
   const [cell, setCell] = useState<string | null>(null)
   const heat = buildHeatmap(stats)
   const hasData = heatmapHasData(stats)
@@ -54,22 +57,24 @@ export function TonesScreen() {
         ))}
       </ul>
 
-      {pingPongReady && (
-        <div className={s.games}>
-          <h2>{t.gamesTitle}</h2>
-          <div className={s.gameButtons}>
-            <button type="button" className={ui.secondary} onClick={() => navigate('/game/shooter')}>
-              {ru.games.shooter.title}
-            </button>
-            <button type="button" className={ui.secondary} onClick={() => navigate('/game/pingpong')}>
-              {ru.games.pingpong.title}
-            </button>
-            <button type="button" className={ui.secondary} onClick={() => navigate('/game/twins')}>
-              {ru.games.twins.title}
-            </button>
-          </div>
-        </div>
-      )}
+      <div className={s.games}>
+        <h2>{t.gamesTitle}</h2>
+        <ul className={s.gameList}>
+          {(['shooter', 'pingpong', 'twins'] as const).map((g) => {
+            const open = material ? gameAvailable(g, material) : false
+            return (
+              <li key={g}>
+                <button type="button" className={s.game} data-locked={!open || undefined} onClick={() => navigate(`/game/${g}`)}>
+                  <span className={s.gameTitle}>{ru.games[g].title}</span>
+                  <span className={s.gameWhat}>
+                    {open ? ru.games[g].what : ru.games.lockedShort(lessonById.get(UNLOCKED_BY[g])?.title ?? '')}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
 
       <h2 className={s.heatTitle}>{t.heatmapTitle}</h2>
       {hasData ? (

@@ -37,10 +37,17 @@ for (const [k, es] of Object.entries(manifest.texts))
 
 // Сверка пиньиня с pinyin-pro (тоны цифрами, ü = v).
 const mismatches: string[] = []
+const neutral: string[] = []
 for (const w of content.words) {
-  const ref = pinyin(w.hanzi, { toneType: 'num', type: 'array', v: true }).map((s) => s.replace(/0$/, '5'))
+  // Словарный пиньинь: сандхи 不/一 у нас считается отдельно (src/lib/pinyin/sandhi.ts).
+  const ref = pinyin(w.hanzi, { toneType: 'num', type: 'array', v: true, toneSandhi: false }).map((s) => s.replace(/0$/, '5'))
   const ours = w.pinyin.trim().split(/\s+/).map((s) => (/[1-5]$/.test(s) ? s : `${s}5`))
-  if (ref.join(' ') !== ours.join(' ')) mismatches.push(`${w.hanzi} (${w.id}): у нас ${ours.join(' ')}, pinyin-pro: ${ref.join(' ')}`)
+  if (ref.join(' ') === ours.join(' ')) continue
+  // Нейтральный второй слог (谢谢 xièxie, 朋友 péngyou) — норма разговорного путунхуа, а не ошибка.
+  const onlyNeutral = ours.every((s, i) => s === ref[i] || (s.endsWith('5') && s.slice(0, -1) === ref[i]?.slice(0, -1)))
+  const line = `${w.hanzi} (${w.id}): у нас ${ours.join(' ')}, pinyin-pro: ${ref.join(' ')}`
+  if (onlyNeutral) neutral.push(line)
+  else mismatches.push(line)
 }
 
 console.log(
@@ -48,6 +55,7 @@ console.log(
     `${content.sentences.length} фраз, ${content.dialogues.length} диалогов; звук: ${Object.keys(manifest.syllables).length} слогов, ${Object.keys(manifest.texts).length} слов`,
 )
 for (const m of mismatches) console.log(`  пиньинь расходится с pinyin-pro (проверь вручную): ${m}`)
+for (const m of neutral) console.log(`  нейтральный тон там, где у pinyin-pro полный (норма речи, проверено): ${m}`)
 for (const w of report.warnings) console.log(`  предупреждение: ${w}`)
 for (const e of report.errors) console.error(`  ОШИБКА: ${e}`)
 console.log(

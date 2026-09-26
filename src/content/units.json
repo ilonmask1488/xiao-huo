@@ -8,27 +8,34 @@
   },
   {
     "id": "s0-u2", "stage": 0, "order": 2, "code": "0.2", "title": "Финали",
-    "goals": ["простые, сложные и носовые финали", "ü и особое -i"],
-    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+    "goals": ["простые, сложные и носовые финали", "e — не «е», ü без точек, особое -i"],
+    "lessons": ["s0-u2-l1", "s0-u2-l2", "s0-u2-l3"],
+    "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
   },
   {
     "id": "s0-u3", "stage": 0, "order": 3, "code": "0.3", "title": "Инициали",
-    "goals": ["придыхание: b/p, d/t, g/k", "zh ch sh r против z c s и j q x"],
-    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+    "goals": ["придыхание: b/p, d/t, g/k", "zh ch sh r против z c s и j q x", "r и l"],
+    "lessons": ["s0-u3-l1", "s0-u3-l2", "s0-u3-l3"],
+    "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
   },
   {
     "id": "s0-u4", "stage": 0, "order": 4, "code": "0.4", "title": "Тоновые пары",
     "goals": ["все 20 сочетаний тонов на реальных словах"],
-    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+    "lessons": ["s0-u4-l1", "s0-u4-l2"],
+    "newWords": ["w-feiji", "w-zhongguo", "w-qianbi", "w-gongzuo", "w-zhuozi", "w-mingtian", "w-xuexi", "w-cidian", "w-tongshi", "w-pengyou", "w-laoshi", "w-meiguo", "w-kaoshi", "w-women", "w-qiche", "w-wenti", "w-diannao"],
+    "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
   },
   {
     "id": "s0-u5", "stage": 0, "order": 5, "code": "0.5", "title": "Изменение тонов",
     "goals": ["3 + 3 → 2 + 3", "不 и 一 меняют тон"],
-    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+    "lessons": ["s0-u5-l1", "s0-u5-l2"],
+    "newWords": ["w-henhao", "w-keyi", "w-bushi", "w-buyao", "w-yi", "w-yige", "w-yitian"],
+    "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
   },
   {
     "id": "s0-u6", "stage": 0, "order": 6, "code": "0.6", "title": "Предстартовый тест",
     "goals": ["проверка всей ступени 0"],
-    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+    "lessons": ["s0-u6-l1"],
+    "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": "s0-u6-l1"
   }
 ]

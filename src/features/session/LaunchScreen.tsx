@@ -26,7 +26,13 @@ export function LaunchScreen() {
 
   const next = row.blocks.find((b) => b.status === 'pending')
   const open = (id: LaunchBlockId, lessonId?: string) =>
-    navigate(id === 'new' && lessonId ? `/lesson/${lessonId}?from=launch` : `/launch/${id}`)
+    navigate(
+      id === 'new' && lessonId
+        ? `/lesson/${lessonId}?from=launch`
+        : id === 'warmup'
+          ? '/game/shooter?from=launch'
+          : `/launch/${id}`,
+    )
   const minutes = Math.round(row.seconds / 60)
 
   return (

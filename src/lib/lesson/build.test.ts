@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { content, lessonById } from '../../content'
 import type { Lesson } from '../../content/types'
+import { bossBreakdown, weakest } from './boss'
 import { buildLesson, interleave, longestRun, MAX_RUN, shuffle, type Screen } from './build'
 
 const g = (n: number): Screen[] => Array.from({ length: n }, (_, i) => ({ kind: 'guessTone', syl: `ma${(i % 4) + 1}`, choices: [1, 4] }))
@@ -48,6 +49,21 @@ describe('сборка урока', () => {
     const screens = buildLesson(lessonById.get('s0-u1-l1')!)
     expect(screens[0]!.kind).toBe('explain')
     expect(new Set(screens.map((s) => s.kind))).toEqual(new Set(['explain', 'repeat', 'listen', 'guessTone', 'read']))
+  })
+
+  it('итог босса по навыкам и самое слабое место', () => {
+    const boss = buildLesson(lessonById.get('s0-u6-l1')!)
+    const results: Record<string, boolean> = {}
+    boss.forEach((s, i) => {
+      if (s.kind === 'guessTone') results[i] = true
+      if (s.kind === 'guessPair') results[i] = i % 2 === 0
+      if (s.kind === 'whichSyllable') results[i] = s.contrast.skill === 'final'
+    })
+    const b = bossBreakdown(boss, results)
+    expect(b.map((x) => x.skill)).toEqual(['tones', 'initials', 'finals', 'pairs'])
+    expect(b.find((x) => x.skill === 'tones')).toMatchObject({ correct: 8, total: 8 })
+    expect(weakest(b)).toBe('initials')
+    expect(weakest([{ skill: 'tones', correct: 3, total: 3 }])).toBeNull()
   })
 
   it('перемешивание детерминировано', () => {
