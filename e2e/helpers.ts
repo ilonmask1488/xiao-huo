@@ -86,13 +86,17 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
     if (await page.getByText(text, { exact: true }).isVisible()) return
     const pos = await position(page)
     const reply = page.locator('button[data-sentence]').first()
+    // Вопрос с вариантами («угадай значение», «какой тон»): «Дальше» появляется только после выбора.
+    const option = page.locator('button[class*="meaningBtn"]:not([disabled]), button[class*="choice"]:not([disabled])').first()
     if (await good.isVisible()) await advance(page, pos, () => good.click())
     else if (await next.isVisible()) await advance(page, pos, () => next.click())
     else if (await reply.isVisible()) {
       await reply.click()
       await advance(page, pos, () => page.getByRole('button', { name: 'Сказал — дальше', exact: true }).click())
-    }
-    else await good.waitFor({ timeout: 10_000 })
+    } else if (await option.isVisible()) {
+      await option.click()
+      await advance(page, pos, () => next.click())
+    } else await good.waitFor({ timeout: 10_000 })
   }
   await expect(page.getByText(text, { exact: true })).toBeVisible()
 }

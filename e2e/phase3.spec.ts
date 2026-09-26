@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { markSoundChecked, passLesson, seedCompleted, STAGE0_BEFORE_BOSS } from './helpers.ts'
+import { advanceUntil, markSoundChecked, passLesson, seedCompleted, STAGE0_BEFORE_BOSS } from './helpers.ts'
 
 const STAGE0_ALL = [...STAGE0_BEFORE_BOSS, 's0-u6-l1']
 const UNIT1 = ['s1-u1-l1', 's1-u1-l2', 's1-u1-l3']
@@ -97,16 +97,8 @@ test('запись в «Повтори вслух» появляется пос�
   await markSoundChecked(page)
   await seedCompleted(page, [...STAGE0_ALL])
   await page.goto('./#/lesson/s1-u1-l1')
-  const good = page.getByRole('button', { name: 'Получилось', exact: true })
-  const next = page.getByRole('button', { name: 'Дальше', exact: true })
-  const option = page.locator('button[class*="meaningBtn"]:not([disabled]), button[class*="choice"]:not([disabled])').first()
-  for (let i = 0; i < 40 && !(await good.isVisible()); i++) {
-    if (await option.isVisible()) {
-      await option.click()
-      await next.click()
-    } else if (await next.isVisible()) await next.click()
-    else await page.waitForTimeout(500)
-  }
-  await expect(good).toBeVisible()
+  // Листаем до первого экрана «Повтори вслух»: образец → пауза → самооценка, и рядом — запись.
+  await advanceUntil(page, 'Повтори вслух', 60)
+  await expect(page.getByRole('button', { name: 'Получилось', exact: true })).toBeVisible({ timeout: 20_000 })
   await expect(page.getByRole('button', { name: 'Записать себя' })).toBeVisible()
 })
