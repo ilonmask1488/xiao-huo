@@ -100,7 +100,8 @@ describe('сандхи', () => {
   })
 
   it('произносимый пиньинь со знаками', () => {
-    expect(spokenMarked('ni3 hao3', '你好')).toBe('ní hǎo')
-    expect(spokenMarked('yi1 ge4', '一个')).toBe('yí gè')
+    expect(spokenMarked('ni3 hao3', '你好')).toBe('níhǎo')
+    expect(spokenMarked('yi1 ge4', '一个')).toBe('yígè')
+    expect(spokenMarked('xi1 an1')).toBe("xī'ān")
   })
 })

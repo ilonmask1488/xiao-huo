@@ -1,0 +1,3812 @@
+[
+ {
+  "id": "s-1-1-01",
+  "tokens": [
+   {
+    "hanzi": "你好",
+    "pinyin": "ni3 hao3",
+    "wordId": "w-nihao"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "叫",
+    "pinyin": "jiao4",
+    "wordId": "w-jiao"
+   },
+   {
+    "hanzi": "王明",
+    "pinyin": "wang2 ming2"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Привет! Меня зовут Ван Мин.",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Ты хорошо! Я зовусь Ван Мин."
+ },
+ {
+  "id": "s-1-1-02",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "叫",
+    "pinyin": "jiao4",
+    "wordId": "w-jiao"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "名字",
+    "pinyin": "ming2 zi5",
+    "wordId": "w-mingzi"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Как тебя зовут?",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Ты зовёшься каким именем?"
+ },
+ {
+  "id": "s-1-1-03",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "工程师",
+    "pinyin": "gong1 cheng2 shi1",
+    "wordId": "w-gongchengshi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я инженер.",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-1-04",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "中国",
+    "pinyin": "zhong1 guo2",
+    "wordId": "w-zhongguo"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Ты китаец?",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Ты являешься Китая человек?"
+ },
+ {
+  "id": "s-1-1-05",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "不是",
+    "pinyin": "bu4 shi4",
+    "wordId": "w-bushi"
+   },
+   {
+    "hanzi": "中国",
+    "pinyin": "zhong1 guo2",
+    "wordId": "w-zhongguo"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "俄罗斯",
+    "pinyin": "e2 luo2 si1",
+    "wordId": "w-eluosi"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я не китаец, я русский.",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Я не являюсь Китая человек, я являюсь России человек."
+ },
+ {
+  "id": "s-1-1-06",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "哪",
+    "pinyin": "na3",
+    "wordId": "w-na3"
+   },
+   {
+    "hanzi": "国",
+    "pinyin": "guo2",
+    "wordId": "w-guo"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Ты из какой страны?",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Ты какой страны человек?"
+ },
+ {
+  "id": "s-1-1-07",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "好",
+    "pinyin": "hao3",
+    "wordId": "w-hao"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "呢",
+    "pinyin": "ne5",
+    "wordId": "w-ne"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У меня всё хорошо, а у тебя?",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Я очень хорошо, а ты?"
+ },
+ {
+  "id": "s-1-1-08",
+  "tokens": [
+   {
+    "hanzi": "认识",
+    "pinyin": "ren4 shi5",
+    "wordId": "w-renshi"
+   },
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "高兴",
+    "pinyin": "gao1 xing4",
+    "wordId": "w-gaoxing"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Рад познакомиться.",
+  "unitId": "s1-u1",
+  "reviewed": false,
+  "literal": "Узнать тебя — очень рад."
+ },
+ {
+  "id": "s-1-1-09",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "老师",
+    "pinyin": "lao3 shi1",
+    "wordId": "w-laoshi"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Он учитель?",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-1-10",
+  "tokens": [
+   {
+    "hanzi": "她",
+    "pinyin": "ta1",
+    "wordId": "w-ta-f"
+   },
+   {
+    "hanzi": "叫",
+    "pinyin": "jiao4",
+    "wordId": "w-jiao"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "名字",
+    "pinyin": "ming2 zi5",
+    "wordId": "w-mingzi"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Как её зовут?",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-1-11",
+  "tokens": [
+   {
+    "hanzi": "王",
+    "pinyin": "wang2"
+   },
+   {
+    "hanzi": "先生",
+    "pinyin": "xian1 sheng5",
+    "wordId": "w-xiansheng"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "你好",
+    "pinyin": "ni3 hao3",
+    "wordId": "w-nihao"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Здравствуйте, господин Ван!",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-1-12",
+  "tokens": [
+   {
+    "hanzi": "我们",
+    "pinyin": "wo3 men5",
+    "wordId": "w-women"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "朋友",
+    "pinyin": "peng2 you5",
+    "wordId": "w-pengyou"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мы друзья.",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-1-13",
+  "tokens": [
+   {
+    "hanzi": "李",
+    "pinyin": "li3"
+   },
+   {
+    "hanzi": "小姐",
+    "pinyin": "xiao3 jie3",
+    "wordId": "w-xiaojie"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "你好",
+    "pinyin": "ni3 hao3",
+    "wordId": "w-nihao"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Здравствуйте, госпожа Ли!",
+  "unitId": "s1-u1",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-01",
+  "tokens": [
+   {
+    "hanzi": "一",
+    "pinyin": "yi1",
+    "wordId": "w-yi"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "二",
+    "pinyin": "er4",
+    "wordId": "w-er"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "三",
+    "pinyin": "san1",
+    "wordId": "w-san"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "四",
+    "pinyin": "si4",
+    "wordId": "w-si"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "五",
+    "pinyin": "wu3",
+    "wordId": "w-wu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Один, два, три, четыре, пять.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-02",
+  "tokens": [
+   {
+    "hanzi": "六",
+    "pinyin": "liu4",
+    "wordId": "w-liu"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "七",
+    "pinyin": "qi1",
+    "wordId": "w-qi"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "八",
+    "pinyin": "ba1",
+    "wordId": "w-ba"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "九",
+    "pinyin": "jiu3",
+    "wordId": "w-jiu"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Шесть, семь, восемь, девять, десять.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-03",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "几",
+    "pinyin": "ji3",
+    "wordId": "w-ji"
+   },
+   {
+    "hanzi": "岁",
+    "pinyin": "sui4",
+    "wordId": "w-sui"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сколько тебе лет? (ребёнку)",
+  "unitId": "s1-u2",
+  "reviewed": false,
+  "literal": "Ты сколько лет?"
+ },
+ {
+  "id": "s-1-2-04",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "二",
+    "pinyin": "er4",
+    "wordId": "w-er"
+   },
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "岁",
+    "pinyin": "sui4",
+    "wordId": "w-sui"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мне двадцать лет.",
+  "unitId": "s1-u2",
+  "reviewed": false,
+  "literal": "Я двадцать лет."
+ },
+ {
+  "id": "s-1-2-05",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "多",
+    "pinyin": "duo1",
+    "wordId": "w-duo"
+   },
+   {
+    "hanzi": "大",
+    "pinyin": "da4",
+    "wordId": "w-da"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сколько тебе лет? (взрослому)",
+  "unitId": "s1-u2",
+  "reviewed": false,
+  "literal": "Ты насколько большой?"
+ },
+ {
+  "id": "s-1-2-06",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "九",
+    "pinyin": "jiu3",
+    "wordId": "w-jiu"
+   },
+   {
+    "hanzi": "岁",
+    "pinyin": "sui4",
+    "wordId": "w-sui"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мне девять лет.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-07",
+  "tokens": [
+   {
+    "hanzi": "三",
+    "pinyin": "san1",
+    "wordId": "w-san"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge4",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Три человека.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-08",
+  "tokens": [
+   {
+    "hanzi": "八",
+    "pinyin": "ba1",
+    "wordId": "w-ba"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge4",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "工程师",
+    "pinyin": "gong1 cheng2 shi1",
+    "wordId": "w-gongchengshi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Восемь инженеров.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-09",
+  "tokens": [
+   {
+    "hanzi": "多少",
+    "pinyin": "duo1 shao3",
+    "wordId": "w-duoshao"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сколько человек?",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-10",
+  "tokens": [
+   {
+    "hanzi": "中国",
+    "pinyin": "zhong1 guo2",
+    "wordId": "w-zhongguo"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "大",
+    "pinyin": "da4",
+    "wordId": "w-da"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Китай большой.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-2-11",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "小",
+    "pinyin": "xiao3",
+    "wordId": "w-xiao"
+   },
+   {
+    "hanzi": "王",
+    "pinyin": "wang2"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Это Сяо Ван (так зовут младших коллег).",
+  "unitId": "s1-u2",
+  "reviewed": false,
+  "literal": "Он маленький Ван."
+ },
+ {
+  "id": "s-1-2-12",
+  "tokens": [
+   {
+    "hanzi": "一个",
+    "pinyin": "yi1 ge4",
+    "wordId": "w-yige"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Один человек.",
+  "unitId": "s1-u2",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-3-01",
+  "tokens": [
+   {
+    "hanzi": "现在",
+    "pinyin": "xian4 zai4",
+    "wordId": "w-xianzai"
+   },
+   {
+    "hanzi": "几",
+    "pinyin": "ji3",
+    "wordId": "w-ji"
+   },
+   {
+    "hanzi": "点",
+    "pinyin": "dian3",
+    "wordId": "w-dian"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Который час?",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Сейчас сколько часов?"
+ },
+ {
+  "id": "s-1-3-02",
+  "tokens": [
+   {
+    "hanzi": "现在",
+    "pinyin": "xian4 zai4",
+    "wordId": "w-xianzai"
+   },
+   {
+    "hanzi": "三",
+    "pinyin": "san1",
+    "wordId": "w-san"
+   },
+   {
+    "hanzi": "点",
+    "pinyin": "dian3",
+    "wordId": "w-dian"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сейчас три часа.",
+  "unitId": "s1-u3",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-3-03",
+  "tokens": [
+   {
+    "hanzi": "今天",
+    "pinyin": "jin1 tian1",
+    "wordId": "w-jintian"
+   },
+   {
+    "hanzi": "星期",
+    "pinyin": "xing1 qi1",
+    "wordId": "w-xingqi"
+   },
+   {
+    "hanzi": "几",
+    "pinyin": "ji3",
+    "wordId": "w-ji"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Какой сегодня день недели?",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Сегодня неделя сколько?"
+ },
+ {
+  "id": "s-1-3-04",
+  "tokens": [
+   {
+    "hanzi": "今天",
+    "pinyin": "jin1 tian1",
+    "wordId": "w-jintian"
+   },
+   {
+    "hanzi": "星期",
+    "pinyin": "xing1 qi1",
+    "wordId": "w-xingqi"
+   },
+   {
+    "hanzi": "五",
+    "pinyin": "wu3",
+    "wordId": "w-wu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сегодня пятница.",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Сегодня неделя пять."
+ },
+ {
+  "id": "s-1-3-05",
+  "tokens": [
+   {
+    "hanzi": "今天",
+    "pinyin": "jin1 tian1",
+    "wordId": "w-jintian"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "九",
+    "pinyin": "jiu3",
+    "wordId": "w-jiu"
+   },
+   {
+    "hanzi": "月",
+    "pinyin": "yue4",
+    "wordId": "w-yue"
+   },
+   {
+    "hanzi": "二",
+    "pinyin": "er4",
+    "wordId": "w-er"
+   },
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "六",
+    "pinyin": "liu4",
+    "wordId": "w-liu"
+   },
+   {
+    "hanzi": "日",
+    "pinyin": "ri4",
+    "wordId": "w-ri"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сегодня 26 сентября.",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Сегодня девятый месяц двадцать шестое число."
+ },
+ {
+  "id": "s-1-3-06",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "时候",
+    "pinyin": "shi2 hou5",
+    "wordId": "w-shihou"
+   },
+   {
+    "hanzi": "工作",
+    "pinyin": "gong1 zuo4",
+    "wordId": "w-gongzuo"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Когда ты работаешь?",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Ты в какое время работаешь?"
+ },
+ {
+  "id": "s-1-3-07",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "上午",
+    "pinyin": "shang4 wu3",
+    "wordId": "w-shangwu"
+   },
+   {
+    "hanzi": "工作",
+    "pinyin": "gong1 zuo4",
+    "wordId": "w-gongzuo"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "下午",
+    "pinyin": "xia4 wu3",
+    "wordId": "w-xiawu"
+   },
+   {
+    "hanzi": "学习",
+    "pinyin": "xue2 xi2",
+    "wordId": "w-xuexi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Утром я работаю, а днём учусь.",
+  "unitId": "s1-u3",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-3-08",
+  "tokens": [
+   {
+    "hanzi": "昨天",
+    "pinyin": "zuo2 tian1",
+    "wordId": "w-zuotian"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "星期",
+    "pinyin": "xing1 qi1",
+    "wordId": "w-xingqi"
+   },
+   {
+    "hanzi": "四",
+    "pinyin": "si4",
+    "wordId": "w-si"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Вчера был четверг.",
+  "unitId": "s1-u3",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-3-09",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "明天",
+    "pinyin": "ming2 tian1",
+    "wordId": "w-mingtian"
+   },
+   {
+    "hanzi": "不",
+    "pinyin": "bu4",
+    "wordId": "w-bu"
+   },
+   {
+    "hanzi": "工作",
+    "pinyin": "gong1 zuo4",
+    "wordId": "w-gongzuo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Завтра я не работаю.",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Я завтра не работаю."
+ },
+ {
+  "id": "s-1-3-10",
+  "tokens": [
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "分钟",
+    "pinyin": "fen1 zhong1",
+    "wordId": "w-fenzhong"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Десять минут.",
+  "unitId": "s1-u3",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-3-11",
+  "tokens": [
+   {
+    "hanzi": "一",
+    "pinyin": "yi1",
+    "wordId": "w-yi"
+   },
+   {
+    "hanzi": "年",
+    "pinyin": "nian2",
+    "wordId": "w-nian"
+   },
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "二",
+    "pinyin": "er4",
+    "wordId": "w-er"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge4",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "月",
+    "pinyin": "yue4",
+    "wordId": "w-yue"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В году двенадцать месяцев.",
+  "unitId": "s1-u3",
+  "reviewed": false,
+  "literal": "Один год — двенадцать месяцев."
+ },
+ {
+  "id": "s-1-3-12",
+  "tokens": [
+   {
+    "hanzi": "中午",
+    "pinyin": "zhong1 wu3",
+    "wordId": "w-zhongwu"
+   },
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "二",
+    "pinyin": "er4",
+    "wordId": "w-er"
+   },
+   {
+    "hanzi": "点",
+    "pinyin": "dian3",
+    "wordId": "w-dian"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В полдень, в двенадцать.",
+  "unitId": "s1-u3",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-01",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "爸爸",
+    "pinyin": "ba4 ba5",
+    "wordId": "w-baba"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Это мой папа.",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "Это есть я папа."
+ },
+ {
+  "id": "s-1-4-02",
+  "tokens": [
+   {
+    "hanzi": "那",
+    "pinyin": "na4",
+    "wordId": "w-na4"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "朋友",
+    "pinyin": "peng2 you5",
+    "wordId": "w-pengyou"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "А это мой друг.",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "То есть мой друг."
+ },
+ {
+  "id": "s-1-4-03",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "家",
+    "pinyin": "jia1",
+    "wordId": "w-jia"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "几",
+    "pinyin": "ji3",
+    "wordId": "w-ji"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge4",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сколько человек в твоей семье?",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "Твоя семья имеет сколько человек?"
+ },
+ {
+  "id": "s-1-4-04",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "家",
+    "pinyin": "jia1",
+    "wordId": "w-jia"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "三",
+    "pinyin": "san1",
+    "wordId": "w-san"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge4",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "人",
+    "pinyin": "ren2",
+    "wordId": "w-ren"
+   },
+   {
+    "hanzi": "：",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "爸爸",
+    "pinyin": "ba4 ba5",
+    "wordId": "w-baba"
+   },
+   {
+    "hanzi": "、",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "妈妈",
+    "pinyin": "ma1 ma5",
+    "wordId": "w-mama"
+   },
+   {
+    "hanzi": "和",
+    "pinyin": "he2",
+    "wordId": "w-he"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Нас в семье трое: папа, мама и я.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-05",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "没",
+    "pinyin": "mei2",
+    "wordId": "w-mei"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "儿子",
+    "pinyin": "er2 zi5",
+    "wordId": "w-erzi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У меня нет сына.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-06",
+  "tokens": [
+   {
+    "hanzi": "她",
+    "pinyin": "ta1",
+    "wordId": "w-ta-f"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "一个",
+    "pinyin": "yi1 ge4",
+    "wordId": "w-yige"
+   },
+   {
+    "hanzi": "女儿",
+    "pinyin": "nv3 er2",
+    "wordId": "w-nver"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У неё есть дочь.",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "Она имеет одну дочь."
+ },
+ {
+  "id": "s-1-4-07",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "谁",
+    "pinyin": "shei2",
+    "wordId": "w-shei"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Кто он?",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "Он является кто?"
+ },
+ {
+  "id": "s-1-4-08",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "同学",
+    "pinyin": "tong2 xue2",
+    "wordId": "w-tongxue"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Он мой однокурсник.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-09",
+  "tokens": [
+   {
+    "hanzi": "我们",
+    "pinyin": "wo3 men5",
+    "wordId": "w-women"
+   },
+   {
+    "hanzi": "都",
+    "pinyin": "dou1",
+    "wordId": "w-dou"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "学生",
+    "pinyin": "xue2 sheng5",
+    "wordId": "w-xuesheng"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мы все студенты.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-10",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "妈妈",
+    "pinyin": "ma1 ma5",
+    "wordId": "w-mama"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "医生",
+    "pinyin": "yi1 sheng1",
+    "wordId": "w-yisheng"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Моя мама — врач.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-11",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "爱",
+    "pinyin": "ai4",
+    "wordId": "w-ai"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "猫",
+    "pinyin": "mao1",
+    "wordId": "w-mao"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я люблю своего кота.",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-12",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "狗",
+    "pinyin": "gou3",
+    "wordId": "w-gou"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У тебя есть собака?",
+  "unitId": "s1-u4",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-4-13",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "谁",
+    "pinyin": "shei2",
+    "wordId": "w-shei"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "狗",
+    "pinyin": "gou3",
+    "wordId": "w-gou"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Чья это собака?",
+  "unitId": "s1-u4",
+  "reviewed": false,
+  "literal": "Это кого собака?"
+ },
+ {
+  "id": "s-1-5-01",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "吃",
+    "pinyin": "chi1",
+    "wordId": "w-chi"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Что ты хочешь съесть?",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Ты хочешь есть что?"
+ },
+ {
+  "id": "s-1-5-02",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "吃",
+    "pinyin": "chi1",
+    "wordId": "w-chi"
+   },
+   {
+    "hanzi": "米饭",
+    "pinyin": "mi3 fan4",
+    "wordId": "w-mifan"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я хочу рис.",
+  "unitId": "s1-u5",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-5-03",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "喝",
+    "pinyin": "he1",
+    "wordId": "w-he1"
+   },
+   {
+    "hanzi": "茶",
+    "pinyin": "cha2",
+    "wordId": "w-cha"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Будешь чай?",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Ты пьёшь чай?"
+ },
+ {
+  "id": "s-1-5-04",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "不",
+    "pinyin": "bu4",
+    "wordId": "w-bu"
+   },
+   {
+    "hanzi": "喝",
+    "pinyin": "he1",
+    "wordId": "w-he1"
+   },
+   {
+    "hanzi": "茶",
+    "pinyin": "cha2",
+    "wordId": "w-cha"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "喝",
+    "pinyin": "he1",
+    "wordId": "w-he1"
+   },
+   {
+    "hanzi": "水",
+    "pinyin": "shui3",
+    "wordId": "w-shui"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я не пью чай, я пью воду.",
+  "unitId": "s1-u5",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-5-05",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "喜欢",
+    "pinyin": "xi3 huan5",
+    "wordId": "w-xihuan"
+   },
+   {
+    "hanzi": "中国",
+    "pinyin": "zhong1 guo2",
+    "wordId": "w-zhongguo"
+   },
+   {
+    "hanzi": "菜",
+    "pinyin": "cai4",
+    "wordId": "w-cai"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мне очень нравится китайская кухня.",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Я очень люблю Китая блюда."
+ },
+ {
+  "id": "s-1-5-06",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "饭馆",
+    "pinyin": "fan4 guan3",
+    "wordId": "w-fanguan"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "菜",
+    "pinyin": "cai4",
+    "wordId": "w-cai"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "好吃",
+    "pinyin": "hao3 chi1",
+    "wordId": "w-haochi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В этом ресторанчике очень вкусно.",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Этого ресторанчика блюда очень вкусные."
+ },
+ {
+  "id": "s-1-5-07",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "喜欢",
+    "pinyin": "xi3 huan5",
+    "wordId": "w-xihuan"
+   },
+   {
+    "hanzi": "吃",
+    "pinyin": "chi1",
+    "wordId": "w-chi"
+   },
+   {
+    "hanzi": "苹果",
+    "pinyin": "ping2 guo3",
+    "wordId": "w-pingguo"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Ты любишь яблоки?",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Ты любишь есть яблоки?"
+ },
+ {
+  "id": "s-1-5-08",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "杯子",
+    "pinyin": "bei1 zi5",
+    "wordId": "w-beizi"
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Эта чашка — моя.",
+  "unitId": "s1-u5",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-5-09",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "妈妈",
+    "pinyin": "ma1 ma5",
+    "wordId": "w-mama"
+   },
+   {
+    "hanzi": "做",
+    "pinyin": "zuo4",
+    "wordId": "w-zuo"
+   },
+   {
+    "hanzi": "中国",
+    "pinyin": "zhong1 guo2",
+    "wordId": "w-zhongguo"
+   },
+   {
+    "hanzi": "菜",
+    "pinyin": "cai4",
+    "wordId": "w-cai"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Моя мама готовит китайские блюда.",
+  "unitId": "s1-u5",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-5-10",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "吃",
+    "pinyin": "chi1",
+    "wordId": "w-chi"
+   },
+   {
+    "hanzi": "一",
+    "pinyin": "yi1",
+    "wordId": "w-yi"
+   },
+   {
+    "hanzi": "些",
+    "pinyin": "xie1",
+    "wordId": "w-xie"
+   },
+   {
+    "hanzi": "水果",
+    "pinyin": "shui3 guo3",
+    "wordId": "w-shuiguo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Хочу немного фруктов.",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "Я хочу есть несколько фруктов."
+ },
+ {
+  "id": "s-1-5-11",
+  "tokens": [
+   {
+    "hanzi": "那",
+    "pinyin": "na4",
+    "wordId": "w-na4"
+   },
+   {
+    "hanzi": "些",
+    "pinyin": "xie1",
+    "wordId": "w-xie"
+   },
+   {
+    "hanzi": "苹果",
+    "pinyin": "ping2 guo3",
+    "wordId": "w-pingguo"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "好吃",
+    "pinyin": "hao3 chi1",
+    "wordId": "w-haochi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Те яблоки очень вкусные.",
+  "unitId": "s1-u5",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-5-12",
+  "tokens": [
+   {
+    "hanzi": "中午",
+    "pinyin": "zhong1 wu3",
+    "wordId": "w-zhongwu"
+   },
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "吃",
+    "pinyin": "chi1",
+    "wordId": "w-chi"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Что хочешь на обед?",
+  "unitId": "s1-u5",
+  "reviewed": false,
+  "literal": "В полдень ты хочешь есть что?"
+ },
+ {
+  "id": "s-1-6-01",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "多少",
+    "pinyin": "duo1 shao3",
+    "wordId": "w-duoshao"
+   },
+   {
+    "hanzi": "钱",
+    "pinyin": "qian2",
+    "wordId": "w-qian"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сколько это стоит?",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Это сколько денег?"
+ },
+ {
+  "id": "s-1-6-02",
+  "tokens": [
+   {
+    "hanzi": "十",
+    "pinyin": "shi2",
+    "wordId": "w-shi2"
+   },
+   {
+    "hanzi": "块",
+    "pinyin": "kuai4",
+    "wordId": "w-kuai"
+   },
+   {
+    "hanzi": "钱",
+    "pinyin": "qian2",
+    "wordId": "w-qian"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Десять юаней.",
+  "unitId": "s1-u6",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-6-03",
+  "tokens": [
+   {
+    "hanzi": "太",
+    "pinyin": "tai4",
+    "wordId": "w-tai"
+   },
+   {
+    "hanzi": "贵",
+    "pinyin": "gui4",
+    "wordId": "w-gui"
+   },
+   {
+    "hanzi": "了",
+    "pinyin": "le5",
+    "wordId": "w-le"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Слишком дорого!",
+  "unitId": "s1-u6",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-6-04",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "买",
+    "pinyin": "mai3",
+    "wordId": "w-mai"
+   },
+   {
+    "hanzi": "一",
+    "pinyin": "yi1",
+    "wordId": "w-yi"
+   },
+   {
+    "hanzi": "本",
+    "pinyin": "ben3",
+    "wordId": "w-ben"
+   },
+   {
+    "hanzi": "书",
+    "pinyin": "shu1",
+    "wordId": "w-shu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я хочу купить книгу.",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Я хочу купить одну книгу."
+ },
+ {
+  "id": "s-1-6-05",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "衣服",
+    "pinyin": "yi1 fu5",
+    "wordId": "w-yifu"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "漂亮",
+    "pinyin": "piao4 liang5",
+    "wordId": "w-piaoliang"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У тебя красивая одежда.",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Твоя одежда очень красивая."
+ },
+ {
+  "id": "s-1-6-06",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "去",
+    "pinyin": "qu4",
+    "wordId": "w-qu"
+   },
+   {
+    "hanzi": "商店",
+    "pinyin": "shang1 dian4",
+    "wordId": "w-shangdian"
+   },
+   {
+    "hanzi": "买",
+    "pinyin": "mai3",
+    "wordId": "w-mai"
+   },
+   {
+    "hanzi": "东西",
+    "pinyin": "dong1 xi5",
+    "wordId": "w-dongxi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я иду в магазин за покупками.",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Я иду в магазин покупать вещи."
+ },
+ {
+  "id": "s-1-6-07",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "钱",
+    "pinyin": "qian2",
+    "wordId": "w-qian"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "少",
+    "pinyin": "shao3",
+    "wordId": "w-shao"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "У меня мало денег.",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Мои деньги очень мало."
+ },
+ {
+  "id": "s-1-6-08",
+  "tokens": [
+   {
+    "hanzi": "那",
+    "pinyin": "na4",
+    "wordId": "w-na4"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "商店",
+    "pinyin": "shang1 dian4",
+    "wordId": "w-shangdian"
+   },
+   {
+    "hanzi": "的",
+    "pinyin": "de5",
+    "wordId": "w-de"
+   },
+   {
+    "hanzi": "东西",
+    "pinyin": "dong1 xi5",
+    "wordId": "w-dongxi"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "多",
+    "pinyin": "duo1",
+    "wordId": "w-duo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В том магазине много всего.",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Того магазина вещей очень много."
+ },
+ {
+  "id": "s-1-6-09",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "买",
+    "pinyin": "mai3",
+    "wordId": "w-mai"
+   },
+   {
+    "hanzi": "了",
+    "pinyin": "le5",
+    "wordId": "w-le"
+   },
+   {
+    "hanzi": "三",
+    "pinyin": "san1",
+    "wordId": "w-san"
+   },
+   {
+    "hanzi": "本",
+    "pinyin": "ben3",
+    "wordId": "w-ben"
+   },
+   {
+    "hanzi": "书",
+    "pinyin": "shu1",
+    "wordId": "w-shu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я купил три книги.",
+  "unitId": "s1-u6",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-6-10",
+  "tokens": [
+   {
+    "hanzi": "太",
+    "pinyin": "tai4",
+    "wordId": "w-tai"
+   },
+   {
+    "hanzi": "好",
+    "pinyin": "hao3",
+    "wordId": "w-hao"
+   },
+   {
+    "hanzi": "了",
+    "pinyin": "le5",
+    "wordId": "w-le"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Отлично!",
+  "unitId": "s1-u6",
+  "reviewed": false,
+  "literal": "Слишком хорошо!"
+ },
+ {
+  "id": "s-1-6-11",
+  "tokens": [
+   {
+    "hanzi": "苹果",
+    "pinyin": "ping2 guo3",
+    "wordId": "w-pingguo"
+   },
+   {
+    "hanzi": "多少",
+    "pinyin": "duo1 shao3",
+    "wordId": "w-duoshao"
+   },
+   {
+    "hanzi": "钱",
+    "pinyin": "qian2",
+    "wordId": "w-qian"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Почём яблоки?",
+  "unitId": "s1-u6",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-6-12",
+  "tokens": [
+   {
+    "hanzi": "五",
+    "pinyin": "wu3",
+    "wordId": "w-wu"
+   },
+   {
+    "hanzi": "块",
+    "pinyin": "kuai4",
+    "wordId": "w-kuai"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Пять юаней.",
+  "unitId": "s1-u6",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-01",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "哪",
+    "pinyin": "na3",
+    "wordId": "w-na3"
+   },
+   {
+    "hanzi": "里",
+    "pinyin": "li3",
+    "wordId": "w-li"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Ты где?",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-02",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "北京",
+    "pinyin": "bei3 jing1",
+    "wordId": "w-beijing"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я в Пекине.",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-03",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "住",
+    "pinyin": "zhu4",
+    "wordId": "w-zhu"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "北京",
+    "pinyin": "bei3 jing1",
+    "wordId": "w-beijing"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я живу в Пекине.",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-04",
+  "tokens": [
+   {
+    "hanzi": "我们",
+    "pinyin": "wo3 men5",
+    "wordId": "w-women"
+   },
+   {
+    "hanzi": "坐",
+    "pinyin": "zuo4",
+    "wordId": "w-zuo4"
+   },
+   {
+    "hanzi": "出租车",
+    "pinyin": "chu1 zu1 che1",
+    "wordId": "w-chuzuche"
+   },
+   {
+    "hanzi": "去",
+    "pinyin": "qu4",
+    "wordId": "w-qu"
+   },
+   {
+    "hanzi": "火车站",
+    "pinyin": "huo3 che1 zhan4",
+    "wordId": "w-huochezhan"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Мы едем на вокзал на такси.",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Мы садимся в такси, едем на вокзал."
+ },
+ {
+  "id": "s-1-7-05",
+  "tokens": [
+   {
+    "hanzi": "医院",
+    "pinyin": "yi1 yuan4",
+    "wordId": "w-yiyuan"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "学校",
+    "pinyin": "xue2 xiao4",
+    "wordId": "w-xuexiao"
+   },
+   {
+    "hanzi": "后面",
+    "pinyin": "hou4 mian4",
+    "wordId": "w-houmian"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Больница — за школой.",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Больница находится школы позади."
+ },
+ {
+  "id": "s-1-7-06",
+  "tokens": [
+   {
+    "hanzi": "火车站",
+    "pinyin": "huo3 che1 zhan4",
+    "wordId": "w-huochezhan"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "前面",
+    "pinyin": "qian2 mian4",
+    "wordId": "w-qianmian"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Вокзал — впереди.",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-07",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "什么",
+    "pinyin": "shen2 me5",
+    "wordId": "w-shenme"
+   },
+   {
+    "hanzi": "时候",
+    "pinyin": "shi2 hou5",
+    "wordId": "w-shihou"
+   },
+   {
+    "hanzi": "回",
+    "pinyin": "hui2",
+    "wordId": "w-hui"
+   },
+   {
+    "hanzi": "来",
+    "pinyin": "lai2",
+    "wordId": "w-lai"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Когда ты вернёшься?",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Ты в какое время вернёшься сюда?"
+ },
+ {
+  "id": "s-1-7-08",
+  "tokens": [
+   {
+    "hanzi": "书",
+    "pinyin": "shu1",
+    "wordId": "w-shu"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "桌子",
+    "pinyin": "zhuo1 zi5",
+    "wordId": "w-zhuozi"
+   },
+   {
+    "hanzi": "上",
+    "pinyin": "shang4",
+    "wordId": "w-shang"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Книга на столе.",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Книга находится стола сверху."
+ },
+ {
+  "id": "s-1-7-09",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "坐",
+    "pinyin": "zuo4",
+    "wordId": "w-zuo4"
+   },
+   {
+    "hanzi": "出租车",
+    "pinyin": "chu1 zu1 che1",
+    "wordId": "w-chuzuche"
+   },
+   {
+    "hanzi": "回",
+    "pinyin": "hui2",
+    "wordId": "w-hui"
+   },
+   {
+    "hanzi": "家",
+    "pinyin": "jia1",
+    "wordId": "w-jia"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я еду домой на такси.",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-10",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "来",
+    "pinyin": "lai2",
+    "wordId": "w-lai"
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "家",
+    "pinyin": "jia1",
+    "wordId": "w-jia"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Придёшь ко мне домой?",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Ты придёшь в мой дом?"
+ },
+ {
+  "id": "s-1-7-11",
+  "tokens": [
+   {
+    "hanzi": "学校",
+    "pinyin": "xue2 xiao4",
+    "wordId": "w-xuexiao"
+   },
+   {
+    "hanzi": "里",
+    "pinyin": "li3",
+    "wordId": "w-li"
+   },
+   {
+    "hanzi": "有",
+    "pinyin": "you3",
+    "wordId": "w-you"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "多",
+    "pinyin": "duo1",
+    "wordId": "w-duo"
+   },
+   {
+    "hanzi": "学生",
+    "pinyin": "xue2 sheng5",
+    "wordId": "w-xuesheng"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В школе много учеников.",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "В школе есть очень много учеников."
+ },
+ {
+  "id": "s-1-7-12",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "开",
+    "pinyin": "kai1",
+    "wordId": "w-kai"
+   },
+   {
+    "hanzi": "出租车",
+    "pinyin": "chu1 zu1 che1",
+    "wordId": "w-chuzuche"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Он водит такси.",
+  "unitId": "s1-u7",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-7-13",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "医院",
+    "pinyin": "yi1 yuan4",
+    "wordId": "w-yiyuan"
+   },
+   {
+    "hanzi": "工作",
+    "pinyin": "gong1 zuo4",
+    "wordId": "w-gongzuo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я работаю в больнице.",
+  "unitId": "s1-u7",
+  "reviewed": false,
+  "literal": "Я в больнице работаю."
+ },
+ {
+  "id": "s-1-8-01",
+  "tokens": [
+   {
+    "hanzi": "今天",
+    "pinyin": "jin1 tian1",
+    "wordId": "w-jintian"
+   },
+   {
+    "hanzi": "天气",
+    "pinyin": "tian1 qi4",
+    "wordId": "w-tianqi"
+   },
+   {
+    "hanzi": "怎么样",
+    "pinyin": "zen3 me5 yang4",
+    "wordId": "w-zenmeyang"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Какая сегодня погода?",
+  "unitId": "s1-u8",
+  "reviewed": false,
+  "literal": "Сегодня погода как?"
+ },
+ {
+  "id": "s-1-8-02",
+  "tokens": [
+   {
+    "hanzi": "今天",
+    "pinyin": "jin1 tian1",
+    "wordId": "w-jintian"
+   },
+   {
+    "hanzi": "很",
+    "pinyin": "hen3",
+    "wordId": "w-hen"
+   },
+   {
+    "hanzi": "热",
+    "pinyin": "re4",
+    "wordId": "w-re"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Сегодня жарко.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-03",
+  "tokens": [
+   {
+    "hanzi": "明天",
+    "pinyin": "ming2 tian1",
+    "wordId": "w-mingtian"
+   },
+   {
+    "hanzi": "会",
+    "pinyin": "hui4",
+    "wordId": "w-hui4"
+   },
+   {
+    "hanzi": "下雨",
+    "pinyin": "xia4 yu3",
+    "wordId": "w-xiayu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Завтра будет дождь.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-04",
+  "tokens": [
+   {
+    "hanzi": "北京",
+    "pinyin": "bei3 jing1",
+    "wordId": "w-beijing"
+   },
+   {
+    "hanzi": "冷",
+    "pinyin": "leng3",
+    "wordId": "w-leng"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "В Пекине холодно?",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-05",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "会",
+    "pinyin": "hui4",
+    "wordId": "w-hui4"
+   },
+   {
+    "hanzi": "说",
+    "pinyin": "shuo1",
+    "wordId": "w-shuo"
+   },
+   {
+    "hanzi": "汉语",
+    "pinyin": "han4 yu3",
+    "wordId": "w-hanyu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я говорю по-китайски.",
+  "unitId": "s1-u8",
+  "reviewed": false,
+  "literal": "Я умею говорить по-китайски."
+ },
+ {
+  "id": "s-1-8-06",
+  "tokens": [
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "会",
+    "pinyin": "hui4",
+    "wordId": "w-hui4"
+   },
+   {
+    "hanzi": "写",
+    "pinyin": "xie3",
+    "wordId": "w-xie3"
+   },
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "字",
+    "pinyin": "zi4",
+    "wordId": "w-zi"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Умеешь писать этот иероглиф?",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-07",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "喜欢",
+    "pinyin": "xi3 huan5",
+    "wordId": "w-xihuan"
+   },
+   {
+    "hanzi": "看",
+    "pinyin": "kan4",
+    "wordId": "w-kan"
+   },
+   {
+    "hanzi": "电影",
+    "pinyin": "dian4 ying3",
+    "wordId": "w-dianying"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я люблю смотреть кино.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-08",
+  "tokens": [
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "看",
+    "pinyin": "kan4",
+    "wordId": "w-kan"
+   },
+   {
+    "hanzi": "电视",
+    "pinyin": "dian4 shi4",
+    "wordId": "w-dianshi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Он смотрит телевизор.",
+  "unitId": "s1-u8",
+  "reviewed": false,
+  "literal": "Он сейчас смотрит телевизор."
+ },
+ {
+  "id": "s-1-8-09",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "没",
+    "pinyin": "mei2",
+    "wordId": "w-mei"
+   },
+   {
+    "hanzi": "看见",
+    "pinyin": "kan4 jian4",
+    "wordId": "w-kanjian"
+   },
+   {
+    "hanzi": "他",
+    "pinyin": "ta1",
+    "wordId": "w-ta"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я его не видел.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-10",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "不",
+    "pinyin": "bu4",
+    "wordId": "w-bu"
+   },
+   {
+    "hanzi": "能",
+    "pinyin": "neng2",
+    "wordId": "w-neng"
+   },
+   {
+    "hanzi": "说话",
+    "pinyin": "shuo1 hua4",
+    "wordId": "w-shuohua"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "工作",
+    "pinyin": "gong1 zuo4",
+    "wordId": "w-gongzuo"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Не могу говорить, я работаю.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-11",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "听",
+    "pinyin": "ting1",
+    "wordId": "w-ting"
+   },
+   {
+    "hanzi": "老师",
+    "pinyin": "lao3 shi1",
+    "wordId": "w-laoshi"
+   },
+   {
+    "hanzi": "说话",
+    "pinyin": "shuo1 hua4",
+    "wordId": "w-shuohua"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я слушаю учителя.",
+  "unitId": "s1-u8",
+  "reviewed": false,
+  "literal": "Я сейчас слушаю, как учитель говорит."
+ },
+ {
+  "id": "s-1-8-12",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "想",
+    "pinyin": "xiang3",
+    "wordId": "w-xiang"
+   },
+   {
+    "hanzi": "睡觉",
+    "pinyin": "shui4 jiao4",
+    "wordId": "w-shuijiao"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я хочу спать.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-8-13",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "在",
+    "pinyin": "zai4",
+    "wordId": "w-zai"
+   },
+   {
+    "hanzi": "读",
+    "pinyin": "du2",
+    "wordId": "w-du"
+   },
+   {
+    "hanzi": "汉语",
+    "pinyin": "han4 yu3",
+    "wordId": "w-hanyu"
+   },
+   {
+    "hanzi": "书",
+    "pinyin": "shu1",
+    "wordId": "w-shu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я читаю книгу на китайском.",
+  "unitId": "s1-u8",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-01",
+  "tokens": [
+   {
+    "hanzi": "喂",
+    "pinyin": "wei2",
+    "wordId": "w-wei"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "你好",
+    "pinyin": "ni3 hao3",
+    "wordId": "w-nihao"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Алло, здравствуйте!",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-02",
+  "tokens": [
+   {
+    "hanzi": "喂",
+    "pinyin": "wei2",
+    "wordId": "w-wei"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "是",
+    "pinyin": "shi4",
+    "wordId": "w-shi"
+   },
+   {
+    "hanzi": "王工",
+    "pinyin": "wang2 gong1"
+   },
+   {
+    "hanzi": "吗",
+    "pinyin": "ma5",
+    "wordId": "w-ma"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Алло, это инженер Ван?",
+  "unitId": "s1-u9",
+  "reviewed": false,
+  "literal": "Алло, является инженер Ван?"
+ },
+ {
+  "id": "s-1-9-03",
+  "tokens": [
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "下午",
+    "pinyin": "xia4 wu3",
+    "wordId": "w-xiawu"
+   },
+   {
+    "hanzi": "打电话",
+    "pinyin": "da3 dian4 hua4",
+    "wordId": "w-dadianhua"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Я позвоню днём.",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-04",
+  "tokens": [
+   {
+    "hanzi": "对不起",
+    "pinyin": "dui4 bu5 qi3",
+    "wordId": "w-duibuqi"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Извините!",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-05",
+  "tokens": [
+   {
+    "hanzi": "没关系",
+    "pinyin": "mei2 guan1 xi5",
+    "wordId": "w-meiguanxi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Ничего страшного.",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-06",
+  "tokens": [
+   {
+    "hanzi": "谢谢",
+    "pinyin": "xie4 xie5",
+    "wordId": "w-xiexie"
+   },
+   {
+    "hanzi": "你",
+    "pinyin": "ni3",
+    "wordId": "w-ni"
+   },
+   {
+    "hanzi": "！",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Спасибо тебе!",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-07",
+  "tokens": [
+   {
+    "hanzi": "不客气",
+    "pinyin": "bu4 ke4 qi5",
+    "wordId": "w-bukeqi"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Не за что.",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-08",
+  "tokens": [
+   {
+    "hanzi": "请",
+    "pinyin": "qing3",
+    "wordId": "w-qing"
+   },
+   {
+    "hanzi": "坐",
+    "pinyin": "zuo4",
+    "wordId": "w-zuo4"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Садитесь, пожалуйста.",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-09",
+  "tokens": [
+   {
+    "hanzi": "请",
+    "pinyin": "qing3",
+    "wordId": "w-qing"
+   },
+   {
+    "hanzi": "喝",
+    "pinyin": "he1",
+    "wordId": "w-he1"
+   },
+   {
+    "hanzi": "茶",
+    "pinyin": "cha2",
+    "wordId": "w-cha"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Угощайтесь чаем.",
+  "unitId": "s1-u9",
+  "reviewed": false,
+  "literal": "Прошу пить чай."
+ },
+ {
+  "id": "s-1-9-10",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "字",
+    "pinyin": "zi4",
+    "wordId": "w-zi"
+   },
+   {
+    "hanzi": "怎么",
+    "pinyin": "zen3 me5",
+    "wordId": "w-zenme"
+   },
+   {
+    "hanzi": "读",
+    "pinyin": "du2",
+    "wordId": "w-du"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Как читается этот иероглиф?",
+  "unitId": "s1-u9",
+  "reviewed": false
+ },
+ {
+  "id": "s-1-9-11",
+  "tokens": [
+   {
+    "hanzi": "这",
+    "pinyin": "zhe4",
+    "wordId": "w-zhe"
+   },
+   {
+    "hanzi": "个",
+    "pinyin": "ge5",
+    "wordId": "w-ge"
+   },
+   {
+    "hanzi": "汉语",
+    "pinyin": "han4 yu3",
+    "wordId": "w-hanyu"
+   },
+   {
+    "hanzi": "怎么",
+    "pinyin": "zen3 me5",
+    "wordId": "w-zenme"
+   },
+   {
+    "hanzi": "说",
+    "pinyin": "shuo1",
+    "wordId": "w-shuo"
+   },
+   {
+    "hanzi": "？",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Как это по-китайски?",
+  "unitId": "s1-u9",
+  "reviewed": false,
+  "literal": "Это по-китайски как сказать?"
+ },
+ {
+  "id": "s-1-9-12",
+  "tokens": [
+   {
+    "hanzi": "对不起",
+    "pinyin": "dui4 bu5 qi3",
+    "wordId": "w-duibuqi"
+   },
+   {
+    "hanzi": "，",
+    "pinyin": ""
+   },
+   {
+    "hanzi": "我",
+    "pinyin": "wo3",
+    "wordId": "w-wo"
+   },
+   {
+    "hanzi": "不",
+    "pinyin": "bu4",
+    "wordId": "w-bu"
+   },
+   {
+    "hanzi": "会",
+    "pinyin": "hui4",
+    "wordId": "w-hui4"
+   },
+   {
+    "hanzi": "说",
+    "pinyin": "shuo1",
+    "wordId": "w-shuo"
+   },
+   {
+    "hanzi": "汉语",
+    "pinyin": "han4 yu3",
+    "wordId": "w-hanyu"
+   },
+   {
+    "hanzi": "。",
+    "pinyin": ""
+   }
+  ],
+  "ru": "Извините, я не говорю по-китайски.",
+  "unitId": "s1-u9",
+  "reviewed": false
+ }
+]

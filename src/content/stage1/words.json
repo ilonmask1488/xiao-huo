@@ -1,0 +1,2133 @@
+[
+ {
+  "id": "w-ta",
+  "hanzi": "他",
+  "pinyin": "ta1",
+  "ru": [
+   "он"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ta-f",
+  "hanzi": "她",
+  "pinyin": "ta1",
+  "ru": [
+   "она"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hao",
+  "hanzi": "好",
+  "pinyin": "hao3",
+  "ru": [
+   "хороший",
+   "хорошо"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ma",
+  "hanzi": "吗",
+  "pinyin": "ma5",
+  "ru": [
+   "(частица вопроса «да/нет»)"
+  ],
+  "pos": "част.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ne",
+  "hanzi": "呢",
+  "pinyin": "ne5",
+  "ru": [
+   "а ты?",
+   "(частица встречного вопроса)"
+  ],
+  "pos": "част.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiao",
+  "hanzi": "叫",
+  "pinyin": "jiao4",
+  "ru": [
+   "звать(ся)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shenme",
+  "hanzi": "什么",
+  "pinyin": "shen2 me5",
+  "ru": [
+   "что",
+   "какой"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mingzi",
+  "hanzi": "名字",
+  "pinyin": "ming2 zi5",
+  "ru": [
+   "имя"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ren",
+  "hanzi": "人",
+  "pinyin": "ren2",
+  "ru": [
+   "человек"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guo",
+  "hanzi": "国",
+  "pinyin": "guo2",
+  "ru": [
+   "страна"
+  ],
+  "pos": "сущ.",
+  "hsk3": 1,
+  "tags": [
+   "stage1",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-na3",
+  "hanzi": "哪",
+  "pinyin": "na3",
+  "ru": [
+   "какой",
+   "который"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-eluosi",
+  "hanzi": "俄罗斯",
+  "pinyin": "e2 luo2 si1",
+  "ru": [
+   "Россия"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage1",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hen",
+  "hanzi": "很",
+  "pinyin": "hen3",
+  "ru": [
+   "очень"
+  ],
+  "pos": "нар.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-renshi",
+  "hanzi": "认识",
+  "pinyin": "ren4 shi5",
+  "ru": [
+   "знать (кого-то)",
+   "познакомиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gaoxing",
+  "hanzi": "高兴",
+  "pinyin": "gao1 xing4",
+  "ru": [
+   "рад",
+   "радостный"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiansheng",
+  "hanzi": "先生",
+  "pinyin": "xian1 sheng5",
+  "ru": [
+   "господин"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiaojie",
+  "hanzi": "小姐",
+  "pinyin": "xiao3 jie3",
+  "ru": [
+   "девушка (обращение)",
+   "госпожа"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gongchengshi",
+  "hanzi": "工程师",
+  "pinyin": "gong1 cheng2 shi1",
+  "ru": [
+   "инженер"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage1",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-er",
+  "hanzi": "二",
+  "pinyin": "er4",
+  "ru": [
+   "два"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-san",
+  "hanzi": "三",
+  "pinyin": "san1",
+  "ru": [
+   "три"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-si",
+  "hanzi": "四",
+  "pinyin": "si4",
+  "ru": [
+   "четыре"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wu",
+  "hanzi": "五",
+  "pinyin": "wu3",
+  "ru": [
+   "пять"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-liu",
+  "hanzi": "六",
+  "pinyin": "liu4",
+  "ru": [
+   "шесть"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qi",
+  "hanzi": "七",
+  "pinyin": "qi1",
+  "ru": [
+   "семь"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ba",
+  "hanzi": "八",
+  "pinyin": "ba1",
+  "ru": [
+   "восемь"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiu",
+  "hanzi": "九",
+  "pinyin": "jiu3",
+  "ru": [
+   "девять"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shi2",
+  "hanzi": "十",
+  "pinyin": "shi2",
+  "ru": [
+   "десять"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ling",
+  "hanzi": "零",
+  "pinyin": "ling2",
+  "ru": [
+   "ноль"
+  ],
+  "pos": "числ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ji",
+  "hanzi": "几",
+  "pinyin": "ji3",
+  "ru": [
+   "сколько (до 10)"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-sui",
+  "hanzi": "岁",
+  "pinyin": "sui4",
+  "ru": [
+   "год (о возрасте)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duo",
+  "hanzi": "多",
+  "pinyin": "duo1",
+  "ru": [
+   "много",
+   "насколько"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duoshao",
+  "hanzi": "多少",
+  "pinyin": "duo1 shao3",
+  "ru": [
+   "сколько"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ge",
+  "hanzi": "个",
+  "pinyin": "ge4",
+  "ru": [
+   "штука (счётное слово)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-da",
+  "hanzi": "大",
+  "pinyin": "da4",
+  "ru": [
+   "большой"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiao",
+  "hanzi": "小",
+  "pinyin": "xiao3",
+  "ru": [
+   "маленький"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nian",
+  "hanzi": "年",
+  "pinyin": "nian2",
+  "ru": [
+   "год"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yue",
+  "hanzi": "月",
+  "pinyin": "yue4",
+  "ru": [
+   "месяц"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ri",
+  "hanzi": "日",
+  "pinyin": "ri4",
+  "ru": [
+   "число (дата)",
+   "день"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xingqi",
+  "hanzi": "星期",
+  "pinyin": "xing1 qi1",
+  "ru": [
+   "неделя"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jintian",
+  "hanzi": "今天",
+  "pinyin": "jin1 tian1",
+  "ru": [
+   "сегодня"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zuotian",
+  "hanzi": "昨天",
+  "pinyin": "zuo2 tian1",
+  "ru": [
+   "вчера"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xianzai",
+  "hanzi": "现在",
+  "pinyin": "xian4 zai4",
+  "ru": [
+   "сейчас"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dian",
+  "hanzi": "点",
+  "pinyin": "dian3",
+  "ru": [
+   "час (о времени)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fenzhong",
+  "hanzi": "分钟",
+  "pinyin": "fen1 zhong1",
+  "ru": [
+   "минута"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shihou",
+  "hanzi": "时候",
+  "pinyin": "shi2 hou5",
+  "ru": [
+   "время",
+   "момент"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shangwu",
+  "hanzi": "上午",
+  "pinyin": "shang4 wu3",
+  "ru": [
+   "утро (до полудня)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhongwu",
+  "hanzi": "中午",
+  "pinyin": "zhong1 wu3",
+  "ru": [
+   "полдень"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiawu",
+  "hanzi": "下午",
+  "pinyin": "xia4 wu3",
+  "ru": [
+   "день (после полудня)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhe",
+  "hanzi": "这",
+  "pinyin": "zhe4",
+  "ru": [
+   "это",
+   "этот"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-na4",
+  "hanzi": "那",
+  "pinyin": "na4",
+  "ru": [
+   "то",
+   "тот"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jia",
+  "hanzi": "家",
+  "pinyin": "jia1",
+  "ru": [
+   "дом",
+   "семья"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-baba",
+  "hanzi": "爸爸",
+  "pinyin": "ba4 ba5",
+  "ru": [
+   "папа"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mama",
+  "hanzi": "妈妈",
+  "pinyin": "ma1 ma5",
+  "ru": [
+   "мама"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-erzi",
+  "hanzi": "儿子",
+  "pinyin": "er2 zi5",
+  "ru": [
+   "сын"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nver",
+  "hanzi": "女儿",
+  "pinyin": "nv3 er2",
+  "ru": [
+   "дочь"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tongxue",
+  "hanzi": "同学",
+  "pinyin": "tong2 xue2",
+  "ru": [
+   "однокурсник",
+   "одноклассник"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xuesheng",
+  "hanzi": "学生",
+  "pinyin": "xue2 sheng5",
+  "ru": [
+   "студент",
+   "ученик"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yisheng",
+  "hanzi": "医生",
+  "pinyin": "yi1 sheng1",
+  "ru": [
+   "врач"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-you",
+  "hanzi": "有",
+  "pinyin": "you3",
+  "ru": [
+   "иметь",
+   "есть (наличие)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mei",
+  "hanzi": "没",
+  "pinyin": "mei2",
+  "ru": [
+   "не (иметь)",
+   "не (сделал)"
+  ],
+  "pos": "нар.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-de",
+  "hanzi": "的",
+  "pinyin": "de5",
+  "ru": [
+   "(частица принадлежности: чей)"
+  ],
+  "pos": "част.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-he",
+  "hanzi": "和",
+  "pinyin": "he2",
+  "ru": [
+   "и (между словами)"
+  ],
+  "pos": "союз",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dou",
+  "hanzi": "都",
+  "pinyin": "dou1",
+  "ru": [
+   "все",
+   "всё"
+  ],
+  "pos": "нар.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shei",
+  "hanzi": "谁",
+  "pinyin": "shei2",
+  "ru": [
+   "кто"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ai",
+  "hanzi": "爱",
+  "pinyin": "ai4",
+  "ru": [
+   "любить"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gou",
+  "hanzi": "狗",
+  "pinyin": "gou3",
+  "ru": [
+   "собака"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mao",
+  "hanzi": "猫",
+  "pinyin": "mao1",
+  "ru": [
+   "кошка",
+   "кот"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chi",
+  "hanzi": "吃",
+  "pinyin": "chi1",
+  "ru": [
+   "есть (кушать)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-he1",
+  "hanzi": "喝",
+  "pinyin": "he1",
+  "ru": [
+   "пить"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mifan",
+  "hanzi": "米饭",
+  "pinyin": "mi3 fan4",
+  "ru": [
+   "варёный рис"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-cai",
+  "hanzi": "菜",
+  "pinyin": "cai4",
+  "ru": [
+   "блюдо",
+   "овощи"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-haochi",
+  "hanzi": "好吃",
+  "pinyin": "hao3 chi1",
+  "ru": [
+   "вкусный"
+  ],
+  "pos": "прил.",
+  "hsk2": 2,
+  "hsk3": 1,
+  "tags": [
+   "stage1",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuiguo",
+  "hanzi": "水果",
+  "pinyin": "shui3 guo3",
+  "ru": [
+   "фрукты"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-pingguo",
+  "hanzi": "苹果",
+  "pinyin": "ping2 guo3",
+  "ru": [
+   "яблоко"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 3,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-cha",
+  "hanzi": "茶",
+  "pinyin": "cha2",
+  "ru": [
+   "чай"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shui",
+  "hanzi": "水",
+  "pinyin": "shui3",
+  "ru": [
+   "вода"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-beizi",
+  "hanzi": "杯子",
+  "pinyin": "bei1 zi5",
+  "ru": [
+   "чашка",
+   "стакан"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fanguan",
+  "hanzi": "饭馆",
+  "pinyin": "fan4 guan3",
+  "ru": [
+   "ресторанчик",
+   "закусочная"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiang",
+  "hanzi": "想",
+  "pinyin": "xiang3",
+  "ru": [
+   "хотеть",
+   "думать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xihuan",
+  "hanzi": "喜欢",
+  "pinyin": "xi3 huan5",
+  "ru": [
+   "нравиться",
+   "любить"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zuo",
+  "hanzi": "做",
+  "pinyin": "zuo4",
+  "ru": [
+   "делать",
+   "готовить"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xie",
+  "hanzi": "些",
+  "pinyin": "xie1",
+  "ru": [
+   "несколько (для множества)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 4,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qu",
+  "hanzi": "去",
+  "pinyin": "qu4",
+  "ru": [
+   "идти",
+   "ехать (туда)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mai",
+  "hanzi": "买",
+  "pinyin": "mai3",
+  "ru": [
+   "покупать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qian",
+  "hanzi": "钱",
+  "pinyin": "qian2",
+  "ru": [
+   "деньги"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kuai",
+  "hanzi": "块",
+  "pinyin": "kuai4",
+  "ru": [
+   "юань (разг.)",
+   "кусок"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dongxi",
+  "hanzi": "东西",
+  "pinyin": "dong1 xi5",
+  "ru": [
+   "вещь",
+   "вещи"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shangdian",
+  "hanzi": "商店",
+  "pinyin": "shang1 dian4",
+  "ru": [
+   "магазин"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yifu",
+  "hanzi": "衣服",
+  "pinyin": "yi1 fu5",
+  "ru": [
+   "одежда"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tai",
+  "hanzi": "太",
+  "pinyin": "tai4",
+  "ru": [
+   "слишком"
+  ],
+  "pos": "нар.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gui",
+  "hanzi": "贵",
+  "pinyin": "gui4",
+  "ru": [
+   "дорогой (о цене)"
+  ],
+  "pos": "прил.",
+  "hsk2": 2,
+  "hsk3": 1,
+  "tags": [
+   "stage1",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-le",
+  "hanzi": "了",
+  "pinyin": "le5",
+  "ru": [
+   "(частица: действие совершилось)"
+  ],
+  "pos": "част.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shao",
+  "hanzi": "少",
+  "pinyin": "shao3",
+  "ru": [
+   "мало"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-piaoliang",
+  "hanzi": "漂亮",
+  "pinyin": "piao4 liang5",
+  "ru": [
+   "красивый"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ben",
+  "hanzi": "本",
+  "pinyin": "ben3",
+  "ru": [
+   "(счётное слово для книг)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shu",
+  "hanzi": "书",
+  "pinyin": "shu1",
+  "ru": [
+   "книга"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zai",
+  "hanzi": "在",
+  "pinyin": "zai4",
+  "ru": [
+   "находиться",
+   "в, на"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-li",
+  "hanzi": "里",
+  "pinyin": "li3",
+  "ru": [
+   "внутри"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shang",
+  "hanzi": "上",
+  "pinyin": "shang4",
+  "ru": [
+   "на, сверху"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xia",
+  "hanzi": "下",
+  "pinyin": "xia4",
+  "ru": [
+   "под, внизу"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qianmian",
+  "hanzi": "前面",
+  "pinyin": "qian2 mian4",
+  "ru": [
+   "впереди",
+   "перед"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 3,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-houmian",
+  "hanzi": "后面",
+  "pinyin": "hou4 mian4",
+  "ru": [
+   "сзади",
+   "за"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 3,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xuexiao",
+  "hanzi": "学校",
+  "pinyin": "xue2 xiao4",
+  "ru": [
+   "школа",
+   "учебное заведение"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yiyuan",
+  "hanzi": "医院",
+  "pinyin": "yi1 yuan4",
+  "ru": [
+   "больница"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huochezhan",
+  "hanzi": "火车站",
+  "pinyin": "huo3 che1 zhan4",
+  "ru": [
+   "вокзал"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chuzuche",
+  "hanzi": "出租车",
+  "pinyin": "chu1 zu1 che1",
+  "ru": [
+   "такси"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zuo4",
+  "hanzi": "坐",
+  "pinyin": "zuo4",
+  "ru": [
+   "сидеть",
+   "ехать на"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-lai",
+  "hanzi": "来",
+  "pinyin": "lai2",
+  "ru": [
+   "приходить",
+   "приезжать (сюда)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hui",
+  "hanzi": "回",
+  "pinyin": "hui2",
+  "ru": [
+   "возвращаться"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhu",
+  "hanzi": "住",
+  "pinyin": "zhu4",
+  "ru": [
+   "жить (где-то)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-beijing",
+  "hanzi": "北京",
+  "pinyin": "bei3 jing1",
+  "ru": [
+   "Пекин"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yizi",
+  "hanzi": "椅子",
+  "pinyin": "yi3 zi5",
+  "ru": [
+   "стул"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kai",
+  "hanzi": "开",
+  "pinyin": "kai1",
+  "ru": [
+   "водить (машину)",
+   "открывать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tianqi",
+  "hanzi": "天气",
+  "pinyin": "tian1 qi4",
+  "ru": [
+   "погода"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zenmeyang",
+  "hanzi": "怎么样",
+  "pinyin": "zen3 me5 yang4",
+  "ru": [
+   "как?",
+   "какой?"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-re",
+  "hanzi": "热",
+  "pinyin": "re4",
+  "ru": [
+   "жарко",
+   "горячий"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-leng",
+  "hanzi": "冷",
+  "pinyin": "leng3",
+  "ru": [
+   "холодно",
+   "холодный"
+  ],
+  "pos": "прил.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiayu",
+  "hanzi": "下雨",
+  "pinyin": "xia4 yu3",
+  "ru": [
+   "идёт дождь"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kan",
+  "hanzi": "看",
+  "pinyin": "kan4",
+  "ru": [
+   "смотреть",
+   "читать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kanjian",
+  "hanzi": "看见",
+  "pinyin": "kan4 jian4",
+  "ru": [
+   "увидеть"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ting",
+  "hanzi": "听",
+  "pinyin": "ting1",
+  "ru": [
+   "слушать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuo",
+  "hanzi": "说",
+  "pinyin": "shuo1",
+  "ru": [
+   "говорить",
+   "сказать"
+  ],
+  "pos": "гл.",
+  "hsk3": 1,
+  "tags": [
+   "stage1",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuohua",
+  "hanzi": "说话",
+  "pinyin": "shuo1 hua4",
+  "ru": [
+   "разговаривать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-du",
+  "hanzi": "读",
+  "pinyin": "du2",
+  "ru": [
+   "читать (вслух)",
+   "учиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xie3",
+  "hanzi": "写",
+  "pinyin": "xie3",
+  "ru": [
+   "писать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zi",
+  "hanzi": "字",
+  "pinyin": "zi4",
+  "ru": [
+   "иероглиф"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hanyu",
+  "hanzi": "汉语",
+  "pinyin": "han4 yu3",
+  "ru": [
+   "китайский язык"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuijiao",
+  "hanzi": "睡觉",
+  "pinyin": "shui4 jiao4",
+  "ru": [
+   "спать"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dianshi",
+  "hanzi": "电视",
+  "pinyin": "dian4 shi4",
+  "ru": [
+   "телевизор"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dianying",
+  "hanzi": "电影",
+  "pinyin": "dian4 ying3",
+  "ru": [
+   "кино",
+   "фильм"
+  ],
+  "pos": "сущ.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hui4",
+  "hanzi": "会",
+  "pinyin": "hui4",
+  "ru": [
+   "уметь",
+   "будет (вероятно)"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-neng",
+  "hanzi": "能",
+  "pinyin": "neng2",
+  "ru": [
+   "мочь"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qing",
+  "hanzi": "请",
+  "pinyin": "qing3",
+  "ru": [
+   "пожалуйста",
+   "просить"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duibuqi",
+  "hanzi": "对不起",
+  "pinyin": "dui4 bu5 qi3",
+  "ru": [
+   "извините"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-meiguanxi",
+  "hanzi": "没关系",
+  "pinyin": "mei2 guan1 xi5",
+  "ru": [
+   "ничего страшного"
+  ],
+  "pos": "фраза",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bukeqi",
+  "hanzi": "不客气",
+  "pinyin": "bu4 ke4 qi5",
+  "ru": [
+   "не за что"
+  ],
+  "pos": "фраза",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wei",
+  "hanzi": "喂",
+  "pinyin": "wei2",
+  "ru": [
+   "алло (по телефону)"
+  ],
+  "pos": "межд.",
+  "hsk2": 1,
+  "hsk3": 2,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dadianhua",
+  "hanzi": "打电话",
+  "pinyin": "da3 dian4 hua4",
+  "ru": [
+   "звонить по телефону"
+  ],
+  "pos": "гл.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zenme",
+  "hanzi": "怎么",
+  "pinyin": "zen3 me5",
+  "ru": [
+   "как"
+  ],
+  "pos": "мест.",
+  "hsk2": 1,
+  "hsk3": 1,
+  "tags": [
+   "stage1"
+  ],
+  "reviewed": false
+ }
+]

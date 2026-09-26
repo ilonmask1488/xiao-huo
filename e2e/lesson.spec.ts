@@ -69,7 +69,7 @@ test('словарь наполняется словами после урока
   await passLesson(page)
   await page.goto('./#/dictionary')
   await expect(page.getByText('你好', { exact: true })).toBeVisible()
-  await expect(page.getByText('ní hǎo', { exact: true })).toBeVisible()
+  await expect(page.getByText('níhǎo', { exact: true })).toBeVisible()
   await page.getByRole('searchbox').fill('xiexie')
   await expect(page.getByText('谢谢', { exact: true })).toBeVisible()
   await expect(page.getByText('你好', { exact: true })).toBeHidden()

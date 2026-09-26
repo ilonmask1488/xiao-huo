@@ -187,3 +187,9 @@
   color: var(--ink-2);
   font-size: var(--fs-small);
 }
+
+.unitDetails {
+  justify-self: start;
+  padding-left: 0;
+  font-size: var(--fs-small);
+}

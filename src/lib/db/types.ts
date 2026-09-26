@@ -49,6 +49,9 @@ export type CardRow = {
   lapses: number
   state: 0 | 1 | 2 | 3
   lastReview?: number
+  /** шаг внутри (пере)обучения (ts-fsrs 5); нет у старых записей — считается 0 */
+  learningSteps?: number
+  createdAt?: number
 }
 
 export type ReviewRow = {
@@ -57,6 +60,9 @@ export type ReviewRow = {
   at: number
   rating: 1 | 2 | 3 | 4
   durationMs: number
+  /** состояние карточки до ответа (для подсчёта удержания) */
+  stateBefore?: 0 | 1 | 2 | 3
+  kind?: 1 | 2 | 3 | 4 | 5
 }
 
 /** Статистика тоновой пары: ключ «13» — первый слог 1-й тон, второй 3-й. */
@@ -84,7 +90,7 @@ export type UnitProgressRow = { unitId: string; lessonsDone: number; completedAt
 
 /* ——— Схема v2 (фаза 1) ——— */
 
-export type AnswerKind = 'tone' | 'syllable' | 'pair' | 'self'
+export type AnswerKind = 'tone' | 'syllable' | 'pair' | 'self' | 'meaning' | 'order'
 export type AnswerSource = 'lesson' | 'game' | 'launch'
 
 /** Один ответ в уроке или игре — источник статистики и тепловой карты. */
@@ -128,10 +134,28 @@ export type LaunchBlockState = {
   auto?: boolean
 }
 
+/** Сегмент пуска — не длиннее ~3 минут одного формата. */
+export type LaunchSegment = {
+  id: string
+  block: 'warmup' | 'review' | 'new' | 'echo' | 'speak'
+  kind: 'game' | 'cards' | 'lesson' | 'echo' | 'speak'
+  status: 'pending' | 'done' | 'skipped'
+  minutes: number
+  lessonId?: string
+  game?: string
+  /** id карточек (cards) или слов/фраз/слогов (echo, speak) */
+  items?: string[]
+  auto?: boolean
+}
+
 /** Ежедневный «пуск»: какие блоки собраны и сколько пройдено. */
 export type LaunchRow = {
   date: string
+  /** фаза 1: блоки целиком; с фазы 2 — сегменты */
   blocks: LaunchBlockState[]
+  segments?: LaunchSegment[]
+  /** сколько карточек было к повторению в начале дня */
+  totalDue?: number
   startedAt: number
   finishedAt?: number
   seconds: number

@@ -7,7 +7,8 @@ import { lessonById } from '../../content'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
 import type { LessonProgressRow } from '../../lib/db/types'
-import { finishBlock } from '../../lib/launch/launch'
+import { finishSegment } from '../../lib/launch/launch'
+import { ensureCardsForLesson } from '../../lib/srs/cards'
 import { trainingFor, weakest } from '../../lib/lesson/boss'
 import { buildLesson } from '../../lib/lesson/build'
 import { completeLesson, getLessonProgress, resetLessonRun } from '../../lib/lesson/progress'
@@ -90,11 +91,13 @@ export function LessonScreen() {
       boss={lesson.boss}
       onFinish={async (r) => {
         // «Босс» засчитывается только при успехе; неудача — без штрафов, время и Δv всё равно идут в зачёт.
-        if (!lesson.boss || r.passed) await completeLesson(lesson.id, r.accuracy)
-        else await resetLessonRun(lesson.id)
+        if (!lesson.boss || r.passed) {
+          await completeLesson(lesson.id, r.accuracy)
+          await ensureCardsForLesson(lesson.id) // слова урока уходят в повторение
+        } else await resetLessonRun(lesson.id)
         await addToday({ seconds: r.seconds, dv: r.dv, spoken: r.spoken, newWords: lesson.newWords.length })
         if (from === 'launch') {
-          await finishBlock('new', { seconds: r.seconds, dv: r.dv, correct: r.correct, total: r.correct + r.wrong })
+          await finishSegment(params.get('seg') ?? 'new', { seconds: r.seconds, dv: r.dv, correct: r.correct, total: r.correct + r.wrong })
         }
         return evaluateAchievements()
       }}

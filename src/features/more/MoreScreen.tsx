@@ -42,6 +42,8 @@ const LICENSES: [string, string][] = [
   ['Workbox, vite-plugin-pwa', 'MIT'],
   ['IBM Plex Sans, IBM Plex Mono', 'SIL Open Font License 1.1'],
   ['pinyin-pro (проверка контента при сборке)', 'MIT'],
+  ['ts-fsrs (интервальное повторение)', 'MIT'],
+  ['Списки HSK: drkameleon/complete-hsk-vocabulary', 'MIT'],
 ]
 
 export function AboutScreen() {

@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { CourseScreen } from '../features/course/CourseScreen'
+import { UnitScreen } from '../features/course/UnitScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
-import { EchoScreen, StatsScreen, StoryScreen } from '../features/more/PlaceholderScreens'
-import { GameScreen } from '../features/games/GameScreen'
+import { EchoScreen, StoryScreen } from '../features/more/PlaceholderScreens'
+import { StatsScreen } from '../features/stats/StatsScreen'
+import { GameRoute } from '../features/games/GameScreen'
 import { LessonScreen } from '../features/lesson/LessonScreen'
 import { SoundCheckScreen } from '../features/lesson/SoundCheck'
 import { HomeScreen } from '../features/session/HomeScreen'
@@ -43,9 +45,10 @@ export function App() {
           <Route index element={<HomeScreen />} />
           <Route path="session" element={<LaunchScreen />} />
           <Route path="lesson/:id" element={<LessonScreen />} />
-          <Route path="launch/:block" element={<LaunchBlockScreen />} />
+          <Route path="launch/:seg" element={<LaunchBlockScreen />} />
+          <Route path="unit/:id" element={<UnitScreen />} />
           <Route path="sound-check" element={<SoundCheckScreen />} />
-          <Route path="game/:id" element={<GameScreen />} />
+          <Route path="game/:id" element={<GameRoute />} />
           <Route path="map" element={<CourseScreen />} />
           <Route path="tones" element={<TonesScreen />} />
           <Route path="dictionary" element={<DictionaryScreen />} />

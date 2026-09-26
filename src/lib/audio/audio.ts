@@ -4,7 +4,7 @@
 import type { Item } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { loadSettings } from '../settings/settings'
-import { entriesFor, entryFor, fallbackText, isWordItem, urlOf, type Voice } from './manifest'
+import { entriesFor, entryFor, fallbackText, isSentenceItem, isWordItem, urlOf, type Voice } from './manifest'
 import { AudioError, player } from './player'
 import { hasChineseVoice, speakChinese } from './speech'
 
@@ -29,7 +29,7 @@ export function durationOf(item: Item, voice?: Voice): number {
 */
 export async function playItem(item: Item, opts: { voice?: Voice; rate?: number } = {}): Promise<void> {
   const entry = entryFor(item, prefs.voice, opts.voice)
-  const rate = opts.rate ?? (isWordItem(item) ? prefs.rate : 1)
+  const rate = opts.rate ?? (isWordItem(item) || isSentenceItem(item) ? prefs.rate : 1)
   if (entry) return player.play(urlOf(entry), rate)
 
   const text = fallbackText(item)

@@ -144,6 +144,11 @@ function UnitRow({
           {action}
         </button>
       )}
+      {open && (
+        <button type="button" className={`${ui.link} ${s.unitDetails}`} onClick={() => navigate(`/unit/${unit.id}`)}>
+          {ru.unit.details}
+        </button>
+      )}
     </li>
   )
 }

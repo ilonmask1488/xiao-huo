@@ -79,9 +79,9 @@ export function hasSandhi(numeric: string, hanzi?: string): boolean {
   return applySandhi(numeric, hanzi).applied.length > 0
 }
 
-/** «ni3 hao3» → «ní hǎo» (произносимый, со знаками). */
+/** «ni3 hao3» → «níhǎo» (произносимый, со знаками, слитно — как слово). */
 export function spokenMarked(numeric: string, hanzi?: string): string {
   return markSyllables(applySandhi(numeric, hanzi).spoken)
-    .map((s) => s.text)
-    .join(' ')
+    .map((s, i) => (i > 0 && /^[aoeāáǎàōóǒòēéěè]/i.test(s.text) ? `'${s.text}` : s.text))
+    .join('')
 }

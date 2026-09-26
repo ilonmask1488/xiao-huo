@@ -3,15 +3,17 @@
   60 секунд, комбо ×2 после 5 верных подряд и ×3 после 10, ошибка сбрасывает комбо, но не заканчивает игру.
   Все игры используют только пройденный материал.
 */
-import { lessonOrder, wordById } from '../../content'
-import type { Syllable, WordId } from '../../content/types'
+import { isPunct, lessonOrder, sentenceById, wordById } from '../../content'
+import type { SentenceId, Syllable, WordId } from '../../content/types'
 import { db } from '../db/db'
 import { pairOf, rng } from '../lesson/build'
 import type { Tone } from '../pinyin/marks'
 import { localDate } from '../progress/streak'
 
-export type GameId = 'shooter' | 'pingpong' | 'twins'
+export type GameId = 'shooter' | 'pingpong' | 'twins' | 'speed' | 'assemble'
 export const ROUND_SECONDS = 60
+/** «Сборка» длиннее: фразу надо собрать, послушать и повторить. */
+export const ASSEMBLE_SECONDS = 90
 
 export type Twin = { answer: Syllable; options: Syllable[]; contrast: string; skill: 'initial' | 'final' | 'tone' }
 
@@ -19,6 +21,10 @@ export type GameMaterial = {
   shooter: { syllables: Syllable[]; tones: Tone[] }
   pingpong: { words: WordId[] }
   twins: { pairs: Twin[] }
+  /** «Скорострел»: пройденные слова */
+  speed: { words: WordId[] }
+  /** «Сборка»: пройденные фразы из 2–7 слов */
+  assemble: { sentences: SentenceId[] }
 }
 
 /** Что из пройденного годится для каждой игры. */
@@ -27,9 +33,13 @@ export function gameMaterial(completed: Set<string>): GameMaterial {
   const tones = new Set<Tone>()
   const words = new Set<WordId>()
   const twins: Twin[] = []
+  const learnedWords = new Set<WordId>()
+  const sentences = new Set<SentenceId>()
   for (const l of lessonOrder) {
     if (!completed.has(l.id)) continue
+    l.newWords.forEach((w) => learnedWords.add(w))
     for (const p of l.parts) {
+      if (p.type === 'sentences' || p.type === 'assemble') p.items.forEach((s) => sentences.add(s))
       if (p.type === 'guessTone') {
         p.items.forEach((s) => syl.add(s))
         p.choices.forEach((t) => tones.add(t))
@@ -44,12 +54,22 @@ export function gameMaterial(completed: Set<string>): GameMaterial {
     shooter: { syllables: [...syl].filter((s) => t.includes(Number(s.slice(-1)) as Tone)), tones: t },
     pingpong: { words: [...words].filter((w) => wordById.has(w)) },
     twins: { pairs: twins },
+    speed: { words: [...learnedWords].filter((w) => wordById.has(w)) },
+    assemble: {
+      sentences: [...sentences].filter((id) => {
+        const s = sentenceById.get(id)
+        const n = s ? s.tokens.filter((t) => !isPunct(t)).length : 0
+        return n >= 2 && n <= 7
+      }),
+    },
   }
 }
 
 export function gameAvailable(id: GameId, m: GameMaterial): boolean {
   if (id === 'shooter') return m.shooter.syllables.length >= 4
   if (id === 'pingpong') return m.pingpong.words.length >= 4
+  if (id === 'speed') return m.speed.words.length >= 12
+  if (id === 'assemble') return m.assemble.sentences.length >= 3
   return m.twins.pairs.length >= 4
 }
 
@@ -58,6 +78,8 @@ export const UNLOCKED_BY: Record<GameId, string> = {
   shooter: 's0-u1-l1',
   pingpong: 's0-u4-l1',
   twins: 's0-u2-l1',
+  speed: 's0-u4-l1',
+  assemble: 's1-u1-l1',
 }
 
 /**

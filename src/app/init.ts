@@ -1,8 +1,11 @@
 import { db } from '../lib/db/db'
+import { ensureCardsForCompleted } from '../lib/srs/cards'
 
 /**
   Первый запуск: запоминаем дату (от неё считается напоминание о бэкапе)
   и просим браузер не удалять данные при нехватке места.
+  Каждый запуск: у слов пройденных уроков должны быть карточки повторения
+  (после обновления приложения или восстановления бэкапа).
 */
 export async function initApp(): Promise<void> {
   try {
@@ -13,5 +16,10 @@ export async function initApp(): Promise<void> {
     }
   } catch (e) {
     console.error('initApp', e)
+  }
+  try {
+    await ensureCardsForCompleted()
+  } catch (e) {
+    console.error('ensureCardsForCompleted', e)
   }
 }

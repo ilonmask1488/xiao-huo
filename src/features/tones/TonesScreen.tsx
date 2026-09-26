@@ -60,7 +60,7 @@ export function TonesScreen() {
       <div className={s.games}>
         <h2>{t.gamesTitle}</h2>
         <ul className={s.gameList}>
-          {(['shooter', 'pingpong', 'twins'] as const).map((g) => {
+          {(['shooter', 'speed', 'pingpong', 'twins', 'assemble'] as const).map((g) => {
             const open = material ? gameAvailable(g, material) : false
             return (
               <li key={g}>

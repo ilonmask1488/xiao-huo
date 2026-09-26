@@ -9,17 +9,12 @@ import { join } from 'node:path'
 import { pinyin } from 'pinyin-pro'
 import type { Content } from '../src/content/types.ts'
 import { checkContent } from './content_checks.ts'
+import { loadContent } from './content_files.ts'
 
 const root = join(import.meta.dirname, '..')
 const load = <T>(file: string): T => JSON.parse(readFileSync(join(root, file), 'utf8')) as T
 
-const content: Content = {
-  units: load('src/content/units.json'),
-  lessons: load('src/content/lessons.json'),
-  words: load('src/content/words.json'),
-  sentences: load('src/content/sentences.json'),
-  dialogues: load('src/content/dialogues.json'),
-}
+const content: Content = loadContent(root)
 const manifest = load<{ syllables: Record<string, { file: string }>; texts: Record<string, { file: string }[]> }>(
   'public/audio/manifest.json',
 )
@@ -50,12 +45,28 @@ for (const w of content.words) {
   else mismatches.push(line)
 }
 
+// Фразы целиком: pinyin-pro учитывает контекст, поэтому лучше различает многозвучные иероглифы.
+const sentenceMismatches: string[] = []
+for (const s of content.sentences) {
+  const text = s.tokens.map((t) => t.hanzi).join('')
+  const ref = pinyin(text, { toneType: 'num', type: 'array', v: true, toneSandhi: false, nonZh: 'removed' })
+    .map((x) => x.replace(/0$/, '5'))
+    .filter((x) => /[a-z]/.test(x))
+  const ours = s.tokens.flatMap((t) => t.pinyin.split(/\s+/).filter(Boolean))
+  const diffs = ours
+    .map((o, i) => [o, ref[i] ?? '?'] as const)
+    .filter(([o, r]) => o !== r && !(o.endsWith('5') && o.slice(0, -1) === r.slice(0, -1)))
+  if (ref.length !== ours.length || diffs.length)
+    sentenceMismatches.push(`${s.id} ${text}: ${diffs.map(([o, r]) => `${o}≠${r}`).join(', ') || `слогов ${ours.length}≠${ref.length}`}`)
+}
+
 console.log(
   `Контент: ${content.units.length} этапов, ${content.lessons.length} уроков, ${content.words.length} слов, ` +
     `${content.sentences.length} фраз, ${content.dialogues.length} диалогов; звук: ${Object.keys(manifest.syllables).length} слогов, ${Object.keys(manifest.texts).length} слов`,
 )
 for (const m of mismatches) console.log(`  пиньинь расходится с pinyin-pro (проверь вручную): ${m}`)
 for (const m of neutral) console.log(`  нейтральный тон там, где у pinyin-pro полный (норма речи, проверено): ${m}`)
+for (const m of sentenceMismatches) console.log(`  фраза: пиньинь расходится с pinyin-pro (проверь вручную): ${m}`)
 for (const w of report.warnings) console.log(`  предупреждение: ${w}`)
 for (const e of report.errors) console.error(`  ОШИБКА: ${e}`)
 console.log(

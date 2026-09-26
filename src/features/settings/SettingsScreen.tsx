@@ -6,6 +6,7 @@ import ui from '../../components/ui.module.css'
 import { ru } from '../../i18n/ru'
 import { BackupError, downloadBackup, importBackup, parseBackup, type Backup } from '../../lib/backup/backup'
 import { db, resetProgress } from '../../lib/db/db'
+import { ensureCardsForCompleted } from '../../lib/srs/cards'
 import type { Settings } from '../../lib/db/types'
 import { updateSettings, useSettings } from '../../lib/settings/settings'
 import s from './SettingsScreen.module.css'
@@ -108,7 +109,7 @@ export function SettingsScreen() {
           label={t.toneColors}
           hint={
             <>
-              <Pinyin numeric="ma1 ma2 ma3 ma4 ma5" className={s.preview} /> — {t.toneColorsHint}
+              <Pinyin numeric="ma1 ma2 ma3 ma4 ma5" className={s.preview} joined={false} /> — {t.toneColorsHint}
             </>
           }
           checked={settings.toneColors}
@@ -212,6 +213,7 @@ function DataSection({ onMessage }: { onMessage: (m: { text: string; error?: boo
           setPending(null)
           if (b)
             importBackup(b)
+              .then(() => ensureCardsForCompleted())
               .then(() => onMessage({ text: t.importDone }))
               .catch(fail)
         }}

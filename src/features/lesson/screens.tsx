@@ -8,7 +8,7 @@ import { Mascot } from '../../components/Mascot'
 import { PlayButton, PlayChip } from '../../components/Play'
 import { ToneChart, ToneGlyph } from '../../components/ToneChart'
 import ui from '../../components/ui.module.css'
-import { wordById } from '../../content'
+import { sentenceById, wordById } from '../../content'
 import type { Item, WordId } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { durationOf, playItem, playSeries, stopAudio, voicesOf, wait } from '../../lib/audio/audio'
@@ -20,6 +20,7 @@ import { pairOf } from '../../lib/lesson/build'
 import { markSyllable, toMarked, type Tone } from '../../lib/pinyin/marks'
 import { applySandhi, spokenMarked } from '../../lib/pinyin/sandhi'
 import s from './lesson.module.css'
+import { AssembleView, CardView, MeaningView, SayItView, SentenceLine, SentenceView } from './phrases'
 
 export type ScreenResult = {
   correct?: boolean
@@ -64,6 +65,16 @@ function useAutoplay(play: () => Promise<unknown>, deps: unknown[] = []) {
 /* ——— Отображение слога или слова ——— */
 
 function ItemView({ item, showHanzi, showRu = true }: { item: Item; showHanzi: boolean; showRu?: boolean }) {
+  if (item.startsWith('s-')) {
+    const sen = sentenceById.get(item)
+    if (!sen) return null
+    return (
+      <div className={s.big}>
+        <SentenceLine sentence={sen} hanziMode={showHanzi ? 'always' : 'never'} big />
+        {showRu && <span className={s.bigRu}>{sen.ru}</span>}
+      </div>
+    )
+  }
   if (isWordItem(item)) {
     const w = wordById.get(item)
     if (!w) return null
@@ -123,6 +134,23 @@ export function ExplainView({ screen, onDone }: Props<'explain'>) {
             {p.words.map((id) => (
               <WordLine key={id} id={id} showSandhi={p.sandhi?.includes(id)} />
             ))}
+          </div>
+        )}
+        {p.sentences && (
+          <div className={s.words}>
+            {p.sentences.map((id) => {
+              const sen = sentenceById.get(id)
+              if (!sen) return null
+              return (
+                <div key={id} className={s.word} style={{ gridTemplateColumns: '1fr auto' }}>
+                  <div>
+                    <SentenceLine sentence={sen} />
+                    <span className={s.wordRu}>{sen.ru}</span>
+                  </div>
+                  <PlayButton item={id} label={ru.lesson.listenAgain} size="s" />
+                </div>
+              )
+            })}
           </div>
         )}
       </div>
@@ -189,7 +217,12 @@ export function ListenView({ screen, onDone }: Props<'listen'>) {
         <div className={s.series}>
           {screen.series.map((item, i) => (
             <PlayChip key={item + i} item={item} active={active === i}>
-              {isWordItem(item) ? (
+              {item.startsWith('s-') ? (
+                <>
+                  <Hanzi className={s.exHanzi}>{sentenceById.get(item)?.tokens.map((t) => t.hanzi).join('') ?? ''}</Hanzi>
+                  <span className={s.exRu}>{sentenceById.get(item)?.ru}</span>
+                </>
+              ) : isWordItem(item) ? (
                 <>
                   <Hanzi className={s.exHanzi}>{wordById.get(item)?.hanzi ?? ''}</Hanzi>
                   <Pinyin numeric={wordById.get(item)?.pinyin ?? ''} className={s.exRu} />
@@ -560,5 +593,15 @@ export function ScreenView(props: { screen: Screen; hanziMode: HanziMode; onDone
       return <WhichSyllableView {...props} screen={screen} />
     case 'guessPair':
       return <GuessPairView {...props} screen={screen} />
+    case 'meaning':
+      return <MeaningView {...props} screen={screen} />
+    case 'sentence':
+      return <SentenceView {...props} screen={screen} />
+    case 'assemble':
+      return <AssembleView {...props} screen={screen} />
+    case 'sayIt':
+      return <SayItView {...props} screen={screen} />
+    case 'card':
+      return <CardView {...props} screen={screen} />
   }
 }

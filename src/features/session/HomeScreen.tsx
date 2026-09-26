@@ -23,8 +23,9 @@ export function HomeScreen() {
   const telemetry = useLiveQuery(async () => {
     const days = await db.days.toArray()
     const streak = computeStreak(new Map(days.map((d) => [d.date, d.seconds])), localDate())
-    return { days: streak.days, dv: days.reduce((sum, d) => sum + d.dv, 0) }
+    return { days: streak.days, dv: days.reduce((sum, d) => sum + d.dv, 0), cards: await db.cards.count() }
   }, [])
+  const reviewLater = (telemetry?.cards ?? 0) === 0
   const [greeting] = useState(() => ru.greetings[dayOfYear() % ru.greetings.length]!)
 
   return (
@@ -61,11 +62,11 @@ export function HomeScreen() {
         </div>
         <ol className={s.rows}>
           {plan.map((b) => (
-            <li key={b.id} className={s.row} data-later={b.id === 'review' || undefined}>
+            <li key={b.id} className={s.row} data-later={(b.id === 'review' && reviewLater) || undefined}>
               <span className={`${s.t} mono`}>T+{String(b.startsAt).padStart(2, '0')}</span>
               <span>
                 <span className={s.blockTitle}>{ru.blocks[b.id].title}</span>
-                <span className={s.blockWhat}>{b.id === 'review' ? ru.launch.skipped.review : ru.blocks[b.id].what}</span>
+                <span className={s.blockWhat}>{b.id === 'review' && reviewLater ? ru.launch.reviewLater : ru.blocks[b.id].what}</span>
               </span>
               <span className={`${s.min} mono`}>{b.minutes} мин</span>
             </li>

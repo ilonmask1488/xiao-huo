@@ -119,10 +119,27 @@ def safe_stem(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
 
 
+CONTENT_DIRS = [CONTENT, CONTENT / "stage1"]
+
+
+def load_all(name: str) -> list:
+    out: list = []
+    for d in CONTENT_DIRS:
+        p = d / f"{name}.json"
+        if p.exists():
+            out += load_json(p)
+    return out
+
+
+def sentence_texts() -> dict[str, str]:
+    """{id фразы: текст} — текст склеен из токенов, как в приложении."""
+    return {s["id"]: "".join(t["hanzi"] for t in s["tokens"]) for s in load_all("sentences")}
+
+
 def collect_needs() -> tuple[set[str], dict[str, str]]:
     """Слоги и слова, которые нужны контенту. Возвращает (слоги, {id слова: иероглифы})."""
-    words = {w["id"]: w["hanzi"] for w in load_json(CONTENT / "words.json")}
-    lessons = load_json(CONTENT / "lessons.json")
+    words = {w["id"]: w["hanzi"] for w in load_all("words")}
+    lessons = load_all("lessons")
     syl: set[str] = set()
     need_words: dict[str, str] = dict(words)
 

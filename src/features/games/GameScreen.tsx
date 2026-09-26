@@ -11,7 +11,7 @@ import { PlayButton } from '../../components/Play'
 import { ToneGlyph } from '../../components/ToneChart'
 import { Placeholder, Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
-import { lessonById, wordById } from '../../content'
+import { isPunct, lessonById, sentenceById, wordById } from '../../content'
 import { ru } from '../../i18n/ru'
 import { playItem, preloadItems, stopAudio } from '../../lib/audio/audio'
 import { sfx } from '../../lib/audio/sfx'
@@ -21,6 +21,7 @@ import {
   gameMaterial,
   gameRandom,
   pairWeightFor,
+  ASSEMBLE_SECONDS,
   ROUND_SECONDS,
   saveRecord,
   shooterDelay,
@@ -32,8 +33,8 @@ import {
   type Twin,
 } from '../../lib/games/games'
 import { classifySwipe, type Point } from '../../lib/games/swipe'
-import { finishBlock } from '../../lib/launch/launch'
-import { pairOf, pairOptions } from '../../lib/lesson/build'
+import { finishSegment } from '../../lib/launch/launch'
+import { assembleOrder, meaningOptions, pairOf, pairOptions } from '../../lib/lesson/build'
 import { completedLessonIds } from '../../lib/lesson/progress'
 import type { Tone } from '../../lib/pinyin/marks'
 import { markSyllable } from '../../lib/pinyin/marks'
@@ -41,12 +42,15 @@ import { evaluateAchievements, type AchievementId } from '../../lib/progress/ach
 import { comboMultiplier, dvForGame } from '../../lib/progress/dv'
 import { pairWeights } from '../../lib/progress/heatmap'
 import { addToday, recordAnswer } from '../../lib/progress/record'
+import { SentenceLine } from '../lesson/phrases'
 import s from './games.module.css'
 
 type Question =
   | { kind: 'shooter'; syl: string; tone: Tone; choices: Tone[] }
   | { kind: 'pingpong'; word: string; pair: string; options: string[] }
   | { kind: 'twins'; twin: Twin; options: string[] }
+  | { kind: 'speed'; word: string; mode: 'text' | 'audio'; options: string[] }
+  | { kind: 'assemble'; id: string; order: number[] }
 
 type RoundResult = {
   score: number
@@ -58,14 +62,21 @@ type RoundResult = {
   seconds: number
 }
 
-const GAME_IDS: GameId[] = ['shooter', 'pingpong', 'twins']
+const GAME_IDS: GameId[] = ['shooter', 'pingpong', 'twins', 'speed', 'assemble']
+
+/** Маршрут /game/:id — при смене игры экран создаётся заново (иначе остались бы итоги прошлой). */
+export function GameRoute() {
+  const id = useParams().id ?? 'shooter'
+  return <GameScreen key={id} />
+}
 
 export function GameScreen() {
   const id = (useParams().id ?? 'shooter') as GameId
   const [params, setParams] = useSearchParams()
   const focus = params.get('focus')
   // Длина раунда: 60 с; параметр seconds — для автотестов.
-  const roundSeconds = Math.min(ROUND_SECONDS, Math.max(5, Number(params.get('seconds')) || ROUND_SECONDS))
+  const baseSeconds = id === 'assemble' ? ASSEMBLE_SECONDS : ROUND_SECONDS
+  const roundSeconds = Math.min(baseSeconds, Math.max(5, Number(params.get('seconds')) || baseSeconds))
   const fromLaunch = params.get('from') === 'launch'
   const navigate = useNavigate()
   const [data, setData] = useState<{ m: GameMaterial; weights: Map<string, number>; best: number } | null>(null)
@@ -109,7 +120,7 @@ export function GameScreen() {
           <Mascot mood="wink" size={88} />
           <h1>{t.title}</h1>
           <p>{t.what}</p>
-          <p className={s.rules}>{id === 'shooter' ? ru.games.shooterRules : ru.games.rules}</p>
+          <p className={s.rules}>{id === 'shooter' ? ru.games.shooterRules : id === 'assemble' ? ru.games.assembleRules : ru.games.rules}</p>
           {focus && <p className={s.focus}>{ru.games.focus(id === 'shooter' ? ru.lesson.toneName(Number(focus)) + ' тон' : pairLabel(focus))}</p>}
           <p className="mono">{ru.games.best(data.best)}</p>
         </div>
@@ -138,7 +149,7 @@ export function GameScreen() {
           const rec = await saveRecord(id, r.score)
           const dv = dvForGame({ seconds: r.seconds, correct: r.correct, wrong: r.wrong, comboBonus: r.comboBonus })
           await addToday({ seconds: r.seconds, dv })
-          if (fromLaunch) await finishBlock('warmup', { seconds: r.seconds, dv, correct: r.correct, total: r.correct + r.wrong })
+          if (fromLaunch) await finishSegment(params.get('seg') ?? 'warmup', { seconds: r.seconds, dv, correct: r.correct, total: r.correct + r.wrong })
           const fresh = await evaluateAchievements()
           setResult({ r, ...rec, fresh, dv })
           setPhase('end')
@@ -247,6 +258,16 @@ function Round({
       last.current = word
       return { kind: 'pingpong', word, pair: pairOf(word), options: pairOptions(word, Math.floor(random() * 1e6)) }
     }
+    if (id === 'speed') {
+      const word = weightedPick(material.speed.words, () => 1, random, last.current)
+      last.current = word
+      return { kind: 'speed', word, mode: random() < 0.5 ? 'text' : 'audio', options: meaningOptions(word, Math.floor(random() * 1e6)) }
+    }
+    if (id === 'assemble') {
+      const sid = weightedPick(material.assemble.sentences, () => 1, random, last.current)
+      last.current = sid
+      return { kind: 'assemble', id: sid, order: assembleOrder(sid, Math.floor(random() * 1e6)) }
+    }
     const pairs = material.twins.pairs
     const twin = weightedPick(pairs, () => 1, random, pairs.find((p) => p.answer === last.current))
     const answer = random() < 0.5 ? twin.answer : twin.options.find((o) => o !== twin.answer)!
@@ -278,22 +299,31 @@ function Round({
   // Звук вопроса + предзагрузка возможных следующих
   useEffect(() => {
     if (!q) return
-    const item = q.kind === 'shooter' ? q.syl : q.kind === 'pingpong' ? q.word : q.twin.answer
-    void playItem(item).catch(() => {})
+    const item = q.kind === 'shooter' ? q.syl : q.kind === 'pingpong' ? q.word : q.kind === 'twins' ? q.twin.answer : q.kind === 'speed' ? q.word : null
+    if (item && (q.kind !== 'speed' || q.mode === 'audio')) void playItem(item).catch(() => {})
     if (q.kind === 'shooter') preloadItems(material.shooter.syllables.slice(0, 8))
     if (q.kind === 'pingpong') preloadItems(material.pingpong.words.slice(0, 6))
   }, [q, material])
 
   const answer = (given: string) => {
     if (!q || feedback || ended.current) return
-    const expected = q.kind === 'shooter' ? String(q.tone) : q.kind === 'pingpong' ? q.pair : q.twin.answer
+    const expected =
+      q.kind === 'shooter'
+        ? String(q.tone)
+        : q.kind === 'pingpong'
+          ? q.pair
+          : q.kind === 'twins'
+            ? q.twin.answer
+            : q.kind === 'speed'
+              ? q.word
+              : `ok:${q.order.length}`
     const ok = given === expected
     const st = stats.current
     if (ok) {
       const newStreak = streak + 1
       const mult = comboMultiplier(newStreak)
       st.correct++
-      st.score += 10 * mult
+      st.score += (q.kind === 'assemble' ? 5 * Number(given.split(':')[1] ?? 2) : 10) * mult
       st.comboBonus += mult - 1
       st.maxStreak = Math.max(st.maxStreak, newStreak)
       setStreak(newStreak)
@@ -306,14 +336,24 @@ function Round({
     }
     setScore(st.score)
     setFeedback({ ok, given })
-    void recordAnswer(
+    if (q.kind === 'assemble') {
+      void recordAnswer({ kind: 'order', source: 'game', game: id, item: q.id, expected: 'ok', given, correct: ok }).catch(() => {})
+      return // следующая фраза — после «Сказал» (повторить вслух)
+    }
+    if (q.kind === 'speed') {
+      void recordAnswer({ kind: 'meaning', source: 'game', game: id, item: q.word, expected, given, correct: ok }).catch(() => {})
+      if (q.mode === 'text') void playItem(q.word).catch(() => {})
+    } else void recordAnswer(
       q.kind === 'shooter'
         ? { kind: 'tone', source: 'game', game: id, item: q.syl, expected, given, correct: ok, skill: 'tone' }
         : q.kind === 'pingpong'
           ? { kind: 'pair', source: 'game', game: id, item: q.word, expected, given, correct: ok, skill: 'pair' }
           : { kind: 'syllable', source: 'game', game: id, item: q.twin.answer, expected, given, correct: ok, skill: q.twin.skill, contrast: q.twin.contrast },
     ).catch(() => {})
-    const delay = q.kind === 'shooter' ? shooterDelay(ok ? streak + 1 : 0) : ok ? 500 : 1100
+    scheduleNext(q.kind === 'shooter' ? shooterDelay(ok ? streak + 1 : 0) : ok ? 500 : 1100, ok)
+  }
+
+  const scheduleNext = (delay: number, ok: boolean) => {
     setTimeout(() => {
       if (ended.current) return
       setFeedback(null)
@@ -344,6 +384,118 @@ function Round({
       {q?.kind === 'shooter' && <Shooter key={q.syl + stats.current.correct + stats.current.wrong} q={q} feedback={feedback} streak={streak} onAnswer={answer} />}
       {q?.kind === 'pingpong' && <PingPong key={q.word + stats.current.correct + stats.current.wrong} q={q} feedback={feedback} onAnswer={answer} />}
       {q?.kind === 'twins' && <Twins key={q.twin.answer + stats.current.correct + stats.current.wrong} q={q} feedback={feedback} onAnswer={answer} />}
+      {q?.kind === 'speed' && <Speed key={q.word + stats.current.correct + stats.current.wrong} q={q} feedback={feedback} onAnswer={answer} />}
+      {q?.kind === 'assemble' && (
+        <AssembleGame
+          key={q.id + stats.current.correct + stats.current.wrong}
+          q={q}
+          feedback={feedback}
+          onAnswer={answer}
+          onNext={() => scheduleNext(0, true)}
+        />
+      )}
+    </div>
+  )
+}
+
+/* ——— Скорострел ——— */
+
+function Speed({
+  q,
+  feedback,
+  onAnswer,
+}: {
+  q: Extract<Question, { kind: 'speed' }>
+  feedback: { ok: boolean; given: string } | null
+  onAnswer: (given: string) => void
+}) {
+  const w = wordById.get(q.word)!
+  return (
+    <div className={s.play}>
+      <p className={s.contrast}>{q.mode === 'text' ? ru.games.speedPromptText : ru.games.speedPromptAudio}</p>
+      {q.mode === 'text' || feedback ? (
+        <div className={s.reveal}>
+          <Hanzi className={s.revealHanzi}>{w.hanzi}</Hanzi>
+          <Pinyin numeric={w.pinyin} />
+        </div>
+      ) : (
+        <PlayButton item={q.word} label={ru.lesson.listenAgain} size="l" />
+      )}
+      <div className={s.speedOptions}>
+        {q.options.map((id) => {
+          const o = wordById.get(id)!
+          return (
+            <button
+              key={id}
+              type="button"
+              className={s.option}
+              data-state={feedback ? (id === q.word ? 'right' : feedback.given === id ? 'wrong' : undefined) : undefined}
+              disabled={!!feedback}
+              onClick={() => onAnswer(id)}
+            >
+              {q.mode === 'text' ? (
+                <span className={s.speedRu}>{o.ru[0]}</span>
+              ) : (
+                <>
+                  <Hanzi className={s.revealHanzi}>{o.hanzi}</Hanzi>
+                  <span className={s.optionLabel}>{o.ru[0]}</span>
+                </>
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+/* ——— Сборка ——— */
+
+function AssembleGame({
+  q,
+  feedback,
+  onAnswer,
+  onNext,
+}: {
+  q: Extract<Question, { kind: 'assemble' }>
+  feedback: { ok: boolean; given: string } | null
+  onAnswer: (given: string) => void
+  onNext: () => void
+}) {
+  const sen = sentenceById.get(q.id)!
+  const right = sen.tokens.map((_, i) => i).filter((i) => !isPunct(sen.tokens[i]!))
+  const [placed, setPlaced] = useState<number[]>([])
+  useEffect(() => {
+    if (placed.length !== right.length || feedback) return
+    const ok = placed.every((i, k) => sen.tokens[i]!.hanzi === sen.tokens[right[k]!]!.hanzi)
+    onAnswer(`${ok ? 'ok' : 'bad'}:${right.length}`)
+    void playItem(q.id).catch(() => {})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [placed])
+  const chip = (i: number, onClick?: () => void) => (
+    <button key={i} type="button" className={s.wordChip} onClick={onClick} disabled={!onClick}>
+      <Hanzi className={s.wordChipHanzi}>{sen.tokens[i]!.hanzi}</Hanzi>
+      <Pinyin numeric={sen.tokens[i]!.pinyin} className={s.optionLabel} />
+    </button>
+  )
+  return (
+    <div className={s.play}>
+      <p className={s.assembleRu}>{sen.ru}</p>
+      <div className={s.assembleLine} data-state={feedback ? (feedback.ok ? 'right' : 'wrong') : undefined}>
+        {placed.map((i) => chip(i, feedback ? undefined : () => setPlaced((p) => p.filter((x) => x !== i))))}
+      </div>
+      {feedback ? (
+        <div className={s.hardest}>
+          {!feedback.ok && <SentenceLine sentence={sen} />}
+          <span>{ru.lesson.nowRepeat}</span>
+          <PlayButton item={q.id} label={ru.lesson.listenAgain} />
+          <button type="button" className={ui.primary} onClick={onNext}>
+            {ru.lesson.saidIt}
+          </button>
+        </div>
+      ) : (
+        <div className={s.assemblePool}>{q.order.filter((i) => !placed.includes(i)).map((i) => chip(i, () => setPlaced((p) => [...p, i])))}</div>
+      )}
     </div>
   )
 }

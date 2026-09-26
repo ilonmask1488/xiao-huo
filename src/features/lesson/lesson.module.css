@@ -359,6 +359,168 @@
   color: var(--ink-2);
 }
 
+/* ——— Фразы ——— */
+.sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2px var(--space-2);
+  margin: 0;
+}
+
+.sentenceBig {
+  justify-content: center;
+  gap: var(--space-1) var(--space-3);
+}
+
+.token {
+  display: grid;
+  justify-items: center;
+  line-height: 1.15;
+}
+
+.tokenHanzi {
+  font-size: 1.5rem;
+}
+
+.sentenceBig .tokenHanzi {
+  font-size: 2.25rem;
+}
+
+.tokenPinyin {
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.sentenceBig .tokenPinyin {
+  font-size: var(--fs-body);
+}
+
+.punct {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  color: var(--ink-2);
+}
+
+.ruLine {
+  font-size: var(--fs-lead);
+}
+
+.ruBig {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ——— Угадай значение ——— */
+.meanings {
+  display: grid;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.meaningBtn {
+  min-height: 52px;
+  padding: var(--space-2) var(--space-4);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  font-size: var(--fs-lead);
+  text-align: left;
+}
+
+.meaningBtn:disabled {
+  cursor: default;
+}
+
+.meaningBtn[data-state='right'] {
+  border-color: var(--t2);
+  box-shadow: inset 0 0 0 2px var(--t2);
+}
+
+.meaningBtn[data-state='wrong'] {
+  border-color: var(--danger);
+  box-shadow: inset 0 0 0 2px var(--danger);
+}
+
+.meaningBtn[data-state='dim'] {
+  opacity: 0.45;
+}
+
+/* ——— Сборка ——— */
+.answerLine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 72px;
+  padding: var(--space-2);
+  border-bottom: 2px solid var(--ink);
+}
+
+.answerLine[data-state='right'] {
+  border-bottom-color: var(--t2);
+}
+
+.answerLine[data-state='wrong'] {
+  border-bottom-color: var(--danger);
+}
+
+.pool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.chipWord {
+  display: grid;
+  justify-items: center;
+  min-width: 52px;
+  min-height: 56px;
+  padding: var(--space-1) var(--space-3);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  line-height: 1.15;
+}
+
+.chipWord:disabled {
+  cursor: default;
+}
+
+.chipHanzi {
+  font-size: 1.5rem;
+}
+
+.chipPinyin {
+  font-size: var(--fs-caption);
+  font-weight: 500;
+}
+
+/* ——— Карточки ——— */
+.grades {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.grades button {
+  flex-direction: column;
+  gap: 0;
+  min-height: 60px;
+  padding: 0 var(--space-1);
+  font-size: var(--fs-small);
+}
+
+.gradeTime {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 /* ——— Итоги ——— */
 .summary {
   display: grid;
@@ -427,4 +589,16 @@
   background: var(--surface);
   font-size: var(--fs-small);
   text-align: left;
+}
+
+.voicePair {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.voiceCol {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
 }

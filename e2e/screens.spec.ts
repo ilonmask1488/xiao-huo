@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { markSoundChecked, seedCompleted } from './helpers.ts'
+import { advanceUntil, markSoundChecked, seedCompleted, STAGE0_BEFORE_BOSS } from './helpers.ts'
 
 /*
   Скриншоты ключевых экранов для проверки дизайна глазами (ТЗ §14).
@@ -18,7 +18,7 @@ async function shoot(page: Page, name: string, scheme: string, project: string, 
 
 for (const scheme of ['light', 'dark'] as const) {
   test(`экраны, тема ${scheme}`, async ({ page }, info) => {
-    test.setTimeout(120_000)
+    test.setTimeout(240_000)
     const p = info.project.name
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
     await page.goto('./')
@@ -61,5 +61,36 @@ for (const scheme of ['light', 'dark'] as const) {
     await page.getByRole('button', { name: '4-й тон' }).click()
     await page.waitForTimeout(300)
     await shoot(page, 'game-play', scheme, p, false)
+
+    if (phase === 'phase1') return
+    // ——— Фаза 2: ступень 1, повторение, пуск из сегментов ———
+    await seedCompleted(page, [...STAGE0_BEFORE_BOSS, 's0-u6-l1', 's1-u1-l1', 's1-u1-l2'])
+    await page.reload()
+    for (const [name, path] of [
+      ['p2-session', '/session'],
+      ['p2-unit', '/unit/s1-u1'],
+      ['p2-stats', '/stats'],
+      ['p2-map', '/map'],
+      ['p2-game-speed', '/game/speed'],
+    ] as const) {
+      await page.goto(`./#${path}`)
+      await shoot(page, name, scheme, p)
+    }
+    // Первый кусок повторения: карточка до и после «Показать ответ»
+    await page.goto('./#/session')
+    await page.getByRole('button', { name: 'Открыть' }).first().click()
+    const show = page.getByRole('button', { name: 'Показать ответ' })
+    if (await show.waitFor({ timeout: 5000 }).then(() => true, () => false)) {
+      await shoot(page, 'p2-card', scheme, p, false)
+      await show.click()
+      await shoot(page, 'p2-card-answer', scheme, p, false)
+    }
+    // Урок 1.1.3: фраза и «сборка»
+    await page.goto('./#/lesson/s1-u1-l3')
+    await shoot(page, 'p2-lesson-grammar', scheme, p)
+    await advanceUntil(page, 'Фраза')
+    await shoot(page, 'p2-sentence', scheme, p, false)
+    await advanceUntil(page, 'Собери фразу', 60)
+    await shoot(page, 'p2-assemble', scheme, p, false)
   })
 }

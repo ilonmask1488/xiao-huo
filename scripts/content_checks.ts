@@ -47,11 +47,24 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
     for (const g of u.grammarNotes)
       for (const id of g.examples) if (!sentences.has(id)) errors.push(`этап ${u.id}, «${g.title}»: нет фразы «${id}»`)
   }
+  const wordPinyin = new Map(c.words.map((w) => [w.id, w.pinyin]))
   for (const s of c.sentences) {
+    if (!s.id.startsWith('s-')) errors.push(`фраза ${s.id}: id должен начинаться с «s-»`)
     if (!units.has(s.unitId)) errors.push(`фраза ${s.id}: нет этапа «${s.unitId}»`)
-    for (const t of s.tokens) if (t.wordId && !words.has(t.wordId)) errors.push(`фраза ${s.id}: нет слова «${t.wordId}»`)
-    if (!s.audio.length) errors.push(`фраза ${s.id}: нет аудио`)
-    for (const a of s.audio) if (!hasFile(a.file)) errors.push(`фраза ${s.id}: нет файла ${a.file}`)
+    if (audio && !audio.texts.has(s.tokens.map((t) => t.hanzi).join('')))
+      errors.push(`фраза ${s.id}: нет звука — запусти scripts/generate_audio.py`)
+    for (const a of s.audio ?? []) if (!hasFile(a.file)) errors.push(`фраза ${s.id}: нет файла ${a.file}`)
+    for (const t of s.tokens) {
+      if (t.wordId && !words.has(t.wordId)) errors.push(`фраза ${s.id}: нет слова «${t.wordId}»`)
+      const syl = t.pinyin.trim().split(/\s+/).filter(Boolean)
+      if (syl.some((x) => !SYL.test(x))) errors.push(`фраза ${s.id}: пиньинь «${t.pinyin}» у «${t.hanzi}» не в формате ni3`)
+      if (syl.length && syl.length !== [...t.hanzi].length)
+        errors.push(`фраза ${s.id}: у «${t.hanzi}» ${[...t.hanzi].length} иероглифа, а слогов ${syl.length}`)
+      // Токен-слово пишется так же, как в словаре (нейтральный тон в речи допускается).
+      const dict = t.wordId ? wordPinyin.get(t.wordId) : undefined
+      if (dict && dict !== t.pinyin && dict.replace(/[1-5]/g, '') !== t.pinyin.replace(/[1-5]/g, ''))
+        errors.push(`фраза ${s.id}: «${t.hanzi}» — ${t.pinyin}, а в словаре ${dict}`)
+    }
   }
   for (const d of c.dialogues) {
     if (!units.has(d.unitId)) errors.push(`диалог ${d.id}: нет этапа «${d.unitId}»`)
@@ -79,6 +92,8 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
     if (item.startsWith('w-')) {
       if (!words.has(item)) errors.push(`${where}: нет слова «${item}»`)
       else if (audio && !audio.texts.has(wordHanzi.get(item)!)) errors.push(`${where}: нет звука слова ${item}`)
+    } else if (item.startsWith('s-')) {
+      if (!sentences.has(item)) errors.push(`${where}: нет фразы «${item}»`)
     } else if (!SYL.test(item)) errors.push(`${where}: «${item}» — не слог с тоном`)
     else if (audio && !audio.syllables.has(item)) errors.push(`${where}: нет звука слога ${item}`)
   }
@@ -122,6 +137,7 @@ function checkPart(
       p.examples?.forEach((e) => checkItem(where, e.syl))
       p.words?.forEach((w) => checkItem(where, w))
       p.sandhi?.forEach((w) => checkItem(where, w))
+      p.sentences?.forEach((s) => checkItem(where, s))
       if (p.body.length > 4) errors.push(`${where}: больше 4 абзацев — это «стена текста»`)
       break
     case 'listen':
@@ -156,6 +172,25 @@ function checkPart(
           }
           if (!same(k)) errors.push(`${where}: варианты ${it.options.join('/')} различаются не только по «${skill}», но и по «${k}»`)
         }
+      }
+      break
+    case 'meaning':
+      for (const w of p.items) {
+        if (!w.startsWith('w-')) errors.push(`${where}: «угадай значение» только для слов, а тут ${w}`)
+        checkItem(where, w)
+      }
+      break
+    case 'sentences':
+    case 'sayIt':
+      p.items.forEach((i) => checkItem(where, i))
+      break
+    case 'assemble':
+      for (const id of p.items) {
+        checkItem(where, id)
+        const s = c.sentences.find((x) => x.id === id)
+        const n = s ? s.tokens.filter((t) => t.pinyin.trim()).length : 0
+        if (s && n < 2) errors.push(`${where}: во фразе ${id} меньше 2 слов — собирать нечего`)
+        if (s && n > 8) errors.push(`${where}: во фразе ${id} ${n} слов — для сборки слишком длинно`)
       }
       break
     case 'guessPair':

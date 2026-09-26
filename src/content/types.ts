@@ -9,8 +9,8 @@ export type LessonId = string
 /** Слог с тоном: «ma3», «lv4». Нейтральный — 5. */
 export type Syllable = string
 
-/** Что озвучить: слог («ma3») или слово (id «w-nihao»). */
-export type Item = Syllable | WordId
+/** Что озвучить: слог («ma3»), слово (id «w-nihao») или фраза (id «s-…»). */
+export type Item = Syllable | WordId | SentenceId
 
 export type Word = {
   id: WordId
@@ -32,11 +32,12 @@ export type Word = {
 export type Token = { hanzi: string; pinyin: string; wordId?: WordId; ru?: string }
 
 export type Sentence = {
-  id: SentenceId
+  id: SentenceId // всегда начинается с «s-»
   tokens: Token[] // явная разбивка на слова — не сегментировать на лету
   ru: string
   literal?: string
-  audio: { voice: string; file: string }[]
+  /** звук берётся из public/audio/manifest.json по тексту фразы; поле оставлено для ручных записей */
+  audio?: { voice: string; file: string }[]
   unitId: string
   /** Слова, которые разрешено использовать до их официального ввода (правило i+1) */
   newWordIds?: WordId[]
@@ -70,6 +71,8 @@ export type LessonPart =
       words?: WordId[]
       /** показать «словарный → как звучит» для этих слов */
       sandhi?: WordId[]
+      /** примеры-фразы (грамматика) */
+      sentences?: SentenceId[]
       mascot?: 'happy' | 'thinking' | 'wink' | 'oops' | 'celebrate'
     }
   | { type: 'listen'; title?: string; series: Item[][] }
@@ -78,6 +81,14 @@ export type LessonPart =
   | { type: 'whichSyllable'; contrast: Contrast; items: { answer: Syllable; options: Syllable[] }[] }
   | { type: 'guessPair'; items: WordId[] }
   | { type: 'read'; items: Item[] }
+  /** Угадай значение: по звуку или по иероглифам с пиньинем — выбрать перевод из 4 */
+  | { type: 'meaning'; prompt: 'audio' | 'text'; items: WordId[] }
+  /** Фразы: разбор по словам, перевод, дословно, звук */
+  | { type: 'sentences'; items: SentenceId[] }
+  /** Сборка: собрать фразу из перемешанных слов, потом послушать и повторить */
+  | { type: 'assemble'; items: SentenceId[] }
+  /** Скажи сам: по-русски → сказать по-китайски → сверить с образцом */
+  | { type: 'sayIt'; items: (WordId | SentenceId)[] }
 
 export type Lesson = {
   id: LessonId
@@ -98,6 +109,8 @@ export type Unit = {
   /** «0.1» — номер для людей */
   code: string
   title: string
+  /** ситуация для ролевого диалога с Claude */
+  situation?: string
   goals: string[]
   lessons: LessonId[]
   newWords: WordId[]

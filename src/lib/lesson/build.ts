@@ -2,8 +2,8 @@
   Урок = последовательность коротких экранов. Части урока (LessonPart) разворачиваются в экраны,
   а между объяснениями экраны перемешиваются так, чтобы одного типа шло не больше 3 подряд.
 */
-import { wordById } from '../../content'
-import type { Contrast, Item, Lesson, LessonPart, Syllable, WordId } from '../../content/types'
+import { content, isPunct, sentenceById, unitOfWord, units, wordById } from '../../content'
+import type { Contrast, Item, Lesson, LessonPart, SentenceId, Syllable, WordId } from '../../content/types'
 import type { Tone } from '../pinyin/marks'
 import { tonesOf } from '../pinyin/normalize'
 
@@ -19,17 +19,35 @@ export type Screen =
   | { kind: 'whichSyllable'; answer: Syllable; options: Syllable[]; contrast: Contrast }
   | { kind: 'guessPair'; word: WordId; options: string[] }
   | { kind: 'read'; item: Item }
+  | { kind: 'meaning'; word: WordId; prompt: 'audio' | 'text'; options: WordId[] }
+  | { kind: 'sentence'; id: SentenceId }
+  | { kind: 'assemble'; id: SentenceId; order: number[] }
+  | { kind: 'sayIt'; item: Item }
+  /** карточка повторения FSRS */
+  | { kind: 'card'; cardId: string; word: WordId; cardKind: 1 | 2 | 3 | 4; options?: string[] }
 
 export type ScreenKind = Screen['kind']
 
 /** Экраны с правильным ответом — из них считается точность. */
 export function isQuestion(s: Screen): boolean {
-  return s.kind === 'guessTone' || s.kind === 'whichSyllable' || s.kind === 'guessPair'
+  return (
+    s.kind === 'guessTone' ||
+    s.kind === 'whichSyllable' ||
+    s.kind === 'guessPair' ||
+    s.kind === 'meaning' ||
+    s.kind === 'assemble' ||
+    s.kind === 'card'
+  )
 }
 
 /** Экраны, где пользователь говорит вслух. */
 export function isSpoken(s: Screen): boolean {
-  return s.kind === 'repeat' || s.kind === 'read'
+  return s.kind === 'repeat' || s.kind === 'read' || s.kind === 'sayIt' || s.kind === 'assemble' || (s.kind === 'card' && s.cardKind === 3)
+}
+
+/** Формат экрана для правила «не больше 3 подряд»: у карточек формат зависит от типа. */
+export function formatOf(s: Screen): string {
+  return s.kind === 'card' ? `card${s.cardKind}` : s.kind
 }
 
 export function expandPart(part: LessonPart, seed = 1): Screen[] {
@@ -53,7 +71,73 @@ export function expandPart(part: LessonPart, seed = 1): Screen[] {
       }))
     case 'guessPair':
       return part.items.map((word, i) => ({ kind: 'guessPair', word, options: pairOptions(word, seed + i) }))
+    case 'meaning':
+      return part.items.map((word, i) => ({
+        kind: 'meaning',
+        word,
+        prompt: part.prompt,
+        options: meaningOptions(word, seed + i),
+      }))
+    case 'sentences':
+      return part.items.map((id) => ({ kind: 'sentence', id }))
+    case 'assemble':
+      return part.items.map((id, i) => ({ kind: 'assemble', id, order: assembleOrder(id, seed + i) }))
+    case 'sayIt':
+      return part.items.map((item) => ({ kind: 'sayIt', item }))
   }
+}
+
+/* ——— Варианты ответов ——— */
+
+/** Правильное слово + 3 других с непохожим переводом — из того же и предыдущих этапов. */
+export function meaningOptions(word: WordId, seed: number): WordId[] {
+  const w = wordById.get(word)
+  if (!w) return [word]
+  const myUnit = unitOfWord.get(word)
+  const order = units.map((u) => u.id)
+  const limit = myUnit ? order.indexOf(myUnit) : order.length
+  const pool = content.words.filter((x) => {
+    if (x.id === word || x.ru[0] === w.ru[0]) return false
+    const u = unitOfWord.get(x.id)
+    return u !== undefined && order.indexOf(u) <= limit
+  })
+  // Сначала слова того же этапа — они похожи по теме и потому полезнее как ловушки.
+  const same = shuffle(pool.filter((x) => unitOfWord.get(x.id) === myUnit), seed)
+  const rest = shuffle(pool.filter((x) => unitOfWord.get(x.id) !== myUnit), seed + 1)
+  const picked = [...same, ...rest].slice(0, 3).map((x) => x.id)
+  return shuffle([word, ...picked], seed + 2)
+}
+
+/** Перемешанный порядок слов фразы (знаки препинания не участвуют и стоят на месте). */
+export function assembleOrder(id: SentenceId, seed: number): number[] {
+  const s = sentenceById.get(id)
+  if (!s) return []
+  const idx = s.tokens.map((_, i) => i).filter((i) => !isPunct(s.tokens[i]!))
+  if (idx.length < 2) return idx
+  // Перемешиваем, пока порядок не отличается от правильного.
+  for (let k = 0; k < 10; k++) {
+    const sh = shuffle(idx, seed + k)
+    if (sh.some((v, i) => v !== idx[i])) return sh
+  }
+  return [...idx].reverse()
+}
+
+/** Тоновый рисунок слова: «13», «3», «435». */
+export function tonePattern(word: WordId): string {
+  const w = wordById.get(word)
+  if (!w) throw new Error(`нет слова ${word}`)
+  return tonesOf(w.pinyin).join('')
+}
+
+/** Для карточки «тоны»: верный рисунок + 3 отличающихся одним слогом. */
+export function patternOptions(word: WordId, seed: number): string[] {
+  const right = tonePattern(word)
+  const near = new Set<string>()
+  for (let i = 0; i < right.length; i++) {
+    const allowed = i === 0 ? '1234' : '12345'
+    for (const t of allowed) if (t !== right[i]) near.add(right.slice(0, i) + t + right.slice(i + 1))
+  }
+  return shuffle([right, ...shuffle([...near], seed).slice(0, 3)], seed + 7)
 }
 
 /**
@@ -63,10 +147,10 @@ export function expandPart(part: LessonPart, seed = 1): Screen[] {
 */
 export function interleave(queues: Screen[][]): Screen[] {
   const qs = queues.map((q) => [...q]).filter((q) => q.length)
-  const counts = new Map<ScreenKind, number>()
-  for (const q of qs) for (const s of q) counts.set(s.kind, (counts.get(s.kind) ?? 0) + 1)
+  const counts = new Map<string, number>()
+  for (const q of qs) for (const s of q) counts.set(formatOf(s), (counts.get(formatOf(s)) ?? 0) + 1)
 
-  const feasible = (last: ScreenKind, run: number): boolean => {
+  const feasible = (last: string, run: number): boolean => {
     let total = 0
     for (const c of counts.values()) total += c
     for (const [k, c] of counts) {
@@ -80,11 +164,12 @@ export function interleave(queues: Screen[][]): Screen[] {
   let current = 0
   let run = 0
   while (qs.some((q) => q.length)) {
-    const last = out[out.length - 1]?.kind
-    const allowed = (i: number) => qs[i]!.length > 0 && (qs[i]![0]!.kind !== last || run < MAX_RUN)
+    const lastScreen = out[out.length - 1]
+    const last = lastScreen ? formatOf(lastScreen) : undefined
+    const allowed = (i: number) => qs[i]!.length > 0 && (formatOf(qs[i]![0]!) !== last || run < MAX_RUN)
     const order = [current, ...qs.keys()].filter((i, n, a) => a.indexOf(i) === n && allowed(i))
     const works = (i: number) => {
-      const kind = qs[i]![0]!.kind
+      const kind = formatOf(qs[i]![0]!)
       counts.set(kind, counts.get(kind)! - 1)
       const ok = feasible(kind, kind === last ? run + 1 : 1)
       counts.set(kind, counts.get(kind)! + 1)
@@ -97,8 +182,8 @@ export function interleave(queues: Screen[][]): Screen[] {
       pick = pool.reduce((a, b) => (qs[b]!.length > qs[a]!.length ? b : a))
     }
     const s = qs[pick]!.shift()!
-    counts.set(s.kind, counts.get(s.kind)! - 1)
-    run = s.kind === last ? run + 1 : 1
+    counts.set(formatOf(s), counts.get(formatOf(s))! - 1)
+    run = formatOf(s) === last ? run + 1 : 1
     out.push(s)
     current = pick
   }
@@ -127,10 +212,10 @@ export function buildLesson(lesson: Lesson): Screen[] {
 export function longestRun(screens: Screen[], ignore: ScreenKind[] = ['explain']): number {
   let best = 0
   let run = 0
-  let last: ScreenKind | null = null
+  let last: string | null = null
   for (const s of screens) {
-    run = s.kind === last ? run + 1 : 1
-    last = s.kind
+    run = formatOf(s) === last ? run + 1 : 1
+    last = formatOf(s)
     if (!ignore.includes(s.kind)) best = Math.max(best, run)
   }
   return best
@@ -140,18 +225,29 @@ export function longestRun(screens: Screen[], ignore: ScreenKind[] = ['explain']
 export function itemsOf(screen: Screen): Item[] {
   switch (screen.kind) {
     case 'explain':
-      return [...(screen.part.examples?.map((e) => e.syl) ?? []), ...(screen.part.words ?? [])]
+      return [
+        ...(screen.part.examples?.map((e) => e.syl) ?? []),
+        ...(screen.part.words ?? []),
+        ...(screen.part.sentences ?? []),
+      ]
     case 'listen':
       return screen.series
     case 'repeat':
     case 'read':
+    case 'sayIt':
       return [screen.item]
     case 'guessTone':
       return [screen.syl, ...screen.choices.filter((t) => t !== 5).map((t) => `${screen.syl.slice(0, -1)}${t}`)]
     case 'whichSyllable':
       return screen.options
     case 'guessPair':
+    case 'card':
       return [screen.word]
+    case 'meaning':
+      return [screen.word]
+    case 'sentence':
+    case 'assemble':
+      return [screen.id]
   }
 }
 

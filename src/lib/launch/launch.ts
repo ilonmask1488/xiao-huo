@@ -1,120 +1,200 @@
 /*
-  Ежедневный «пуск» фазы 1. Пока нет повторения FSRS (фаза 2), собирается из того, что есть:
-  - Разминка — «Угадай тон» по пройденным слогам (потом — мини-игра);
-  - Повторение — пропускается до фазы 2;
-  - Новое — следующий урок;
-  - Эхо — «Повтори вслух» по пройденному;
-  - Скажи сам — «Прочитай» пройденные слова и слоги.
-  Блоки без содержания пропускаются.
+  Ежедневный «пуск» (ТЗ §5.1, фаза 2). Блоки по времени — из planSession (разминка 3, повторение 10,
+  новое 12, эхо 10, скажи сам 5 при 40 минутах). Чтобы не было скучно, блоки режутся на сегменты
+  не длиннее ~3 минут одного формата и чередуются: разминка → повторение → новое → эхо → повторение →
+  скажи сам → эхо → … Новый урок — один сегмент: формат в нём меняется сам (не больше 3 экранов подряд).
+  Блоки без материала пропускаются.
 */
-import { lessonById, lessonOrder } from '../../content'
-import type { Item, Syllable } from '../../content/types'
+import { lessonById, lessonOrder, sentenceById, wordById } from '../../content'
+import type { Item } from '../../content/types'
 import { db } from '../db/db'
-import { gameAvailable, gameMaterial } from '../games/games'
-import type { LaunchBlockState, LaunchRow } from '../db/types'
-import { hash, interleave, shuffle, type Screen } from '../lesson/build'
+import type { CardRow, LaunchRow, LaunchSegment } from '../db/types'
+import { gameAvailable, gameMaterial, type GameId } from '../games/games'
+import { hash, patternOptions, shuffle, type Screen } from '../lesson/build'
 import { completedLessonIds, nextLessonId } from '../lesson/progress'
-import type { Tone } from '../pinyin/marks'
 import { localDate } from '../progress/streak'
+import { planSession, type BlockId } from '../session/plan'
+import { ensureCardsForCompleted, mixKinds, reviewQueue, DUE_OVERLOAD } from '../srs/cards'
 
-export type LaunchBlockId = LaunchBlockState['id']
-export const LAUNCH_ORDER: LaunchBlockId[] = ['warmup', 'review', 'new', 'echo', 'speak']
+export type LaunchBlockId = BlockId
+export const MAX_SEGMENT_MINUTES = 3
 
-type Learned = { syllables: Syllable[]; toneChoices: Set<Tone>; spoken: Item[]; words: Item[] }
+/** Сколько секунд в среднем уходит на экран каждого формата. */
+export const SECONDS_PER = { cards: 15, echo: 18, speak: 22 } as const
 
-/** Что уже пройдено: слоги из «угадай тон», звуки из «повтори/послушай», слова. */
+type Learned = { spoken: Item[]; words: Item[]; sentences: Item[] }
+
+/** Пройденный материал для эха и «скажи сам». */
 export function learnedMaterial(completed: Set<string>): Learned {
-  const syllables = new Set<Syllable>()
-  const toneChoices = new Set<Tone>()
   const spoken = new Set<Item>()
   const words = new Set<Item>()
+  const sentences = new Set<Item>()
   for (const l of lessonOrder) {
     if (!completed.has(l.id)) continue
     l.newWords.forEach((w) => words.add(w))
     for (const p of l.parts) {
-      if (p.type === 'guessTone') {
-        p.items.forEach((s) => syllables.add(s))
-        p.choices.forEach((t) => toneChoices.add(t))
-      }
       if (p.type === 'repeat' || p.type === 'read') p.items.forEach((i) => spoken.add(i))
       if (p.type === 'listen') p.series.flat().forEach((i) => spoken.add(i))
+      if (p.type === 'sentences' || p.type === 'assemble') p.items.forEach((i) => sentences.add(i))
+      if (p.type === 'explain') p.sentences?.forEach((i) => sentences.add(i))
     }
   }
-  return { syllables: [...syllables], toneChoices, spoken: [...spoken], words: [...words] }
+  return {
+    spoken: [...spoken].filter((i) => !i.startsWith('s-') || sentenceById.has(i)),
+    words: [...words].filter((w) => wordById.has(w)),
+    sentences: [...sentences].filter((s) => sentenceById.has(s)),
+  }
 }
 
-/** Экраны синтетического блока (разминка, эхо, скажи сам) на сегодня. */
-export function blockScreens(block: LaunchBlockId, learned: Learned, date: string): Screen[] {
-  const seed = hash(`${date}:${block}`)
-  switch (block) {
-    case 'warmup': {
-      const choices = [...learned.toneChoices].sort() as Tone[]
-      // Тоны, которых ещё не было в уроках, не спрашиваем.
-      const items = shuffle(
-        learned.syllables.filter((s) => choices.includes(Number(s.slice(-1)) as Tone)),
-        seed,
-      ).slice(0, 12)
-      return items.map((syl) => ({ kind: 'guessTone', syl, choices }))
+/** Игра для разминки: по кругу из доступных, чтобы не приедалась. */
+export function warmupGame(completed: Set<string>, date: string): GameId | null {
+  const m = gameMaterial(completed)
+  const all: GameId[] = ['shooter', 'speed', 'pingpong', 'twins', 'assemble']
+  const open = all.filter((g) => gameAvailable(g, m))
+  if (!open.length) return null
+  return open[hash(date) % open.length]!
+}
+
+function chunk<T>(arr: T[], size: number): T[][] {
+  const out: T[][] = []
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size))
+  return out
+}
+
+export type PlanInput = {
+  minutes: number
+  completed: Set<string>
+  /** очередь карточек (самые срочные первыми) */
+  due: CardRow[]
+  date: string
+}
+
+/** План на день: сегменты в порядке прохождения. */
+export function planSegments(input: PlanInput): LaunchSegment[] {
+  const { completed, date } = input
+  const plan = planSession(input.minutes)
+  const min = Object.fromEntries(plan.map((b) => [b.id, b.minutes])) as Record<BlockId, number>
+  const seed = hash(date)
+  const learned = learnedMaterial(completed)
+
+  // Разминка
+  const game = warmupGame(completed, date)
+  const warmup: LaunchSegment[] = game
+    ? [{ id: 'warmup', block: 'warmup', kind: 'game', game, minutes: min.warmup, status: 'pending' }]
+    : []
+
+  // Повторение: по времени, куски ≤ 3 минут
+  const perChunk = Math.floor((MAX_SEGMENT_MINUTES * 60) / SECONDS_PER.cards)
+  const cardCount = Math.min(input.due.length, Math.round((min.review * 60) / SECONDS_PER.cards))
+  const review = chunk(input.due.slice(0, cardCount), perChunk).map((part) => mixKinds(part).map((c) => c.id)).map(
+    (items, i): LaunchSegment => ({
+      id: `review-${i + 1}`,
+      block: 'review',
+      kind: 'cards',
+      items,
+      minutes: Math.max(1, Math.round((items.length * SECONDS_PER.cards) / 60)),
+      status: 'pending',
+    }),
+  )
+
+  // Новое
+  const next = nextLessonId(completed)
+  const fresh: LaunchSegment[] = next
+    ? [{ id: 'new', block: 'new', kind: 'lesson', lessonId: next, minutes: min.new, status: 'pending' }]
+    : []
+
+  // Эхо: фразы, пока их нет — слова и слоги
+  const echoPool = learned.sentences.length >= 4 ? learned.sentences : learned.spoken
+  const echoCount = Math.min(echoPool.length, Math.round((min.echo * 60) / SECONDS_PER.echo))
+  const echo = chunk(shuffle(echoPool, seed).slice(0, echoCount), Math.floor((MAX_SEGMENT_MINUTES * 60) / SECONDS_PER.echo)).map(
+    (items, i): LaunchSegment => ({
+      id: `echo-${i + 1}`,
+      block: 'echo',
+      kind: 'echo',
+      items,
+      minutes: Math.max(1, Math.round((items.length * SECONDS_PER.echo) / 60)),
+      status: 'pending',
+    }),
+  )
+
+  // Скажи сам: слова и фразы по-русски → вслух по-китайски
+  const speakPool = [...learned.words, ...learned.sentences]
+  const speakCount = Math.min(speakPool.length, Math.round((min.speak * 60) / SECONDS_PER.speak))
+  const speak = chunk(shuffle(speakPool, seed + 1).slice(0, speakCount), Math.floor((MAX_SEGMENT_MINUTES * 60) / SECONDS_PER.speak)).map(
+    (items, i): LaunchSegment => ({
+      id: `speak-${i + 1}`,
+      block: 'speak',
+      kind: 'speak',
+      items,
+      minutes: Math.max(1, Math.round((items.length * SECONDS_PER.speak) / 60)),
+      status: 'pending',
+    }),
+  )
+
+  // Чередование: разминка, первый кусок повторения, новое, дальше по кругу повторение/эхо/скажи сам.
+  const out: LaunchSegment[] = [...warmup]
+  if (review.length) out.push(review.shift()!)
+  out.push(...fresh)
+  const queues = [review, echo, speak].filter((q) => q.length)
+  // После «нового» сначала эхо — повторить вслух только что услышанное.
+  queues.sort((a, b) => (a[0]!.kind === 'echo' ? -1 : b[0]!.kind === 'echo' ? 1 : 0))
+  let k = 0
+  while (queues.some((q) => q.length)) {
+    const last = out[out.length - 1]?.kind
+    let tries = 0
+    while (tries < queues.length && (!queues[k % queues.length]!.length || queues[k % queues.length]![0]!.kind === last)) {
+      k++
+      tries++
     }
+    const q = queues[k % queues.length]!.length ? queues[k % queues.length]! : queues.find((x) => x.length)!
+    out.push(q.shift()!)
+    k++
+  }
+  return out
+}
+
+/** Экраны сегмента (детерминированно — можно выйти и продолжить). */
+export function segmentScreens(seg: LaunchSegment, date: string, cards?: Map<string, CardRow>): Screen[] {
+  const seed = hash(`${date}:${seg.id}`)
+  const items = seg.items ?? []
+  switch (seg.kind) {
+    case 'cards':
+      return items.flatMap((id, i): Screen[] => {
+        const c = cards?.get(id)
+        const [word, kindStr] = [id.slice(0, id.lastIndexOf(':')), id.slice(id.lastIndexOf(':') + 1)]
+        const cardKind = Number(c?.kind ?? kindStr) as 1 | 2 | 3 | 4
+        if (!wordById.has(word) || cardKind > 4) return []
+        return [{ kind: 'card', cardId: id, word, cardKind, options: cardKind === 4 ? patternOptions(word, seed + i) : undefined }]
+      })
     case 'echo':
-      return shuffle(learned.spoken, seed)
-        .slice(0, 8)
-        .map((item) => ({ kind: 'repeat', item }))
-    case 'speak': {
-      const words = shuffle(learned.words, seed).slice(0, 4)
-      const syl = shuffle(learned.spoken.filter((i) => !i.startsWith('w-')), seed + 1).slice(0, 4)
-      return interleave([words.map((item) => ({ kind: 'read', item })), syl.map((item) => ({ kind: 'read', item }))])
-    }
+      return items.map((item) => ({ kind: 'repeat', item }))
+    case 'speak':
+      return items.map((item) => ({ kind: 'sayIt', item }))
     default:
       return []
   }
 }
 
-/** План на сегодня: какие блоки есть, какие пропускаются. */
-export function planLaunch(completed: Set<string>, date: string): LaunchBlockState[] {
-  const learned = learnedMaterial(completed)
-  const next = nextLessonId(completed)
-  const games = gameMaterial(completed)
-  return LAUNCH_ORDER.map((id): LaunchBlockState => {
-    if (id === 'review') return { id, status: 'skipped', auto: true }
-    // Разминка — раунд «Тон-тира» по пройденным тонам.
-    if (id === 'warmup') return gameAvailable('shooter', games) ? { id, status: 'pending' } : { id, status: 'skipped', auto: true }
-    if (id === 'new') return next ? { id, status: 'pending', lessonId: next } : { id, status: 'skipped', auto: true }
-    return blockScreens(id, learned, date).length ? { id, status: 'pending' } : { id, status: 'skipped', auto: true }
-  })
-}
-
-/**
-  Обновить план в течение дня: если урок пройден с карты, «Новое» указывает на следующий,
-  а блоки, пропущенные из-за отсутствия материала, открываются. Сделанное и пропущенное
-  пользователем не трогаем.
-*/
-export function refreshPlan(blocks: LaunchBlockState[], fresh: LaunchBlockState[]): LaunchBlockState[] {
-  return blocks.map((b) => {
-    const f = fresh.find((x) => x.id === b.id)!
-    if (b.status === 'done' || (b.status === 'skipped' && !b.auto)) return b
-    return f
-  })
-}
-
-/** Загрузить или создать сегодняшний пуск. */
-export async function getTodayLaunch(): Promise<LaunchRow> {
+/** Загрузить или создать сегодняшний пуск; план обновляется, пока блок не начат. */
+export async function getTodayLaunch(minutes: number): Promise<LaunchRow & { segments: LaunchSegment[] }> {
   const date = localDate()
+  // Сначала — карточки для уже пройденных уроков, иначе план соберётся без повторения.
+  await ensureCardsForCompleted()
+  const completed = await completedLessonIds()
+  const queue = await reviewQueue(Math.round((60 * 60) / SECONDS_PER.cards))
+  const fresh = planSegments({ minutes, completed, due: [...queue.cards].sort((a, b) => a.due - b.due), date })
   const existing = await db.launches.get(date)
-  const fresh = planLaunch(await completedLessonIds(), date)
-  if (existing) {
-    const blocks = refreshPlan(existing.blocks, fresh)
-    if (JSON.stringify(blocks) !== JSON.stringify(existing.blocks)) {
-      const finished = blocks.every((b) => b.status !== 'pending')
-      const row = { ...existing, blocks, finishedAt: finished ? (existing.finishedAt ?? Date.now()) : undefined }
-      await db.launches.put(row)
-      return row
-    }
-    return existing
+  if (existing?.segments) {
+    const segments = refreshSegments(existing.segments, fresh)
+    const row = { ...existing, segments, totalDue: queue.totalDue }
+    if (JSON.stringify(segments) !== JSON.stringify(existing.segments)) await db.launches.put(row)
+    return row
   }
-  const row: LaunchRow = {
+  const row: LaunchRow & { segments: LaunchSegment[] } = {
     date,
-    blocks: fresh,
+    blocks: [],
+    segments: fresh,
+    totalDue: queue.totalDue,
     startedAt: Date.now(),
     seconds: 0,
     dv: 0,
@@ -125,33 +205,59 @@ export async function getTodayLaunch(): Promise<LaunchRow> {
   return row
 }
 
-export async function finishBlock(
-  block: LaunchBlockId,
+/**
+  Обновить план в течение дня: блоки, где ещё ничего не сделано и не пропущено вручную,
+  берутся из свежего плана (например, урок пройден с карты — «Новое» указывает на следующий).
+*/
+export function refreshSegments(old: LaunchSegment[], fresh: LaunchSegment[]): LaunchSegment[] {
+  const touched = new Set(old.filter((s) => s.status === 'done' || (s.status === 'skipped' && !s.auto)).map((s) => s.block))
+  const keep = old.filter((s) => touched.has(s.block))
+  const add = fresh.filter((s) => !touched.has(s.block))
+  // Порядок — как в свежем плане, сделанное остаётся на своих местах в начале.
+  const done = keep.filter((s) => s.status !== 'pending')
+  const pending = [...keep.filter((s) => s.status === 'pending'), ...add]
+  const order = new Map(fresh.map((s, i) => [s.id, i]))
+  pending.sort((a, b) => (order.get(a.id) ?? 99) - (order.get(b.id) ?? 99))
+  return [...done, ...pending]
+}
+
+export async function finishSegment(
+  segId: string,
   r: { seconds: number; dv: number; correct: number; total: number },
 ): Promise<void> {
   const date = localDate()
   await db.transaction('rw', db.launches, async () => {
     const row = await db.launches.get(date)
-    if (!row) return
-    row.blocks = row.blocks.map((b) => (b.id === block ? { ...b, status: 'done' } : b))
+    if (!row?.segments) return
+    row.segments = row.segments.map((s) => (s.id === segId ? { ...s, status: 'done' } : s))
     row.seconds += Math.round(r.seconds)
     row.dv += r.dv
     row.correct += r.correct
     row.total += r.total
-    if (row.blocks.every((b) => b.status !== 'pending')) row.finishedAt = Date.now()
+    if (row.segments.every((s) => s.status !== 'pending')) row.finishedAt = Date.now()
     await db.launches.put(row)
   })
 }
 
-export async function skipBlock(block: LaunchBlockId): Promise<void> {
+/** Пропустить весь блок (все его сегменты). */
+export async function skipBlock(block: BlockId): Promise<void> {
   const date = localDate()
   const row = await db.launches.get(date)
-  if (!row) return
-  row.blocks = row.blocks.map((b) => (b.id === block && b.status === 'pending' ? { ...b, status: 'skipped', auto: false } : b))
-  if (row.blocks.every((b) => b.status !== 'pending')) row.finishedAt = Date.now()
+  if (!row?.segments) return
+  row.segments = row.segments.map((s) => (s.block === block && s.status === 'pending' ? { ...s, status: 'skipped', auto: false } : s))
+  if (row.segments.every((s) => s.status !== 'pending')) row.finishedAt = Date.now()
   await db.launches.put(row)
+}
+
+/** Куда вести сегмент. */
+export function segmentUrl(seg: LaunchSegment): string {
+  if (seg.kind === 'lesson' && seg.lessonId) return `/lesson/${seg.lessonId}?from=launch&seg=${seg.id}`
+  if (seg.kind === 'game' && seg.game) return `/game/${seg.game}?from=launch&seg=${seg.id}`
+  return `/launch/${seg.id}`
 }
 
 export function lessonTitle(id?: string): string | undefined {
   return id ? lessonById.get(id)?.title : undefined
 }
+
+export { DUE_OVERLOAD }

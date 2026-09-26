@@ -16,7 +16,7 @@ import json
 import shutil
 import sys
 
-from audio_lib import AUDIO, CACHE, MANIFEST, ROOT, SOURCES, collect_needs, decode, encode, load_json, process, safe_stem
+from audio_lib import AUDIO, CACHE, MANIFEST, ROOT, SOURCES, collect_needs, decode, encode, load_json, process, safe_stem, sentence_texts
 from prepare_syllables import native_syllable, native_word
 
 VOICES = {"female": ("zh-CN-XiaoxiaoNeural", "edge-xiaoxiao"), "male": ("zh-CN-YunxiNeural", "edge-yunxi")}
@@ -28,6 +28,10 @@ POLYPHONES = set(
     "似提兴血压转曲答薄背参藏称冲单度恶缝供冠横华划济假间降结卷量率论蒙宁喷片铺期切亲圈塞上盛识属宿说挑通系吓鲜旋"
     "与载扎涨正挣作查场乘担否号喝几夹累色舍什"
 )
+
+
+# Во фразах отмечаем только иероглифы, где синтез реально ошибается с чтением.
+SENTENCE_RISKY = set("了都会少还长行得地着重为乐觉数教便种只差相干看")
 
 
 async def tts(text: str, voice: str) -> bytes:
@@ -63,7 +67,7 @@ def main() -> int:
     chars = {k: v for k, v in load_json(ROOT / "scripts" / "syllable_chars.json").items() if not k.startswith("_")}
 
     # Старые файлы удаляем: имена с хэшем, всё пересоздаётся из кэша за секунды.
-    for sub in ("syl", "w"):
+    for sub in ("syl", "w", "s"):
         shutil.rmtree(AUDIO / sub, ignore_errors=True)
 
     manifest = {"version": 1, "sources": SOURCES, "syllables": {}, "texts": {}}
@@ -96,6 +100,17 @@ def main() -> int:
                 review.append(
                     f"| слово {hanzi} ({wid}) | многозвучные: {''.join(poly)} | TTS оба голоса{' + носитель' if nat else ''} | проверить чтение |"
                 )
+
+        # Фразы: два голоса синтеза. Фразы со «рискованными» иероглифами — в отчёт.
+        for sid, text in sorted(sentence_texts().items()):
+            if text in manifest["texts"]:
+                continue
+            manifest["texts"][text] = [
+                tts_entry(text, voice_key, f"{safe_stem(text)}-{voice_key[0]}", "s") for voice_key in VOICES
+            ]
+            risky = sorted({c for c in text if c in SENTENCE_RISKY})
+            if risky:
+                review.append(f"| фраза {text} ({sid}) | {''.join(risky)} | TTS оба голоса | проверить чтение |")
     except Exception as e:  # сеть, edge-tts недоступен и т.п. — не молчим
         print(f"\nОШИБКА: {e}", file=sys.stderr)
         print(
@@ -108,7 +123,11 @@ def main() -> int:
 
     n_files = len(manifest["syllables"]) + sum(len(v) for v in manifest["texts"].values())
     size = sum(p.stat().st_size for p in AUDIO.rglob("*.mp3"))
-    print(f"Слогов: {len(manifest['syllables'])}, слов: {len(manifest['texts'])}, файлов: {n_files}, {size / 1024:.0f} КБ")
+    n_sent = len(sentence_texts())
+    print(
+        f"Слогов: {len(manifest['syllables'])}, слов: {len(manifest['texts']) - n_sent}, фраз: {n_sent}, "
+        f"файлов: {n_files}, {size / 1024:.0f} КБ"
+    )
 
     report = ROOT / "docs" / "audio-review.md"
     report.write_text(

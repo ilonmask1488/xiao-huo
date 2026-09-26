@@ -3,7 +3,7 @@
   Файлы лежат в public/audio, имена с хэшем содержимого — кэш офлайна не устаревает.
 */
 import manifestJson from '../../../public/audio/manifest.json'
-import { wordById } from '../../content'
+import { sentenceById, sentenceText, wordById } from '../../content'
 import type { Item } from '../../content/types'
 
 export type Voice = 'native' | 'female' | 'male'
@@ -29,11 +29,19 @@ export function isWordItem(item: Item): boolean {
   return item.startsWith('w-')
 }
 
-/** Все записи для слога или слова (у слова — носитель и два голоса TTS). */
+export function isSentenceItem(item: Item): boolean {
+  return item.startsWith('s-')
+}
+
+/** Все записи для слога, слова или фразы (у слова — носитель и два голоса TTS). */
 export function entriesFor(item: Item): AudioEntry[] {
   if (isWordItem(item)) {
     const w = wordById.get(item)
     return w ? (manifest.texts[w.hanzi] ?? []) : []
+  }
+  if (isSentenceItem(item)) {
+    const s = sentenceById.get(item)
+    return s ? (manifest.texts[sentenceText(s)] ?? []) : []
   }
   const e = manifest.syllables[item]
   return e ? [e] : []
@@ -52,7 +60,12 @@ export function entryFor(item: Item, prefer: 'female' | 'male', voice?: Voice): 
 
 /** Текст для запасного синтеза в браузере (только у слов есть иероглифы). */
 export function fallbackText(item: Item): string | undefined {
-  return isWordItem(item) ? wordById.get(item)?.hanzi : undefined
+  if (isWordItem(item)) return wordById.get(item)?.hanzi
+  if (isSentenceItem(item)) {
+    const s = sentenceById.get(item)
+    return s ? sentenceText(s) : undefined
+  }
+  return undefined
 }
 
 export function hasAudio(item: Item): boolean {

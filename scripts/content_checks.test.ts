@@ -13,7 +13,7 @@ const base = (): Content => ({
       goals: [],
       lessons: ['l1'],
       newWords: ['w-ni'],
-      sentences: ['s1'],
+      sentences: ['s-1'],
       dialogues: [],
       grammarNotes: [],
       boss: '',
@@ -35,7 +35,7 @@ const base = (): Content => ({
   words: [{ id: 'w-ni', hanzi: '你', pinyin: 'ni3', ru: ['ты'], tags: [], reviewed: false }],
   sentences: [
     {
-      id: 's1',
+      id: 's-1',
       tokens: [{ hanzi: '你', pinyin: 'ni3', wordId: 'w-ni' }],
       ru: 'ты',
       audio: [{ voice: 'f', file: 's1.mp3' }],
@@ -46,7 +46,7 @@ const base = (): Content => ({
   dialogues: [],
 })
 
-const audio = { syllables: new Set(['ma1', 'ma4', 'ba4', 'pa4', 'lv4', 'lu4', 'ju1', 'zhi1']), texts: new Set(['你', '好']) }
+const audio = { syllables: new Set(['ma1', 'ma4', 'ba4', 'pa4', 'lv4', 'lu4', 'ju1', 'zhi1']), texts: new Set(['你', '好', '你你好']) }
 
 describe('проверка контента', () => {
   it('корректный контент без ошибок', () => {
@@ -60,7 +60,7 @@ describe('проверка контента', () => {
     c.units[0]!.newWords.push('w-missing')
     const r = checkContent(c, (f) => f !== 's1.mp3', audio)
     expect(r.errors).toContain('этап u1: нет слова «w-missing»')
-    expect(r.errors).toContain('фраза s1: нет файла s1.mp3')
+    expect(r.errors).toContain('фраза s-1: нет файла s1.mp3')
   })
 
   it('у слога урока нет звука — ошибка', () => {

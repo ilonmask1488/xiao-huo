@@ -14,6 +14,11 @@ export type AchievementId =
   | 'loud-100'
   | 'night'
   | 'stage0'
+  | 'third-100'
+  | 'no-dip-miss'
+  | 'orbit-7'
+  | 'words-100'
+  | 'loud-1000'
 
 type Check = () => Promise<boolean>
 
@@ -33,6 +38,19 @@ const CHECKS: Record<AchievementId, Check> = {
     return h >= 23 || h < 4
   },
   stage0: async () => !!(await db.unitProgress.get('s0-u6'))?.completedAt,
+  'third-100': async () =>
+    (await db.answers.where('kind').equals('tone').filter((a) => a.expected === '3' && a.correct).count()) >= 100,
+  // 20 третьих тонов подряд — без единой ошибки
+  'no-dip-miss': async () => {
+    const thirds = (await db.answers.where('kind').equals('tone').filter((a) => a.expected === '3').sortBy('at')).slice(-20)
+    return thirds.length >= 20 && thirds.every((a) => a.correct)
+  },
+  'orbit-7': async () => {
+    const days = await db.days.toArray()
+    return computeStreak(new Map(days.map((d) => [d.date, d.seconds])), localDate()).days >= 7
+  },
+  'words-100': async () => (await db.cards.where('kind').equals(1).count()) >= 100,
+  'loud-1000': async () => (await db.days.toArray()).reduce((s, d) => s + d.spokenCount, 0) >= 1000,
 }
 
 export const ACHIEVEMENT_IDS = Object.keys(CHECKS) as AchievementId[]

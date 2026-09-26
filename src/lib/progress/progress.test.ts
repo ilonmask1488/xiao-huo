@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { ToneStatRow } from '../db/types'
 import { comboMultiplier, dvForGame, dvForLesson } from './dv'
 import { buildHeatmap, hardestTone, heatmapHasData, pairWeights } from './heatmap'
+import { hskForecast, minutesByDay, wordsByStage, wordsPace } from './stats'
 import { addDays, computeStreak, ORBIT_DAY_SECONDS } from './streak'
 
 const T = '2026-09-26'
@@ -43,6 +44,39 @@ describe('дни на орбите', () => {
   it('addDays переходит через месяц и год', () => {
     expect(addDays('2026-01-01', -1)).toBe('2025-12-31')
     expect(addDays('2026-02-28', 1)).toBe('2026-03-01')
+  })
+})
+
+describe('статистика и прогноз', () => {
+  const day = (offset: number, minutes: number, newWords = 0) => ({
+    date: addDays(T, -offset),
+    seconds: minutes * 60,
+    dv: 0,
+    spokenCount: 0,
+    newWords,
+  })
+
+  it('минуты по дням: 14 дней, пропуски — нули', () => {
+    const m = minutesByDay([day(0, 20), day(2, 12)], T)
+    expect(m).toHaveLength(14)
+    expect(m.at(-1)).toEqual({ date: T, minutes: 20 })
+    expect(m.at(-2)!.minutes).toBe(0)
+    expect(m.at(-3)!.minutes).toBe(12)
+  })
+
+  it('темп новых слов и прогноз до HSK', () => {
+    const pace = wordsPace([day(0, 30, 7), day(1, 30, 7)], T)
+    expect(pace).toBe(1)
+    const learned = new Set(['w-ni', 'w-wo', 'w-shi'])
+    const f = hskForecast(learned, 'hsk2', pace)
+    expect(f[0]).toMatchObject({ level: 1, have: 3, need: 150, days: 147 })
+    expect(hskForecast(learned, 'hsk2', 0)[0]!.days).toBeNull()
+  })
+
+  it('слова по ступеням', () => {
+    const by = wordsByStage(new Set(['w-ni', 'w-ta', 'w-ma']))
+    expect(by.get(0)).toBe(1)
+    expect(by.get(1)).toBe(2)
   })
 })
 

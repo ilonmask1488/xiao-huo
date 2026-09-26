@@ -92,7 +92,12 @@ export async function passLesson(page: Page, maxSteps = 80): Promise<string> {
   const good = page.getByRole('button', { name: 'Получилось', exact: true })
   const check = page.getByRole('button', { name: 'Проверить', exact: true })
   const next = page.getByRole('button', { name: 'Дальше', exact: true })
+  const said = page.getByRole('button', { name: 'Сказал — дальше', exact: true })
+  const show = page.getByRole('button', { name: 'Показать ответ', exact: true })
+  const gradeGood = page.getByRole('button', { name: /^Хорошо/ })
   const choice = page.locator('button[class*="choice"]:not([disabled])').first()
+  const meaning = page.locator('button[class*="meaningBtn"]:not([disabled])').first()
+  const poolChip = page.locator('[class*="pool"] button[class*="chipWord"]').first()
   for (let i = 0; i < maxSteps; i++) {
     const pos = await position(page)
     if (pos === 'summary') break
@@ -100,8 +105,18 @@ export async function passLesson(page: Page, maxSteps = 80): Promise<string> {
       await check.click()
       await good.waitFor()
     }
-    if (await good.isVisible()) {
+    if (await show.isVisible()) {
+      await show.click()
+      await advance(page, pos, () => gradeGood.click())
+    } else if (await good.isVisible()) {
       await advance(page, pos, () => good.click())
+    } else if (await poolChip.isVisible()) {
+      // «Сборка»: переносим слова по одному, пока не кончатся, потом «Сказал — дальше»
+      while (await poolChip.isVisible()) await poolChip.click()
+      await advance(page, pos, () => said.click())
+    } else if (await meaning.isVisible()) {
+      await meaning.click()
+      await advance(page, pos, () => next.click())
     } else if (await choice.isVisible()) {
       await choice.click()
       await advance(page, pos, () => next.click())

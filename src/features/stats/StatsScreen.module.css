@@ -1,0 +1,180 @@
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-s);
+}
+
+.tile {
+  display: grid;
+  gap: 2px;
+  padding: var(--space-3);
+}
+
+.tile:nth-child(odd) {
+  border-right: var(--hairline) solid var(--line-strong);
+}
+
+.tile:nth-child(-n + 2) {
+  border-bottom: var(--hairline) solid var(--line-strong);
+}
+
+.tileValue {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.tileLabel,
+.tileNote {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5) 0 0;
+}
+
+.section h2 {
+  font-size: var(--fs-body);
+}
+
+.note {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.chart {
+  margin: 0;
+}
+
+.chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.axis {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.threshold {
+  stroke: var(--flame);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.tick {
+  fill: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 8px;
+}
+
+.barMark {
+  fill: var(--ink-2);
+}
+
+.barMark[data-active] {
+  fill: var(--ink);
+}
+
+.tooltip {
+  min-height: 1.5em;
+  margin-top: var(--space-1);
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.list div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.list dd {
+  margin: 0;
+}
+
+.pairs {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pairs li {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-small);
+}
+
+.more {
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.forecast {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fcHead {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.bar {
+  height: 8px;
+  margin: var(--space-1) 0;
+  border-radius: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.bar > div {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--ink);
+}
+
+.achievements {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.achievements li {
+  display: grid;
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline) dashed var(--line-strong);
+  border-radius: var(--radius-s);
+  color: var(--ink-2);
+}
+
+.achievements li[data-got] {
+  border: 1.5px solid var(--flame);
+  color: var(--ink);
+}
+
+.achName {
+  font-weight: 600;
+}
