@@ -29,7 +29,10 @@ test('пуск: сегменты по ≤3 минуты, повторение к
   await expect(page.getByText(/Повторение/).first()).toBeVisible()
   // Открываем первый кусок повторения
   await page.getByRole('button', { name: 'Открыть' }).first().click()
-  const show = page.getByRole('button', { name: 'Показать ответ' })
+  // Первая карточка — одно объяснение, потом «?»
+  await page.getByRole('button', { name: 'Понятно', exact: true }).click()
+  await expect(page.getByText(/Повторение слов · карточка 1 из \d+/)).toBeVisible()
+  const show = page.getByRole('button', { name: 'Проверить себя' })
   const toneChoice = page.locator('button[class*="choice"]:not([disabled])').first()
   if (await toneChoice.isVisible()) {
     await toneChoice.click()
@@ -37,9 +40,11 @@ test('пуск: сегменты по ≤3 минуты, повторение к
   }
   await expect(show).toBeVisible()
   await show.click()
-  // Четыре оценки с интервалами
-  for (const g of ['Снова', 'Трудно', 'Хорошо', 'Легко']) await expect(page.getByRole('button', { name: new RegExp(`^${g}`) })).toBeVisible()
-  await page.getByRole('button', { name: /^Хорошо/ }).click()
+  // Вопрос и четыре понятные оценки с подписью, когда слово вернётся
+  await expect(page.getByText('Ты вспомнил значение?')).toBeVisible()
+  for (const g of ['Не вспомнил', 'С трудом', 'Вспомнил', 'Легко']) await expect(page.getByRole('button', { name: new RegExp(`^${g}`) })).toBeVisible()
+  await expect(page.getByRole('button', { name: /^Не вспомнил.*покажу снова через/ })).toBeVisible()
+  await page.getByRole('button', { name: /^Вспомнил/ }).click()
   await expect(page.getByText(/2 из \d+/)).toBeVisible()
 })
 

@@ -8,7 +8,7 @@ import { Mascot } from '../../components/Mascot'
 import ui from '../../components/ui.module.css'
 import { ru } from '../../i18n/ru'
 import { preloadItems, stopAudio } from '../../lib/audio/audio'
-import type { AnswerSource, HanziMode } from '../../lib/db/types'
+import type { AnswerSource, HanziMode, LaunchSegment } from '../../lib/db/types'
 import { isQuestion, itemsOf, type Screen } from '../../lib/lesson/build'
 import { saveLessonStep } from '../../lib/lesson/progress'
 import { type AchievementId } from '../../lib/progress/achievements'
@@ -45,6 +45,10 @@ type Props = {
   summaryActions: (r: RunResult) => React.ReactNode
   onRestart?: () => void
   boss?: { passPercent: number; launchTitle?: string; passedText?: string; postponedText?: string }
+  /** Сегмент занятия: «Повторение слов · карточка 5 из 9» и полоска всего занятия по блокам (UX §3.3) */
+  blockTitle?: string
+  counterWord?: string
+  session?: { segments: LaunchSegment[]; currentId: string }
 }
 
 export function LessonRunner(props: Props) {
@@ -53,6 +57,7 @@ export function LessonRunner(props: Props) {
   const [results, setResults] = useState<Record<string, boolean>>(props.initialResults ?? {})
   const [spoken, setSpoken] = useState(0)
   const [finished, setFinished] = useState<{ r: RunResult; fresh: AchievementId[] } | null>(null)
+  const [exiting, setExiting] = useState(false)
   const lastTick = useRef(0)
   const seconds = useRef(0)
   const resumed = (props.startAt ?? 0) > 0
@@ -126,15 +131,33 @@ export function LessonRunner(props: Props) {
 
   return (
     <div className={s.runner} data-run={runId} data-start-at={props.startAt ?? 0}>
-      <div className={s.top}>
-        <button type="button" className={s.close} onClick={props.onExit} aria-label={ru.lesson.close}>
+      <div className={s.topRow}>
+        <button type="button" className={s.close} onClick={() => setExiting(true)} aria-label={ru.lesson.close}>
           <IconClose size={24} />
         </button>
-        <div className={s.bar} role="progressbar" aria-valuemin={0} aria-valuemax={screens.length} aria-valuenow={index}>
-          <div className={s.barFill} style={{ width: `${progress * 100}%` }} />
-        </div>
-        <span className={`${s.count} mono`}>{ru.lesson.progress(Math.min(index + 1, screens.length), screens.length)}</span>
+        <span className={`${s.progressLabel} mono`}>
+          {props.blockTitle && props.counterWord
+            ? ru.lesson.progressOf(props.blockTitle, props.counterWord, Math.min(index + 1, screens.length), screens.length)
+            : ru.lesson.progress(Math.min(index + 1, screens.length), screens.length)}
+        </span>
       </div>
+      <div className={s.bar} role="progressbar" aria-valuemin={0} aria-valuemax={screens.length} aria-valuenow={index}>
+        <div className={s.barFill} style={{ width: `${progress * 100}%` }} />
+      </div>
+      {props.session && <SessionBar segments={props.session.segments} currentId={props.session.currentId} />}
+      {exiting && (
+        <div className={s.exit} role="dialog" aria-label={ru.lesson.exitTitle}>
+          <p>{ru.lesson.exitTitle}</p>
+          <div className={s.row}>
+            <button type="button" className={ui.secondary} onClick={() => setExiting(false)}>
+              {ru.lesson.exitNo}
+            </button>
+            <button type="button" className={ui.primary} onClick={props.onExit}>
+              {ru.lesson.exitYes}
+            </button>
+          </div>
+        </div>
+      )}
       {resumed && index === props.startAt && props.onRestart && (
         <div className={s.resume}>
           <span>{ru.lesson.resumeTitle}</span>
@@ -145,6 +168,41 @@ export function LessonRunner(props: Props) {
       )}
       {screen && <ScreenView key={`${runId}:${index}`} screen={screen} hanziMode={props.hanziMode} onDone={(r) => void onDone(r)} />}
     </div>
+  )
+}
+
+/** Тонкая полоска всего занятия по блокам; нажатие показывает названия (UX §3.3). */
+function SessionBar({ segments, currentId }: { segments: LaunchSegment[]; currentId: string }) {
+  const [legend, setLegend] = useState(false)
+  const blocks: { block: LaunchSegment['block']; minutes: number; status: 'done' | 'current' | 'pending' }[] = []
+  for (const seg of segments) {
+    let b = blocks.find((x) => x.block === seg.block)
+    if (!b) {
+      b = { block: seg.block, minutes: 0, status: 'done' }
+      blocks.push(b)
+    }
+    b.minutes += seg.minutes
+    if (seg.id === currentId) b.status = 'current'
+    else if (seg.status === 'pending' && b.status !== 'current') b.status = 'pending'
+  }
+  return (
+    <>
+      <button type="button" className={s.sessionBar} aria-label={ru.lesson.sessionBar} aria-expanded={legend} onClick={() => setLegend((v) => !v)}>
+        {blocks.map((b) => (
+          <span key={b.block} className={s.sessionSeg} data-status={b.status} style={{ flexGrow: b.minutes }} />
+        ))}
+      </button>
+      {legend && (
+        <ul className={s.sessionLegend}>
+          {blocks.map((b) => (
+            <li key={b.block} data-status={b.status}>
+              {b.status === 'done' ? '✓ ' : b.status === 'current' ? '● ' : '○ '}
+              {ru.blocks[b.block].title}
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   )
 }
 

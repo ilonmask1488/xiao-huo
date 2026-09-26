@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { AppDB } from '../db/db'
 import type { CardRow } from '../db/types'
 import { answerCard, ensureCardsForLesson, ensureHanziOnlyCards, hanziOnlyAllowed, mixKinds, retentionStats, reviewQueue } from './cards'
-import { formatInterval, newCard, previewIntervals, review } from './srs'
+import { formatInterval, formatWhen, newCard, previewIntervals, review } from './srs'
 
 const DAY = 24 * 60 * 60 * 1000
 const T0 = Date.UTC(2026, 8, 26, 9)
@@ -47,6 +47,17 @@ describe('FSRS-обёртка', () => {
     const c = review(newCard('w-ni', 1, T0), 3, T0)
     for (const v of Object.values(c)) expect(['string', 'number', 'undefined']).toContain(typeof v)
     expect(JSON.parse(JSON.stringify(c))).toEqual(c)
+  })
+
+  it('когда вернётся карточка — словами', () => {
+    expect(formatWhen(30_000)).toBe('через 1 мин')
+    expect(formatWhen(10 * 60_000)).toBe('через 10 мин')
+    expect(formatWhen(6 * 60 * 60_000)).toBe('через 6 ч')
+    expect(formatWhen(DAY)).toBe('завтра')
+    expect(formatWhen(3 * DAY)).toBe('через 3 дня')
+    expect(formatWhen(8 * DAY)).toBe('через 8 дней')
+    expect(formatWhen(21 * DAY)).toBe('через 3 нед')
+    expect(formatWhen(90 * DAY)).toBe('через 3 мес')
   })
 
   it('подписи интервалов', () => {

@@ -17,8 +17,8 @@
     {
       "name": "preview",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "preview", "--", "--port", "4173", "--strictPort"],
-      "port": 4173
+      "runtimeArgs": ["run", "preview", "--", "--port", "4174", "--strictPort"],
+      "port": 4174
     }
   ]
 }

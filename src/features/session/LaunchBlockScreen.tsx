@@ -20,16 +20,20 @@ export function LaunchBlockScreen() {
   const settings = useSettings()
   const date = localDate()
   const runId = `launch:${date}:${segId}`
-  const [data, setData] = useState<{ seg?: LaunchSegment; cards: Map<string, CardRow>; startAt: number; results: Record<string, boolean> } | null>(
-    null,
-  )
+  const [data, setData] = useState<{
+    seg?: LaunchSegment
+    segments: LaunchSegment[]
+    cards: Map<string, CardRow>
+    startAt: number
+    results: Record<string, boolean>
+  } | null>(null)
   useEffect(() => {
     void (async () => {
       const row = await db.launches.get(date)
       const seg = row?.segments?.find((x) => x.id === segId)
       const cards = new Map((await db.cards.bulkGet(seg?.items ?? [])).filter((c): c is CardRow => !!c).map((c) => [c.id, c]))
       const p = await getLessonProgress(runId)
-      setData({ seg, cards, startAt: p?.step ?? 0, results: p?.results ?? {} })
+      setData({ seg, segments: row?.segments ?? [], cards, startAt: p?.step ?? 0, results: p?.results ?? {} })
     })()
   }, [runId, segId, date])
   const screens = useMemo(() => (data?.seg ? segmentScreens(data.seg, date, data.cards) : []), [data, date])
@@ -52,6 +56,9 @@ export function LaunchBlockScreen() {
       hanziMode={settings.hanziMode}
       startAt={data.startAt < screens.length ? data.startAt : 0}
       initialResults={data.results}
+      blockTitle={ru.blocks[seg.block].title}
+      counterWord={seg.kind === 'cards' ? ru.lesson.counterCard : ru.lesson.counterPhrase}
+      session={{ segments: data.segments, currentId: seg.id }}
       onExit={back}
       onFinish={async (r) => {
         await addToday({ seconds: r.seconds, dv: r.dv, spoken: r.spoken })

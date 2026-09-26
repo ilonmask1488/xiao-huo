@@ -39,6 +39,8 @@ test('урок можно прервать и продолжить с того �
   await page.getByRole('button', { name: 'Дальше', exact: true }).click()
   await expect(page.getByText('3 из 28')).toBeVisible()
   await page.getByRole('button', { name: 'Выйти из урока' }).click()
+  await expect(page.getByText('Прогресс сохранён — продолжишь с этого места. Выйти?')).toBeVisible()
+  await page.getByRole('button', { name: 'Выйти', exact: true }).click()
   await expect(page.getByRole('heading', { level: 1, name: 'Курс' })).toBeVisible()
   await page.goto('./#/lesson/s0-u1-l1')
   await expect(page.getByText('3 из 28')).toBeVisible()

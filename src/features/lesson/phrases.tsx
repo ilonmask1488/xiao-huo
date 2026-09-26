@@ -1,8 +1,10 @@
 /*
   Экраны фаз 2+: фразы, «угадай значение», «сборка», «скажи сам», карточки повторения.
 */
+import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Hanzi, MixedText, Pinyin } from '../../components/Chinese'
+import { Help } from '../../components/Help'
 import { PlayButton } from '../../components/Play'
 import { RecordCompare } from '../../components/RecordCompare'
 import { ToneGlyph } from '../../components/ToneChart'
@@ -20,7 +22,7 @@ import { tonePattern } from '../../lib/lesson/build'
 import type { Tone } from '../../lib/pinyin/marks'
 import { addToday } from '../../lib/progress/record'
 import { answerCard } from '../../lib/srs/cards'
-import { formatInterval, previewIntervals, type Grade14 } from '../../lib/srs/srs'
+import { formatWhen, previewIntervals, type Grade14 } from '../../lib/srs/srs'
 import { useSettings } from '../../lib/settings/settings'
 import s from './lesson.module.css'
 import type { ScreenResult } from './screens'
@@ -323,53 +325,104 @@ export function SayItView({ screen, hanziMode, onDone }: Props<'sayIt'>) {
   )
 }
 
-/* ——— Карточка повторения ——— */
+/* ——— Карточка повторения (UX §3): шаг 1 — вопрос, шаг 2 — ответ, шаг 3 — самооценка ——— */
+
+const GRADES = [1, 2, 3, 4] as const
+
+/** Первая карточка в жизни пользователя: одно объяснение, потом — по «?». */
+function FirstTime({ onOk }: { onOk: () => void }) {
+  const t = ru.review
+  return (
+    <div className={s.view}>
+      <div className={`${s.body} ${s.center}`}>
+        <p className={s.kicker}>{t.blockTitle}</p>
+        <h2>{t.explainTitle}</h2>
+        {t.explain.map((p) => (
+          <p key={p} className={s.explainText}>
+            {p}
+          </p>
+        ))}
+      </div>
+      <div className={s.actions}>
+        <button type="button" className={ui.primary} onClick={onOk}>
+          {t.ok}
+        </button>
+      </div>
+    </div>
+  )
+}
 
 export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
   const settings = useSettings()
+  const t = ru.review
   const w = wordById.get(screen.word)!
+  const kind = screen.cardKind
   const [intervals, setIntervals] = useState<Record<Grade14, number> | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const [hint, setHint] = useState(false)
   const [given, setGiven] = useState<string | null>(null)
   const started = useRef(0)
+  const explained = useLiveQuery(async () => ({ v: !!(await db.getMeta('cardsExplained')) }), [])
   useEffect(() => {
     started.current = Date.now()
     void db.cards.get(screen.cardId).then((r: CardRow | undefined) => {
       if (r) setIntervals(previewIntervals(r, Date.now(), settings.desiredRetention))
     })
   }, [screen.cardId, settings.desiredRetention])
-  useAutoplay(screen.cardKind === 1 || screen.cardKind === 4 ? screen.word : null, [screen.cardId])
+  // Вопрос звучит сам там, где он на слух: «на слух» и «тоны». В остальных типах образец — после проверки.
+  useAutoplay(kind === 1 || kind === 4 ? screen.word : null, [screen.cardId])
 
   const finish = async (grade: Grade14) => {
     await answerCard(screen.cardId, grade, Date.now() - started.current, settings.desiredRetention).catch((e) => console.error(e))
-    if (screen.cardKind === 3) await addToday({ spoken: 1 }).catch(() => {})
-    onDone({ correct: grade >= 2, spoken: screen.cardKind === 3 })
+    if (kind === 3) await addToday({ spoken: 1 }).catch(() => {})
+    onDone({ correct: grade >= 2, spoken: kind === 3 })
+  }
+  const reveal = () => {
+    setRevealed(true)
+    if (kind !== 1) void playItem(screen.word).catch(() => {})
   }
 
+  if (!explained) return null
+  if (!explained.v) return <FirstTime onOk={() => void db.setMeta('cardsExplained', true)} />
+
   const showHanzi = hanziMode !== 'never'
-  const answer = (
-    <div className={s.big}>
-      {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
-      <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
-      <span className={s.bigRu}>{w.ru.join(', ')}</span>
-      {(screen.cardKind === 2 || screen.cardKind === 5) && w.mnemonic && (
-        <p className={s.mnemonic}>
-          <b>{ru.review.mnemonic}.</b> <MixedText text={w.mnemonic} />
-        </p>
-      )}
+  const header = (
+    <div className={s.cardHead}>
+      <div>
+        <p className={s.kicker}>{t.instruction[kind]}</p>
+        {kind === 3 && <p className={s.ruBig}>«{w.ru.join(', ')}»</p>}
+        <p className={s.stepsLine}>{t.steps[kind]}</p>
+      </div>
+      <Help title={t.explainTitle} text={t.explain} />
+    </div>
+  )
+  const grades = (
+    <div className={s.grades} role="group" aria-label={t.gradeLabel}>
+      {GRADES.map((g) => (
+        <button key={g} type="button" className={g === 3 ? ui.primary : ui.secondary} data-grade={g} onClick={() => void finish(g)}>
+          <span>{t.grades[g]}</span>
+          {intervals && <span className={s.gradeTime}>{t.gradeWhen(g, formatWhen(intervals[g]))}</span>}
+        </button>
+      ))}
     </div>
   )
 
   // Тип 4: выбрать тоновый рисунок — оценка по ответу.
-  if (screen.cardKind === 4) {
+  if (kind === 4) {
     const right = tonePattern(screen.word)
     return (
       <div className={s.view}>
         <div className={`${s.body} ${s.center}`}>
-          <p className={s.kicker}>{ru.review.kind[4]}</p>
+          {header}
           {showHanzi ? <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi> : <span className={s.bigRu}>{w.ru[0]}</span>}
+          {given ? (
+            <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+          ) : (
+            <span className={s.plainPinyin} lang="zh-Latn-pinyin">
+              {w.pinyin.replace(/[1-5]/g, '').split(/\s+/).join('')}
+            </span>
+          )}
           <PlayButton item={screen.word} label={ru.lesson.listenAgain} />
-          {given && <Pinyin numeric={w.pinyin} className={s.bigPinyin} />}
           <div className={s.choices}>
             {(screen.options ?? [right]).map((o) => (
               <button
@@ -393,59 +446,80 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
               </button>
             ))}
           </div>
+          {given && <p className={s.feedbackLine}>{given === right ? ru.lesson.correct : ru.lesson.youChose(given, right)}</p>}
         </div>
         <div className={s.actions}>
-          {given && (
+          {given ? (
             <button type="button" className={ui.primary} onClick={() => void finish(given === right ? 3 : 1)}>
               {ru.lesson.next}
             </button>
+          ) : (
+            <p className={s.disabledHint}>{ru.lesson.chooseFirst}</p>
           )}
         </div>
       </div>
     )
   }
 
+  // Шаг 1: только то, что нужно для вопроса
   const prompt =
-    screen.cardKind === 1 ? (
-      <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="l" />
-    ) : screen.cardKind === 5 ? (
-      <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>
-    ) : screen.cardKind === 2 ? (
+    kind === 1 ? (
+      <>
+        <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="l" />
+        {hint ? (
+          showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>
+        ) : (
+          <button type="button" className={`${ui.link} ${s.hintLink}`} onClick={() => setHint(true)}>
+            {t.hintHanzi}
+          </button>
+        )}
+      </>
+    ) : kind === 3 ? (
+      hint ? (
+        <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+      ) : (
+        <button type="button" className={`${ui.link} ${s.hintLink}`} onClick={() => setHint(true)}>
+          {t.hintPinyin}
+        </button>
+      )
+    ) : (
       <div className={s.big}>
         {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
-        <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+        {kind === 2 && <Pinyin numeric={w.pinyin} className={s.bigPinyin} />}
       </div>
-    ) : (
-      <p className={s.ruBig}>{w.ru.join(', ')}</p>
     )
+
+  // Шаг 2: ответ целиком
+  const answer = (
+    <div className={s.big}>
+      {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
+      <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
+      <span className={s.bigRu}>{w.ru.join(', ')}</span>
+      <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="s" />
+      {(kind === 2 || kind === 5) && w.mnemonic && (
+        <p className={s.mnemonic}>
+          <b>{t.mnemonic}.</b> <MixedText text={w.mnemonic} />
+        </p>
+      )}
+      {kind === 3 && <RecordCompare item={screen.word} compact />}
+    </div>
+  )
 
   return (
     <div className={s.view}>
       <div className={`${s.body} ${s.center}`}>
-        <p className={s.kicker}>{ru.review.kind[screen.cardKind]}</p>
-        {prompt}
-        {revealed ? answer : <p className={s.phase}>{ru.review.hint[screen.cardKind]}</p>}
+        {header}
+        {revealed ? answer : prompt}
       </div>
       <div className={s.actions}>
         {revealed ? (
-          <div className={s.grades} role="group" aria-label={ru.review.gradeLabel}>
-            {([1, 2, 3, 4] as const).map((g) => (
-              <button key={g} type="button" className={g === 3 ? ui.primary : ui.secondary} onClick={() => void finish(g)}>
-                <span>{ru.review.grades[g]}</span>
-                {intervals && <span className={s.gradeTime}>{formatInterval(intervals[g])}</span>}
-              </button>
-            ))}
-          </div>
+          <>
+            <p className={s.question}>{kind === 3 ? t.saidRight : t.recalled}</p>
+            {grades}
+          </>
         ) : (
-          <button
-            type="button"
-            className={ui.primary}
-            onClick={() => {
-              setRevealed(true)
-              if (screen.cardKind !== 1) void playItem(screen.word).catch(() => {})
-            }}
-          >
-            {ru.review.show}
+          <button type="button" className={ui.primary} onClick={reveal}>
+            {t.check}
           </button>
         )}
       </div>

@@ -79,6 +79,19 @@ export function previewIntervals(row: CardRow, now = Date.now(), retention = 0.9
   }
 }
 
+/** Когда карточка вернётся — словами: «через 10 мин», «завтра», «через 8 дней» (UX §3.1). */
+export function formatWhen(ms: number): string {
+  const min = Math.max(1, Math.round(ms / 60_000))
+  if (min < 60) return `через ${min} мин`
+  const h = Math.round(min / 60)
+  if (h < 20) return `через ${h} ч`
+  const d = Math.max(1, Math.round(h / 24))
+  if (d === 1) return 'завтра'
+  if (d < 14) return `через ${d} ${d % 10 >= 2 && d % 10 <= 4 && (d < 10 || d > 20) ? 'дня' : 'дней'}`
+  if (d < 60) return `через ${Math.round(d / 7)} нед`
+  return `через ${Math.round(d / 30)} мес`
+}
+
 /** «10 мин», «1 д», «3 нед», «2 мес» */
 export function formatInterval(ms: number): string {
   const min = Math.max(1, Math.round(ms / 60_000))

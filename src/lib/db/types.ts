@@ -34,6 +34,7 @@ export type MetaKey =
   | 'soundChecked'
   | 'micExplained'
   | 'asrExplained'
+  | 'cardsExplained'
 
 export type MetaRow = { key: MetaKey; value: number | boolean | string }
 

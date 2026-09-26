@@ -79,7 +79,8 @@ for (const scheme of ['light', 'dark'] as const) {
     // Первый кусок повторения: карточка до и после «Показать ответ»
     await page.goto('./#/session')
     await page.getByRole('button', { name: 'Открыть' }).first().click()
-    const show = page.getByRole('button', { name: 'Показать ответ' })
+    await page.getByRole('button', { name: 'Понятно', exact: true }).click({ timeout: 5000 }).catch(() => {})
+    const show = page.getByRole('button', { name: 'Проверить себя' })
     if (await show.waitFor({ timeout: 5000 }).then(() => true, () => false)) {
       await shoot(page, 'p2-card', scheme, p, false)
       await show.click()

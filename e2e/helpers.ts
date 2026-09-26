@@ -59,7 +59,7 @@ const SUMMARY = /^(Урок пройден|Раунд окончен|Пуск!|�
 
 /** Хоть что-то, на что можно нажать: экран ещё грузится (контент и звук подтягиваются до первого рендера) или играет образец. */
 const ANY_ACTION =
-  'button:has-text("Получилось"), button:has-text("Дальше"), button:has-text("Сказал — дальше"), button:has-text("Показать ответ"), button[data-sentence], button[class*="meaningBtn"], button[class*="choice"]'
+  'button:has-text("Получилось"), button:has-text("Дальше"), button:has-text("Сказал — дальше"), button:has-text("Проверить себя"), button:has-text("Понятно"), button[data-sentence], button[class*="meaningBtn"], button[class*="choice"]'
 
 type DialogueJson = { id: string; lines: { sentenceId: string; choices?: string[] }[] }
 const dialogues = ['src/content/stage1/dialogues.json', 'src/content/stage2/dialogues.json', 'src/content/stage3/dialogues.json', 'src/content/story/dialogues.json'].flatMap(
@@ -71,7 +71,7 @@ const rightReply = (dialogue: string, line: number) => dialogues.find((d) => d.i
 /** Текущий номер экрана («5 из 28») или «итоги». */
 async function position(page: Page): Promise<string> {
   if (await page.getByRole('heading', { name: SUMMARY }).isVisible()) return 'summary'
-  const count = page.locator('[class*="count"]').first()
+  const count = page.locator('[class*="progressLabel"]').first()
   if ((await count.count()) === 0) return ''
   return (await count.textContent({ timeout: 1000 }).catch(() => '')) ?? ''
 }
@@ -114,8 +114,9 @@ export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | '
   const check = page.getByRole('button', { name: 'Проверить', exact: true })
   const next = page.getByRole('button', { name: 'Дальше', exact: true })
   const said = page.getByRole('button', { name: 'Сказал — дальше', exact: true })
-  const show = page.getByRole('button', { name: 'Показать ответ', exact: true })
-  const gradeGood = page.getByRole('button', { name: /^Хорошо/ })
+  const show = page.getByRole('button', { name: 'Проверить себя', exact: true })
+  const gradeGood = page.getByRole('button', { name: /^Вспомнил/ })
+  const ok = page.getByRole('button', { name: 'Понятно', exact: true })
   const choice = page.locator('button[class*="choice"]:not([disabled])').first()
   const meaning = page.locator('button[class*="meaningBtn"]:not([disabled])').first()
   const poolChip = page.locator('[class*="pool"] button[class*="chipWord"]').first()
@@ -123,6 +124,11 @@ export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | '
   for (let i = 0; i < maxSteps; i++) {
     const pos = await position(page)
     if (pos === 'summary') break
+    // Первая карточка в жизни — объяснение с кнопкой «Понятно»
+    if (await ok.isVisible()) {
+      await ok.click()
+      continue
+    }
     if (await check.isVisible()) {
       await check.click()
       await good.waitFor()
