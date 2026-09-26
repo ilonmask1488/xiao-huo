@@ -133,5 +133,38 @@ for (const scheme of ['light', 'dark'] as const) {
     await page.goto('./#/lesson/story-1')
     await advanceUntil(page, 'Культура: Как обращаться к коллегам')
     await shoot(page, 'p3-culture', scheme, p)
+
+    if (phase === 'phase3') return
+    // ——— Фаза 4: карточка слова, ступень 2, график тона ———
+    const stage1 = Array.from({ length: 9 }, (_, u) => [1, 2, 3].map((l) => `s1-u${u + 1}-l${l}`).concat(`s1-u${u + 1}-boss`)).flat()
+    await seedCompleted(page, [...stage1, 's2-u4-l1', 's2-u10-l1'])
+    await page.goto('./#/word/w-huojian')
+    await expect(page.getByTestId('stroke-order').locator('svg').first()).toBeVisible()
+    await shoot(page, 'p4-word', scheme, p)
+    await page.getByRole('button', { name: 'Напиши сам' }).click()
+    await shoot(page, 'p4-word-quiz', scheme, p)
+    for (const [name, path] of [
+      ['p4-map', '/map'],
+      ['p4-unit', '/unit/s2-u10'],
+      ['p4-dictionary', '/dictionary'],
+    ] as const) {
+      await page.goto(`./#${path}`)
+      await shoot(page, name, scheme, p)
+    }
+    await page.goto('./#/lesson/s2-u10-l2')
+    await shoot(page, 'p4-lesson-engineer', scheme, p)
+    if (p === 'android') {
+      // График тона после записи (поддельный микрофон Chromium)
+      await page.goto('./#/echo/dialogue-d-s2-u10-boss')
+      await page.getByRole('button', { name: 'Записать себя' }).click()
+      await page.getByRole('button', { name: 'Понятно, записать' }).click()
+      await page.getByRole('button', { name: 'Стоп' }).waitFor()
+      await page.waitForTimeout(1500)
+      await page.getByRole('button', { name: 'Стоп' }).click()
+      await page.getByRole('button', { name: 'График тона' }).click()
+      await page.getByTestId('pitch-chart').waitFor()
+      await page.getByTestId('pitch-chart').scrollIntoViewIfNeeded()
+      await shoot(page, 'p4-pitch', scheme, p)
+    }
   })
 }

@@ -24,7 +24,7 @@ export type Screen =
   | { kind: 'assemble'; id: SentenceId; order: number[] }
   | { kind: 'sayIt'; item: Item }
   /** карточка повторения FSRS */
-  | { kind: 'card'; cardId: string; word: WordId; cardKind: 1 | 2 | 3 | 4; options?: string[] }
+  | { kind: 'card'; cardId: string; word: WordId; cardKind: 1 | 2 | 3 | 4 | 5; options?: string[] }
   /** реплика персонажа в диалоге (или твоя — без выбора) */
   | { kind: 'line'; dialogueId: string; index: number; speaker: string; sentenceId: SentenceId }
   /** твой ответ в диалоге: выбрать верную реплику, потом сказать вслух */

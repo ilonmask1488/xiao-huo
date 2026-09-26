@@ -105,6 +105,7 @@ describe('проверка контента', () => {
   it('слово из будущего этапа — предупреждение i+1, если не помечено как новое', () => {
     const c = base()
     c.words.push({ id: 'w-hao', hanzi: '好', pinyin: 'hao3', ru: ['хорошо'], tags: [], reviewed: false })
+    c.units.push({ ...c.units[0]!, id: 'u2', order: 2, code: '0.2', lessons: [], newWords: ['w-hao'], sentences: [] })
     c.sentences[0]!.tokens.push({ hanzi: '好', pinyin: 'hao3', wordId: 'w-hao' })
     expect(checkContent(c, () => true, audio).warnings).toHaveLength(1)
     c.sentences[0]!.newWordIds = ['w-hao']

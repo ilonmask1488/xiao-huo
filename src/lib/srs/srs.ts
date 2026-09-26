@@ -10,7 +10,7 @@
 import { createEmptyCard, fsrs, generatorParameters, Rating, type Card, type Grade } from 'ts-fsrs'
 import type { CardRow } from '../db/types'
 
-export type CardKind = 1 | 2 | 3 | 4
+export type CardKind = 1 | 2 | 3 | 4 | 5
 export type Grade14 = 1 | 2 | 3 | 4
 
 export function cardId(itemId: string, kind: CardKind): string {
@@ -92,9 +92,10 @@ export function formatInterval(ms: number): string {
 }
 
 /** Какие карточки открываются после ответа (постепенное открытие типов). */
-export function unlocksAfter(row: CardRow, grade: Grade14): CardKind[] {
+export function unlocksAfter(row: CardRow, grade: Grade14, hanziOnly = false): CardKind[] {
   if (grade < 3) return []
   if (row.kind === 1) return [2, 4]
-  if (row.kind === 2) return [3]
+  // Тип 5 «иероглифы без пиньиня» — со второй ступени или по настройке.
+  if (row.kind === 2) return hanziOnly ? [3, 5] : [3]
   return []
 }

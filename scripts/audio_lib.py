@@ -137,7 +137,7 @@ def safe_stem(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
 
 
-CONTENT_DIRS = [CONTENT, CONTENT / "stage1", CONTENT / "story"]
+CONTENT_DIRS = [CONTENT, CONTENT / "stage1", CONTENT / "story", CONTENT / "stage2"]
 
 
 def load_all(name: str) -> list:

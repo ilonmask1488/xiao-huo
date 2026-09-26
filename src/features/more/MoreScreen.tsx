@@ -43,6 +43,9 @@ const LICENSES: [string, string][] = [
   ['IBM Plex Sans, IBM Plex Mono', 'SIL Open Font License 1.1'],
   ['pinyin-pro (проверка контента при сборке)', 'MIT'],
   ['ts-fsrs (интервальное повторение)', 'MIT'],
+  ['pitchy (график высоты тона)', 'MIT'],
+  ['hanzi-writer (порядок черт)', 'MIT'],
+  ['Данные черт: Make Me a Hanzi через hanzi-writer-data', 'Arphic Public License (текст — hanzi/ARPHICPL.TXT)'],
   ['Списки HSK: drkameleon/complete-hsk-vocabulary', 'MIT'],
 ]
 

@@ -154,7 +154,9 @@ export function checkContent(c: Content, hasFile: (file: string) => boolean, aud
 
   // Правило i+1: фраза этапа использует только слова этого и предыдущих этапов.
   const ordered = [...c.units].sort((a, b) => a.stage - b.stage || a.order - b.order)
-  const known = new Set<string>()
+  // Слова вне этапов (из эпизодов «Командировки») доступны везде: сюжет идёт параллельно этапам.
+  const inUnits = new Set(c.units.flatMap((u) => u.newWords))
+  const known = new Set<string>(c.words.filter((w) => !inUnits.has(w.id)).map((w) => w.id))
   for (const u of ordered) {
     u.newWords.forEach((w) => known.add(w))
     for (const s of c.sentences.filter((x) => x.unitId === u.id)) {

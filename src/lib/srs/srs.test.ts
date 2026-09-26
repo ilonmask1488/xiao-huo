@@ -2,7 +2,7 @@ import Dexie from 'dexie'
 import { afterEach, describe, expect, it } from 'vitest'
 import { AppDB } from '../db/db'
 import type { CardRow } from '../db/types'
-import { answerCard, ensureCardsForLesson, mixKinds, retentionStats, reviewQueue } from './cards'
+import { answerCard, ensureCardsForLesson, ensureHanziOnlyCards, hanziOnlyAllowed, mixKinds, retentionStats, reviewQueue } from './cards'
 import { formatInterval, newCard, previewIntervals, review } from './srs'
 
 const DAY = 24 * 60 * 60 * 1000
@@ -76,6 +76,31 @@ describe('карточки в базе', () => {
     // открытые типы приходят не сразу, а к следующему занятию
     expect((await d.cards.get('w-ni:4'))!.due).toBeGreaterThan(T0 + 60_000)
     expect(await d.reviews.count()).toBe(3)
+  })
+
+  it('тип 5 «только иероглифы»: со второй ступени или по настройке, и догоняет уже выученные', async () => {
+    const d = freshDb()
+    await ensureCardsForLesson('s0-u1-l3', d, T0)
+    await answerCard('w-ni:1', 3, 3000, 0.9, d, T0)
+    // До второй ступени тип 2 открывает только тип 3
+    expect(await hanziOnlyAllowed(d)).toBe(false)
+    expect(await answerCard('w-ni:2', 3, 3000, 0.9, d, T0 + DAY)).toEqual([3])
+    expect(await ensureHanziOnlyCards(d, T0 + DAY)).toBe(0)
+
+    // Пройден урок второй ступени — тип 5 открывается; уже выученные карточки типа 2 его догоняют
+    await d.lessonProgress.put({ lessonId: 's2-u1-l1', step: 0, results: {}, startedAt: T0, updatedAt: T0, seconds: 60, completedAt: T0, timesCompleted: 1 })
+    expect(await hanziOnlyAllowed(d)).toBe(true)
+    await d.cards.update('w-ni:2', { state: 2 })
+    expect(await ensureHanziOnlyCards(d, T0 + 2 * DAY)).toBe(1)
+    expect(await ensureHanziOnlyCards(d, T0 + 2 * DAY)).toBe(0)
+    expect((await d.cards.get('w-ni:5'))!.kind).toBe(5)
+
+    // По настройке — и без второй ступени
+    const e = freshDb()
+    await e.settings.put({ id: 'main', hanziOnlyCardsEarly: true })
+    await ensureCardsForLesson('s0-u1-l3', e, T0)
+    await answerCard('w-ni:1', 3, 3000, 0.9, e, T0)
+    expect(await answerCard('w-ni:2', 3, 3000, 0.9, e, T0 + DAY)).toEqual([3, 5])
   })
 
   it('очередь: сначала просроченные, лимит и флаг перегрузки', async () => {

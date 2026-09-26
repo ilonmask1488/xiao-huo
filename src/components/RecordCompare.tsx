@@ -2,16 +2,19 @@
   «Запиши себя и сравни»: образец → я → образец.
   Микрофон спрашивается только при первом нажатии, с объяснением зачем.
 */
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import type { Item } from '../content/types'
 import { ru } from '../i18n/ru'
-import { playItem, stopAudio, wait } from '../lib/audio/audio'
+import { playItem, sampleUrl, stopAudio, wait } from '../lib/audio/audio'
 import type { Voice } from '../lib/audio/manifest'
 import { player } from '../lib/audio/player'
 import { recordingSupported, RecorderError, startRecording, type Recording } from '../lib/audio/recorder'
 import { db } from '../lib/db/db'
 import s from './RecordCompare.module.css'
+import { SpeechCheck } from './SpeechCheck'
 import ui from './ui.module.css'
+
+const PitchChart = lazy(() => import('./PitchChart'))
 
 type Phase = 'idle' | 'explain' | 'recording' | 'ready' | 'comparing'
 
@@ -37,6 +40,8 @@ export function RecordCompare({
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0)
   const rec = useRef<Recording | null>(null)
   const mine = useRef<string | null>(null)
+  const [mineUrl, setMineUrl] = useState<string | null>(null)
+  const [chart, setChart] = useState(false)
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined)
 
   useEffect(
@@ -53,9 +58,13 @@ export function RecordCompare({
     setError(null)
     if (mine.current) URL.revokeObjectURL(mine.current)
     mine.current = null
+    setMineUrl(null)
   }, [item])
 
-  if (!recordingSupported()) return null
+  const canRecord = recordingSupported()
+  // Для графика — основной голос из настроек: у голосов персонажей (особенно низкого у инженера Вана) тон читается хуже.
+  const sample = sampleUrl(item)
+  if (!canRecord) return <SpeechCheck item={item} onBusy={onBusy} />
 
   const begin = async () => {
     setError(null)
@@ -88,6 +97,7 @@ export function RecordCompare({
       const res = await r.stop()
       if (mine.current) URL.revokeObjectURL(mine.current)
       mine.current = res.url
+      setMineUrl(res.url)
       setPhase('ready')
       void compare()
     } catch {
@@ -154,8 +164,19 @@ export function RecordCompare({
               {ru.record.compare}
             </button>
           )}
+          {phase !== 'idle' && sample && (
+            <button type="button" className={ui.secondary} aria-pressed={chart} onClick={() => setChart((v) => !v)}>
+              {chart ? ru.pitch.hide : ru.pitch.show}
+            </button>
+          )}
         </div>
       )}
+      {chart && sample && mineUrl && (phase === 'ready' || phase === 'comparing') && (
+        <Suspense fallback={<p className={s.steps}>{ru.pitch.loading}</p>}>
+          <PitchChart sampleUrl={sample} mineUrl={mineUrl} />
+        </Suspense>
+      )}
+      {phase !== 'recording' && phase !== 'explain' && <SpeechCheck item={item} onBusy={onBusy} />}
       {phase === 'comparing' && (
         <p className={s.steps} aria-live="polite">
           <span data-on={step === 1 || undefined}>{ru.record.sample}</span> → <span data-on={step === 2 || undefined}>{ru.record.me}</span> →{' '}

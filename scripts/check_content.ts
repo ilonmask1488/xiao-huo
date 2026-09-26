@@ -10,6 +10,7 @@ import { pinyin } from 'pinyin-pro'
 import type { Content } from '../src/content/types.ts'
 import { checkContent } from './content_checks.ts'
 import { loadContent } from './content_files.ts'
+import { courseChars, hanziFile } from './hanzi_lib.ts'
 
 const root = join(import.meta.dirname, '..')
 const load = <T>(file: string): T => JSON.parse(readFileSync(join(root, file), 'utf8')) as T
@@ -30,6 +31,10 @@ const report = checkContent(content, hasFile, {
 for (const [k, e] of Object.entries(manifest.syllables)) if (!hasFile(e.file)) report.errors.push(`звук слога ${k}: нет файла ${e.file}`)
 for (const [k, es] of Object.entries(manifest.texts))
   for (const e of es) if (!hasFile(e.file)) report.errors.push(`звук «${k}»: нет файла ${e.file}`)
+
+// Порядок черт есть для каждого иероглифа слов (npm run hanzi).
+const noStrokes = courseChars(content).filter((ch) => !existsSync(join(root, 'public/hanzi', hanziFile(ch))))
+if (noStrokes.length) report.errors.push(`нет данных порядка черт: ${noStrokes.join(' ')} — запусти npm run hanzi`)
 
 // Сверка пиньиня с pinyin-pro (тоны цифрами, ü = v).
 const mismatches: string[] = []

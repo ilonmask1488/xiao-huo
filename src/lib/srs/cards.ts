@@ -1,9 +1,10 @@
 /*
   Карточки в базе: создание, очередь на повторение, ответ.
 */
-import { lessonById, lessonOrder, wordById } from '../../content'
+import { lessonById, lessonOrder, unitById, wordById } from '../../content'
 import { db, type AppDB } from '../db/db'
 import type { CardRow } from '../db/types'
+import { loadSettings } from '../settings/settings'
 import { cardId, newCard, review, unlocksAfter, type CardKind, type Grade14 } from './srs'
 
 /** Больше этого — не заваливаем, а берём самые срочные и честно говорим об этом. */
@@ -35,6 +36,32 @@ export async function ensureCardsForCompleted(database: AppDB = db): Promise<voi
   const done = await database.lessonProgress.filter((p) => !!p.completedAt).toArray()
   const ids = new Set(done.map((p) => p.lessonId))
   for (const l of lessonOrder) if (ids.has(l.id)) await ensureCardsForLesson(l.id, database)
+}
+
+/** Карточки «только иероглифы» открыты: пройден хоть один урок второй ступени или включено в настройках. */
+export async function hanziOnlyAllowed(database: AppDB = db): Promise<boolean> {
+  if ((await loadSettings(database)).hanziOnlyCardsEarly) return true
+  const done = await database.lessonProgress.filter((p) => !!p.completedAt).toArray()
+  return done.some((p) => (unitById.get(lessonById.get(p.lessonId)?.unitId ?? '')?.stage ?? 0) >= 2)
+}
+
+/**
+  Догнать тип 5 для слов, чья карточка «иероглифы + пиньинь» уже выучена
+  (её открыли до второй ступени или до включения настройки).
+*/
+export async function ensureHanziOnlyCards(database: AppDB = db, now = Date.now()): Promise<number> {
+  if (!(await hanziOnlyAllowed(database))) return 0
+  const learned = await database.cards.where('kind').equals(2).filter((c) => c.state === 2).toArray()
+  let created = 0
+  await database.transaction('rw', database.cards, async () => {
+    for (const c of learned) {
+      const id = cardId(c.itemId, 5)
+      if (await database.cards.get(id)) continue
+      await database.cards.put({ ...newCard(c.itemId, 5, now), due: now + UNLOCK_DELAY_MS })
+      created++
+    }
+  })
+  return created
 }
 
 export type ReviewQueue = { cards: CardRow[]; totalDue: number; capped: boolean }
@@ -79,13 +106,14 @@ export async function answerCard(
   now = Date.now(),
 ): Promise<CardKind[]> {
   const opened: CardKind[] = []
+  const hanziOnly = await hanziOnlyAllowed(database)
   await database.transaction('rw', database.cards, database.reviews, async () => {
     const row = await database.cards.get(id)
     if (!row) return
     const next = review(row, grade, now, retention)
     await database.cards.put(next)
     await database.reviews.add({ cardId: id, at: now, rating: grade, durationMs, stateBefore: row.state, kind: row.kind })
-    for (const kind of unlocksAfter(row, grade)) {
+    for (const kind of unlocksAfter(row, grade, hanziOnly)) {
       const nid = cardId(row.itemId, kind)
       if (await database.cards.get(nid)) continue
       const card = newCard(row.itemId, kind, now)

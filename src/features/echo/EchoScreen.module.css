@@ -275,4 +275,8 @@
   padding: var(--space-2) var(--gutter) var(--space-3);
   border-top: var(--hairline) solid var(--line-strong);
   background: var(--paper);
+  /* с графиком тона док растёт — прокручивается сам, не закрывая весь экран */
+  max-height: 62dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }

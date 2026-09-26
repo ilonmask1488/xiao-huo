@@ -14,7 +14,7 @@ import { useSettings } from '../../lib/settings/settings'
 import { WordLine } from '../lesson/screens'
 import s from './DictionaryScreen.module.css'
 
-type Filter = 'all' | 'hard' | `stage:${number}` | 'hsk1'
+type Filter = 'all' | 'hard' | `stage:${number}` | `hsk:${number}` | 'engineering'
 
 export function DictionaryScreen() {
   const t = ru.dictionary
@@ -44,13 +44,14 @@ export function DictionaryScreen() {
   }
   const stages = [...new Set(learned.map(stageOf))].sort()
   const hskOf = (w: Word) => (settings.hskScale === 'hsk2' ? w.hsk2 : w.hsk3)
-  const hasHsk1 = learned.some((w) => hskOf(w) === 1)
+  const hskLevels = [...new Set(learned.map(hskOf).filter((n): n is number => !!n && n <= 3))].sort()
 
   const q = query.trim()
   const matchPinyin = pinyinQueryMatcher(q)
   const shown = learned.filter((w) => {
     if (filter === 'hard' && !data?.hard.has(w.id)) return false
-    if (filter === 'hsk1' && hskOf(w) !== 1) return false
+    if (filter.startsWith('hsk:') && hskOf(w) !== Number(filter.slice(4))) return false
+    if (filter === 'engineering' && !w.tags.includes('engineering')) return false
     if (filter.startsWith('stage:') && stageOf(w) !== Number(filter.slice(6))) return false
     if (!q) return true
     const lq = q.toLowerCase()
@@ -77,7 +78,8 @@ export function DictionaryScreen() {
   const chips: { id: Filter; label: string; show: boolean }[] = [
     { id: 'all', label: t.all(learned.length), show: true },
     ...stages.map((n) => ({ id: `stage:${n}` as Filter, label: t.stage(n), show: stages.length > 1 })),
-    { id: 'hsk1', label: 'HSK 1', show: hasHsk1 },
+    ...hskLevels.map((n) => ({ id: `hsk:${n}` as Filter, label: `HSK ${n}`, show: true })),
+    { id: 'engineering', label: t.engineering, show: learned.some((w) => w.tags.includes('engineering')) },
     { id: 'hard', label: t.hard, show: (data?.hard.size ?? 0) > 0 },
   ]
 
@@ -107,7 +109,7 @@ export function DictionaryScreen() {
       {shown.length ? (
         <div className={s.list}>
           {shown.map((w) => (
-            <WordLine key={w.id} id={w.id} showSandhi />
+            <WordLine key={w.id} id={w.id} showSandhi href={`/word/${w.id}`} />
           ))}
         </div>
       ) : (

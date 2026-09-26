@@ -2,7 +2,7 @@
   Экраны фаз 2+: фразы, «угадай значение», «сборка», «скажи сам», карточки повторения.
 */
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Hanzi, Pinyin } from '../../components/Chinese'
+import { Hanzi, MixedText, Pinyin } from '../../components/Chinese'
 import { PlayButton } from '../../components/Play'
 import { RecordCompare } from '../../components/RecordCompare'
 import { ToneGlyph } from '../../components/ToneChart'
@@ -352,6 +352,11 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
       {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}
       <Pinyin numeric={w.pinyin} className={s.bigPinyin} />
       <span className={s.bigRu}>{w.ru.join(', ')}</span>
+      {(screen.cardKind === 2 || screen.cardKind === 5) && w.mnemonic && (
+        <p className={s.mnemonic}>
+          <b>{ru.review.mnemonic}.</b> <MixedText text={w.mnemonic} />
+        </p>
+      )}
     </div>
   )
 
@@ -403,6 +408,8 @@ export function CardView({ screen, hanziMode, onDone }: Props<'card'>) {
   const prompt =
     screen.cardKind === 1 ? (
       <PlayButton item={screen.word} label={ru.lesson.listenAgain} size="l" />
+    ) : screen.cardKind === 5 ? (
+      <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>
     ) : screen.cardKind === 2 ? (
       <div className={s.big}>
         {showHanzi && <Hanzi className={s.bigHanzi}>{w.hanzi}</Hanzi>}

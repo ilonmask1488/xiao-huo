@@ -14,7 +14,7 @@ import { hash, patternOptions, shuffle, type Screen } from '../lesson/build'
 import { completedLessonIds, nextLessonId } from '../lesson/progress'
 import { localDate } from '../progress/streak'
 import { planSession, type BlockId } from '../session/plan'
-import { ensureCardsForCompleted, mixKinds, reviewQueue, DUE_OVERLOAD } from '../srs/cards'
+import { ensureCardsForCompleted, ensureHanziOnlyCards, mixKinds, reviewQueue, DUE_OVERLOAD } from '../srs/cards'
 
 export type LaunchBlockId = BlockId
 export const MAX_SEGMENT_MINUTES = 3
@@ -162,8 +162,8 @@ export function segmentScreens(seg: LaunchSegment, date: string, cards?: Map<str
       return items.flatMap((id, i): Screen[] => {
         const c = cards?.get(id)
         const [word, kindStr] = [id.slice(0, id.lastIndexOf(':')), id.slice(id.lastIndexOf(':') + 1)]
-        const cardKind = Number(c?.kind ?? kindStr) as 1 | 2 | 3 | 4
-        if (!wordById.has(word) || cardKind > 4) return []
+        const cardKind = Number(c?.kind ?? kindStr) as 1 | 2 | 3 | 4 | 5
+        if (!wordById.has(word) || cardKind > 5) return []
         return [{ kind: 'card', cardId: id, word, cardKind, options: cardKind === 4 ? patternOptions(word, seed + i) : undefined }]
       })
     case 'echo':
@@ -180,6 +180,7 @@ export async function getTodayLaunch(minutes: number): Promise<LaunchRow & { seg
   const date = localDate()
   // Сначала — карточки для уже пройденных уроков, иначе план соберётся без повторения.
   await ensureCardsForCompleted()
+  await ensureHanziOnlyCards()
   const completed = await completedLessonIds()
   const queue = await reviewQueue(Math.round((60 * 60) / SECONDS_PER.cards))
   const fresh = planSegments({ minutes, completed, due: [...queue.cards].sort((a, b) => a.due - b.due), date })

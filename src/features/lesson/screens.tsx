@@ -7,6 +7,7 @@ import { Hanzi, MixedText, Pinyin } from '../../components/Chinese'
 import { Mascot } from '../../components/Mascot'
 import { PlayButton, PlayChip } from '../../components/Play'
 import { ToneChart, ToneGlyph } from '../../components/ToneChart'
+import { Link } from 'react-router-dom'
 import { RecordCompare } from '../../components/RecordCompare'
 import ui from '../../components/ui.module.css'
 import { sentenceById, wordById } from '../../content'
@@ -166,7 +167,7 @@ export function ExplainView({ screen, onDone }: Props<'explain'>) {
 }
 
 /** Строка слова: иероглифы, пиньинь, «как звучит», перевод, звук в разных голосах. */
-export function WordLine({ id, showSandhi }: { id: WordId; showSandhi?: boolean }) {
+export function WordLine({ id, showSandhi, href }: { id: WordId; showSandhi?: boolean; /** ссылка на карточку слова (словарь) */ href?: string }) {
   const w = wordById.get(id)
   const [voice, setVoice] = useState<Voice | undefined>(undefined)
   if (!w) return null
@@ -174,7 +175,13 @@ export function WordLine({ id, showSandhi }: { id: WordId; showSandhi?: boolean 
   const voices = voicesOf(id)
   return (
     <div className={s.word}>
-      <Hanzi className={s.wordHanzi}>{w.hanzi}</Hanzi>
+      {href ? (
+        <Link to={href} className={s.wordLink} aria-label={ru.dictionary.open(w.hanzi)}>
+          <Hanzi className={s.wordHanzi}>{w.hanzi}</Hanzi>
+        </Link>
+      ) : (
+        <Hanzi className={s.wordHanzi}>{w.hanzi}</Hanzi>
+      )}
       <div>
         <Pinyin numeric={w.pinyin} className={s.wordPinyin} />
         {(showSandhi || sandhi.applied.length > 0) && sandhi.applied.length > 0 && (

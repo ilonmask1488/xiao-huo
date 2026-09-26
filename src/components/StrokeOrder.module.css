@@ -1,0 +1,67 @@
+.wrap {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+}
+
+.chars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.cell {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+/* Клетка 米字格: рамка, осевые и диагональные пунктиры — как в прописях */
+.box {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  border: 1.5px solid var(--line-strong);
+  background:
+    linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat,
+    linear-gradient(45deg, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(-45deg, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    var(--surface);
+  touch-action: none;
+}
+
+.cell[data-active] .box {
+  border-color: var(--flame);
+}
+
+.box svg {
+  display: block;
+}
+
+.count {
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+}
+
+.note {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.row button {
+  width: auto;
+  min-height: var(--tap);
+  font-size: var(--fs-small);
+}

@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
-import { lessonById, unitsOfStage } from '../../content'
+import { lessonById, unitsOfStage, wordById } from '../../content'
+import { hanziChars, hanziDataUrl } from '../../lib/hanzi'
 import type { Unit } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { entriesFor, urlOf } from '../../lib/audio/manifest'
@@ -158,7 +159,9 @@ function OfflineAudio({ lessonIds }: { lessonIds: string[] }) {
   const [state, setState] = useState<{ done: number; total: number } | null>(null)
   const run = async () => {
     const items = new Set(lessonIds.flatMap((id) => buildLesson(lessonById.get(id)!).flatMap(itemsOf)))
-    const urls = [...new Set([...items].flatMap((i) => entriesFor(i).map(urlOf)))]
+    const chars = lessonIds.flatMap((id) => lessonById.get(id)!.newWords.flatMap((w) => hanziChars(wordById.get(w)?.hanzi ?? '')))
+    // Звук уроков и порядок черт новых слов — чтобы в полёте работало всё.
+    const urls = [...new Set([...[...items].flatMap((i) => entriesFor(i).map(urlOf)), ...chars.map(hanziDataUrl)])]
     setState({ done: 0, total: urls.length })
     let done = 0
     const queue = [...urls]

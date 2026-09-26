@@ -33,6 +33,7 @@ export type MetaKey =
   | 'storagePersisted'
   | 'soundChecked'
   | 'micExplained'
+  | 'asrExplained'
 
 export type MetaRow = { key: MetaKey; value: number | boolean | string }
 

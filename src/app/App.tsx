@@ -3,6 +3,7 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { CourseScreen } from '../features/course/CourseScreen'
 import { UnitScreen } from '../features/course/UnitScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
+import { WordScreen } from '../features/dictionary/WordScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
 import { EchoScreen } from '../features/echo/EchoScreen'
 import { StoryScreen } from '../features/story/StoryScreen'
@@ -53,6 +54,7 @@ export function App() {
           <Route path="map" element={<CourseScreen />} />
           <Route path="tones" element={<TonesScreen />} />
           <Route path="dictionary" element={<DictionaryScreen />} />
+          <Route path="word/:id" element={<WordScreen />} />
           <Route path="more" element={<MoreScreen />} />
           <Route path="stats" element={<StatsScreen />} />
           <Route path="echo" element={<EchoScreen />} />

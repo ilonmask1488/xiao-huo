@@ -1,8 +1,9 @@
 /*
   Манифест звуков (генерирует scripts/generate_audio.py) и выбор файла для слога или слова.
   Файлы лежат в public/audio, имена с хэшем содержимого — кэш офлайна не устаревает.
+  Сам манифест (~300 КБ) не вшит в бандл: грузится один раз при запуске (loadManifest в main.tsx)
+  и лежит в предзагрузке service worker — офлайн он есть всегда.
 */
-import manifestJson from '../../../public/audio/manifest.json'
 import { sentenceById, sentenceText, wordById } from '../../content'
 import type { Item } from '../../content/types'
 
@@ -18,9 +19,19 @@ type Manifest = {
   texts: Record<string, AudioEntry[]>
 }
 
-export const manifest = manifestJson as Manifest
-
 const BASE = `${import.meta.env.BASE_URL}audio/`
+
+export let manifest: Manifest = { version: 0, sources: {}, syllables: {}, texts: {} }
+
+/** Загрузить манифест до первого рендера. Не вышло — звук упадёт на синтез браузера, как при отсутствии файла. */
+export async function loadManifest(): Promise<void> {
+  try {
+    const r = await fetch(`${BASE}manifest.json`)
+    if (r.ok) manifest = (await r.json()) as Manifest
+  } catch (e) {
+    console.error(e)
+  }
+}
 
 export function urlOf(entry: AudioEntry): string {
   return BASE + entry.file

@@ -1,0 +1,715 @@
+[
+ {
+  "id": "d-s2-u1-boss",
+  "unitId": "s2-u1",
+  "title": "День рождения Сяо Ли",
+  "characters": [
+   "me",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-1-12"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-1-13",
+    "choices": [
+     "s-2-1-05",
+     "s-2-1-07"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.1-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.1-b02",
+    "choices": [
+     "s-2-1-11",
+     "s-2-1-15"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.1-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.1-b04",
+    "choices": [
+     "s-2-1-12",
+     "s-2-1-01"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.1-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.1-b06",
+    "choices": [
+     "s-2-1-14",
+     "s-2-1-09"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u2-boss",
+  "unitId": "s2-u2",
+  "title": "Длинная смена",
+  "characters": [
+   "me",
+   "wanggong"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-2-01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-2-02",
+    "choices": [
+     "s-2-2-11",
+     "s-2-2-12"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-2-10"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.2-b01",
+    "choices": [
+     "s-2-2-14",
+     "s-2-2-05"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.2-b02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.2-b03",
+    "choices": [
+     "s-2-2-13",
+     "s-2-2-09"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-2-07"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.2-b04",
+    "choices": [
+     "s-2-2-04",
+     "s-2-2-08"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u3-boss",
+  "unitId": "s2-u3",
+  "title": "Дорога в аэропорт",
+  "characters": [
+   "me",
+   "siji"
+  ],
+  "lines": [
+   {
+    "speaker": "siji",
+    "sentenceId": "s-1.7-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.3-b01",
+    "choices": [
+     "s-2-3-08",
+     "s-2-3-10"
+    ]
+   },
+   {
+    "speaker": "siji",
+    "sentenceId": "s-2-3-02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.3-b02",
+    "choices": [
+     "s-2-3-11",
+     "s-2-3-14"
+    ]
+   },
+   {
+    "speaker": "siji",
+    "sentenceId": "s-2.3-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.3-b04",
+    "choices": [
+     "s-2-3-07",
+     "s-2-3-03"
+    ]
+   },
+   {
+    "speaker": "siji",
+    "sentenceId": "s-2.3-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.3-b06",
+    "choices": [
+     "s-2-3-09",
+     "s-2-3-04"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u4-boss",
+  "unitId": "s2-u4",
+  "title": "Первый день в цехе",
+  "characters": [
+   "me",
+   "wanggong"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-4-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.4-b01",
+    "choices": [
+     "s-2-1-13",
+     "s-2-3-14"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.4-b02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.4-b03",
+    "choices": [
+     "s-2-4-12",
+     "s-2-4-02"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.4-b04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.4-b05",
+    "choices": [
+     "s-2-4-07",
+     "s-2-4-14"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.4-b06"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.4-b07",
+    "choices": [
+     "s-2-4-08",
+     "s-2-4-07"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u5-boss",
+  "unitId": "s2-u5",
+  "title": "Новая куртка",
+  "characters": [
+   "ayi",
+   "me"
+  ],
+  "lines": [
+   {
+    "speaker": "ayi",
+    "sentenceId": "s-1.6-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.5-b01",
+    "choices": [
+     "s-2-5-11",
+     "s-2-5-08"
+    ]
+   },
+   {
+    "speaker": "ayi",
+    "sentenceId": "s-2-5-04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.5-b02",
+    "choices": [
+     "s-2-5-06",
+     "s-2-5-12"
+    ]
+   },
+   {
+    "speaker": "ayi",
+    "sentenceId": "s-2.5-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.5-b04",
+    "choices": [
+     "s-2-5-07",
+     "s-2-5-08"
+    ]
+   },
+   {
+    "speaker": "ayi",
+    "sentenceId": "s-2.5-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.5-b06",
+    "choices": [
+     "s-2-5-04",
+     "s-2-5-10"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u6-boss",
+  "unitId": "s2-u6",
+  "title": "Кофе с Сяо Ли",
+  "characters": [
+   "fuwuyuan",
+   "me",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "fuwuyuan",
+    "sentenceId": "s-2-6-02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-6-03",
+    "choices": [
+     "s-2-6-09",
+     "s-2-6-12"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.6-b01"
+   },
+   {
+    "speaker": "fuwuyuan",
+    "sentenceId": "s-2.6-b02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.6-b03",
+    "choices": [
+     "s-2-6-13",
+     "s-2-6-11"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.6-b04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-6-14",
+    "choices": [
+     "s-2-6-05",
+     "s-2-6-01"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.6-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.6-b06",
+    "choices": [
+     "s-2-6-04",
+     "s-2-6-02"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u7-boss",
+  "unitId": "s2-u7",
+  "title": "Ошибка в чертеже",
+  "characters": [
+   "me",
+   "wanggong"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.7-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.7-b02",
+    "choices": [
+     "s-2-7-10",
+     "s-2-7-08"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.7-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.7-b04",
+    "choices": [
+     "s-2-7-09",
+     "s-2-7-13"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-7-04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-7-05",
+    "choices": [
+     "s-2-7-02",
+     "s-2-5-05"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.7-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.7-b06",
+    "choices": [
+     "s-2-7-07",
+     "s-2-7-09"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u8-boss",
+  "unitId": "s2-u8",
+  "title": "Футбол после смены",
+  "characters": [
+   "me",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-8-05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-8-06",
+    "choices": [
+     "s-2-8-03",
+     "s-2-8-11"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-8-08"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.8-b01",
+    "choices": [
+     "s-2-8-10",
+     "s-2-8-09"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-8-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.8-b02",
+    "choices": [
+     "s-2-8-06",
+     "s-2-8-13"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.8-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-1-9-06",
+    "choices": [
+     "s-2-8-08",
+     "s-2-8-05"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u9-boss",
+  "unitId": "s2-u9",
+  "title": "Выходные в Пекине",
+  "characters": [
+   "me",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-9-08"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-9-09",
+    "choices": [
+     "s-2-9-06",
+     "s-2-9-13"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.9-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.9-b02",
+    "choices": [
+     "s-2-9-03",
+     "s-2-9-12"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-9-06"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.9-b03",
+    "choices": [
+     "s-2-9-07",
+     "s-2-9-05"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.9-b04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.9-b05",
+    "choices": [
+     "s-2-9-11",
+     "s-2-9-13"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u10-boss",
+  "unitId": "s2-u10",
+  "title": "Огневые испытания",
+  "characters": [
+   "me",
+   "wanggong"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-10-02"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-10-05",
+    "choices": [
+     "s-2-10-03",
+     "s-2-10-12"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.10-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.10-b02",
+    "choices": [
+     "s-2-10-01",
+     "s-2-10-09"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.10-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.10-b04",
+    "choices": [
+     "s-2-10-14",
+     "s-2-10-05"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.10-b05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.10-b06",
+    "choices": [
+     "s-2-10-02",
+     "s-2-10-12"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u11-boss",
+  "unitId": "s2-u11",
+  "title": "Совещание",
+  "characters": [
+   "me",
+   "wanggong"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.11-b01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.11-b02",
+    "choices": [
+     "s-2-11-13",
+     "s-2-11-11"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.11-b03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-11-01",
+    "choices": [
+     "s-2-11-08",
+     "s-2-11-15"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.11-b04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.11-b05",
+    "choices": [
+     "s-2-11-07",
+     "s-2-11-10"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2.11-b06"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-11-08",
+    "choices": [
+     "s-2-11-12",
+     "s-2-11-02"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "d-s2-u12-boss",
+  "unitId": "s2-u12",
+  "title": "Проводы в аэропорт",
+  "characters": [
+   "me",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-12-14"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.12-b01",
+    "choices": [
+     "s-2-12-12",
+     "s-2-12-06"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-12-04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.12-b02",
+    "choices": [
+     "s-2-12-11",
+     "s-2-12-05"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-12-08"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.12-b03",
+    "choices": [
+     "s-2-12-10",
+     "s-2-12-13"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2.12-b04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.12-b05",
+    "choices": [
+     "s-2-12-09",
+     "s-2-12-12"
+    ]
+   }
+  ]
+ }
+]

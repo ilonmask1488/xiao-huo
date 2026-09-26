@@ -581,22 +581,41 @@ def words_of(sentence_tokens: list[dict]) -> int:
     return sum(1 for t in sentence_tokens if t["pinyin"])
 
 
+def base_words(files: list[str]) -> list[dict]:
+    out: list[dict] = []
+    for f in files:
+        path = ROOT / f
+        if path.exists():
+            out += json.loads(path.read_text(encoding="utf-8"))
+    return out
+
+
 def build() -> None:
+    build_stage(1, UNITS, BOSSES, ["src/content/words.json"], OUT)
+
+
+def build_stage(stage: int, units: list[dict], bosses: dict, base_files: list[str], out_dir: Path) -> None:
+    """Общий сборщик ступени: слова, фразы, 3 урока на этап + диалог-босс."""
+    from mnemonics import MNEMONICS
+
     hsk = load_hsk()
-    stage0 = json.loads((ROOT / "src/content/words.json").read_text(encoding="utf-8"))
-    dictionary = {w["hanzi"]: (w["id"], w["pinyin"]) for w in stage0}
+    dictionary = {w["hanzi"]: (w["id"], w["pinyin"]) for w in base_words(base_files)}
+    known_ids = {w["id"] for w in base_words(base_files)}
     words_out, sentences_out, lessons_out, units_out, dialogues_out = [], [], [], [], []
     known: dict[str, str] = {}
-    ids = set()
+    for f in ("src/content/stage1/sentences.json",) if stage > 1 else ():
+        for s in json.loads((ROOT / f).read_text(encoding="utf-8")):
+            known[plain_text(s)] = s["id"]
+    ids = set(known_ids)
 
-    for u in UNITS:
+    for u in units:
         for wid, hanzi, py, ru_, pos in u["words"]:
             if hanzi in dictionary:
                 raise SystemExit(f"Слово {hanzi} уже есть в курсе ({dictionary[hanzi][0]})")
             dictionary[hanzi] = (wid, py)
 
-    for n, u in enumerate(UNITS, start=1):
-        uid = f"s1-u{n}"
+    for n, u in enumerate(units, start=1):
+        uid = f"s{stage}-u{n}"
         unit_words = []
         for wid, hanzi, py, ru_, pos in u["words"]:
             if wid in ids:
@@ -608,12 +627,15 @@ def build() -> None:
                 w["hsk2"] = lv["old"]
             if lv.get("new"):
                 w["hsk3"] = lv["new"]
-            tags = ["stage1"]
-            if lv.get("old") != 1:
+            tags = [f"stage{stage}"]
+            if lv.get("old") != stage:
                 tags.append("extra")
-            if wid == "w-gongchengshi":
+            # «Инженер» — профессиональные слова этапов модуля; общие слова HSK 1–2 из них не помечаем.
+            if wid == "w-gongchengshi" or (u.get("engineering") and lv.get("old") not in (1, 2)):
                 tags.append("engineering")
             w["tags"] = tags
+            if wid in MNEMONICS:
+                w["mnemonic"] = MNEMONICS[wid]
             w["reviewed"] = False
             words_out.append(w)
             unit_words.append(wid)
@@ -644,7 +666,7 @@ def build() -> None:
             sents.append(s)
             return sid
 
-        boss = BOSSES[u["code"]]
+        boss = bosses[u["code"]]
         did = f"d-{uid}-boss"
         dialogues_out.append(make_dialogue(did, uid, boss["title"], boss["lines"], known, new_sentence))
         boss_lesson = {
@@ -659,13 +681,13 @@ def build() -> None:
         lessons_out += lessons
         units_out.append(
             {
-                "id": uid, "stage": 1, "order": n, "code": u["code"], "title": u["title"], "situation": u["situation"],
+                "id": uid, "stage": stage, "order": n, "code": u["code"], "title": u["title"], "situation": u["situation"],
                 "goals": u["goals"], "lessons": [l["id"] for l in lessons], "newWords": unit_words,
                 "sentences": [s["id"] for s in sents], "dialogues": [did], "grammarNotes": grammar, "boss": boss_lesson["id"],
             }
         )
 
-    OUT.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     for name, data in (
         ("units", units_out),
         ("words", words_out),
@@ -673,10 +695,10 @@ def build() -> None:
         ("lessons", lessons_out),
         ("dialogues", dialogues_out),
     ):
-        (OUT / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        (out_dir / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (ROOT / "src/content/characters.json").write_text(json.dumps(CHARACTERS, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(
-        f"Этапов {len(units_out)}, уроков {len(lessons_out)}, слов {len(words_out)}, фраз {len(sentences_out)}, "
+        f"Ступень {stage}: этапов {len(units_out)}, уроков {len(lessons_out)}, слов {len(words_out)}, фраз {len(sentences_out)}, "
         f"диалогов {len(dialogues_out)}"
     )
 

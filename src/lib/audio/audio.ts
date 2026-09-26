@@ -18,6 +18,12 @@ void loadSettings()
   .then((s) => configureAudio(s))
   .catch(() => {})
 
+/** Адрес файла образца (для графика тона); null — файла нет, звучит синтез браузера. */
+export function sampleUrl(item: Item, voice?: Voice): string | null {
+  const e = entryFor(item, prefs.voice, voice)
+  return e ? urlOf(e) : null
+}
+
 /** Длительность звука в мс (для паузы «твоя очередь»). */
 export function durationOf(item: Item, voice?: Voice): number {
   return entryFor(item, prefs.voice, voice)?.ms ?? 800

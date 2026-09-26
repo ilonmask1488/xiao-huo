@@ -8,6 +8,11 @@ import s1Lessons from './stage1/lessons.json'
 import s1Sentences from './stage1/sentences.json'
 import s1Units from './stage1/units.json'
 import s1Words from './stage1/words.json'
+import s2Dialogues from './stage2/dialogues.json'
+import s2Lessons from './stage2/lessons.json'
+import s2Sentences from './stage2/sentences.json'
+import s2Units from './stage2/units.json'
+import s2Words from './stage2/words.json'
 import storyDialogues from './story/dialogues.json'
 import storyEpisodes from './story/episodes.json'
 import storyLessons from './story/lessons.json'
@@ -18,11 +23,11 @@ import unitsJson from './units.json'
 import wordsJson from './words.json'
 
 export const content: Content = {
-  units: [...unitsJson, ...s1Units] as Unit[],
-  lessons: [...lessonsJson, ...s1Lessons, ...storyLessons] as Lesson[],
-  words: [...wordsJson, ...s1Words, ...storyWords] as Word[],
-  sentences: [...sentencesJson, ...s1Sentences, ...storySentences] as Sentence[],
-  dialogues: [...dialoguesJson, ...s1Dialogues, ...storyDialogues] as Dialogue[],
+  units: [...unitsJson, ...s1Units, ...s2Units] as Unit[],
+  lessons: [...lessonsJson, ...s1Lessons, ...s2Lessons, ...storyLessons] as Lesson[],
+  words: [...wordsJson, ...s1Words, ...storyWords, ...s2Words] as Word[],
+  sentences: [...sentencesJson, ...s1Sentences, ...storySentences, ...s2Sentences] as Sentence[],
+  dialogues: [...dialoguesJson, ...s1Dialogues, ...s2Dialogues, ...storyDialogues] as Dialogue[],
   characters: charactersJson as Character[],
   episodes: storyEpisodes as Episode[],
 }

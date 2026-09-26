@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -7,6 +8,9 @@ const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 
 
 // На GitHub Pages сайт живёт в подпапке /<имя-репозитория>/ — её передаёт workflow.
 const base = process.env.BASE_PATH || '/'
+
+// Манифест звука грузится при запуске — кладём его в предзагрузку с ревизией по содержимому.
+const audioManifestRevision = createHash('md5').update(readFileSync(new URL('./public/audio/manifest.json', import.meta.url))).digest('hex')
 
 export default defineConfig({
   base,
@@ -44,6 +48,7 @@ export default defineConfig({
         // Оболочка приложения целиком: код, стили, иконки, шрифты (кроме ненужных поднаборов).
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2,webmanifest}'],
         globIgnores: ['**/*vietnamese*', '**/audio/**'],
+        additionalManifestEntries: [{ url: 'audio/manifest.json', revision: audioManifestRevision }],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
         runtimeCaching: [
@@ -56,6 +61,12 @@ export default defineConfig({
               rangeRequests: true,
               cacheableResponse: { statuses: [0, 200] },
             },
+          },
+          {
+            // Порядок черт (фаза 4): данные знака грузятся при первом показе и остаются офлайн.
+            urlPattern: ({ url }) => url.pathname.includes('/hanzi/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'hanzi', cacheableResponse: { statuses: [0, 200] } },
           },
         ],
       },
