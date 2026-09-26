@@ -34,5 +34,41 @@
   "unlockAfter": "s1-u6",
   "lessonId": "story-4",
   "dialogueId": "d-ep4"
+ },
+ {
+  "id": "ep5",
+  "n": 5,
+  "title": "Экскурсия по заводу",
+  "blurb": "Инженер Ван ведёт тебя по цехам. Смотри, спрашивай, не бойся сказать «не понимаю».",
+  "unlockAfter": "s2-u4",
+  "lessonId": "story-5",
+  "dialogueId": "d-ep5"
+ },
+ {
+  "id": "ep6",
+  "n": 6,
+  "title": "Совещание",
+  "blurb": "Тебя представляют заказчику. Говорят быстро — переспрашивай и предлагай.",
+  "unlockAfter": "s3-u12",
+  "lessonId": "story-6",
+  "dialogueId": "d-ep6"
+ },
+ {
+  "id": "ep7",
+  "n": 7,
+  "title": "Испытания",
+  "blurb": "Огневые испытания двигателя. Отсчёт, зажигание — и данные на экране.",
+  "unlockAfter": "s3-u14",
+  "lessonId": "story-7",
+  "dialogueId": "d-ep7"
+ },
+ {
+  "id": "ep8",
+  "n": 8,
+  "title": "Прощальный ужин и 干杯！",
+  "blurb": "Последний вечер. Тосты, благодарности и вопрос «когда снова приедешь?».",
+  "unlockAfter": "s3-u14",
+  "lessonId": "story-8",
+  "dialogueId": "d-ep8"
  }
 ]

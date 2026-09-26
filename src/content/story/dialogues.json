@@ -256,5 +256,266 @@
    }
   ],
   "cultureNote": "辣不辣？ — «остро или нет?» — главный вопрос в Китае. На севере едят мягче, в Сычуани — огонь. За общим обедом платит тот, кто пригласил, и спорить за счёт — часть ритуала. Чай в столовой обычно бесплатный."
+ },
+ {
+  "id": "d-ep5",
+  "unitId": "s2-u4",
+  "title": "Экскурсия по заводу",
+  "characters": [
+   "me",
+   "wanggong",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep5-01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep5-02",
+    "choices": [
+     "s-2-4-09",
+     "s-2-4-14"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-2-4-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2.4-b01",
+    "choices": [
+     "s-2-4-12",
+     "s-2-4-13"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-2-4-04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-4-07",
+    "choices": [
+     "s-2-4-10",
+     "s-2-4-03"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep5-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep5-04",
+    "choices": [
+     "s-2-4-09",
+     "s-2-4-05"
+    ]
+   }
+  ],
+  "cultureNote": "В цехе каска обязательна, даже для гостей, — её выдадут на проходной. 安全第一 «безопасность прежде всего» висит на каждой стене. Фотографировать оборудование без разрешения нельзя: сначала спроси 可以照相吗？ Отказ — не обида, а правило."
+ },
+ {
+  "id": "d-ep6",
+  "unitId": "s3-u12",
+  "title": "Совещание",
+  "characters": [
+   "me",
+   "wanggong",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep6-01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep6-02",
+    "choices": [
+     "s-3-12-02",
+     "s-3-12-14"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep6-03"
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep6-04"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-2-10-11",
+    "choices": [
+     "s-3-12-08",
+     "s-3-12-19"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep6-05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep6-06",
+    "choices": [
+     "s-3-12-04",
+     "s-3-12-12"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep6-07"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep6-08",
+    "choices": [
+     "s-3-12-23",
+     "s-3-12-06"
+    ]
+   }
+  ],
+  "cultureNote": "Первым говорит старший — 王工. Перебивать его не принято; своё мнение говорят, когда спросят: 你有什么意见？ Переспросить — нормально и даже уважительно: 请再说一次 «повторите, пожалуйста», 请说慢一点 «говорите помедленнее». Числа и даты повторяют вслух, чтобы сверить."
+ },
+ {
+  "id": "d-ep7",
+  "unitId": "s3-u14",
+  "title": "Испытания",
+  "characters": [
+   "me",
+   "wanggong",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep7-01"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-3.14-b02",
+    "choices": [
+     "s-3-14-22",
+     "s-2-10-06"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep7-02"
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep7-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep7-04",
+    "choices": [
+     "s-3-14-19",
+     "s-3-14-11"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep7-05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep7-06",
+    "choices": [
+     "s-3-14-07",
+     "s-3-14-15"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep7-07"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep7-08",
+    "choices": [
+     "s-3-8-09",
+     "s-3-14-14"
+    ]
+   }
+  ],
+  "cultureNote": "Во время отсчёта на стенде молчат все, кроме ведущего: 五、四、三、二、一，点火！ Разговоры — только после команды. Успешное испытание отмечают вместе, и зовёт всех обычно начальник — отказаться от такого ужина почти невозможно."
+ },
+ {
+  "id": "d-ep8",
+  "unitId": "s3-u14",
+  "title": "Прощальный ужин и 干杯！",
+  "characters": [
+   "fuwuyuan",
+   "me",
+   "wanggong",
+   "xiaoli"
+  ],
+  "lines": [
+   {
+    "speaker": "fuwuyuan",
+    "sentenceId": "s-ep8-01"
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep8-02"
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep8-03"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep8-04",
+    "choices": [
+     "s-3-8-03",
+     "s-3-5-04"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep8-05"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep8-06",
+    "choices": [
+     "s-3-11-25",
+     "s-3-11-13"
+    ]
+   },
+   {
+    "speaker": "xiaoli",
+    "sentenceId": "s-ep8-07"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-ep8-08",
+    "choices": [
+     "s-3-2-16",
+     "s-3-8-09"
+    ]
+   },
+   {
+    "speaker": "wanggong",
+    "sentenceId": "s-ep8-09"
+   },
+   {
+    "speaker": "me",
+    "sentenceId": "s-3-9-24",
+    "choices": [
+     "s-3-14-20",
+     "s-3-5-01"
+    ]
+   }
+  ],
+  "cultureNote": "干杯 буквально «сухой бокал»: после такого тоста принято допить. Хочешь пригубить — скажи 随意 «по желанию». Чокаясь со старшим, держи бокал ниже его бокала — это знак уважения. Не пьёшь совсем — 我不喝酒 и чай в бокале: никто не обидится."
  }
 ]

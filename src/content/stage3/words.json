@@ -1,0 +1,5744 @@
+[
+ {
+  "id": "w-ai3",
+  "hanzi": "矮",
+  "pinyin": "ai3",
+  "ru": [
+   "низкий (о росте)"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-pang",
+  "hanzi": "胖",
+  "pinyin": "pang4",
+  "ru": [
+   "полный",
+   "толстый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "月 (мясо) + 半 «половина»: половина туши — полный.",
+  "reviewed": false
+ },
+ {
+  "id": "w-shou4",
+  "hanzi": "瘦",
+  "pinyin": "shou4",
+  "ru": [
+   "худой"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "疒 «болезнь» + 叟 «старик»: болезненно худой.",
+  "reviewed": false
+ },
+ {
+  "id": "w-nianqing",
+  "hanzi": "年轻",
+  "pinyin": "nian2 qing1",
+  "ru": [
+   "молодой"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-lao",
+  "hanzi": "老",
+  "pinyin": "lao3",
+  "ru": [
+   "старый",
+   "старина (перед фамилией)"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-keai",
+  "hanzi": "可爱",
+  "pinyin": "ke3 ai4",
+  "ru": [
+   "милый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-congming",
+  "hanzi": "聪明",
+  "pinyin": "cong1 ming5",
+  "ru": [
+   "умный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "聪 = 耳 «ухо» + 总: слышит всё — умный. 明 = 日 «солнце» + 月 «луна» — ясный ум.",
+  "reviewed": false
+ },
+ {
+  "id": "w-reqing",
+  "hanzi": "热情",
+  "pinyin": "re4 qing2",
+  "ru": [
+   "приветливый",
+   "радушный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-renzhen",
+  "hanzi": "认真",
+  "pinyin": "ren4 zhen1",
+  "ru": [
+   "старательный",
+   "серьёзный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-anjing",
+  "hanzi": "安静",
+  "pinyin": "an1 jing4",
+  "ru": [
+   "тихий",
+   "спокойный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "安 = 女 под крышей 宀 — покой; 静 = 青 + 争 «спор» утих — тишина.",
+  "reviewed": false
+ },
+ {
+  "id": "w-qiguai",
+  "hanzi": "奇怪",
+  "pinyin": "qi2 guai4",
+  "ru": [
+   "странный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bizi",
+  "hanzi": "鼻子",
+  "pinyin": "bi2 zi5",
+  "ru": [
+   "нос"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "自 «сам» — древняя пиктограмма носа (китайцы показывают на нос, говоря «я»); 鼻 = 自 + 畀.",
+  "reviewed": false
+ },
+ {
+  "id": "w-erduo",
+  "hanzi": "耳朵",
+  "pinyin": "er3 duo5",
+  "ru": [
+   "ухо"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-lian",
+  "hanzi": "脸",
+  "pinyin": "lian3",
+  "ru": [
+   "лицо"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-toufa",
+  "hanzi": "头发",
+  "pinyin": "tou2 fa5",
+  "ru": [
+   "волосы"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "发 fà «волосы» — тот же знак, что 发 fā «выпускать» в 发动机: волосы «выпускает» голова.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yanjing4",
+  "hanzi": "眼镜",
+  "pinyin": "yan3 jing4",
+  "ru": [
+   "очки"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "眼 «глаз» + 镜 «зеркало, линза» (钅 «металл» в оправе): стекляшки для глаз.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jiao3",
+  "hanzi": "脚",
+  "pinyin": "jiao3",
+  "ru": [
+   "ступня",
+   "нога (ниже колена)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tui",
+  "hanzi": "腿",
+  "pinyin": "tui3",
+  "ru": [
+   "нога"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kou",
+  "hanzi": "口",
+  "pinyin": "kou3",
+  "ru": [
+   "рот",
+   "(счётное для членов семьи)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiang4b",
+  "hanzi": "像",
+  "pinyin": "xiang4",
+  "ru": [
+   "быть похожим"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yiyang",
+  "hanzi": "一样",
+  "pinyin": "yi1 yang4",
+  "ru": [
+   "одинаковый",
+   "так же"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-you4",
+  "hanzi": "又",
+  "pinyin": "you4",
+  "ru": [
+   "опять",
+   "и… и… (又…又…)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bieren",
+  "hanzi": "别人",
+  "pinyin": "bie2 ren5",
+  "ru": [
+   "другие люди",
+   "чужой"
+  ],
+  "pos": "мест.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ziji",
+  "hanzi": "自己",
+  "pinyin": "zi4 ji3",
+  "ru": [
+   "сам",
+   "себя"
+  ],
+  "pos": "мест.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-danxin",
+  "hanzi": "担心",
+  "pinyin": "dan1 xin1",
+  "ru": [
+   "беспокоиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-haipa",
+  "hanzi": "害怕",
+  "pinyin": "hai4 pa4",
+  "ru": [
+   "бояться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shengqi",
+  "hanzi": "生气",
+  "pinyin": "sheng1 qi4",
+  "ru": [
+   "сердиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nanguo",
+  "hanzi": "难过",
+  "pinyin": "nan2 guo4",
+  "ru": [
+   "грустить",
+   "расстроенный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhaoji",
+  "hanzi": "着急",
+  "pinyin": "zhao2 ji2",
+  "ru": [
+   "волноваться",
+   "торопиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fangxin",
+  "hanzi": "放心",
+  "pinyin": "fang4 xin1",
+  "ru": [
+   "не волноваться",
+   "быть спокойным"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guanxin",
+  "hanzi": "关心",
+  "pinyin": "guan1 xin1",
+  "ru": [
+   "заботиться",
+   "беспокоиться о ком-то"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-manyi",
+  "hanzi": "满意",
+  "pinyin": "man3 yi4",
+  "ru": [
+   "доволен"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shufu",
+  "hanzi": "舒服",
+  "pinyin": "shu1 fu5",
+  "ru": [
+   "удобный",
+   "хорошо себя чувствовать"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-teng",
+  "hanzi": "疼",
+  "pinyin": "teng2",
+  "ru": [
+   "болеть (о боли)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "疒 «болезнь» + 冬 «зима»: зимняя ломота — болит.",
+  "reviewed": false
+ },
+ {
+  "id": "w-fashao",
+  "hanzi": "发烧",
+  "pinyin": "fa1 shao1",
+  "ru": [
+   "температурить",
+   "жар"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "烧 = 火 «огонь» + 尧: жар внутри; 发 «выпускать» — тело выдаёт жар.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ganmao",
+  "hanzi": "感冒",
+  "pinyin": "gan3 mao4",
+  "ru": [
+   "простуда",
+   "простудиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiankang",
+  "hanzi": "健康",
+  "pinyin": "jian4 kang1",
+  "ru": [
+   "здоровье",
+   "здоровый"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-e4",
+  "hanzi": "饿",
+  "pinyin": "e4",
+  "ru": [
+   "голодный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "饣 «еда» + 我 «я» (подсказка чтения): мне — еды! Голоден.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ke3",
+  "hanzi": "渴",
+  "pinyin": "ke3",
+  "ru": [
+   "хотеть пить"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "氵 «вода» + 曷: жаждать воды.",
+  "reviewed": false
+ },
+ {
+  "id": "w-bao3",
+  "hanzi": "饱",
+  "pinyin": "bao3",
+  "ru": [
+   "сытый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "饣 «еда» + 包 «свёрток»: набит едой, как свёрток, — сытый.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ku",
+  "hanzi": "哭",
+  "pinyin": "ku1",
+  "ru": [
+   "плакать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "两 глаза 口口 над 犬 «собакой»: воет, как пёс, — плачет.",
+  "reviewed": false
+ },
+ {
+  "id": "w-duanlian",
+  "hanzi": "锻炼",
+  "pinyin": "duan4 lian4",
+  "ru": [
+   "тренироваться",
+   "закаляться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tiyu",
+  "hanzi": "体育",
+  "pinyin": "ti3 yu4",
+  "ru": [
+   "спорт",
+   "физкультура"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bisai",
+  "hanzi": "比赛",
+  "pinyin": "bi3 sai4",
+  "ru": [
+   "соревнование",
+   "матч"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xizao",
+  "hanzi": "洗澡",
+  "pinyin": "xi3 zao3",
+  "ru": [
+   "мыться",
+   "принимать душ"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiaoxin",
+  "hanzi": "小心",
+  "pinyin": "xiao3 xin1",
+  "ru": [
+   "осторожно",
+   "быть осторожным"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yinggai",
+  "hanzi": "应该",
+  "pinyin": "ying1 gai1",
+  "ru": [
+   "следует",
+   "должен"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-geng",
+  "hanzi": "更",
+  "pinyin": "geng4",
+  "ru": [
+   "ещё (более)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shua",
+  "hanzi": "刷",
+  "pinyin": "shua1",
+  "ru": [
+   "чистить щёткой"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ya",
+  "hanzi": "牙",
+  "pinyin": "ya2",
+  "ru": [
+   "зуб"
+  ],
+  "pos": "сущ.",
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bangongshi",
+  "hanzi": "办公室",
+  "pinyin": "ban4 gong1 shi4",
+  "ru": [
+   "офис",
+   "кабинет"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chufang",
+  "hanzi": "厨房",
+  "pinyin": "chu2 fang2",
+  "ru": [
+   "кухня"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xishoujian",
+  "hanzi": "洗手间",
+  "pinyin": "xi3 shou3 jian1",
+  "ru": [
+   "туалет",
+   "уборная"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bingxiang",
+  "hanzi": "冰箱",
+  "pinyin": "bing1 xiang1",
+  "ru": [
+   "холодильник"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "冰 = 冫 «лёд» + 水 «вода»; 箱 «ящик» (竹 «бамбук» сверху — плетёный короб): ящик со льдом.",
+  "reviewed": false
+ },
+ {
+  "id": "w-kongtiao",
+  "hanzi": "空调",
+  "pinyin": "kong1 tiao2",
+  "ru": [
+   "кондиционер"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dianti",
+  "hanzi": "电梯",
+  "pinyin": "dian4 ti1",
+  "ru": [
+   "лифт"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "电 «электричество» + 梯 «лестница» (木 «дерево»): электрическая лестница — лифт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-deng",
+  "hanzi": "灯",
+  "pinyin": "deng1",
+  "ru": [
+   "лампа",
+   "свет"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "火 «огонь» + 丁: огонёк на ножке — лампа.",
+  "reviewed": false
+ },
+ {
+  "id": "w-lou",
+  "hanzi": "楼",
+  "pinyin": "lou2",
+  "ru": [
+   "здание",
+   "этаж"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ceng",
+  "hanzi": "层",
+  "pinyin": "ceng2",
+  "ru": [
+   "этаж (счётное)",
+   "слой"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-difang",
+  "hanzi": "地方",
+  "pinyin": "di4 fang5",
+  "ru": [
+   "место"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fujin",
+  "hanzi": "附近",
+  "pinyin": "fu4 jin4",
+  "ru": [
+   "поблизости",
+   "рядом"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhongjian",
+  "hanzi": "中间",
+  "pinyin": "zhong1 jian1",
+  "ru": [
+   "середина",
+   "между"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-linju",
+  "hanzi": "邻居",
+  "pinyin": "lin2 ju1",
+  "ru": [
+   "сосед"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "邻 = 令 + 阝 «селение»: живущие рядом в селении; 居 — «жить».",
+  "reviewed": false
+ },
+ {
+  "id": "w-ban",
+  "hanzi": "搬",
+  "pinyin": "ban1",
+  "ru": [
+   "переезжать",
+   "переносить"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ganjing",
+  "hanzi": "干净",
+  "pinyin": "gan1 jing4",
+  "ru": [
+   "чистый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "干 «сухой» + 净 (冫 «лёд» + 争): чисто, как сухой лёд.",
+  "reviewed": false
+ },
+ {
+  "id": "w-huanjing",
+  "hanzi": "环境",
+  "pinyin": "huan2 jing4",
+  "ru": [
+   "обстановка",
+   "окружение"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiu4b",
+  "hanzi": "旧",
+  "pinyin": "jiu4",
+  "ru": [
+   "старый (о вещах)"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huai",
+  "hanzi": "坏",
+  "pinyin": "huai4",
+  "ru": [
+   "плохой",
+   "сломанный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "土 «земля» + 不 «не»: земля, на которой не растёт, — плохая, испорченная.",
+  "reviewed": false
+ },
+ {
+  "id": "w-huan",
+  "hanzi": "换",
+  "pinyin": "huan4",
+  "ru": [
+   "менять",
+   "заменять"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yong",
+  "hanzi": "用",
+  "pinyin": "yong4",
+  "ru": [
+   "пользоваться",
+   "использовать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ba3",
+  "hanzi": "把",
+  "pinyin": "ba3",
+  "ru": [
+   "(частица: взять и… — предмет перед глаголом)"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dasao",
+  "hanzi": "打扫",
+  "pinyin": "da3 sao3",
+  "ru": [
+   "убирать(ся)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wei4b",
+  "hanzi": "位",
+  "pinyin": "wei4",
+  "ru": [
+   "(вежливое счётное для людей)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-keren",
+  "hanzi": "客人",
+  "pinyin": "ke4 ren2",
+  "ru": [
+   "гость"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guan",
+  "hanzi": "关",
+  "pinyin": "guan1",
+  "ru": [
+   "закрывать",
+   "выключать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chengshi",
+  "hanzi": "城市",
+  "pinyin": "cheng2 shi4",
+  "ru": [
+   "город"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiedao",
+  "hanzi": "街道",
+  "pinyin": "jie1 dao4",
+  "ru": [
+   "улица"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ditie",
+  "hanzi": "地铁",
+  "pinyin": "di4 tie3",
+  "ru": [
+   "метро"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "地 «земля» + 铁 «железо» (钅 «металл» + 失): железо под землёй — метро.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ditu",
+  "hanzi": "地图",
+  "pinyin": "di4 tu2",
+  "ru": [
+   "карта"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dong-east",
+  "hanzi": "东",
+  "pinyin": "dong1",
+  "ru": [
+   "восток"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nan2",
+  "hanzi": "南",
+  "pinyin": "nan2",
+  "ru": [
+   "юг"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xi1",
+  "hanzi": "西",
+  "pinyin": "xi1",
+  "ru": [
+   "запад"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-beifang",
+  "hanzi": "北方",
+  "pinyin": "bei3 fang1",
+  "ru": [
+   "север (региона)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bian",
+  "hanzi": "边",
+  "pinyin": "bian1",
+  "ru": [
+   "сторона",
+   "край"
+  ],
+  "pos": "сущ.",
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yinhang",
+  "hanzi": "银行",
+  "pinyin": "yin2 hang2",
+  "ru": [
+   "банк"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "银 «серебро» (钅 «металл» + 艮) + 行 «ряд лавок»: серебряная лавка — банк.",
+  "reviewed": false
+ },
+ {
+  "id": "w-chaoshi",
+  "hanzi": "超市",
+  "pinyin": "chao1 shi4",
+  "ru": [
+   "супермаркет"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tushuguan",
+  "hanzi": "图书馆",
+  "pinyin": "tu2 shu1 guan3",
+  "ru": [
+   "библиотека"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "图 «карты» + 书 «книги» + 馆 «здание с едой/гостями» (饣): дом книг и карт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-gongyuan",
+  "hanzi": "公园",
+  "pinyin": "gong1 yuan2",
+  "ru": [
+   "парк"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huayuan",
+  "hanzi": "花园",
+  "pinyin": "hua1 yuan2",
+  "ru": [
+   "сад"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhan",
+  "hanzi": "站",
+  "pinyin": "zhan4",
+  "ru": [
+   "станция",
+   "стоять"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-liang4",
+  "hanzi": "辆",
+  "pinyin": "liang4",
+  "ru": [
+   "(счётное для машин)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jingguo",
+  "hanzi": "经过",
+  "pinyin": "jing1 guo4",
+  "ru": [
+   "проходить через",
+   "мимо"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yudao",
+  "hanzi": "遇到",
+  "pinyin": "yu4 dao4",
+  "ru": [
+   "встретить",
+   "столкнуться с"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-likai",
+  "hanzi": "离开",
+  "pinyin": "li2 kai1",
+  "ru": [
+   "уходить",
+   "покидать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chidao",
+  "hanzi": "迟到",
+  "pinyin": "chi2 dao4",
+  "ru": [
+   "опаздывать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "迟 = ⻌ «идти» + 尺 «мера»: идёшь, отмеряя каждый шаг, — опаздываешь; 到 «прибыть».",
+  "reviewed": false
+ },
+ {
+  "id": "w-mashang",
+  "hanzi": "马上",
+  "pinyin": "ma3 shang4",
+  "ru": [
+   "сейчас же",
+   "немедленно"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yizhi",
+  "hanzi": "一直",
+  "pinyin": "yi1 zhi2",
+  "ru": [
+   "прямо",
+   "всё время"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gangcai",
+  "hanzi": "刚才",
+  "pinyin": "gang1 cai2",
+  "ru": [
+   "только что"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yihuir",
+  "hanzi": "一会儿",
+  "pinyin": "yi1 hui4 r5",
+  "ru": [
+   "немного (времени)",
+   "чуть-чуть"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-deng3",
+  "hanzi": "等",
+  "pinyin": "deng3",
+  "ru": [
+   "ждать"
+  ],
+  "pos": "гл.",
+  "hsk2": 4,
+  "hsk3": 1,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-cai2",
+  "hanzi": "才",
+  "pinyin": "cai2",
+  "ru": [
+   "только тогда (позже, чем ждали)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fangbian",
+  "hanzi": "方便",
+  "pinyin": "fang1 bian4",
+  "ru": [
+   "удобно",
+   "удобный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jie1",
+  "hanzi": "接",
+  "pinyin": "jie1",
+  "ru": [
+   "встречать (приезжающего)",
+   "принимать (звонок)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-caidan",
+  "hanzi": "菜单",
+  "pinyin": "cai4 dan1",
+  "ru": [
+   "меню"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-mianbao",
+  "hanzi": "面包",
+  "pinyin": "mian4 bao1",
+  "ru": [
+   "хлеб"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-miantiao",
+  "hanzi": "面条",
+  "pinyin": "mian4 tiao2",
+  "ru": [
+   "лапша"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dangao",
+  "hanzi": "蛋糕",
+  "pinyin": "dan4 gao1",
+  "ru": [
+   "торт",
+   "пирожное"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tang",
+  "hanzi": "糖",
+  "pinyin": "tang2",
+  "ru": [
+   "сахар",
+   "конфета"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tian2",
+  "hanzi": "甜",
+  "pinyin": "tian2",
+  "ru": [
+   "сладкий"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guozhi",
+  "hanzi": "果汁",
+  "pinyin": "guo3 zhi1",
+  "ru": [
+   "сок"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-pijiu",
+  "hanzi": "啤酒",
+  "pinyin": "pi2 jiu3",
+  "ru": [
+   "пиво"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-putao",
+  "hanzi": "葡萄",
+  "pinyin": "pu2 tao5",
+  "ru": [
+   "виноград"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 5,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiangjiao",
+  "hanzi": "香蕉",
+  "pinyin": "xiang1 jiao1",
+  "ru": [
+   "банан"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kuaizi",
+  "hanzi": "筷子",
+  "pinyin": "kuai4 zi5",
+  "ru": [
+   "палочки для еды"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "竹 «бамбук» сверху + 快 «быстрый»: быстрые бамбуковые палочки.",
+  "reviewed": false
+ },
+ {
+  "id": "w-wan3",
+  "hanzi": "碗",
+  "pinyin": "wan3",
+  "ru": [
+   "миска",
+   "пиала (счётное)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "石 «камень» + 宛: каменная посудина — миска.",
+  "reviewed": false
+ },
+ {
+  "id": "w-panzi",
+  "hanzi": "盘子",
+  "pinyin": "pan2 zi5",
+  "ru": [
+   "тарелка"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chenshan",
+  "hanzi": "衬衫",
+  "pinyin": "chen4 shan1",
+  "ru": [
+   "рубашка"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Оба знака с 衤 «одежда»: 衫 — с 彡, три штриха, как складки ткани.",
+  "reviewed": false
+ },
+ {
+  "id": "w-kuzi",
+  "hanzi": "裤子",
+  "pinyin": "ku4 zi5",
+  "ru": [
+   "брюки"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "衤 «одежда» + 库 «склад» (подсказка чтения kù): одежда-склад для ног — брюки.",
+  "reviewed": false
+ },
+ {
+  "id": "w-qunzi",
+  "hanzi": "裙子",
+  "pinyin": "qun2 zi5",
+  "ru": [
+   "юбка"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xie2",
+  "hanzi": "鞋",
+  "pinyin": "xie2",
+  "ru": [
+   "обувь",
+   "ботинки"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "革 «выделанная кожа» + 圭: кожаная обувь.",
+  "reviewed": false
+ },
+ {
+  "id": "w-maozi",
+  "hanzi": "帽子",
+  "pinyin": "mao4 zi5",
+  "ru": [
+   "шапка",
+   "шляпа"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-san3",
+  "hanzi": "伞",
+  "pinyin": "san3",
+  "ru": [
+   "зонт"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Пиктограмма зонта: купол, спицы и ручка — 伞.",
+  "reviewed": false
+ },
+ {
+  "id": "w-lan",
+  "hanzi": "蓝",
+  "pinyin": "lan2",
+  "ru": [
+   "синий"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "艹 «трава» + 监: индиго — трава, из которой красили в синий.",
+  "reviewed": false
+ },
+ {
+  "id": "w-lv4",
+  "hanzi": "绿",
+  "pinyin": "lv4",
+  "ru": [
+   "зелёный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "纟 «шёлковая нить» + 录: зелёная нить.",
+  "reviewed": false
+ },
+ {
+  "id": "w-huang",
+  "hanzi": "黄",
+  "pinyin": "huang2",
+  "ru": [
+   "жёлтый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wan4",
+  "hanzi": "万",
+  "pinyin": "wan4",
+  "ru": [
+   "десять тысяч"
+  ],
+  "pos": "числ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yigong",
+  "hanzi": "一共",
+  "pinyin": "yi1 gong4",
+  "ru": [
+   "всего",
+   "итого"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuang",
+  "hanzi": "双",
+  "pinyin": "shuang1",
+  "ru": [
+   "пара (счётное)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tiao",
+  "hanzi": "条",
+  "pinyin": "tiao2",
+  "ru": [
+   "(счётное для длинного: брюки, дорога, рыба)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bao1",
+  "hanzi": "包",
+  "pinyin": "bao1",
+  "ru": [
+   "сумка",
+   "пакет"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhong3",
+  "hanzi": "种",
+  "pinyin": "zhong3",
+  "ru": [
+   "вид",
+   "сорт (счётное)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xuanze",
+  "hanzi": "选择",
+  "pinyin": "xuan3 ze2",
+  "ru": [
+   "выбирать",
+   "выбор"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ban4",
+  "hanzi": "半",
+  "pinyin": "ban4",
+  "ru": [
+   "половина"
+  ],
+  "pos": "числ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ke4",
+  "hanzi": "刻",
+  "pinyin": "ke4",
+  "ru": [
+   "четверть (часа)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fen",
+  "hanzi": "分",
+  "pinyin": "fen1",
+  "ru": [
+   "минута",
+   "фэнь (копейка)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yiqian",
+  "hanzi": "以前",
+  "pinyin": "yi3 qian2",
+  "ru": [
+   "раньше",
+   "до"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yihou",
+  "hanzi": "以后",
+  "pinyin": "yi3 hou4",
+  "ru": [
+   "потом",
+   "после"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guoqu",
+  "hanzi": "过去",
+  "pinyin": "guo4 qu4",
+  "ru": [
+   "прошлое",
+   "в прошлом"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zuijin",
+  "hanzi": "最近",
+  "pinyin": "zui4 jin4",
+  "ru": [
+   "в последнее время"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhoumo",
+  "hanzi": "周末",
+  "pinyin": "zhou1 mo4",
+  "ru": [
+   "выходные"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "周 «неделя, круг» + 末 «конец» (木 «дерево» с чертой на верхушке — самый кончик): конец недели.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jijie",
+  "hanzi": "季节",
+  "pinyin": "ji4 jie2",
+  "ru": [
+   "время года",
+   "сезон"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chun",
+  "hanzi": "春",
+  "pinyin": "chun1",
+  "ru": [
+   "весна"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Солнце 日 внизу и растения, пробивающиеся сверху, — весна.",
+  "reviewed": false
+ },
+ {
+  "id": "w-xia4",
+  "hanzi": "夏",
+  "pinyin": "xia4",
+  "ru": [
+   "лето"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Человек с большой головой в жару — лето.",
+  "reviewed": false
+ },
+ {
+  "id": "w-qiu",
+  "hanzi": "秋",
+  "pinyin": "qiu1",
+  "ru": [
+   "осень"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "禾 «злак» + 火 «огонь»: сжигают стерню после жатвы — осень.",
+  "reviewed": false
+ },
+ {
+  "id": "w-dong1",
+  "hanzi": "冬",
+  "pinyin": "dong1",
+  "ru": [
+   "зима"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "夂 «конец, замыкание» + 冫 «лёд»: замкнутый льдом конец года — зима.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jieri",
+  "hanzi": "节日",
+  "pinyin": "jie2 ri4",
+  "ru": [
+   "праздник"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dasuan",
+  "hanzi": "打算",
+  "pinyin": "da3 suan4",
+  "ru": [
+   "собираться",
+   "планировать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jueding",
+  "hanzi": "决定",
+  "pinyin": "jue2 ding4",
+  "ru": [
+   "решить",
+   "решение"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "决 = 冫 + 夬 «рассечь»: рассечь сомнения — решить; 定 «установить».",
+  "reviewed": false
+ },
+ {
+  "id": "w-zongshi",
+  "hanzi": "总是",
+  "pinyin": "zong3 shi4",
+  "ru": [
+   "всегда"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jingchang",
+  "hanzi": "经常",
+  "pinyin": "jing1 chang2",
+  "ru": [
+   "часто"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xian",
+  "hanzi": "先",
+  "pinyin": "xian1",
+  "ru": [
+   "сначала"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ranhou",
+  "hanzi": "然后",
+  "pinyin": "ran2 hou4",
+  "ru": [
+   "потом",
+   "затем"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhongyu",
+  "hanzi": "终于",
+  "pinyin": "zhong1 yu2",
+  "ru": [
+   "наконец"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "终 = 纟 «нить» + 冬 «зима»: нить кончилась, как год зимой, — наконец.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jiu3",
+  "hanzi": "久",
+  "pinyin": "jiu3",
+  "ru": [
+   "долго"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yiban",
+  "hanzi": "一般",
+  "pinyin": "yi1 ban1",
+  "ru": [
+   "обычно",
+   "обычный"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guo5",
+  "hanzi": "过",
+  "pinyin": "guo5",
+  "ru": [
+   "(частица: уже бывало — 去过)"
+  ],
+  "pos": "част.",
+  "hsk2": 4,
+  "hsk3": 1,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-di",
+  "hanzi": "第",
+  "pinyin": "di4",
+  "ru": [
+   "(порядковое: 第二 — второй)"
+  ],
+  "pos": "числ.",
+  "hsk3": 1,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yibian",
+  "hanzi": "一边",
+  "pinyin": "yi1 bian1",
+  "ru": [
+   "одновременно (一边…一边…)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-putonghua",
+  "hanzi": "普通话",
+  "pinyin": "pu3 tong1 hua4",
+  "ru": [
+   "путунхуа (стандартный китайский)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "普通 «обычный, общий» + 话 «речь»: общая речь — путунхуа, стандартный китайский.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ciyu",
+  "hanzi": "词语",
+  "pinyin": "ci2 yu3",
+  "ru": [
+   "слово",
+   "выражение"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-juzi",
+  "hanzi": "句子",
+  "pinyin": "ju4 zi5",
+  "ru": [
+   "предложение",
+   "фраза"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zidian",
+  "hanzi": "字典",
+  "pinyin": "zi4 dian3",
+  "ru": [
+   "словарь иероглифов"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "字 «иероглиф» + 典 «канон, свод»: свод иероглифов.",
+  "reviewed": false
+ },
+ {
+  "id": "w-lianxi",
+  "hanzi": "练习",
+  "pinyin": "lian4 xi2",
+  "ru": [
+   "упражнение",
+   "упражняться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Оба знака с 纟 «нить»: упражняться — как прясть нить раз за разом.",
+  "reviewed": false
+ },
+ {
+  "id": "w-fuxi",
+  "hanzi": "复习",
+  "pinyin": "fu4 xi2",
+  "ru": [
+   "повторять (пройденное)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zuoye",
+  "hanzi": "作业",
+  "pinyin": "zuo4 ye4",
+  "ru": [
+   "домашнее задание"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chengji",
+  "hanzi": "成绩",
+  "pinyin": "cheng2 ji4",
+  "ru": [
+   "результат",
+   "оценка"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nianji",
+  "hanzi": "年级",
+  "pinyin": "nian2 ji2",
+  "ru": [
+   "класс",
+   "курс"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuxue",
+  "hanzi": "数学",
+  "pinyin": "shu4 xue2",
+  "ru": [
+   "математика"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-lishi",
+  "hanzi": "历史",
+  "pinyin": "li4 shi3",
+  "ru": [
+   "история"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wenhua",
+  "hanzi": "文化",
+  "pinyin": "wen2 hua4",
+  "ru": [
+   "культура"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-heiban",
+  "hanzi": "黑板",
+  "pinyin": "hei1 ban3",
+  "ru": [
+   "доска (школьная)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "黑 «чёрный» (灬 — копоть от огня) + 板 «доска» (木 «дерево»).",
+  "reviewed": false
+ },
+ {
+  "id": "w-xiaozhang",
+  "hanzi": "校长",
+  "pinyin": "xiao4 zhang3",
+  "ru": [
+   "директор школы"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiao1",
+  "hanzi": "教",
+  "pinyin": "jiao1",
+  "ru": [
+   "учить (кого-то)",
+   "преподавать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiang",
+  "hanzi": "讲",
+  "pinyin": "jiang3",
+  "ru": [
+   "объяснять",
+   "рассказывать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "讠 «речь» + 井 «колодец»: черпать слова, как воду из колодца, — рассказывать, объяснять.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jide",
+  "hanzi": "记得",
+  "pinyin": "ji4 de5",
+  "ru": [
+   "помнить"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wangji",
+  "hanzi": "忘记",
+  "pinyin": "wang4 ji4",
+  "ru": [
+   "забыть"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "忘 = 亡 «пропасть» + 心 «сердце»; 记 = 讠 «речь» + 己 «сам»: пропало из сердца то, что говорил себе.",
+  "reviewed": false
+ },
+ {
+  "id": "w-mingbai",
+  "hanzi": "明白",
+  "pinyin": "ming2 bai5",
+  "ru": [
+   "понимать",
+   "понятно"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "明 «ясный» + 白 «белый»: ясно и бело — понятно.",
+  "reviewed": false
+ },
+ {
+  "id": "w-qingchu",
+  "hanzi": "清楚",
+  "pinyin": "qing1 chu5",
+  "ru": [
+   "ясный",
+   "понятный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiandan",
+  "hanzi": "简单",
+  "pinyin": "jian3 dan1",
+  "ru": [
+   "простой"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-rongyi",
+  "hanzi": "容易",
+  "pinyin": "rong2 yi4",
+  "ru": [
+   "лёгкий",
+   "легко"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "容 = 宀 «крыша» + 谷 «долина»: под крышей просторно, как в долине, — легко.",
+  "reviewed": false
+ },
+ {
+  "id": "w-nan",
+  "hanzi": "难",
+  "pinyin": "nan2",
+  "ru": [
+   "трудный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "又 «рука» + 隹 «птица»: поймать птицу рукой — трудно.",
+  "reviewed": false
+ },
+ {
+  "id": "w-tigao",
+  "hanzi": "提高",
+  "pinyin": "ti2 gao1",
+  "ru": [
+   "повышать",
+   "улучшать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ban1",
+  "hanzi": "班",
+  "pinyin": "ban1",
+  "ru": [
+   "группа",
+   "класс",
+   "смена"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-renwei",
+  "hanzi": "认为",
+  "pinyin": "ren4 wei2",
+  "ru": [
+   "считать",
+   "полагать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiangxin",
+  "hanzi": "相信",
+  "pinyin": "xiang1 xin4",
+  "ru": [
+   "верить"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "相 «взаимно» + 信 (亻 «человек» + 言 «слово»): человек держит слово — ему верят.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yiwei",
+  "hanzi": "以为",
+  "pinyin": "yi3 wei2",
+  "ru": [
+   "думать (ошибочно)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tongyi",
+  "hanzi": "同意",
+  "pinyin": "tong2 yi4",
+  "ru": [
+   "соглашаться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-biaoshi",
+  "hanzi": "表示",
+  "pinyin": "biao3 shi4",
+  "ru": [
+   "выражать",
+   "означать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yaoqiu",
+  "hanzi": "要求",
+  "pinyin": "yao1 qiu2",
+  "ru": [
+   "требовать",
+   "требование"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xuyao",
+  "hanzi": "需要",
+  "pinyin": "xu1 yao4",
+  "ru": [
+   "нужно",
+   "нуждаться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "需 = 雨 «дождь» + 而: посевам нужен дождь; 要 «хотеть».",
+  "reviewed": false
+ },
+ {
+  "id": "w-yuanyi",
+  "hanzi": "愿意",
+  "pinyin": "yuan4 yi4",
+  "ru": [
+   "быть готовым",
+   "хотеть"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gan3",
+  "hanzi": "敢",
+  "pinyin": "gan3",
+  "ru": [
+   "осмеливаться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bixu",
+  "hanzi": "必须",
+  "pinyin": "bi4 xu1",
+  "ru": [
+   "обязательно должен"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yiding",
+  "hanzi": "一定",
+  "pinyin": "yi1 ding4",
+  "ru": [
+   "обязательно",
+   "непременно"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dangran",
+  "hanzi": "当然",
+  "pinyin": "dang1 ran2",
+  "ru": [
+   "конечно"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qishi",
+  "hanzi": "其实",
+  "pinyin": "qi2 shi2",
+  "ru": [
+   "на самом деле"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jihu",
+  "hanzi": "几乎",
+  "pinyin": "ji1 hu1",
+  "ru": [
+   "почти"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tebie",
+  "hanzi": "特别",
+  "pinyin": "te4 bie2",
+  "ru": [
+   "особенно",
+   "особый"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ji2",
+  "hanzi": "极",
+  "pinyin": "ji2",
+  "ru": [
+   "крайне (…极了 — невероятно)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duome",
+  "hanzi": "多么",
+  "pinyin": "duo1 me5",
+  "ru": [
+   "как же",
+   "насколько"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huozhe",
+  "hanzi": "或者",
+  "pinyin": "huo4 zhe3",
+  "ru": [
+   "или (в утверждении)"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-haishi",
+  "hanzi": "还是",
+  "pinyin": "hai2 shi5",
+  "ru": [
+   "или (в вопросе)",
+   "всё-таки"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ruguo",
+  "hanzi": "如果",
+  "pinyin": "ru2 guo3",
+  "ru": [
+   "если"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-suiran",
+  "hanzi": "虽然",
+  "pinyin": "sui1 ran2",
+  "ru": [
+   "хотя"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-erqie",
+  "hanzi": "而且",
+  "pinyin": "er2 qie3",
+  "ru": [
+   "к тому же"
+  ],
+  "pos": "союз",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-weile",
+  "hanzi": "为了",
+  "pinyin": "wei4 le5",
+  "ru": [
+   "ради",
+   "для того чтобы"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guanyu",
+  "hanzi": "关于",
+  "pinyin": "guan1 yu2",
+  "ru": [
+   "о",
+   "касательно"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huzhao",
+  "hanzi": "护照",
+  "pinyin": "hu4 zhao4",
+  "ru": [
+   "паспорт"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "护 «охранять» (扌 «рука») + 照 «свидетельство»: охранная грамота — паспорт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-xinglixiang",
+  "hanzi": "行李箱",
+  "pinyin": "xing2 li5 xiang1",
+  "ru": [
+   "чемодан"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhaoxiangji",
+  "hanzi": "照相机",
+  "pinyin": "zhao4 xiang4 ji1",
+  "ru": [
+   "фотоаппарат"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhaopian",
+  "hanzi": "照片",
+  "pinyin": "zhao4 pian4",
+  "ru": [
+   "фотография"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "照 «свет, снимок» (灬 «огонь» вспышки) + 片 «пластинка»: пластинка со снимком.",
+  "reviewed": false
+ },
+ {
+  "id": "w-hua4",
+  "hanzi": "画",
+  "pinyin": "hua4",
+  "ru": [
+   "рисовать",
+   "картина"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yinyue",
+  "hanzi": "音乐",
+  "pinyin": "yin1 yue4",
+  "ru": [
+   "музыка"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "音 «звук» + 乐 «радость»: звук, приносящий радость.",
+  "reviewed": false
+ },
+ {
+  "id": "w-youxi",
+  "hanzi": "游戏",
+  "pinyin": "you2 xi4",
+  "ru": [
+   "игра"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xinwen",
+  "hanzi": "新闻",
+  "pinyin": "xin1 wen2",
+  "ru": [
+   "новости"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiemu",
+  "hanzi": "节目",
+  "pinyin": "jie2 mu4",
+  "ru": [
+   "передача",
+   "программа"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-biaoyan",
+  "hanzi": "表演",
+  "pinyin": "biao3 yan3",
+  "ru": [
+   "выступление",
+   "выступать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-gushi",
+  "hanzi": "故事",
+  "pinyin": "gu4 shi5",
+  "ru": [
+   "история",
+   "рассказ"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-aihao",
+  "hanzi": "爱好",
+  "pinyin": "ai4 hao4",
+  "ru": [
+   "увлечение",
+   "хобби"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xingqu",
+  "hanzi": "兴趣",
+  "pinyin": "xing4 qu4",
+  "ru": [
+   "интерес"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shangwang",
+  "hanzi": "上网",
+  "pinyin": "shang4 wang3",
+  "ru": [
+   "выходить в интернет"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shijie",
+  "hanzi": "世界",
+  "pinyin": "shi4 jie4",
+  "ru": [
+   "мир"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guojia",
+  "hanzi": "国家",
+  "pinyin": "guo2 jia1",
+  "ru": [
+   "страна",
+   "государство"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-youming",
+  "hanzi": "有名",
+  "pinyin": "you3 ming2",
+  "ru": [
+   "известный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-liwu",
+  "hanzi": "礼物",
+  "pinyin": "li3 wu4",
+  "ru": [
+   "подарок"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "礼 = 礻«ритуал» + 乚; 物 «вещь»: вещь для ритуала — подарок.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jianmian",
+  "hanzi": "见面",
+  "pinyin": "jian4 mian4",
+  "ru": [
+   "встречаться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-canjia",
+  "hanzi": "参加",
+  "pinyin": "can1 jia1",
+  "ru": [
+   "участвовать",
+   "присутствовать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-juxing",
+  "hanzi": "举行",
+  "pinyin": "ju3 xing2",
+  "ru": [
+   "проводить (мероприятие)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiehun",
+  "hanzi": "结婚",
+  "pinyin": "jie2 hun1",
+  "ru": [
+   "жениться",
+   "выйти замуж"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "结 = 纟 «нить» + 吉 «счастье»: связать счастливой нитью; 婚 = 女 «женщина» + 昏 «сумерки» — свадьбы играли вечером.",
+  "reviewed": false
+ },
+ {
+  "id": "w-a",
+  "hanzi": "啊",
+  "pinyin": "a5",
+  "ru": [
+   "(частица: восклицание)"
+  ],
+  "pos": "част.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ganbei",
+  "hanzi": "干杯",
+  "pinyin": "gan1 bei1",
+  "ru": [
+   "до дна!",
+   "за здоровье!"
+  ],
+  "pos": "гл.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhu4",
+  "hanzi": "祝",
+  "pinyin": "zhu4",
+  "ru": [
+   "желать (祝你…)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-pashan",
+  "hanzi": "爬山",
+  "pinyin": "pa2 shan1",
+  "ru": [
+   "ходить в горы"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xin4",
+  "hanzi": "信",
+  "pinyin": "xin4",
+  "ru": [
+   "письмо"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-taiyang",
+  "hanzi": "太阳",
+  "pinyin": "tai4 yang2",
+  "ru": [
+   "солнце"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "太 «великий» + 阳 (阝 «холм» + 日 «солнце»): солнечная сторона холма — солнце.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yueliang",
+  "hanzi": "月亮",
+  "pinyin": "yue4 liang5",
+  "ru": [
+   "луна"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "月 «луна» + 亮 «светлый»: светлая луна.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yun",
+  "hanzi": "云",
+  "pinyin": "yun2",
+  "ru": [
+   "облако"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "云 — пиктограмма клубящегося облака; 二 сверху — небо.",
+  "reviewed": false
+ },
+ {
+  "id": "w-he2",
+  "hanzi": "河",
+  "pinyin": "he2",
+  "ru": [
+   "река"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shu4",
+  "hanzi": "树",
+  "pinyin": "shu4",
+  "ru": [
+   "дерево"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "木 «дерево» + 对: дерево — 树.",
+  "reviewed": false
+ },
+ {
+  "id": "w-cao",
+  "hanzi": "草",
+  "pinyin": "cao3",
+  "ru": [
+   "трава"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "艹 «трава» + 早 «рано» (подсказка чтения cǎo): трава.",
+  "reviewed": false
+ },
+ {
+  "id": "w-hua1",
+  "hanzi": "花",
+  "pinyin": "hua1",
+  "ru": [
+   "цветок"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "艹 «трава» + 化 «превращаться»: трава, превратившаяся в цветок.",
+  "reviewed": false
+ },
+ {
+  "id": "w-niao",
+  "hanzi": "鸟",
+  "pinyin": "niao3",
+  "ru": [
+   "птица"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Пиктограмма птицы: голова, крыло и лапы.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ma3",
+  "hanzi": "马",
+  "pinyin": "ma3",
+  "ru": [
+   "лошадь"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "Пиктограмма лошади: грива и четыре ноги, упрощённые до 马.",
+  "reviewed": false
+ },
+ {
+  "id": "w-dongwu",
+  "hanzi": "动物",
+  "pinyin": "dong4 wu4",
+  "ru": [
+   "животное"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiongmao",
+  "hanzi": "熊猫",
+  "pinyin": "xiong2 mao1",
+  "ru": [
+   "панда"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "熊 «медведь» (灬 — лапы) + 猫 «кошка»: медведь-кошка — панда.",
+  "reviewed": false
+ },
+ {
+  "id": "w-gua",
+  "hanzi": "刮",
+  "pinyin": "gua1",
+  "ru": [
+   "дуть (о ветре)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 6,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-feng",
+  "hanzi": "风",
+  "pinyin": "feng1",
+  "ru": [
+   "ветер"
+  ],
+  "pos": "сущ.",
+  "hsk3": 1,
+  "tags": [
+   "stage3",
+   "extra"
+  ],
+  "mnemonic": "几 «навес» + 乂: под навесом гуляет ветер.",
+  "reviewed": false
+ },
+ {
+  "id": "w-xinxian",
+  "hanzi": "新鲜",
+  "pinyin": "xin1 xian1",
+  "ru": [
+   "свежий"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-turan",
+  "hanzi": "突然",
+  "pinyin": "tu1 ran2",
+  "ru": [
+   "вдруг",
+   "внезапно"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "突 = 穴 «нора» + 犬 «собака»: собака выскочила из норы — вдруг.",
+  "reviewed": false
+ },
+ {
+  "id": "w-chuxian",
+  "hanzi": "出现",
+  "pinyin": "chu1 xian4",
+  "ru": [
+   "появиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bianhua",
+  "hanzi": "变化",
+  "pinyin": "bian4 hua4",
+  "ru": [
+   "изменение",
+   "меняться"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yingxiang",
+  "hanzi": "影响",
+  "pinyin": "ying3 xiang3",
+  "ru": [
+   "влиять",
+   "влияние"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-faxian",
+  "hanzi": "发现",
+  "pinyin": "fa1 xian4",
+  "ru": [
+   "обнаружить"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "发 «выпускать» + 现 (王 «нефрит» + 见 «видеть»): нефрит показался — обнаружили.",
+  "reviewed": false
+ },
+ {
+  "id": "w-zhuyi",
+  "hanzi": "注意",
+  "pinyin": "zhu4 yi4",
+  "ru": [
+   "обращать внимание",
+   "быть внимательным"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-di1",
+  "hanzi": "低",
+  "pinyin": "di1",
+  "ru": [
+   "низкий"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duan",
+  "hanzi": "短",
+  "pinyin": "duan3",
+  "ru": [
+   "короткий"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yue4b",
+  "hanzi": "越",
+  "pinyin": "yue4",
+  "ru": [
+   "чем… тем… (越…越…)"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bei4",
+  "hanzi": "被",
+  "pinyin": "bei4",
+  "ru": [
+   "(пассив: кем-то сделано)"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-de-adv",
+  "hanzi": "地",
+  "pinyin": "de5",
+  "ru": [
+   "(частица: делает наречие — 认真地)"
+  ],
+  "pos": "част.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nainai",
+  "hanzi": "奶奶",
+  "pinyin": "nai3 nai5",
+  "ru": [
+   "бабушка (по отцу)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "女 «женщина» + 乃: старшая женщина — бабушка.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yeye",
+  "hanzi": "爷爷",
+  "pinyin": "ye2 ye5",
+  "ru": [
+   "дедушка (по отцу)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "父 «отец» сверху: отец отца — дедушка.",
+  "reviewed": false
+ },
+ {
+  "id": "w-shushu",
+  "hanzi": "叔叔",
+  "pinyin": "shu1 shu5",
+  "ru": [
+   "дядя"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ayi",
+  "hanzi": "阿姨",
+  "pinyin": "a1 yi2",
+  "ru": [
+   "тётя",
+   "тётушка (обращение)"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-siji",
+  "hanzi": "司机",
+  "pinyin": "si1 ji1",
+  "ru": [
+   "водитель"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jingli",
+  "hanzi": "经理",
+  "pinyin": "jing1 li3",
+  "ru": [
+   "менеджер",
+   "директор"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhaogu",
+  "hanzi": "照顾",
+  "pinyin": "zhao4 gu4",
+  "ru": [
+   "заботиться",
+   "ухаживать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guanxi",
+  "hanzi": "关系",
+  "pinyin": "guan1 xi5",
+  "ru": [
+   "отношения",
+   "связь"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiguan",
+  "hanzi": "习惯",
+  "pinyin": "xi2 guan4",
+  "ru": [
+   "привычка",
+   "привыкнуть"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bangmang",
+  "hanzi": "帮忙",
+  "pinyin": "bang1 mang2",
+  "ru": [
+   "помогать",
+   "выручать"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jie4",
+  "hanzi": "借",
+  "pinyin": "jie4",
+  "ru": [
+   "одалживать",
+   "брать взаймы"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "亻 «человек» + 昔 «прежде»: человек, которому прежде что-то дали, — одолжить.",
+  "reviewed": false
+ },
+ {
+  "id": "w-gen",
+  "hanzi": "跟",
+  "pinyin": "gen1",
+  "ru": [
+   "с (кем-то)",
+   "следовать"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "足 «нога» + 艮: идти следом — с кем-то.",
+  "reviewed": false
+ },
+ {
+  "id": "w-shi3",
+  "hanzi": "使",
+  "pinyin": "shi3",
+  "ru": [
+   "делать так, что",
+   "заставлять"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhi3",
+  "hanzi": "只",
+  "pinyin": "zhi3",
+  "ru": [
+   "только"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qita",
+  "hanzi": "其他",
+  "pinyin": "qi2 ta1",
+  "ru": [
+   "другие",
+   "остальные"
+  ],
+  "pos": "мест.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xiangtong",
+  "hanzi": "相同",
+  "pinyin": "xiang1 tong2",
+  "ru": [
+   "одинаковый"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bijiao",
+  "hanzi": "比较",
+  "pinyin": "bi3 jiao4",
+  "ru": [
+   "довольно",
+   "сравнивать"
+  ],
+  "pos": "нар.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-cha4",
+  "hanzi": "差",
+  "pinyin": "cha4",
+  "ru": [
+   "плохой",
+   "не хватать"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-duan4",
+  "hanzi": "段",
+  "pinyin": "duan4",
+  "ru": [
+   "отрезок (счётное: время, дорога)"
+  ],
+  "pos": "сч. сл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiao3-money",
+  "hanzi": "角",
+  "pinyin": "jiao3",
+  "ru": [
+   "цзяо (десять фэней)",
+   "угол"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-genju",
+  "hanzi": "根据",
+  "pinyin": "gen1 ju4",
+  "ru": [
+   "согласно",
+   "на основании"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-chule",
+  "hanzi": "除了",
+  "pinyin": "chu2 le5",
+  "ru": [
+   "кроме"
+  ],
+  "pos": "предл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shuiping",
+  "hanzi": "水平",
+  "pinyin": "shui3 ping2",
+  "ru": [
+   "уровень"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shengyin",
+  "hanzi": "声音",
+  "pinyin": "sheng1 yin1",
+  "ru": [
+   "голос",
+   "звук"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-nuli",
+  "hanzi": "努力",
+  "pinyin": "nu3 li4",
+  "ru": [
+   "стараться",
+   "усердно"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-liaojie",
+  "hanzi": "了解",
+  "pinyin": "liao3 jie3",
+  "ru": [
+   "хорошо знать",
+   "разбираться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 4,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-huiyi",
+  "hanzi": "会议",
+  "pinyin": "hui4 yi4",
+  "ru": [
+   "совещание"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "会 «собираться» + 议 (讠 «речь» + 义): собраться и обсуждать — совещание.",
+  "reviewed": false
+ },
+ {
+  "id": "w-banfa",
+  "hanzi": "办法",
+  "pinyin": "ban4 fa3",
+  "ru": [
+   "способ",
+   "выход"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiejue",
+  "hanzi": "解决",
+  "pinyin": "jie3 jue2",
+  "ru": [
+   "решить (проблему)"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "解 «развязать» (刀 «нож», 牛 «бык» — разделать) + 决 «решить»: развязать проблему.",
+  "reviewed": false
+ },
+ {
+  "id": "w-wancheng",
+  "hanzi": "完成",
+  "pinyin": "wan2 cheng2",
+  "ru": [
+   "завершить",
+   "выполнить"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "完 = 宀 «крыша» + 元: дом под крышей достроен; 成 «стать»: завершить.",
+  "reviewed": false
+ },
+ {
+  "id": "w-jieshu",
+  "hanzi": "结束",
+  "pinyin": "jie2 shu4",
+  "ru": [
+   "закончиться"
+  ],
+  "pos": "гл.",
+  "hsk2": 3,
+  "hsk3": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jihui",
+  "hanzi": "机会",
+  "pinyin": "ji1 hui4",
+  "ru": [
+   "возможность",
+   "шанс"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhuyao",
+  "hanzi": "主要",
+  "pinyin": "zhu3 yao4",
+  "ru": [
+   "главный",
+   "в основном"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhongyao",
+  "hanzi": "重要",
+  "pinyin": "zhong4 yao4",
+  "ru": [
+   "важный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "hsk3": 1,
+  "tags": [
+   "stage3"
+  ],
+  "mnemonic": "重 «тяжёлый» + 要 «нужный»: весомое и нужное — важное.",
+  "reviewed": false
+ },
+ {
+  "id": "w-zuoyong",
+  "hanzi": "作用",
+  "pinyin": "zuo4 yong4",
+  "ru": [
+   "роль",
+   "действие"
+  ],
+  "pos": "сущ.",
+  "hsk2": 3,
+  "hsk3": 2,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dianzi",
+  "hanzi": "电子",
+  "pinyin": "dian4 zi3",
+  "ru": [
+   "электронный"
+  ],
+  "pos": "прил.",
+  "hsk2": 3,
+  "tags": [
+   "stage3"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jihua",
+  "hanzi": "计划",
+  "pinyin": "ji4 hua4",
+  "ru": [
+   "план",
+   "планировать"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "计 = 讠 «речь» + 十 «десять»: считать вслух до десяти — планировать; 划 «размечать».",
+  "reviewed": false
+ },
+ {
+  "id": "w-jindu",
+  "hanzi": "进度",
+  "pinyin": "jin4 du4",
+  "ru": [
+   "ход работ",
+   "график"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-baogao",
+  "hanzi": "报告",
+  "pinyin": "bao4 gao4",
+  "ru": [
+   "отчёт",
+   "доклад"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "报 «сообщать» + 告 «объявлять»: сообщение — отчёт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-fangan",
+  "hanzi": "方案",
+  "pinyin": "fang1 an4",
+  "ru": [
+   "вариант",
+   "проектное решение"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-kehu",
+  "hanzi": "客户",
+  "pinyin": "ke4 hu4",
+  "ru": [
+   "заказчик",
+   "клиент"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hetong",
+  "hanzi": "合同",
+  "pinyin": "he2 tong5",
+  "ru": [
+   "договор",
+   "контракт"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "合 «соединять» + 同 «одинаковый»: соединить одинаковые намерения — договор.",
+  "reviewed": false
+ },
+ {
+  "id": "w-zhiliang",
+  "hanzi": "质量",
+  "pinyin": "zhi4 liang4",
+  "ru": [
+   "качество"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "质 «сущность» + 量 «мера»: мера сущности — качество.",
+  "reviewed": false
+ },
+ {
+  "id": "w-biaozhun",
+  "hanzi": "标准",
+  "pinyin": "biao1 zhun3",
+  "ru": [
+   "стандарт"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "标 = 木 + 示: отметка на дереве; 准 = 冫 + 隹: точный. Точная отметка — стандарт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-taolun",
+  "hanzi": "讨论",
+  "pinyin": "tao3 lun4",
+  "ru": [
+   "обсуждать"
+  ],
+  "pos": "гл.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jianyi",
+  "hanzi": "建议",
+  "pinyin": "jian4 yi4",
+  "ru": [
+   "предлагать",
+   "предложение"
+  ],
+  "pos": "гл.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yijian",
+  "hanzi": "意见",
+  "pinyin": "yi4 jian4",
+  "ru": [
+   "мнение",
+   "замечание"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-bumen",
+  "hanzi": "部门",
+  "pinyin": "bu4 men2",
+  "ru": [
+   "отдел"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiaofu",
+  "hanzi": "交付",
+  "pinyin": "jiao1 fu4",
+  "ru": [
+   "сдавать",
+   "поставлять"
+  ],
+  "pos": "гл.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-qixian",
+  "hanzi": "期限",
+  "pinyin": "qi1 xian4",
+  "ru": [
+   "срок"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-hangtian",
+  "hanzi": "航天",
+  "pinyin": "hang2 tian1",
+  "ru": [
+   "космонавтика",
+   "аэрокосмический"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "航 = 舟 «лодка» + 亢: плыть; 天 «небо»: плыть по небу — космонавтика.",
+  "reviewed": false
+ },
+ {
+  "id": "w-fuhecailiao",
+  "hanzi": "复合材料",
+  "pinyin": "fu4 he2 cai2 liao4",
+  "ru": [
+   "композитный материал"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tanxianwei",
+  "hanzi": "碳纤维",
+  "pinyin": "tan4 xian1 wei2",
+  "ru": [
+   "углеволокно"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "碳 «углерод» (石 «камень» + 炭 «уголь») + 纤维 «волокно» (纟 «нить» в обоих).",
+  "reviewed": false
+ },
+ {
+  "id": "w-zaihe",
+  "hanzi": "载荷",
+  "pinyin": "zai4 he4",
+  "ru": [
+   "нагрузка"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yingli",
+  "hanzi": "应力",
+  "pinyin": "ying4 li4",
+  "ru": [
+   "механическое напряжение"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yingbianpian",
+  "hanzi": "应变片",
+  "pinyin": "ying4 bian4 pian4",
+  "ru": [
+   "тензодатчик"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-lv3",
+  "hanzi": "铝",
+  "pinyin": "lv3",
+  "ru": [
+   "алюминий"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "钅 «металл» + 吕 (подсказка чтения lǚ): алюминий.",
+  "reviewed": false
+ },
+ {
+  "id": "w-gang",
+  "hanzi": "钢",
+  "pinyin": "gang1",
+  "ru": [
+   "сталь"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "钅 «металл» + 冈 «хребет» (подсказка чтения gāng): хребет из металлов — сталь.",
+  "reviewed": false
+ },
+ {
+  "id": "w-tai4",
+  "hanzi": "钛",
+  "pinyin": "tai4",
+  "ru": [
+   "титан"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "钅 «металл» + 太 «великий»: великий металл — титан.",
+  "reviewed": false
+ },
+ {
+  "id": "w-hanjie",
+  "hanzi": "焊接",
+  "pinyin": "han4 jie1",
+  "ru": [
+   "сварка",
+   "сваривать"
+  ],
+  "pos": "гл.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "焊 = 火 «огонь» + 旱 «засуха»: жарить огнём — сварка; 接 «соединять».",
+  "reviewed": false
+ },
+ {
+  "id": "w-jiagong",
+  "hanzi": "加工",
+  "pinyin": "jia1 gong1",
+  "ru": [
+   "механическая обработка"
+  ],
+  "pos": "гл.",
+  "hsk2": 6,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-biaomian",
+  "hanzi": "表面",
+  "pinyin": "biao3 mian4",
+  "ru": [
+   "поверхность"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jiegou",
+  "hanzi": "结构",
+  "pinyin": "jie2 gou4",
+  "ru": [
+   "конструкция",
+   "структура"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhongliang",
+  "hanzi": "重量",
+  "pinyin": "zhong4 liang4",
+  "ru": [
+   "вес"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhijing",
+  "hanzi": "直径",
+  "pinyin": "zhi2 jing4",
+  "ru": [
+   "диаметр"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-changdu",
+  "hanzi": "长度",
+  "pinyin": "chang2 du4",
+  "ru": [
+   "длина"
+  ],
+  "pos": "сущ.",
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-houdu",
+  "hanzi": "厚度",
+  "pinyin": "hou4 du4",
+  "ru": [
+   "толщина"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jingdu",
+  "hanzi": "精度",
+  "pinyin": "jing1 du4",
+  "ru": [
+   "точность"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-danwei",
+  "hanzi": "单位",
+  "pinyin": "dan1 wei4",
+  "ru": [
+   "единица измерения",
+   "организация"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-luoshuan",
+  "hanzi": "螺栓",
+  "pinyin": "luo2 shuan1",
+  "ru": [
+   "болт"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "螺 = 虫 «насекомое, улитка» + 累: спираль улитки — резьба; 栓 = 木 + 全: затычка. Болт.",
+  "reviewed": false
+ },
+ {
+  "id": "w-mifeng",
+  "hanzi": "密封",
+  "pinyin": "mi4 feng1",
+  "ru": [
+   "уплотнение",
+   "герметизация"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-yali",
+  "hanzi": "压力",
+  "pinyin": "ya1 li4",
+  "ru": [
+   "давление"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "压 = 厂 «навес» + 土 «земля» + 丶: земля давит на навес; 力 «сила»: сила давления.",
+  "reviewed": false
+ },
+ {
+  "id": "w-shengchan",
+  "hanzi": "生产",
+  "pinyin": "sheng1 chan3",
+  "ru": [
+   "производить",
+   "производство"
+  ],
+  "pos": "гл.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-shebei",
+  "hanzi": "设备",
+  "pinyin": "she4 bei4",
+  "ru": [
+   "оборудование"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-suliao",
+  "hanzi": "塑料",
+  "pinyin": "su4 liao4",
+  "ru": [
+   "пластик"
+  ],
+  "pos": "сущ.",
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tiji",
+  "hanzi": "体积",
+  "pinyin": "ti3 ji1",
+  "ru": [
+   "объём"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-celiang",
+  "hanzi": "测量",
+  "pinyin": "ce4 liang2",
+  "ru": [
+   "измерять"
+  ],
+  "pos": "гл.",
+  "hsk2": 6,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-ceshi",
+  "hanzi": "测试",
+  "pinyin": "ce4 shi4",
+  "ru": [
+   "тест",
+   "тестировать"
+  ],
+  "pos": "гл.",
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-canshu",
+  "hanzi": "参数",
+  "pinyin": "can1 shu4",
+  "ru": [
+   "параметр"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-quxian",
+  "hanzi": "曲线",
+  "pinyin": "qu1 xian4",
+  "ru": [
+   "кривая",
+   "график"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-wucha",
+  "hanzi": "误差",
+  "pinyin": "wu4 cha1",
+  "ru": [
+   "погрешность"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-guzhang",
+  "hanzi": "故障",
+  "pinyin": "gu4 zhang4",
+  "ru": [
+   "неисправность"
+  ],
+  "pos": "сущ.",
+  "hsk2": 6,
+  "hsk3": 6,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "故 «причина, случай» + 障 (阝 «холм» + 章): преграда. Случай-преграда — неисправность.",
+  "reviewed": false
+ },
+ {
+  "id": "w-yuanyin",
+  "hanzi": "原因",
+  "pinyin": "yuan2 yin1",
+  "ru": [
+   "причина"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fenxi",
+  "hanzi": "分析",
+  "pinyin": "fen1 xi1",
+  "ru": [
+   "анализировать",
+   "анализ"
+  ],
+  "pos": "гл.",
+  "hsk2": 5,
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jilu",
+  "hanzi": "记录",
+  "pinyin": "ji4 lu4",
+  "ru": [
+   "записывать",
+   "запись"
+  ],
+  "pos": "гл.",
+  "hsk2": 5,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhendong",
+  "hanzi": "振动",
+  "pinyin": "zhen4 dong4",
+  "ru": [
+   "вибрация"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "振 = 扌 «рука» + 辰: трясти рукой; 动 «двигаться»: вибрация.",
+  "reviewed": false
+ },
+ {
+  "id": "w-xielou",
+  "hanzi": "泄漏",
+  "pinyin": "xie4 lou4",
+  "ru": [
+   "утечка"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "Оба знака с 氵 «вода»: 泄 «выпускать», 漏 = 氵 + 屚 (дом 尸 под дождём 雨): протекает.",
+  "reviewed": false
+ },
+ {
+  "id": "w-dianhuo",
+  "hanzi": "点火",
+  "pinyin": "dian3 huo3",
+  "ru": [
+   "зажигание",
+   "поджечь"
+  ],
+  "pos": "гл.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tuili",
+  "hanzi": "推力",
+  "pinyin": "tui1 li4",
+  "ru": [
+   "тяга"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "推 = 扌 «рука» + 隹: толкать рукой; 力 «сила»: сила толчка — тяга.",
+  "reviewed": false
+ },
+ {
+  "id": "w-famen",
+  "hanzi": "阀门",
+  "pinyin": "fa2 men2",
+  "ru": [
+   "клапан"
+  ],
+  "pos": "сущ.",
+  "hsk3": 7,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "阀 = 门 «дверь» + 伐: дверца для потока — клапан; 门 «ворота».",
+  "reviewed": false
+ },
+ {
+  "id": "w-guandao",
+  "hanzi": "管道",
+  "pinyin": "guan3 dao4",
+  "ru": [
+   "трубопровод"
+  ],
+  "pos": "сущ.",
+  "hsk3": 6,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-dianya",
+  "hanzi": "电压",
+  "pinyin": "dian4 ya1",
+  "ru": [
+   "напряжение (электрическое)"
+  ],
+  "pos": "сущ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xinhao",
+  "hanzi": "信号",
+  "pinyin": "xin4 hao4",
+  "ru": [
+   "сигнал"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "信 «весть» + 号 «знак, номер»: знак-весть — сигнал.",
+  "reviewed": false
+ },
+ {
+  "id": "w-hege",
+  "hanzi": "合格",
+  "pinyin": "he2 ge2",
+  "ru": [
+   "годный",
+   "прошёл проверку"
+  ],
+  "pos": "прил.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-tingzhi",
+  "hanzi": "停止",
+  "pinyin": "ting2 zhi3",
+  "ru": [
+   "остановить(ся)"
+  ],
+  "pos": "гл.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-jixu",
+  "hanzi": "继续",
+  "pinyin": "ji4 xu4",
+  "ru": [
+   "продолжать"
+  ],
+  "pos": "гл.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-xitong",
+  "hanzi": "系统",
+  "pinyin": "xi4 tong3",
+  "ru": [
+   "система"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "mnemonic": "系 «связывать» (纟 «нить») + 统 «объединять»: связанное в одно — система.",
+  "reviewed": false
+ },
+ {
+  "id": "w-ruanjian",
+  "hanzi": "软件",
+  "pinyin": "ruan3 jian4",
+  "ru": [
+   "программа",
+   "ПО"
+  ],
+  "pos": "сущ.",
+  "hsk2": 5,
+  "hsk3": 5,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-pingjun",
+  "hanzi": "平均",
+  "pinyin": "ping2 jun1",
+  "ru": [
+   "средний"
+  ],
+  "pos": "прил.",
+  "hsk2": 5,
+  "hsk3": 4,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-fanwei",
+  "hanzi": "范围",
+  "pinyin": "fan4 wei2",
+  "ru": [
+   "диапазон",
+   "пределы"
+  ],
+  "pos": "сущ.",
+  "hsk2": 4,
+  "hsk3": 3,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-baifenzhi",
+  "hanzi": "百分之",
+  "pinyin": "bai3 fen1 zhi1",
+  "ru": [
+   "процент (百分之十 — 10 %)"
+  ],
+  "pos": "числ.",
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ },
+ {
+  "id": "w-zhengchang",
+  "hanzi": "正常",
+  "pinyin": "zheng4 chang2",
+  "ru": [
+   "нормальный",
+   "в норме"
+  ],
+  "pos": "прил.",
+  "hsk2": 4,
+  "hsk3": 2,
+  "tags": [
+   "stage3",
+   "extra",
+   "engineering"
+  ],
+  "reviewed": false
+ }
+]

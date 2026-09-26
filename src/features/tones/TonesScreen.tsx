@@ -9,31 +9,39 @@ import ui from '../../components/ui.module.css'
 import { content, lessonById } from '../../content'
 import { gameAvailable, gameMaterial, UNLOCKED_BY } from '../../lib/games/games'
 import { completedLessonIds } from '../../lib/lesson/progress'
-import type { Tone } from '../../content/types'
+import type { Tone, Word } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
 import { buildHeatmap, heatmapHasData, PAIR_TONES } from '../../lib/progress/heatmap'
 import s from './TonesScreen.module.css'
 
-/** Пример слова для каждой ячейки таблицы тоновых пар (слова с меткой «pair:13»). */
-export const PAIR_EXAMPLES = new Map(
-  content.words.flatMap((w) => {
-    const cell = w.tags.find((t) => t.startsWith('pair:'))?.slice(5)
-    return cell ? [[cell, w] as const] : []
-  }),
-)
+/**
+  Пример слова для каждой ячейки таблицы тоновых пар (слова с меткой «pair:13»).
+  Считается при первом обращении, а не при импорте: контент грузится до первого рендера, но после импорта модулей.
+*/
+let pairExamplesCache: Map<string, Word> | null = null
+function pairExamples(): Map<string, Word> {
+  pairExamplesCache ??= new Map(
+    content.words.flatMap((w) => {
+      const cell = w.tags.find((t) => t.startsWith('pair:'))?.slice(5)
+      return cell ? [[cell, w] as const] : []
+    }),
+  )
+  return pairExamplesCache
+}
 
 export function TonesScreen() {
   const t = ru.tones
+  const examples = pairExamples()
   const navigate = useNavigate()
   const stats = useLiveQuery(() => db.toneStats.toArray(), [], [])
   const material = useLiveQuery(async () => gameMaterial(await completedLessonIds()), [])
   const [cell, setCell] = useState<string | null>(null)
   const heat = buildHeatmap(stats)
   const hasData = heatmapHasData(stats)
-  const pingPongReady = PAIR_EXAMPLES.size > 0
+  const pingPongReady = examples.size > 0
   const selected = cell ? heat.flat().find((c) => c.pair === cell) : undefined
-  const example = cell ? PAIR_EXAMPLES.get(cell) : undefined
+  const example = cell ? examples.get(cell) : undefined
 
   return (
     <Screen title={t.title} subtitle={t.subtitle}>
@@ -93,7 +101,7 @@ export function TonesScreen() {
                   {ru.lesson.toneShort(r + 1)}
                 </span>
                 {row.map((c) => {
-                  const ex = PAIR_EXAMPLES.get(c.pair)
+                  const ex = examples.get(c.pair)
                   return (
                     <button
                       key={c.pair}

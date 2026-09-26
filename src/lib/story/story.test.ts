@@ -51,8 +51,8 @@ describe('«Командировка»', () => {
     expect(voiceFor('кто-то', 'male')).toBe('female')
   })
 
-  it('четыре эпизода; эпизод открывается после всех уроков этапа', () => {
-    expect(episodes.map((e) => e.n)).toEqual([1, 2, 3, 4])
+  it('восемь эпизодов; эпизод открывается после всех уроков этапа', () => {
+    expect(episodes.map((e) => e.n)).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
     expect(episodeStates(new Set()).every((e) => !e.open && !e.done)).toBe(true)
     const ep1 = episodes[0]!
     const unit = unitById.get(ep1.unlockAfter)!
@@ -81,7 +81,7 @@ describe('плеер «Эхо»', () => {
     const none = echoTracks(new Set())
     expect(none.some((t) => t.learned)).toBe(false)
     expect(none.filter((t) => t.kind === 'dialogue').length).toBe(units.filter((u) => u.dialogues.length).length)
-    expect(none.filter((t) => t.kind === 'episode').length).toBe(4)
+    expect(none.filter((t) => t.kind === 'episode').length).toBe(8)
 
     const u = units.find((x) => x.stage === 1)!
     const tracks = echoTracks(new Set([u.lessons[0]!]))

@@ -36,7 +36,7 @@ export function durationOf(item: Item, voice?: Voice): number {
 export async function playItem(item: Item, opts: { voice?: Voice; rate?: number } = {}): Promise<void> {
   const entry = entryFor(item, prefs.voice, opts.voice)
   const rate = opts.rate ?? (isWordItem(item) || isSentenceItem(item) ? prefs.rate : 1)
-  if (entry) return player.play(urlOf(entry), rate)
+  if (entry) return player.play(urlOf(entry), rate, Math.round(entry.ms / rate) + 2500)
 
   const text = fallbackText(item)
   if (text && (await hasChineseVoice())) return speakChinese(text, rate)

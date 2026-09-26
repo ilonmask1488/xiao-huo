@@ -9,7 +9,8 @@
     [王明:wang2 ming2] — токен не из словаря, например имя);
   - берёт пиньинь токенов из словаря, уровни HSK — из открытого списка drkameleon/complete-hsk-vocabulary;
   - собирает по 3 урока на этап по единому шаблону.
-Всё сгенерированное — reviewed: false. После запуска: generate_audio.py и npm run check:content.
+Всё сгенерированное — reviewed: false. После запуска: author_stage2.py, author_stage3.py, author_story.py,
+generate_audio.py, npm run hanzi и npm run check:content.
 """
 import json
 import re
@@ -603,7 +604,7 @@ def build_stage(stage: int, units: list[dict], bosses: dict, base_files: list[st
     known_ids = {w["id"] for w in base_words(base_files)}
     words_out, sentences_out, lessons_out, units_out, dialogues_out = [], [], [], [], []
     known: dict[str, str] = {}
-    for f in ("src/content/stage1/sentences.json",) if stage > 1 else ():
+    for f in [f"src/content/stage{i}/sentences.json" for i in range(1, stage)]:
         for s in json.loads((ROOT / f).read_text(encoding="utf-8")):
             known[plain_text(s)] = s["id"]
     ids = set(known_ids)
@@ -631,7 +632,7 @@ def build_stage(stage: int, units: list[dict], bosses: dict, base_files: list[st
             if lv.get("old") != stage:
                 tags.append("extra")
             # «Инженер» — профессиональные слова этапов модуля; общие слова HSK 1–2 из них не помечаем.
-            if wid == "w-gongchengshi" or (u.get("engineering") and lv.get("old") not in (1, 2)):
+            if wid == "w-gongchengshi" or (u.get("engineering") and (lv.get("old") or 9) > 3):
                 tags.append("engineering")
             w["tags"] = tags
             if wid in MNEMONICS:

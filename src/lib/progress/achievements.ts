@@ -1,7 +1,8 @@
 /*
-  Достижения ступени 0. Названия и описания — в ru.ts (achievements).
+  Достижения. Названия и описания — в ru.ts (achievements).
   Проверяются после урока или игры; новые возвращаются для показа в итогах.
 */
+import { unitsOfStage } from '../../content'
 import { db } from '../db/db'
 import { computeStreak, localDate } from './streak'
 
@@ -19,6 +20,9 @@ export type AchievementId =
   | 'orbit-7'
   | 'words-100'
   | 'loud-1000'
+  | 'stage1'
+  | 'stage2'
+  | 'orbit'
 
 type Check = () => Promise<boolean>
 
@@ -51,6 +55,17 @@ const CHECKS: Record<AchievementId, Check> = {
   },
   'words-100': async () => (await db.cards.where('kind').equals(1).count()) >= 100,
   'loud-1000': async () => (await db.days.toArray()).reduce((s, d) => s + d.spokenCount, 0) >= 1000,
+  stage1: () => stageDone(1),
+  stage2: () => stageDone(2),
+  orbit: () => stageDone(3),
+}
+
+/** Ступень собрана: пройден каждый урок каждого её этапа (по журналу уроков — он переживает и бэкап). */
+async function stageDone(stage: number): Promise<boolean> {
+  const units = unitsOfStage(stage)
+  if (!units.length) return false
+  const done = new Set((await db.lessonProgress.filter((p) => !!p.completedAt).toArray()).map((p) => p.lessonId))
+  return units.every((u) => u.lessons.every((l) => done.has(l)))
 }
 
 export const ACHIEVEMENT_IDS = Object.keys(CHECKS) as AchievementId[]

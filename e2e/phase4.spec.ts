@@ -114,7 +114,7 @@ test('ступень 2: этап «Инженер» проходится, сло
   await markSoundChecked(page)
   await seedCompleted(page, [...STAGE0_ALL, ...STAGE1_ALL])
   await page.goto('./#/map')
-  await expect(page.getByRole('button', { name: /2\.4 Инженер: завод и чертёж/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: /2\.4 Инженер: завод и чертёж/ })).toBeVisible({ timeout: 20_000 })
   await page.goto('./#/lesson/s2-u4-l1')
   await expect(page.getByRole('heading', { name: 'Новые слова' })).toBeVisible()
   await passLesson(page, 120)

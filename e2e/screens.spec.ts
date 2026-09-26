@@ -166,5 +166,30 @@ for (const scheme of ['light', 'dark'] as const) {
       await page.getByTestId('pitch-chart').scrollIntoViewIfNeeded()
       await shoot(page, 'p4-pitch', scheme, p)
     }
+
+    if (phase === 'phase4') return
+    // ——— Фаза 5: третья ступень, «Инженер», все эпизоды, последний босс ———
+    const stage2 = Array.from({ length: 12 }, (_, u) => [1, 2, 3].map((l) => `s2-u${u + 1}-l${l}`).concat(`s2-u${u + 1}-boss`)).flat()
+    const stage3 = Array.from({ length: 14 }, (_, u) => [1, 2, 3].map((l) => `s3-u${u + 1}-l${l}`).concat(`s3-u${u + 1}-boss`)).flat()
+    await seedCompleted(page, [...stage2, ...stage3.filter((id) => id !== 's3-u14-boss')])
+    for (const [name, path] of [
+      ['p5-map', '/map'],
+      ['p5-story', '/story'],
+      ['p5-unit', '/unit/s3-u13'],
+      ['p5-stats', '/stats'],
+      ['p5-dictionary', '/dictionary'],
+    ] as const) {
+      await page.goto(`./#${path}`)
+      await shoot(page, name, scheme, p)
+    }
+    await page.goto('./#/lesson/story-8')
+    await page.getByRole('button', { name: 'Дальше', exact: true }).click()
+    await expect(page.getByText('服务员', { exact: true }).first()).toBeVisible()
+    await shoot(page, 'p5-episode8', scheme, p, false)
+    await page.goto('./#/lesson/s3-u14-boss')
+    await shoot(page, 'p5-boss-intro', scheme, p)
+    await passLesson(page, 80, 'right')
+    await page.waitForTimeout(3000)
+    await shoot(page, 'p5-orbit', scheme, p)
   })
 }

@@ -1,0 +1,5502 @@
+[
+ {
+  "id": "s3-u1-l1",
+  "unitId": "s3-u1",
+  "order": 1,
+  "title": "Внешность и характер: слова (1)",
+  "newWords": [
+   "w-ai3",
+   "w-pang",
+   "w-shou4",
+   "w-nianqing",
+   "w-lao",
+   "w-keai",
+   "w-congming",
+   "w-reqing",
+   "w-renzhen",
+   "w-anjing",
+   "w-qiguai",
+   "w-bizi"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Внешность и характер». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-ai3",
+     "w-pang",
+     "w-shou4",
+     "w-nianqing",
+     "w-lao",
+     "w-keai",
+     "w-congming",
+     "w-reqing",
+     "w-renzhen",
+     "w-anjing",
+     "w-qiguai",
+     "w-bizi"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-ai3",
+      "w-pang",
+      "w-shou4",
+      "w-nianqing",
+      "w-lao"
+     ],
+     [
+      "w-keai",
+      "w-congming",
+      "w-reqing",
+      "w-renzhen",
+      "w-anjing"
+     ],
+     [
+      "w-qiguai",
+      "w-bizi"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-ai3",
+     "w-pang",
+     "w-shou4",
+     "w-nianqing",
+     "w-lao",
+     "w-keai",
+     "w-congming",
+     "w-reqing",
+     "w-renzhen",
+     "w-anjing",
+     "w-qiguai",
+     "w-bizi"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-ai3",
+     "w-pang",
+     "w-shou4"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-nianqing",
+     "w-lao",
+     "w-keai"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-bizi",
+     "w-qiguai",
+     "w-anjing",
+     "w-renzhen",
+     "w-reqing",
+     "w-congming",
+     "w-keai",
+     "w-lao",
+     "w-nianqing",
+     "w-shou4",
+     "w-pang",
+     "w-ai3"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u1-l2",
+  "unitId": "s3-u1",
+  "order": 2,
+  "title": "Внешность и характер: слова (2) и 又…又… — «и… и…»",
+  "newWords": [
+   "w-erduo",
+   "w-lian",
+   "w-toufa",
+   "w-yanjing4",
+   "w-jiao3",
+   "w-tui",
+   "w-kou",
+   "w-xiang4b",
+   "w-yiyang",
+   "w-you4",
+   "w-bieren",
+   "w-ziji"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-erduo",
+     "w-lian",
+     "w-toufa",
+     "w-yanjing4",
+     "w-jiao3",
+     "w-tui",
+     "w-kou",
+     "w-xiang4b",
+     "w-yiyang",
+     "w-you4",
+     "w-bieren",
+     "w-ziji"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-erduo",
+      "w-lian",
+      "w-toufa",
+      "w-yanjing4",
+      "w-jiao3"
+     ],
+     [
+      "w-tui",
+      "w-kou",
+      "w-xiang4b",
+      "w-yiyang",
+      "w-you4"
+     ],
+     [
+      "w-bieren",
+      "w-ziji"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-erduo",
+     "w-lian",
+     "w-toufa",
+     "w-yanjing4",
+     "w-jiao3",
+     "w-tui",
+     "w-kou",
+     "w-xiang4b",
+     "w-yiyang",
+     "w-you4",
+     "w-bieren",
+     "w-ziji"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-erduo",
+     "w-lian",
+     "w-toufa"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-yanjing4",
+     "w-jiao3",
+     "w-tui"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "又…又… — «и… и…»",
+    "body": [
+     "Два качества сразу: 又高又瘦 — «и высокий, и худой».",
+     "Не соединяй прилагательные через 和."
+    ],
+    "sentences": [
+     "s-3-1-02"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-1-02"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-1-02"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-erduo",
+     "w-lian",
+     "w-toufa",
+     "w-yanjing4"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u1-l3",
+  "unitId": "s3-u1",
+  "order": 3,
+  "title": "Внешность и характер: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "一样 — «одинаково»",
+    "body": [
+     "A 和 B 一样 + прилагательное: 我和妹妹一样高.",
+     "Отрицание — 不一样."
+    ],
+    "sentences": [
+     "s-3-1-12"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-1-12"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "口 — считать семью",
+    "body": [
+     "Членов семьи считают ртами: 四口人.",
+     "Людей вообще — 个: 三个人."
+    ],
+    "sentences": [
+     "s-3-1-13",
+     "s-3-1-14"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-1-13",
+     "s-3-1-14"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-1-01",
+     "s-3-1-03",
+     "s-3-1-04",
+     "s-3-1-05",
+     "s-3-1-06",
+     "s-3-1-07",
+     "s-3-1-08",
+     "s-3-1-09",
+     "s-3-1-10",
+     "s-3-1-11",
+     "s-3-1-15",
+     "s-3-1-16",
+     "s-3-1-17",
+     "s-3-1-18",
+     "s-3-1-19",
+     "s-3-1-20"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-1-01",
+     "s-3-1-03",
+     "s-3-1-05",
+     "s-3-1-06"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-1-01",
+     "s-3-1-03",
+     "s-3-1-04"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-1-05",
+     "s-3-1-06",
+     "s-3-1-07"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-ai3",
+     "w-pang",
+     "w-shou4",
+     "w-erduo",
+     "w-lian",
+     "w-toufa"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u1-boss",
+  "unitId": "s3-u1",
+  "order": 4,
+  "title": "Обратный отсчёт: Кто есть кто на заводе",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Кто есть кто на заводе",
+    "body": [
+     "Сяо Ли показывает новых коллег и заодно расспрашивает о твоей семье.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u1-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u2-l1",
+  "unitId": "s3-u2",
+  "order": 1,
+  "title": "Самочувствие и спорт: слова (1)",
+  "newWords": [
+   "w-danxin",
+   "w-haipa",
+   "w-shengqi",
+   "w-nanguo",
+   "w-zhaoji",
+   "w-fangxin",
+   "w-guanxin",
+   "w-manyi",
+   "w-shufu",
+   "w-teng",
+   "w-fashao",
+   "w-ganmao",
+   "w-jiankang"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Самочувствие и спорт». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-danxin",
+     "w-haipa",
+     "w-shengqi",
+     "w-nanguo",
+     "w-zhaoji",
+     "w-fangxin",
+     "w-guanxin",
+     "w-manyi",
+     "w-shufu",
+     "w-teng",
+     "w-fashao",
+     "w-ganmao",
+     "w-jiankang"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-danxin",
+      "w-haipa",
+      "w-shengqi",
+      "w-nanguo",
+      "w-zhaoji"
+     ],
+     [
+      "w-fangxin",
+      "w-guanxin",
+      "w-manyi",
+      "w-shufu",
+      "w-teng"
+     ],
+     [
+      "w-fashao",
+      "w-ganmao",
+      "w-jiankang"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-danxin",
+     "w-haipa",
+     "w-shengqi",
+     "w-nanguo",
+     "w-zhaoji",
+     "w-fangxin",
+     "w-guanxin",
+     "w-manyi",
+     "w-shufu",
+     "w-teng",
+     "w-fashao",
+     "w-ganmao",
+     "w-jiankang"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-danxin",
+     "w-haipa",
+     "w-shengqi"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-nanguo",
+     "w-zhaoji",
+     "w-fangxin"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-jiankang",
+     "w-ganmao",
+     "w-fashao",
+     "w-teng",
+     "w-shufu",
+     "w-manyi",
+     "w-guanxin",
+     "w-fangxin",
+     "w-zhaoji",
+     "w-nanguo",
+     "w-shengqi",
+     "w-haipa",
+     "w-danxin"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u2-l2",
+  "unitId": "s3-u2",
+  "order": 2,
+  "title": "Самочувствие и спорт: слова (2) и 应该 — «следует»",
+  "newWords": [
+   "w-e4",
+   "w-ke3",
+   "w-bao3",
+   "w-ku",
+   "w-duanlian",
+   "w-tiyu",
+   "w-bisai",
+   "w-xizao",
+   "w-xiaoxin",
+   "w-yinggai",
+   "w-geng",
+   "w-shua",
+   "w-ya"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-e4",
+     "w-ke3",
+     "w-bao3",
+     "w-ku",
+     "w-duanlian",
+     "w-tiyu",
+     "w-bisai",
+     "w-xizao",
+     "w-xiaoxin",
+     "w-yinggai",
+     "w-geng",
+     "w-shua",
+     "w-ya"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-e4",
+      "w-ke3",
+      "w-bao3",
+      "w-ku",
+      "w-duanlian"
+     ],
+     [
+      "w-tiyu",
+      "w-bisai",
+      "w-xizao",
+      "w-xiaoxin",
+      "w-yinggai"
+     ],
+     [
+      "w-geng",
+      "w-shua",
+      "w-ya"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-e4",
+     "w-ke3",
+     "w-bao3",
+     "w-ku",
+     "w-duanlian",
+     "w-tiyu",
+     "w-bisai",
+     "w-xizao",
+     "w-xiaoxin",
+     "w-yinggai",
+     "w-geng",
+     "w-shua",
+     "w-ya"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-e4",
+     "w-ke3",
+     "w-bao3"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-ku",
+     "w-duanlian",
+     "w-tiyu"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "应该 — «следует»",
+    "body": [
+     "应该 + глагол: 你应该吃药.",
+     "Отрицание — 不应该."
+    ],
+    "sentences": [
+     "s-3-2-03"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-2-03"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-2-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-e4",
+     "w-ke3",
+     "w-bao3",
+     "w-ku"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u2-l3",
+  "unitId": "s3-u2",
+  "order": 3,
+  "title": "Самочувствие и спорт: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "更 — «ещё более»",
+    "body": [
+     "更 усиливает сравнение: 今天比昨天更冷 — «сегодня ещё холоднее».",
+     "最 — «самый»."
+    ],
+    "sentences": [
+     "s-3-2-17"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-2-17"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "别 с чувствами",
+    "body": [
+     "别担心, 别难过, 别着急 — «не волнуйся, не грусти, не спеши».",
+     "放心 — «не переживай»."
+    ],
+    "sentences": [
+     "s-3-2-04",
+     "s-3-2-05",
+     "s-3-2-20"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-2-04",
+     "s-3-2-05",
+     "s-3-2-20"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-2-01",
+     "s-3-2-02",
+     "s-3-2-06",
+     "s-3-2-07",
+     "s-3-2-08",
+     "s-3-2-09",
+     "s-3-2-10",
+     "s-3-2-11",
+     "s-3-2-12",
+     "s-3-2-13",
+     "s-3-2-14",
+     "s-3-2-15",
+     "s-3-2-16",
+     "s-3-2-18",
+     "s-3-2-19",
+     "s-3-2-21",
+     "s-3-2-22",
+     "s-3-2-23"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-2-01",
+     "s-3-2-02",
+     "s-3-2-06",
+     "s-3-2-07"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-2-01",
+     "s-3-2-02",
+     "s-3-2-06"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-2-07",
+     "s-3-2-08",
+     "s-3-2-09"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-danxin",
+     "w-haipa",
+     "w-shengqi",
+     "w-e4",
+     "w-ke3",
+     "w-bao3"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u2-boss",
+  "unitId": "s3-u2",
+  "order": 4,
+  "title": "Обратный отсчёт: Сяо Ли заболел",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Сяо Ли заболел",
+    "body": [
+     "Сяо Ли пришёл на работу простуженный. Посочувствуй и дай совет.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u2-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u3-l1",
+  "unitId": "s3-u3",
+  "order": 1,
+  "title": "Дом и офис: слова (1)",
+  "newWords": [
+   "w-bangongshi",
+   "w-chufang",
+   "w-xishoujian",
+   "w-bingxiang",
+   "w-kongtiao",
+   "w-dianti",
+   "w-deng",
+   "w-lou",
+   "w-ceng",
+   "w-difang",
+   "w-fujin",
+   "w-zhongjian",
+   "w-linju"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Дом и офис». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-bangongshi",
+     "w-chufang",
+     "w-xishoujian",
+     "w-bingxiang",
+     "w-kongtiao",
+     "w-dianti",
+     "w-deng",
+     "w-lou",
+     "w-ceng",
+     "w-difang",
+     "w-fujin",
+     "w-zhongjian",
+     "w-linju"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-bangongshi",
+      "w-chufang",
+      "w-xishoujian",
+      "w-bingxiang",
+      "w-kongtiao"
+     ],
+     [
+      "w-dianti",
+      "w-deng",
+      "w-lou",
+      "w-ceng",
+      "w-difang"
+     ],
+     [
+      "w-fujin",
+      "w-zhongjian",
+      "w-linju"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-bangongshi",
+     "w-chufang",
+     "w-xishoujian",
+     "w-bingxiang",
+     "w-kongtiao",
+     "w-dianti",
+     "w-deng",
+     "w-lou",
+     "w-ceng",
+     "w-difang",
+     "w-fujin",
+     "w-zhongjian",
+     "w-linju"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-bangongshi",
+     "w-chufang",
+     "w-xishoujian"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-bingxiang",
+     "w-kongtiao",
+     "w-dianti"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-linju",
+     "w-zhongjian",
+     "w-fujin",
+     "w-difang",
+     "w-ceng",
+     "w-lou",
+     "w-deng",
+     "w-dianti",
+     "w-kongtiao",
+     "w-bingxiang",
+     "w-xishoujian",
+     "w-chufang",
+     "w-bangongshi"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u3-l2",
+  "unitId": "s3-u3",
+  "order": 2,
+  "title": "Дом и офис: слова (2) и 把 — «взять и…»",
+  "newWords": [
+   "w-ban",
+   "w-ganjing",
+   "w-huanjing",
+   "w-jiu4b",
+   "w-huai",
+   "w-huan",
+   "w-yong",
+   "w-ba3",
+   "w-dasao",
+   "w-wei4b",
+   "w-keren",
+   "w-guan"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-ban",
+     "w-ganjing",
+     "w-huanjing",
+     "w-jiu4b",
+     "w-huai",
+     "w-huan",
+     "w-yong",
+     "w-ba3",
+     "w-dasao",
+     "w-wei4b",
+     "w-keren",
+     "w-guan"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-ban",
+      "w-ganjing",
+      "w-huanjing",
+      "w-jiu4b",
+      "w-huai"
+     ],
+     [
+      "w-huan",
+      "w-yong",
+      "w-ba3",
+      "w-dasao",
+      "w-wei4b"
+     ],
+     [
+      "w-keren",
+      "w-guan"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-ban",
+     "w-ganjing",
+     "w-huanjing",
+     "w-jiu4b",
+     "w-huai",
+     "w-huan",
+     "w-yong",
+     "w-ba3",
+     "w-dasao",
+     "w-wei4b",
+     "w-keren",
+     "w-guan"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-ban",
+     "w-ganjing",
+     "w-huanjing"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-jiu4b",
+     "w-huai",
+     "w-huan"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "把 — «взять и…»",
+    "body": [
+     "Предмет выносится вперёд: 把 + предмет + глагол + куда: 把书放在桌子上 — «книгу положи на стол»."
+    ],
+    "sentences": [
+     "s-3-3-07",
+     "s-3-3-08"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-3-07",
+     "s-3-3-08"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-3-07",
+     "s-3-3-08"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-ban",
+     "w-ganjing",
+     "w-huanjing",
+     "w-jiu4b"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u3-l3",
+  "unitId": "s3-u3",
+  "order": 3,
+  "title": "Дом и офис: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "楼 и 层 — этаж",
+    "body": [
+     "三楼 и 三层 — «третий этаж».",
+     "楼 ещё и «здание»: 办公楼."
+    ],
+    "sentences": [
+     "s-3-3-01",
+     "s-3-3-02"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-3-01",
+     "s-3-3-02"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "坏了 и 旧",
+    "body": [
+     "坏了 — «сломался» (изменение с 了).",
+     "旧 — «старый» о вещах, 老 — о людях."
+    ],
+    "sentences": [
+     "s-3-3-06",
+     "s-3-3-13"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-3-06",
+     "s-3-3-13"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-3-03",
+     "s-3-3-04",
+     "s-3-3-05",
+     "s-3-3-09",
+     "s-3-3-10",
+     "s-3-3-11",
+     "s-3-3-12",
+     "s-3-3-14",
+     "s-3-3-15",
+     "s-3-3-16",
+     "s-3-3-17",
+     "s-3-3-18",
+     "s-3-3-19",
+     "s-3-3-20",
+     "s-3-3-21",
+     "s-3-3-22"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-3-03",
+     "s-3-3-04",
+     "s-3-3-05",
+     "s-3-3-09"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-3-03",
+     "s-3-3-04",
+     "s-3-3-05"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-3-09",
+     "s-3-3-10",
+     "s-3-3-11"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-bangongshi",
+     "w-chufang",
+     "w-xishoujian",
+     "w-ban",
+     "w-ganjing",
+     "w-huanjing"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u3-boss",
+  "unitId": "s3-u3",
+  "order": 4,
+  "title": "Обратный отсчёт: Новый кабинет",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новый кабинет",
+    "body": [
+     "Инженер Ван показывает твой кабинет. Спроси, что где, и скажи, что сломано.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u3-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u4-l1",
+  "unitId": "s3-u4",
+  "order": 1,
+  "title": "Город и транспорт: слова (1)",
+  "newWords": [
+   "w-chengshi",
+   "w-jiedao",
+   "w-ditie",
+   "w-ditu",
+   "w-dong-east",
+   "w-nan2",
+   "w-xi1",
+   "w-beifang",
+   "w-bian",
+   "w-yinhang",
+   "w-chaoshi",
+   "w-tushuguan",
+   "w-gongyuan",
+   "w-huayuan"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Город и транспорт». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-chengshi",
+     "w-jiedao",
+     "w-ditie",
+     "w-ditu",
+     "w-dong-east",
+     "w-nan2",
+     "w-xi1",
+     "w-beifang",
+     "w-bian",
+     "w-yinhang",
+     "w-chaoshi",
+     "w-tushuguan",
+     "w-gongyuan",
+     "w-huayuan"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-chengshi",
+      "w-jiedao",
+      "w-ditie",
+      "w-ditu",
+      "w-dong-east"
+     ],
+     [
+      "w-nan2",
+      "w-xi1",
+      "w-beifang",
+      "w-bian",
+      "w-yinhang"
+     ],
+     [
+      "w-chaoshi",
+      "w-tushuguan",
+      "w-gongyuan",
+      "w-huayuan"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-chengshi",
+     "w-jiedao",
+     "w-ditie",
+     "w-ditu",
+     "w-dong-east",
+     "w-nan2",
+     "w-xi1",
+     "w-beifang",
+     "w-bian",
+     "w-yinhang",
+     "w-chaoshi",
+     "w-tushuguan",
+     "w-gongyuan",
+     "w-huayuan"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-chengshi",
+     "w-jiedao",
+     "w-ditie"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-ditu",
+     "w-dong-east",
+     "w-nan2"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-huayuan",
+     "w-gongyuan",
+     "w-tushuguan",
+     "w-chaoshi",
+     "w-yinhang",
+     "w-bian",
+     "w-beifang",
+     "w-xi1",
+     "w-nan2",
+     "w-dong-east",
+     "w-ditu",
+     "w-ditie",
+     "w-jiedao",
+     "w-chengshi"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u4-l2",
+  "unitId": "s3-u4",
+  "order": 2,
+  "title": "Город и транспорт: слова (2) и 才 и 就",
+  "newWords": [
+   "w-zhan",
+   "w-liang4",
+   "w-jingguo",
+   "w-yudao",
+   "w-likai",
+   "w-chidao",
+   "w-mashang",
+   "w-yizhi",
+   "w-gangcai",
+   "w-yihuir",
+   "w-deng3",
+   "w-cai2",
+   "w-fangbian",
+   "w-jie1"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-zhan",
+     "w-liang4",
+     "w-jingguo",
+     "w-yudao",
+     "w-likai",
+     "w-chidao",
+     "w-mashang",
+     "w-yizhi",
+     "w-gangcai",
+     "w-yihuir",
+     "w-deng3",
+     "w-cai2",
+     "w-fangbian",
+     "w-jie1"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-zhan",
+      "w-liang4",
+      "w-jingguo",
+      "w-yudao",
+      "w-likai"
+     ],
+     [
+      "w-chidao",
+      "w-mashang",
+      "w-yizhi",
+      "w-gangcai",
+      "w-yihuir"
+     ],
+     [
+      "w-deng3",
+      "w-cai2",
+      "w-fangbian",
+      "w-jie1"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-zhan",
+     "w-liang4",
+     "w-jingguo",
+     "w-yudao",
+     "w-likai",
+     "w-chidao",
+     "w-mashang",
+     "w-yizhi",
+     "w-gangcai",
+     "w-yihuir",
+     "w-deng3",
+     "w-cai2",
+     "w-fangbian",
+     "w-jie1"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-zhan",
+     "w-liang4",
+     "w-jingguo"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-yudao",
+     "w-likai",
+     "w-chidao"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "才 и 就",
+    "body": [
+     "才 — позже, чем ждали: 他九点才来 «пришёл только в девять».",
+     "就 — раньше: 他七点就来了."
+    ],
+    "sentences": [
+     "s-3-4-17",
+     "s-3-4-14"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-4-17",
+     "s-3-4-14"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-4-17",
+     "s-3-4-14"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-zhan",
+     "w-liang4",
+     "w-jingguo",
+     "w-yudao"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u4-l3",
+  "unitId": "s3-u4",
+  "order": 3,
+  "title": "Город и транспорт: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "一直 — «прямо» и «всё время»",
+    "body": [
+     "一直走 — «идите прямо».",
+     "我一直想来北京 — «я всё время хотел приехать»."
+    ],
+    "sentences": [
+     "s-3-4-04"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-4-04"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "Стороны: 东南西北 + 边",
+    "body": [
+     "东边, 南边, 西边, 北边 — «на востоке» и так далее.",
+     "北方 — «север» как регион."
+    ],
+    "sentences": [
+     "s-3-4-07",
+     "s-3-4-08"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-4-07",
+     "s-3-4-08"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-4-01",
+     "s-3-4-02",
+     "s-3-4-03",
+     "s-3-4-05",
+     "s-3-4-06",
+     "s-3-4-09",
+     "s-3-4-10",
+     "s-3-4-11",
+     "s-3-4-12",
+     "s-3-4-13",
+     "s-3-4-15",
+     "s-3-4-16",
+     "s-3-4-18",
+     "s-3-4-19",
+     "s-3-4-20",
+     "s-3-4-21"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-4-01",
+     "s-3-4-02",
+     "s-3-4-03",
+     "s-3-4-05"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-4-01",
+     "s-3-4-02",
+     "s-3-4-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-4-05",
+     "s-3-4-06",
+     "s-3-4-09"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-chengshi",
+     "w-jiedao",
+     "w-ditie",
+     "w-zhan",
+     "w-liang4",
+     "w-jingguo"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u4-boss",
+  "unitId": "s3-u4",
+  "order": 4,
+  "title": "Обратный отсчёт: До банка на такси",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "До банка на такси",
+    "body": [
+     "Такси. Объясни, куда ехать, и поддержи разговор с водителем.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u4-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u5-l1",
+  "unitId": "s3-u5",
+  "order": 1,
+  "title": "Еда и покупки: слова (1)",
+  "newWords": [
+   "w-caidan",
+   "w-mianbao",
+   "w-miantiao",
+   "w-dangao",
+   "w-tang",
+   "w-tian2",
+   "w-guozhi",
+   "w-pijiu",
+   "w-putao",
+   "w-xiangjiao",
+   "w-kuaizi",
+   "w-wan3",
+   "w-panzi",
+   "w-chenshan",
+   "w-kuzi"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Еда и покупки». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-caidan",
+     "w-mianbao",
+     "w-miantiao",
+     "w-dangao",
+     "w-tang",
+     "w-tian2",
+     "w-guozhi",
+     "w-pijiu",
+     "w-putao",
+     "w-xiangjiao",
+     "w-kuaizi",
+     "w-wan3",
+     "w-panzi",
+     "w-chenshan",
+     "w-kuzi"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-caidan",
+      "w-mianbao",
+      "w-miantiao",
+      "w-dangao",
+      "w-tang"
+     ],
+     [
+      "w-tian2",
+      "w-guozhi",
+      "w-pijiu",
+      "w-putao",
+      "w-xiangjiao"
+     ],
+     [
+      "w-kuaizi",
+      "w-wan3",
+      "w-panzi",
+      "w-chenshan",
+      "w-kuzi"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-caidan",
+     "w-mianbao",
+     "w-miantiao",
+     "w-dangao",
+     "w-tang",
+     "w-tian2",
+     "w-guozhi",
+     "w-pijiu",
+     "w-putao",
+     "w-xiangjiao",
+     "w-kuaizi",
+     "w-wan3",
+     "w-panzi",
+     "w-chenshan",
+     "w-kuzi"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-caidan",
+     "w-mianbao",
+     "w-miantiao"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-dangao",
+     "w-tang",
+     "w-tian2"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-kuzi",
+     "w-chenshan",
+     "w-panzi",
+     "w-wan3",
+     "w-kuaizi",
+     "w-xiangjiao",
+     "w-putao",
+     "w-pijiu",
+     "w-guozhi",
+     "w-tian2",
+     "w-tang",
+     "w-dangao",
+     "w-miantiao",
+     "w-mianbao",
+     "w-caidan"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u5-l2",
+  "unitId": "s3-u5",
+  "order": 2,
+  "title": "Еда и покупки: слова (2) и Счётные посуды",
+  "newWords": [
+   "w-qunzi",
+   "w-xie2",
+   "w-maozi",
+   "w-san3",
+   "w-lan",
+   "w-lv4",
+   "w-huang",
+   "w-wan4",
+   "w-yigong",
+   "w-shuang",
+   "w-tiao",
+   "w-bao1",
+   "w-zhong3",
+   "w-xuanze"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-qunzi",
+     "w-xie2",
+     "w-maozi",
+     "w-san3",
+     "w-lan",
+     "w-lv4",
+     "w-huang",
+     "w-wan4",
+     "w-yigong",
+     "w-shuang",
+     "w-tiao",
+     "w-bao1",
+     "w-zhong3",
+     "w-xuanze"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-qunzi",
+      "w-xie2",
+      "w-maozi",
+      "w-san3",
+      "w-lan"
+     ],
+     [
+      "w-lv4",
+      "w-huang",
+      "w-wan4",
+      "w-yigong",
+      "w-shuang"
+     ],
+     [
+      "w-tiao",
+      "w-bao1",
+      "w-zhong3",
+      "w-xuanze"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-qunzi",
+     "w-xie2",
+     "w-maozi",
+     "w-san3",
+     "w-lan",
+     "w-lv4",
+     "w-huang",
+     "w-wan4",
+     "w-yigong",
+     "w-shuang",
+     "w-tiao",
+     "w-bao1",
+     "w-zhong3",
+     "w-xuanze"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-qunzi",
+     "w-xie2",
+     "w-maozi"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-san3",
+     "w-lan",
+     "w-lv4"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "Счётные посуды",
+    "body": [
+     "一碗面条 «миска лапши», 一杯果汁 «стакан сока».",
+     "Посуда сама становится счётным словом."
+    ],
+    "sentences": [
+     "s-3-5-02",
+     "s-3-5-07"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-5-02",
+     "s-3-5-07"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-5-02",
+     "s-3-5-07"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-qunzi",
+     "w-xie2",
+     "w-maozi",
+     "w-san3"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u5-l3",
+  "unitId": "s3-u5",
+  "order": 3,
+  "title": "Еда и покупки: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "双 и 条",
+    "body": [
+     "双 — пара: 一双鞋.",
+     "条 — длинное: 一条裤子, 一条鱼, 一条路."
+    ],
+    "sentences": [
+     "s-3-5-10",
+     "s-3-5-11"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-5-10",
+     "s-3-5-11"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "万 — десять тысяч",
+    "body": [
+     "Китайцы считают десятками тысяч: 一万 = 10 000, 十万 = 100 000, 一百万 = 1 000 000."
+    ],
+    "sentences": [
+     "s-3-5-16"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-5-16"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-5-01",
+     "s-3-5-03",
+     "s-3-5-04",
+     "s-3-5-05",
+     "s-3-5-06",
+     "s-3-5-08",
+     "s-3-5-09",
+     "s-3-5-12",
+     "s-3-5-13",
+     "s-3-5-14",
+     "s-3-5-15",
+     "s-3-5-17",
+     "s-3-5-18",
+     "s-3-5-19",
+     "s-3-5-20",
+     "s-3-5-21",
+     "s-3-5-22"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-5-01",
+     "s-3-5-03",
+     "s-3-5-04",
+     "s-3-5-05"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-5-01",
+     "s-3-5-03",
+     "s-3-5-04"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-5-05",
+     "s-3-5-06",
+     "s-3-5-08"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-caidan",
+     "w-mianbao",
+     "w-miantiao",
+     "w-qunzi",
+     "w-xie2",
+     "w-maozi"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u5-boss",
+  "unitId": "s3-u5",
+  "order": 4,
+  "title": "Обратный отсчёт: Обед по меню",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Обед по меню",
+    "body": [
+     "Кафе у завода. Официантка приносит меню — закажи сам.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u5-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u6-l1",
+  "unitId": "s3-u6",
+  "order": 1,
+  "title": "Время и планы: слова (1)",
+  "newWords": [
+   "w-ban4",
+   "w-ke4",
+   "w-fen",
+   "w-yiqian",
+   "w-yihou",
+   "w-guoqu",
+   "w-zuijin",
+   "w-zhoumo",
+   "w-jijie",
+   "w-chun",
+   "w-xia4",
+   "w-qiu",
+   "w-dong1"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Время и планы». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-ban4",
+     "w-ke4",
+     "w-fen",
+     "w-yiqian",
+     "w-yihou",
+     "w-guoqu",
+     "w-zuijin",
+     "w-zhoumo",
+     "w-jijie",
+     "w-chun",
+     "w-xia4",
+     "w-qiu",
+     "w-dong1"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-ban4",
+      "w-ke4",
+      "w-fen",
+      "w-yiqian",
+      "w-yihou"
+     ],
+     [
+      "w-guoqu",
+      "w-zuijin",
+      "w-zhoumo",
+      "w-jijie",
+      "w-chun"
+     ],
+     [
+      "w-xia4",
+      "w-qiu",
+      "w-dong1"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-ban4",
+     "w-ke4",
+     "w-fen",
+     "w-yiqian",
+     "w-yihou",
+     "w-guoqu",
+     "w-zuijin",
+     "w-zhoumo",
+     "w-jijie",
+     "w-chun",
+     "w-xia4",
+     "w-qiu",
+     "w-dong1"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-ban4",
+     "w-ke4",
+     "w-fen"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-yiqian",
+     "w-yihou",
+     "w-guoqu"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-dong1",
+     "w-qiu",
+     "w-xia4",
+     "w-chun",
+     "w-jijie",
+     "w-zhoumo",
+     "w-zuijin",
+     "w-guoqu",
+     "w-yihou",
+     "w-yiqian",
+     "w-fen",
+     "w-ke4",
+     "w-ban4"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u6-l2",
+  "unitId": "s3-u6",
+  "order": 2,
+  "title": "Время и планы: слова (2) и 过 — «бывало»",
+  "newWords": [
+   "w-jieri",
+   "w-dasuan",
+   "w-jueding",
+   "w-zongshi",
+   "w-jingchang",
+   "w-xian",
+   "w-ranhou",
+   "w-zhongyu",
+   "w-jiu3",
+   "w-yiban",
+   "w-guo5",
+   "w-di",
+   "w-yibian"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-jieri",
+     "w-dasuan",
+     "w-jueding",
+     "w-zongshi",
+     "w-jingchang",
+     "w-xian",
+     "w-ranhou",
+     "w-zhongyu",
+     "w-jiu3",
+     "w-yiban",
+     "w-guo5",
+     "w-di",
+     "w-yibian"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-jieri",
+      "w-dasuan",
+      "w-jueding",
+      "w-zongshi",
+      "w-jingchang"
+     ],
+     [
+      "w-xian",
+      "w-ranhou",
+      "w-zhongyu",
+      "w-jiu3",
+      "w-yiban"
+     ],
+     [
+      "w-guo5",
+      "w-di",
+      "w-yibian"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-jieri",
+     "w-dasuan",
+     "w-jueding",
+     "w-zongshi",
+     "w-jingchang",
+     "w-xian",
+     "w-ranhou",
+     "w-zhongyu",
+     "w-jiu3",
+     "w-yiban",
+     "w-guo5",
+     "w-di",
+     "w-yibian"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-jieri",
+     "w-dasuan",
+     "w-jueding"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-zongshi",
+     "w-jingchang",
+     "w-xian"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "过 — «бывало»",
+    "body": [
+     "Глагол + 过 — опыт: 去过 «бывал», 吃过 «пробовал».",
+     "Вопрос: 你去过…吗？ Отрицание: 没去过."
+    ],
+    "sentences": [
+     "s-3-6-09",
+     "s-3-6-10"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-6-09",
+     "s-3-6-10"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-6-09",
+     "s-3-6-10"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-jieri",
+     "w-dasuan",
+     "w-jueding",
+     "w-zongshi"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u6-l3",
+  "unitId": "s3-u6",
+  "order": 3,
+  "title": "Время и планы: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "半 и 刻",
+    "body": [
+     "八点半 — половина девятого, 九点一刻 — четверть десятого.",
+     "Минуты: 十点十分."
+    ],
+    "sentences": [
+     "s-3-6-01",
+     "s-3-6-02",
+     "s-3-6-03"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-6-01",
+     "s-3-6-02",
+     "s-3-6-03"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "先…然后…",
+    "body": [
+     "«Сначала…, потом…»: 先吃饭，然后工作.",
+     "以后 — «после чего-то»: 下班以后."
+    ],
+    "sentences": [
+     "s-3-6-16",
+     "s-3-6-05"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-6-16",
+     "s-3-6-05"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-6-04",
+     "s-3-6-06",
+     "s-3-6-07",
+     "s-3-6-08",
+     "s-3-6-11",
+     "s-3-6-12",
+     "s-3-6-13",
+     "s-3-6-14",
+     "s-3-6-15",
+     "s-3-6-17",
+     "s-3-6-18",
+     "s-3-6-19",
+     "s-3-6-20",
+     "s-3-6-21",
+     "s-3-6-22",
+     "s-3-6-23"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-6-04",
+     "s-3-6-06",
+     "s-3-6-07",
+     "s-3-6-08"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-6-04",
+     "s-3-6-06",
+     "s-3-6-07"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-6-08",
+     "s-3-6-11",
+     "s-3-6-12"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-ban4",
+     "w-ke4",
+     "w-fen",
+     "w-jieri",
+     "w-dasuan",
+     "w-jueding"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u6-boss",
+  "unitId": "s3-u6",
+  "order": 4,
+  "title": "Обратный отсчёт: Планы на выходные",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Планы на выходные",
+    "body": [
+     "Сяо Ли зовёт на Великую стену. Договоритесь, когда и как.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u6-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u7-l1",
+  "unitId": "s3-u7",
+  "order": 1,
+  "title": "Учёба и язык: слова (1)",
+  "newWords": [
+   "w-putonghua",
+   "w-ciyu",
+   "w-juzi",
+   "w-zidian",
+   "w-lianxi",
+   "w-fuxi",
+   "w-zuoye",
+   "w-chengji",
+   "w-nianji",
+   "w-shuxue",
+   "w-lishi",
+   "w-wenhua",
+   "w-heiban"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Учёба и язык». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-putonghua",
+     "w-ciyu",
+     "w-juzi",
+     "w-zidian",
+     "w-lianxi",
+     "w-fuxi",
+     "w-zuoye",
+     "w-chengji",
+     "w-nianji",
+     "w-shuxue",
+     "w-lishi",
+     "w-wenhua",
+     "w-heiban"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-putonghua",
+      "w-ciyu",
+      "w-juzi",
+      "w-zidian",
+      "w-lianxi"
+     ],
+     [
+      "w-fuxi",
+      "w-zuoye",
+      "w-chengji",
+      "w-nianji",
+      "w-shuxue"
+     ],
+     [
+      "w-lishi",
+      "w-wenhua",
+      "w-heiban"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-putonghua",
+     "w-ciyu",
+     "w-juzi",
+     "w-zidian",
+     "w-lianxi",
+     "w-fuxi",
+     "w-zuoye",
+     "w-chengji",
+     "w-nianji",
+     "w-shuxue",
+     "w-lishi",
+     "w-wenhua",
+     "w-heiban"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-putonghua",
+     "w-ciyu",
+     "w-juzi"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-zidian",
+     "w-lianxi",
+     "w-fuxi"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-heiban",
+     "w-wenhua",
+     "w-lishi",
+     "w-shuxue",
+     "w-nianji",
+     "w-chengji",
+     "w-zuoye",
+     "w-fuxi",
+     "w-lianxi",
+     "w-zidian",
+     "w-juzi",
+     "w-ciyu",
+     "w-putonghua"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u7-l2",
+  "unitId": "s3-u7",
+  "order": 2,
+  "title": "Учёба и язык: слова (2) и 教 + кому + что",
+  "newWords": [
+   "w-xiaozhang",
+   "w-jiao1",
+   "w-jiang",
+   "w-jide",
+   "w-wangji",
+   "w-mingbai",
+   "w-qingchu",
+   "w-jiandan",
+   "w-rongyi",
+   "w-nan",
+   "w-tigao",
+   "w-ban1"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-xiaozhang",
+     "w-jiao1",
+     "w-jiang",
+     "w-jide",
+     "w-wangji",
+     "w-mingbai",
+     "w-qingchu",
+     "w-jiandan",
+     "w-rongyi",
+     "w-nan",
+     "w-tigao",
+     "w-ban1"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-xiaozhang",
+      "w-jiao1",
+      "w-jiang",
+      "w-jide",
+      "w-wangji"
+     ],
+     [
+      "w-mingbai",
+      "w-qingchu",
+      "w-jiandan",
+      "w-rongyi",
+      "w-nan"
+     ],
+     [
+      "w-tigao",
+      "w-ban1"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-xiaozhang",
+     "w-jiao1",
+     "w-jiang",
+     "w-jide",
+     "w-wangji",
+     "w-mingbai",
+     "w-qingchu",
+     "w-jiandan",
+     "w-rongyi",
+     "w-nan",
+     "w-tigao",
+     "w-ban1"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-xiaozhang",
+     "w-jiao1",
+     "w-jiang"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-jide",
+     "w-wangji",
+     "w-mingbai"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "教 + кому + что",
+    "body": [
+     "教 — учить кого-то: 王工教我汉语.",
+     "Учиться самому — 学习."
+    ],
+    "sentences": [
+     "s-3-7-14"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-7-14"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-7-14"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-xiaozhang",
+     "w-jiao1",
+     "w-jiang",
+     "w-jide"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u7-l3",
+  "unitId": "s3-u7",
+  "order": 3,
+  "title": "Учёба и язык: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "记得 / 忘记 / 明白",
+    "body": [
+     "记得 — помню (без 了).",
+     "忘记了 — забыл, 明白了 — понял: с 了, потому что состояние сменилось."
+    ],
+    "sentences": [
+     "s-3-7-16",
+     "s-3-7-17",
+     "s-3-7-19"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-7-16",
+     "s-3-7-17",
+     "s-3-7-19"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "难 и 容易",
+    "body": [
+     "汉语很难 / 很容易.",
+     "Смягчить: 不容易 — «нелёгкий»."
+    ],
+    "sentences": [
+     "s-3-7-22",
+     "s-3-7-23"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-7-22",
+     "s-3-7-23"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-7-01",
+     "s-3-7-02",
+     "s-3-7-03",
+     "s-3-7-04",
+     "s-3-7-05",
+     "s-3-7-06",
+     "s-3-7-07",
+     "s-3-7-08",
+     "s-3-7-09",
+     "s-3-7-10",
+     "s-3-7-11",
+     "s-3-7-12",
+     "s-3-7-13",
+     "s-3-7-15",
+     "s-3-7-18",
+     "s-3-7-20",
+     "s-3-7-21",
+     "s-3-7-24",
+     "s-3-7-25"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-7-01",
+     "s-3-7-02",
+     "s-3-7-03",
+     "s-3-7-04"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-7-01",
+     "s-3-7-02",
+     "s-3-7-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-7-04",
+     "s-3-7-05",
+     "s-3-7-06"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-putonghua",
+     "w-ciyu",
+     "w-juzi",
+     "w-xiaozhang",
+     "w-jiao1",
+     "w-jiang"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u7-boss",
+  "unitId": "s3-u7",
+  "order": 4,
+  "title": "Обратный отсчёт: Урок с инженером Ваном",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Урок с инженером Ваном",
+    "body": [
+     "Инженер Ван решил сам подтянуть твой китайский. Переспрашивай — он это уважает.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u7-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u8-l1",
+  "unitId": "s3-u8",
+  "order": 1,
+  "title": "Мнение и условия: слова (1)",
+  "newWords": [
+   "w-renwei",
+   "w-xiangxin",
+   "w-yiwei",
+   "w-tongyi",
+   "w-biaoshi",
+   "w-yaoqiu",
+   "w-xuyao",
+   "w-yuanyi",
+   "w-gan3",
+   "w-bixu",
+   "w-yiding",
+   "w-dangran"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Мнение и условия». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-renwei",
+     "w-xiangxin",
+     "w-yiwei",
+     "w-tongyi",
+     "w-biaoshi",
+     "w-yaoqiu",
+     "w-xuyao",
+     "w-yuanyi",
+     "w-gan3",
+     "w-bixu",
+     "w-yiding",
+     "w-dangran"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-renwei",
+      "w-xiangxin",
+      "w-yiwei",
+      "w-tongyi",
+      "w-biaoshi"
+     ],
+     [
+      "w-yaoqiu",
+      "w-xuyao",
+      "w-yuanyi",
+      "w-gan3",
+      "w-bixu"
+     ],
+     [
+      "w-yiding",
+      "w-dangran"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-renwei",
+     "w-xiangxin",
+     "w-yiwei",
+     "w-tongyi",
+     "w-biaoshi",
+     "w-yaoqiu",
+     "w-xuyao",
+     "w-yuanyi",
+     "w-gan3",
+     "w-bixu",
+     "w-yiding",
+     "w-dangran"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-renwei",
+     "w-xiangxin",
+     "w-yiwei"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-tongyi",
+     "w-biaoshi",
+     "w-yaoqiu"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-dangran",
+     "w-yiding",
+     "w-bixu",
+     "w-gan3",
+     "w-yuanyi",
+     "w-xuyao",
+     "w-yaoqiu",
+     "w-biaoshi",
+     "w-tongyi",
+     "w-yiwei",
+     "w-xiangxin",
+     "w-renwei"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u8-l2",
+  "unitId": "s3-u8",
+  "order": 2,
+  "title": "Мнение и условия: слова (2) и 还是 или 或者",
+  "newWords": [
+   "w-qishi",
+   "w-jihu",
+   "w-tebie",
+   "w-ji2",
+   "w-duome",
+   "w-huozhe",
+   "w-haishi",
+   "w-ruguo",
+   "w-suiran",
+   "w-erqie",
+   "w-weile",
+   "w-guanyu"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-qishi",
+     "w-jihu",
+     "w-tebie",
+     "w-ji2",
+     "w-duome",
+     "w-huozhe",
+     "w-haishi",
+     "w-ruguo",
+     "w-suiran",
+     "w-erqie",
+     "w-weile",
+     "w-guanyu"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-qishi",
+      "w-jihu",
+      "w-tebie",
+      "w-ji2",
+      "w-duome"
+     ],
+     [
+      "w-huozhe",
+      "w-haishi",
+      "w-ruguo",
+      "w-suiran",
+      "w-erqie"
+     ],
+     [
+      "w-weile",
+      "w-guanyu"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-qishi",
+     "w-jihu",
+     "w-tebie",
+     "w-ji2",
+     "w-duome",
+     "w-huozhe",
+     "w-haishi",
+     "w-ruguo",
+     "w-suiran",
+     "w-erqie",
+     "w-weile",
+     "w-guanyu"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-qishi",
+     "w-jihu",
+     "w-tebie"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-ji2",
+     "w-duome",
+     "w-huozhe"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "还是 или 或者",
+    "body": [
+     "В вопросе — 还是: 茶还是咖啡？ В утверждении — 或者: 坐地铁或者坐出租车."
+    ],
+    "sentences": [
+     "s-3-8-18",
+     "s-3-8-19"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-8-18",
+     "s-3-8-19"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-8-18",
+     "s-3-8-19"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-qishi",
+     "w-jihu",
+     "w-tebie",
+     "w-ji2"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u8-l3",
+  "unitId": "s3-u8",
+  "order": 3,
+  "title": "Мнение и условия: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "如果…就…",
+    "body": [
+     "«Если…, то…»: 如果明天下雨，我们就不去.",
+     "就 стоит перед глаголом второй части."
+    ],
+    "sentences": [
+     "s-3-8-20"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-8-20"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "虽然…但是… и 而且",
+    "body": [
+     "«Хотя…, но…»: 虽然很难，但是我想学习.",
+     "而且 — «к тому же» добавляет довод."
+    ],
+    "sentences": [
+     "s-3-8-21",
+     "s-3-8-22"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-8-21",
+     "s-3-8-22"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-8-01",
+     "s-3-8-02",
+     "s-3-8-03",
+     "s-3-8-04",
+     "s-3-8-05",
+     "s-3-8-06",
+     "s-3-8-07",
+     "s-3-8-08",
+     "s-3-8-09",
+     "s-3-8-10",
+     "s-3-8-11",
+     "s-3-8-12",
+     "s-3-8-13",
+     "s-3-8-14",
+     "s-3-8-15",
+     "s-3-8-16",
+     "s-3-8-17",
+     "s-3-8-23",
+     "s-3-8-24"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-8-01",
+     "s-3-8-02",
+     "s-3-8-03",
+     "s-3-8-04"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-8-01",
+     "s-3-8-02",
+     "s-3-8-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-8-04",
+     "s-3-8-05",
+     "s-3-8-06"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-renwei",
+     "w-xiangxin",
+     "w-yiwei",
+     "w-qishi",
+     "w-jihu",
+     "w-tebie"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u8-boss",
+  "unitId": "s3-u8",
+  "order": 4,
+  "title": "Обратный отсчёт: Спор о детали",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Спор о детали",
+    "body": [
+     "Инженер Ван спрашивает твоё мнение о детали. Скажи, что думаешь, и предложи проверить.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u8-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u9-l1",
+  "unitId": "s3-u9",
+  "order": 1,
+  "title": "Досуг и гости: слова (1)",
+  "newWords": [
+   "w-huzhao",
+   "w-xinglixiang",
+   "w-zhaoxiangji",
+   "w-zhaopian",
+   "w-hua4",
+   "w-yinyue",
+   "w-youxi",
+   "w-xinwen",
+   "w-jiemu",
+   "w-biaoyan",
+   "w-gushi",
+   "w-aihao",
+   "w-xingqu",
+   "w-shangwang"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Досуг и гости». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-huzhao",
+     "w-xinglixiang",
+     "w-zhaoxiangji",
+     "w-zhaopian",
+     "w-hua4",
+     "w-yinyue",
+     "w-youxi",
+     "w-xinwen",
+     "w-jiemu",
+     "w-biaoyan",
+     "w-gushi",
+     "w-aihao",
+     "w-xingqu",
+     "w-shangwang"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-huzhao",
+      "w-xinglixiang",
+      "w-zhaoxiangji",
+      "w-zhaopian",
+      "w-hua4"
+     ],
+     [
+      "w-yinyue",
+      "w-youxi",
+      "w-xinwen",
+      "w-jiemu",
+      "w-biaoyan"
+     ],
+     [
+      "w-gushi",
+      "w-aihao",
+      "w-xingqu",
+      "w-shangwang"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-huzhao",
+     "w-xinglixiang",
+     "w-zhaoxiangji",
+     "w-zhaopian",
+     "w-hua4",
+     "w-yinyue",
+     "w-youxi",
+     "w-xinwen",
+     "w-jiemu",
+     "w-biaoyan",
+     "w-gushi",
+     "w-aihao",
+     "w-xingqu",
+     "w-shangwang"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-huzhao",
+     "w-xinglixiang",
+     "w-zhaoxiangji"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-zhaopian",
+     "w-hua4",
+     "w-yinyue"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-shangwang",
+     "w-xingqu",
+     "w-aihao",
+     "w-gushi",
+     "w-biaoyan",
+     "w-jiemu",
+     "w-xinwen",
+     "w-youxi",
+     "w-yinyue",
+     "w-hua4",
+     "w-zhaopian",
+     "w-zhaoxiangji",
+     "w-xinglixiang",
+     "w-huzhao"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u9-l2",
+  "unitId": "s3-u9",
+  "order": 2,
+  "title": "Досуг и гости: слова (2) и 对…有兴趣",
+  "newWords": [
+   "w-shijie",
+   "w-guojia",
+   "w-youming",
+   "w-liwu",
+   "w-jianmian",
+   "w-canjia",
+   "w-juxing",
+   "w-jiehun",
+   "w-a",
+   "w-ganbei",
+   "w-zhu4",
+   "w-pashan",
+   "w-xin4"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-shijie",
+     "w-guojia",
+     "w-youming",
+     "w-liwu",
+     "w-jianmian",
+     "w-canjia",
+     "w-juxing",
+     "w-jiehun",
+     "w-a",
+     "w-ganbei",
+     "w-zhu4",
+     "w-pashan",
+     "w-xin4"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-shijie",
+      "w-guojia",
+      "w-youming",
+      "w-liwu",
+      "w-jianmian"
+     ],
+     [
+      "w-canjia",
+      "w-juxing",
+      "w-jiehun",
+      "w-a",
+      "w-ganbei"
+     ],
+     [
+      "w-zhu4",
+      "w-pashan",
+      "w-xin4"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-shijie",
+     "w-guojia",
+     "w-youming",
+     "w-liwu",
+     "w-jianmian",
+     "w-canjia",
+     "w-juxing",
+     "w-jiehun",
+     "w-a",
+     "w-ganbei",
+     "w-zhu4",
+     "w-pashan",
+     "w-xin4"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-shijie",
+     "w-guojia",
+     "w-youming"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-liwu",
+     "w-jianmian",
+     "w-canjia"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "对…有兴趣",
+    "body": [
+     "«Интересоваться чем-то»: 我对中国历史很有兴趣.",
+     "爱好 — увлечение как занятие."
+    ],
+    "sentences": [
+     "s-3-9-12",
+     "s-3-9-06"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-9-12",
+     "s-3-9-06"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-9-12",
+     "s-3-9-06"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-shijie",
+     "w-guojia",
+     "w-youming",
+     "w-liwu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u9-l3",
+  "unitId": "s3-u9",
+  "order": 3,
+  "title": "Досуг и гости: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "啊 — восклицание",
+    "body": [
+     "啊 в конце усиливает чувство: 真好吃啊！ Читается слитно с предыдущим слогом."
+    ],
+    "sentences": [
+     "s-3-9-23"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-9-23"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "参加 и 举行",
+    "body": [
+     "参加 — участвовать (в соревновании, свадьбе).",
+     "举行 — проводить мероприятие."
+    ],
+    "sentences": [
+     "s-3-9-20",
+     "s-3-9-21"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-9-20",
+     "s-3-9-21"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-9-01",
+     "s-3-9-02",
+     "s-3-9-03",
+     "s-3-9-04",
+     "s-3-9-05",
+     "s-3-9-07",
+     "s-3-9-08",
+     "s-3-9-09",
+     "s-3-9-10",
+     "s-3-9-11",
+     "s-3-9-13",
+     "s-3-9-14",
+     "s-3-9-15",
+     "s-3-9-16",
+     "s-3-9-17",
+     "s-3-9-18",
+     "s-3-9-19",
+     "s-3-9-22",
+     "s-3-9-24",
+     "s-3-9-25",
+     "s-3-9-26",
+     "s-3-9-27"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-9-01",
+     "s-3-9-02",
+     "s-3-9-03",
+     "s-3-9-04"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-9-01",
+     "s-3-9-02",
+     "s-3-9-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-9-04",
+     "s-3-9-05",
+     "s-3-9-07"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-huzhao",
+     "w-xinglixiang",
+     "w-zhaoxiangji",
+     "w-shijie",
+     "w-guojia",
+     "w-youming"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u9-boss",
+  "unitId": "s3-u9",
+  "order": 4,
+  "title": "Обратный отсчёт: Приглашение на свадьбу",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Приглашение на свадьбу",
+    "body": [
+     "У Сяо Ли большая новость. Порадуйся и прими приглашение.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u9-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u10-l1",
+  "unitId": "s3-u10",
+  "order": 1,
+  "title": "Природа и перемены: слова (1)",
+  "newWords": [
+   "w-taiyang",
+   "w-yueliang",
+   "w-yun",
+   "w-he2",
+   "w-shu4",
+   "w-cao",
+   "w-hua1",
+   "w-niao",
+   "w-ma3",
+   "w-dongwu",
+   "w-xiongmao",
+   "w-gua",
+   "w-feng"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Природа и перемены». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-taiyang",
+     "w-yueliang",
+     "w-yun",
+     "w-he2",
+     "w-shu4",
+     "w-cao",
+     "w-hua1",
+     "w-niao",
+     "w-ma3",
+     "w-dongwu",
+     "w-xiongmao",
+     "w-gua",
+     "w-feng"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-taiyang",
+      "w-yueliang",
+      "w-yun",
+      "w-he2",
+      "w-shu4"
+     ],
+     [
+      "w-cao",
+      "w-hua1",
+      "w-niao",
+      "w-ma3",
+      "w-dongwu"
+     ],
+     [
+      "w-xiongmao",
+      "w-gua",
+      "w-feng"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-taiyang",
+     "w-yueliang",
+     "w-yun",
+     "w-he2",
+     "w-shu4",
+     "w-cao",
+     "w-hua1",
+     "w-niao",
+     "w-ma3",
+     "w-dongwu",
+     "w-xiongmao",
+     "w-gua",
+     "w-feng"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-taiyang",
+     "w-yueliang",
+     "w-yun"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-he2",
+     "w-shu4",
+     "w-cao"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-feng",
+     "w-gua",
+     "w-xiongmao",
+     "w-dongwu",
+     "w-ma3",
+     "w-niao",
+     "w-hua1",
+     "w-cao",
+     "w-shu4",
+     "w-he2",
+     "w-yun",
+     "w-yueliang",
+     "w-taiyang"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u10-l2",
+  "unitId": "s3-u10",
+  "order": 2,
+  "title": "Природа и перемены: слова (2) и 被 — пассив",
+  "newWords": [
+   "w-xinxian",
+   "w-turan",
+   "w-chuxian",
+   "w-bianhua",
+   "w-yingxiang",
+   "w-faxian",
+   "w-zhuyi",
+   "w-di1",
+   "w-duan",
+   "w-yue4b",
+   "w-bei4",
+   "w-de-adv"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-xinxian",
+     "w-turan",
+     "w-chuxian",
+     "w-bianhua",
+     "w-yingxiang",
+     "w-faxian",
+     "w-zhuyi",
+     "w-di1",
+     "w-duan",
+     "w-yue4b",
+     "w-bei4",
+     "w-de-adv"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-xinxian",
+      "w-turan",
+      "w-chuxian",
+      "w-bianhua",
+      "w-yingxiang"
+     ],
+     [
+      "w-faxian",
+      "w-zhuyi",
+      "w-di1",
+      "w-duan",
+      "w-yue4b"
+     ],
+     [
+      "w-bei4",
+      "w-de-adv"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-xinxian",
+     "w-turan",
+     "w-chuxian",
+     "w-bianhua",
+     "w-yingxiang",
+     "w-faxian",
+     "w-zhuyi",
+     "w-di1",
+     "w-duan",
+     "w-yue4b",
+     "w-bei4",
+     "w-de-adv"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-xinxian",
+     "w-turan",
+     "w-chuxian"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-bianhua",
+     "w-yingxiang",
+     "w-faxian"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "被 — пассив",
+    "body": [
+     "Предмет + 被 + кто + глагол + 了: 图纸被小李拿走了 — «чертёж унесён Сяо Ли»."
+    ],
+    "sentences": [
+     "s-3-10-21"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-10-21"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-10-21"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-xinxian",
+     "w-turan",
+     "w-chuxian",
+     "w-bianhua"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u10-l3",
+  "unitId": "s3-u10",
+  "order": 3,
+  "title": "Природа и перемены: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "地 — наречие",
+    "body": [
+     "Прилагательное + 地 + глагол: 认真地工作, 慢慢地说.",
+     "Не путай с 的 (перед существительным)."
+    ],
+    "sentences": [
+     "s-3-10-22",
+     "s-3-10-23"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-10-22",
+     "s-3-10-23"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "越来越 и 越…越…",
+    "body": [
+     "越来越 + прилагательное — «всё более»: 越来越热.",
+     "越 A 越 B — «чем A, тем B»."
+    ],
+    "sentences": [
+     "s-3-10-19",
+     "s-3-10-20"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-10-19",
+     "s-3-10-20"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-10-01",
+     "s-3-10-02",
+     "s-3-10-03",
+     "s-3-10-04",
+     "s-3-10-05",
+     "s-3-10-06",
+     "s-3-10-07",
+     "s-3-10-08",
+     "s-3-10-09",
+     "s-3-10-10",
+     "s-3-10-11",
+     "s-3-10-12",
+     "s-3-10-13",
+     "s-3-10-14",
+     "s-3-10-15",
+     "s-3-10-16",
+     "s-3-10-17",
+     "s-3-10-18"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-10-01",
+     "s-3-10-02",
+     "s-3-10-03",
+     "s-3-10-04"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-10-01",
+     "s-3-10-02",
+     "s-3-10-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-10-04",
+     "s-3-10-05",
+     "s-3-10-06"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-taiyang",
+     "w-yueliang",
+     "w-yun",
+     "w-xinxian",
+     "w-turan",
+     "w-chuxian"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u10-boss",
+  "unitId": "s3-u10",
+  "order": 4,
+  "title": "Обратный отсчёт: Ветер на стенде",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ветер на стенде",
+    "body": [
+     "Испытание на открытом стенде, а погода портится. Обсудите с инженером Ваном перенос.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u10-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u11-l1",
+  "unitId": "s3-u11",
+  "order": 1,
+  "title": "Люди и сравнения: слова (1)",
+  "newWords": [
+   "w-nainai",
+   "w-yeye",
+   "w-shushu",
+   "w-ayi",
+   "w-siji",
+   "w-jingli",
+   "w-zhaogu",
+   "w-guanxi",
+   "w-xiguan",
+   "w-bangmang",
+   "w-jie4",
+   "w-gen",
+   "w-shi3"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Люди и сравнения». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-nainai",
+     "w-yeye",
+     "w-shushu",
+     "w-ayi",
+     "w-siji",
+     "w-jingli",
+     "w-zhaogu",
+     "w-guanxi",
+     "w-xiguan",
+     "w-bangmang",
+     "w-jie4",
+     "w-gen",
+     "w-shi3"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-nainai",
+      "w-yeye",
+      "w-shushu",
+      "w-ayi",
+      "w-siji"
+     ],
+     [
+      "w-jingli",
+      "w-zhaogu",
+      "w-guanxi",
+      "w-xiguan",
+      "w-bangmang"
+     ],
+     [
+      "w-jie4",
+      "w-gen",
+      "w-shi3"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-nainai",
+     "w-yeye",
+     "w-shushu",
+     "w-ayi",
+     "w-siji",
+     "w-jingli",
+     "w-zhaogu",
+     "w-guanxi",
+     "w-xiguan",
+     "w-bangmang",
+     "w-jie4",
+     "w-gen",
+     "w-shi3"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-nainai",
+     "w-yeye",
+     "w-shushu"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-ayi",
+     "w-siji",
+     "w-jingli"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-shi3",
+     "w-gen",
+     "w-jie4",
+     "w-bangmang",
+     "w-xiguan",
+     "w-guanxi",
+     "w-zhaogu",
+     "w-jingli",
+     "w-siji",
+     "w-ayi",
+     "w-shushu",
+     "w-yeye",
+     "w-nainai"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u11-l2",
+  "unitId": "s3-u11",
+  "order": 2,
+  "title": "Люди и сравнения: слова (2) и 跟…一起",
+  "newWords": [
+   "w-zhi3",
+   "w-qita",
+   "w-xiangtong",
+   "w-bijiao",
+   "w-cha4",
+   "w-duan4",
+   "w-jiao3-money",
+   "w-genju",
+   "w-chule",
+   "w-shuiping",
+   "w-shengyin",
+   "w-nuli",
+   "w-liaojie"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-zhi3",
+     "w-qita",
+     "w-xiangtong",
+     "w-bijiao",
+     "w-cha4",
+     "w-duan4",
+     "w-jiao3-money",
+     "w-genju",
+     "w-chule",
+     "w-shuiping",
+     "w-shengyin",
+     "w-nuli",
+     "w-liaojie"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-zhi3",
+      "w-qita",
+      "w-xiangtong",
+      "w-bijiao",
+      "w-cha4"
+     ],
+     [
+      "w-duan4",
+      "w-jiao3-money",
+      "w-genju",
+      "w-chule",
+      "w-shuiping"
+     ],
+     [
+      "w-shengyin",
+      "w-nuli",
+      "w-liaojie"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-zhi3",
+     "w-qita",
+     "w-xiangtong",
+     "w-bijiao",
+     "w-cha4",
+     "w-duan4",
+     "w-jiao3-money",
+     "w-genju",
+     "w-chule",
+     "w-shuiping",
+     "w-shengyin",
+     "w-nuli",
+     "w-liaojie"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-zhi3",
+     "w-qita",
+     "w-xiangtong"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-bijiao",
+     "w-cha4",
+     "w-duan4"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "跟…一起",
+    "body": [
+     "«Вместе с кем-то»: 我跟小李一起去.",
+     "跟 стоит до глагола."
+    ],
+    "sentences": [
+     "s-3-11-10"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-11-10"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-11-10"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-zhi3",
+     "w-qita",
+     "w-xiangtong",
+     "w-bijiao"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u11-l3",
+  "unitId": "s3-u11",
+  "order": 3,
+  "title": "Люди и сравнения: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "除了…都…",
+    "body": [
+     "«Кроме X, все…»: 除了小李，大家都来了.",
+     "Только — 只: 我只有一个问题."
+    ],
+    "sentences": [
+     "s-3-11-21",
+     "s-3-11-12"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-11-21",
+     "s-3-11-12"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "使 — «делать так, что»",
+    "body": [
+     "Причина + 使 + кто + состояние: 这个结果使大家很高兴."
+    ],
+    "sentences": [
+     "s-3-11-11"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-11-11"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-11-01",
+     "s-3-11-02",
+     "s-3-11-03",
+     "s-3-11-04",
+     "s-3-11-05",
+     "s-3-11-06",
+     "s-3-11-07",
+     "s-3-11-08",
+     "s-3-11-09",
+     "s-3-11-13",
+     "s-3-11-14",
+     "s-3-11-15",
+     "s-3-11-16",
+     "s-3-11-17",
+     "s-3-11-18",
+     "s-3-11-19",
+     "s-3-11-20",
+     "s-3-11-22",
+     "s-3-11-23",
+     "s-3-11-24",
+     "s-3-11-25"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-11-01",
+     "s-3-11-02",
+     "s-3-11-03",
+     "s-3-11-04"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-11-01",
+     "s-3-11-02",
+     "s-3-11-03"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-11-04",
+     "s-3-11-05",
+     "s-3-11-06"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-nainai",
+     "w-yeye",
+     "w-shushu",
+     "w-zhi3",
+     "w-qita",
+     "w-xiangtong"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u11-boss",
+  "unitId": "s3-u11",
+  "order": 4,
+  "title": "Обратный отсчёт: Ужин у Сяо Ли",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ужин у Сяо Ли",
+    "body": [
+     "Сяо Ли позвал домой. Познакомься с семьёй и не теряйся, если бабушка говорит на диалекте.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u11-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u12-l1",
+  "unitId": "s3-u12",
+  "order": 1,
+  "title": "Инженер: совещание и планы: слова (1)",
+  "newWords": [
+   "w-huiyi",
+   "w-banfa",
+   "w-jiejue",
+   "w-wancheng",
+   "w-jieshu",
+   "w-jihui",
+   "w-zhuyao",
+   "w-zhongyao",
+   "w-zuoyong",
+   "w-dianzi",
+   "w-jihua",
+   "w-jindu"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Инженер: совещание и планы». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-huiyi",
+     "w-banfa",
+     "w-jiejue",
+     "w-wancheng",
+     "w-jieshu",
+     "w-jihui",
+     "w-zhuyao",
+     "w-zhongyao",
+     "w-zuoyong",
+     "w-dianzi",
+     "w-jihua",
+     "w-jindu"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-huiyi",
+      "w-banfa",
+      "w-jiejue",
+      "w-wancheng",
+      "w-jieshu"
+     ],
+     [
+      "w-jihui",
+      "w-zhuyao",
+      "w-zhongyao",
+      "w-zuoyong",
+      "w-dianzi"
+     ],
+     [
+      "w-jihua",
+      "w-jindu"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-huiyi",
+     "w-banfa",
+     "w-jiejue",
+     "w-wancheng",
+     "w-jieshu",
+     "w-jihui",
+     "w-zhuyao",
+     "w-zhongyao",
+     "w-zuoyong",
+     "w-dianzi",
+     "w-jihua",
+     "w-jindu"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-huiyi",
+     "w-banfa",
+     "w-jiejue"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-wancheng",
+     "w-jieshu",
+     "w-jihui"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-jindu",
+     "w-jihua",
+     "w-dianzi",
+     "w-zuoyong",
+     "w-zhongyao",
+     "w-zhuyao",
+     "w-jihui",
+     "w-jieshu",
+     "w-wancheng",
+     "w-jiejue",
+     "w-banfa",
+     "w-huiyi"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u12-l2",
+  "unitId": "s3-u12",
+  "order": 2,
+  "title": "Инженер: совещание и планы: слова (2) и 有 + событие",
+  "newWords": [
+   "w-baogao",
+   "w-fangan",
+   "w-kehu",
+   "w-hetong",
+   "w-zhiliang",
+   "w-biaozhun",
+   "w-taolun",
+   "w-jianyi",
+   "w-yijian",
+   "w-bumen",
+   "w-jiaofu",
+   "w-qixian"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-baogao",
+     "w-fangan",
+     "w-kehu",
+     "w-hetong",
+     "w-zhiliang",
+     "w-biaozhun",
+     "w-taolun",
+     "w-jianyi",
+     "w-yijian",
+     "w-bumen",
+     "w-jiaofu",
+     "w-qixian"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-baogao",
+      "w-fangan",
+      "w-kehu",
+      "w-hetong",
+      "w-zhiliang"
+     ],
+     [
+      "w-biaozhun",
+      "w-taolun",
+      "w-jianyi",
+      "w-yijian",
+      "w-bumen"
+     ],
+     [
+      "w-jiaofu",
+      "w-qixian"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-baogao",
+     "w-fangan",
+     "w-kehu",
+     "w-hetong",
+     "w-zhiliang",
+     "w-biaozhun",
+     "w-taolun",
+     "w-jianyi",
+     "w-yijian",
+     "w-bumen",
+     "w-jiaofu",
+     "w-qixian"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-baogao",
+     "w-fangan",
+     "w-kehu"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-hetong",
+     "w-zhiliang",
+     "w-biaozhun"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "有 + событие",
+    "body": [
+     "«Будет совещание» — 有会议, «придут гости» — 有客人来.",
+     "Время — перед 有."
+    ],
+    "sentences": [
+     "s-3-12-01"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-12-01"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-12-01"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-baogao",
+     "w-fangan",
+     "w-kehu",
+     "w-hetong"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u12-l3",
+  "unitId": "s3-u12",
+  "order": 3,
+  "title": "Инженер: совещание и планы: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "建议 и 讨论一下",
+    "body": [
+     "我建议 + что сделать: 我建议换材料.",
+     "讨论一下 — «давайте обсудим» (мягко)."
+    ],
+    "sentences": [
+     "s-3-12-19",
+     "s-3-12-18"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-12-19",
+     "s-3-12-18"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "主要 и 重要",
+    "body": [
+     "主要 — главный из нескольких: 主要问题.",
+     "重要 — важный сам по себе: 质量最重要."
+    ],
+    "sentences": [
+     "s-3-12-07",
+     "s-3-12-08"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-12-07",
+     "s-3-12-08"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-12-02",
+     "s-3-12-03",
+     "s-3-12-04",
+     "s-3-12-05",
+     "s-3-12-06",
+     "s-3-12-09",
+     "s-3-12-10",
+     "s-3-12-11",
+     "s-3-12-12",
+     "s-3-12-13",
+     "s-3-12-14",
+     "s-3-12-15",
+     "s-3-12-16",
+     "s-3-12-17",
+     "s-3-12-20",
+     "s-3-12-21",
+     "s-3-12-22",
+     "s-3-12-23"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-12-02",
+     "s-3-12-03",
+     "s-3-12-04",
+     "s-3-12-05"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-12-02",
+     "s-3-12-03",
+     "s-3-12-04"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-12-05",
+     "s-3-12-06",
+     "s-3-12-09"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-huiyi",
+     "w-banfa",
+     "w-jiejue",
+     "w-baogao",
+     "w-fangan",
+     "w-kehu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u12-boss",
+  "unitId": "s3-u12",
+  "order": 4,
+  "title": "Обратный отсчёт: Совещание с заказчиком",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Совещание с заказчиком",
+    "body": [
+     "Заказчик приехал. Инженер Ван ждёт от тебя предложений — не отмалчивайся.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u12-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u13-l1",
+  "unitId": "s3-u13",
+  "order": 1,
+  "title": "Инженер: материалы и производство: слова (1)",
+  "newWords": [
+   "w-hangtian",
+   "w-fuhecailiao",
+   "w-tanxianwei",
+   "w-zaihe",
+   "w-yingli",
+   "w-yingbianpian",
+   "w-lv3",
+   "w-gang",
+   "w-tai4",
+   "w-hanjie",
+   "w-jiagong",
+   "w-biaomian",
+   "w-jiegou"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Инженер: материалы и производство». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-hangtian",
+     "w-fuhecailiao",
+     "w-tanxianwei",
+     "w-zaihe",
+     "w-yingli",
+     "w-yingbianpian",
+     "w-lv3",
+     "w-gang",
+     "w-tai4",
+     "w-hanjie",
+     "w-jiagong",
+     "w-biaomian",
+     "w-jiegou"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-hangtian",
+      "w-fuhecailiao",
+      "w-tanxianwei",
+      "w-zaihe",
+      "w-yingli"
+     ],
+     [
+      "w-yingbianpian",
+      "w-lv3",
+      "w-gang",
+      "w-tai4",
+      "w-hanjie"
+     ],
+     [
+      "w-jiagong",
+      "w-biaomian",
+      "w-jiegou"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-hangtian",
+     "w-fuhecailiao",
+     "w-tanxianwei",
+     "w-zaihe",
+     "w-yingli",
+     "w-yingbianpian",
+     "w-lv3",
+     "w-gang",
+     "w-tai4",
+     "w-hanjie",
+     "w-jiagong",
+     "w-biaomian",
+     "w-jiegou"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-hangtian",
+     "w-fuhecailiao",
+     "w-tanxianwei"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-zaihe",
+     "w-yingli",
+     "w-yingbianpian"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-jiegou",
+     "w-biaomian",
+     "w-jiagong",
+     "w-hanjie",
+     "w-tai4",
+     "w-gang",
+     "w-lv3",
+     "w-yingbianpian",
+     "w-yingli",
+     "w-zaihe",
+     "w-tanxianwei",
+     "w-fuhecailiao",
+     "w-hangtian"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u13-l2",
+  "unitId": "s3-u13",
+  "order": 2,
+  "title": "Инженер: материалы и производство: слова (2) и «Сделано из»",
+  "newWords": [
+   "w-zhongliang",
+   "w-zhijing",
+   "w-changdu",
+   "w-houdu",
+   "w-jingdu",
+   "w-danwei",
+   "w-luoshuan",
+   "w-mifeng",
+   "w-yali",
+   "w-shengchan",
+   "w-shebei",
+   "w-suliao",
+   "w-tiji"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-zhongliang",
+     "w-zhijing",
+     "w-changdu",
+     "w-houdu",
+     "w-jingdu",
+     "w-danwei",
+     "w-luoshuan",
+     "w-mifeng",
+     "w-yali",
+     "w-shengchan",
+     "w-shebei",
+     "w-suliao",
+     "w-tiji"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-zhongliang",
+      "w-zhijing",
+      "w-changdu",
+      "w-houdu",
+      "w-jingdu"
+     ],
+     [
+      "w-danwei",
+      "w-luoshuan",
+      "w-mifeng",
+      "w-yali",
+      "w-shengchan"
+     ],
+     [
+      "w-shebei",
+      "w-suliao",
+      "w-tiji"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-zhongliang",
+     "w-zhijing",
+     "w-changdu",
+     "w-houdu",
+     "w-jingdu",
+     "w-danwei",
+     "w-luoshuan",
+     "w-mifeng",
+     "w-yali",
+     "w-shengchan",
+     "w-shebei",
+     "w-suliao",
+     "w-tiji"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-zhongliang",
+     "w-zhijing",
+     "w-changdu"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-houdu",
+     "w-jingdu",
+     "w-danwei"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "«Сделано из»",
+    "body": [
+     "X 是 Y 做的 — «X сделан из Y»: 是复合材料做的.",
+     "Короче — 是铝的 «из алюминия»."
+    ],
+    "sentences": [
+     "s-3-13-02",
+     "s-3-13-07",
+     "s-3-13-24"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-13-02",
+     "s-3-13-07",
+     "s-3-13-24"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-13-02",
+     "s-3-13-24"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-zhongliang",
+     "w-zhijing",
+     "w-changdu",
+     "w-houdu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u13-l3",
+  "unitId": "s3-u13",
+  "order": 3,
+  "title": "Инженер: материалы и производство: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Параметр 是 число",
+    "body": [
+     "Длина, вес, точность называются через 是: 直径是二十毫米, 精度是零点一毫米.",
+     "Десятичная точка — 点."
+    ],
+    "sentences": [
+     "s-3-13-14",
+     "s-3-13-17"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-13-14",
+     "s-3-13-17"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "需要 — «нужно»",
+    "body": [
+     "需要 + существительное или глагол: 这里需要焊接.",
+     "Вопрос: 需要什么？"
+    ],
+    "sentences": [
+     "s-3-13-09"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-13-09"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-13-01",
+     "s-3-13-03",
+     "s-3-13-04",
+     "s-3-13-05",
+     "s-3-13-06",
+     "s-3-13-08",
+     "s-3-13-10",
+     "s-3-13-11",
+     "s-3-13-12",
+     "s-3-13-13",
+     "s-3-13-15",
+     "s-3-13-16",
+     "s-3-13-18",
+     "s-3-13-19",
+     "s-3-13-20",
+     "s-3-13-21",
+     "s-3-13-22",
+     "s-3-13-23",
+     "s-3-13-25"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-13-01",
+     "s-3-13-03",
+     "s-3-13-04",
+     "s-3-13-05"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-13-01",
+     "s-3-13-03",
+     "s-3-13-04"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-13-05",
+     "s-3-13-06",
+     "s-3-13-08"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-hangtian",
+     "w-fuhecailiao",
+     "w-tanxianwei",
+     "w-zhongliang",
+     "w-zhijing",
+     "w-changdu"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u13-boss",
+  "unitId": "s3-u13",
+  "order": 4,
+  "title": "Обратный отсчёт: Материал детали",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Материал детали",
+    "body": [
+     "В цехе. Инженер Ван спрашивает про материал и точность — отвечай по-инженерному коротко.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u13-boss"
+   }
+  ]
+ },
+ {
+  "id": "s3-u14-l1",
+  "unitId": "s3-u14",
+  "order": 1,
+  "title": "Инженер: испытания и качество: слова (1)",
+  "newWords": [
+   "w-celiang",
+   "w-ceshi",
+   "w-canshu",
+   "w-quxian",
+   "w-wucha",
+   "w-guzhang",
+   "w-yuanyin",
+   "w-fenxi",
+   "w-jilu",
+   "w-zhendong",
+   "w-xielou",
+   "w-dianhuo",
+   "w-tuili"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Новые слова",
+    "mascot": "happy",
+    "body": [
+     "Этап «Инженер: испытания и качество». Послушай каждое слово: нажми на звук, выбери голос — носитель или синтез."
+    ],
+    "words": [
+     "w-celiang",
+     "w-ceshi",
+     "w-canshu",
+     "w-quxian",
+     "w-wucha",
+     "w-guzhang",
+     "w-yuanyin",
+     "w-fenxi",
+     "w-jilu",
+     "w-zhendong",
+     "w-xielou",
+     "w-dianhuo",
+     "w-tuili"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-celiang",
+      "w-ceshi",
+      "w-canshu",
+      "w-quxian",
+      "w-wucha"
+     ],
+     [
+      "w-guzhang",
+      "w-yuanyin",
+      "w-fenxi",
+      "w-jilu",
+      "w-zhendong"
+     ],
+     [
+      "w-xielou",
+      "w-dianhuo",
+      "w-tuili"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-celiang",
+     "w-ceshi",
+     "w-canshu",
+     "w-quxian",
+     "w-wucha",
+     "w-guzhang",
+     "w-yuanyin",
+     "w-fenxi",
+     "w-jilu",
+     "w-zhendong",
+     "w-xielou",
+     "w-dianhuo",
+     "w-tuili"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-celiang",
+     "w-ceshi",
+     "w-canshu"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-quxian",
+     "w-wucha",
+     "w-guzhang"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-tuili",
+     "w-dianhuo",
+     "w-xielou",
+     "w-zhendong",
+     "w-jilu",
+     "w-fenxi",
+     "w-yuanyin",
+     "w-guzhang",
+     "w-wucha",
+     "w-quxian",
+     "w-canshu",
+     "w-ceshi",
+     "w-celiang"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u14-l2",
+  "unitId": "s3-u14",
+  "order": 2,
+  "title": "Инженер: испытания и качество: слова (2) и 百分之 — проценты",
+  "newWords": [
+   "w-famen",
+   "w-guandao",
+   "w-dianya",
+   "w-xinhao",
+   "w-hege",
+   "w-tingzhi",
+   "w-jixu",
+   "w-xitong",
+   "w-ruanjian",
+   "w-pingjun",
+   "w-fanwei",
+   "w-baifenzhi",
+   "w-zhengchang"
+  ],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Ещё слова",
+    "body": [
+     "Вторая половина слов этапа."
+    ],
+    "words": [
+     "w-famen",
+     "w-guandao",
+     "w-dianya",
+     "w-xinhao",
+     "w-hege",
+     "w-tingzhi",
+     "w-jixu",
+     "w-xitong",
+     "w-ruanjian",
+     "w-pingjun",
+     "w-fanwei",
+     "w-baifenzhi",
+     "w-zhengchang"
+    ]
+   },
+   {
+    "type": "listen",
+    "series": [
+     [
+      "w-famen",
+      "w-guandao",
+      "w-dianya",
+      "w-xinhao",
+      "w-hege"
+     ],
+     [
+      "w-tingzhi",
+      "w-jixu",
+      "w-xitong",
+      "w-ruanjian",
+      "w-pingjun"
+     ],
+     [
+      "w-fanwei",
+      "w-baifenzhi",
+      "w-zhengchang"
+     ]
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "audio",
+    "items": [
+     "w-famen",
+     "w-guandao",
+     "w-dianya",
+     "w-xinhao",
+     "w-hege",
+     "w-tingzhi",
+     "w-jixu",
+     "w-xitong",
+     "w-ruanjian",
+     "w-pingjun",
+     "w-fanwei",
+     "w-baifenzhi",
+     "w-zhengchang"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "w-famen",
+     "w-guandao",
+     "w-dianya"
+    ]
+   },
+   {
+    "type": "read",
+    "items": [
+     "w-xinhao",
+     "w-hege",
+     "w-tingzhi"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "百分之 — проценты",
+    "body": [
+     "Читается «из ста частей»: 百分之一 — 1 %, 百分之十 — 10 %, 百分之九十九 — 99 %."
+    ],
+    "sentences": [
+     "s-3-14-05"
+    ],
+    "mascot": "thinking"
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-14-05"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-14-05"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "w-famen",
+     "w-guandao",
+     "w-dianya",
+     "w-xinhao"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u14-l3",
+  "unitId": "s3-u14",
+  "order": 3,
+  "title": "Инженер: испытания и качество: фразы",
+  "newWords": [],
+  "parts": [
+   {
+    "type": "explain",
+    "title": "正常 и 合格",
+    "body": [
+     "正常 — «в норме» о параметрах и системах.",
+     "合格 — «годный, прошёл проверку» о детали; брак — 不合格."
+    ],
+    "sentences": [
+     "s-3-14-03",
+     "s-3-14-17",
+     "s-3-14-18"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-14-03",
+     "s-3-14-17",
+     "s-3-14-18"
+    ]
+   },
+   {
+    "type": "explain",
+    "title": "Команды",
+    "body": [
+     "Короткие команды без 请: 停止试验！ 点火！ Просьбы коллеге — с 请: 请记录温度."
+    ],
+    "sentences": [
+     "s-3-14-19",
+     "s-3-14-12",
+     "s-3-14-09"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-14-19",
+     "s-3-14-12",
+     "s-3-14-09"
+    ]
+   },
+   {
+    "type": "sentences",
+    "items": [
+     "s-3-14-01",
+     "s-3-14-02",
+     "s-3-14-04",
+     "s-3-14-06",
+     "s-3-14-07",
+     "s-3-14-08",
+     "s-3-14-10",
+     "s-3-14-11",
+     "s-3-14-13",
+     "s-3-14-14",
+     "s-3-14-15",
+     "s-3-14-16",
+     "s-3-14-20",
+     "s-3-14-21",
+     "s-3-14-22",
+     "s-3-14-23",
+     "s-3-14-24"
+    ]
+   },
+   {
+    "type": "assemble",
+    "items": [
+     "s-3-14-01",
+     "s-3-14-02",
+     "s-3-14-04",
+     "s-3-14-06"
+    ]
+   },
+   {
+    "type": "repeat",
+    "items": [
+     "s-3-14-01",
+     "s-3-14-02",
+     "s-3-14-04"
+    ]
+   },
+   {
+    "type": "sayIt",
+    "items": [
+     "s-3-14-06",
+     "s-3-14-07",
+     "s-3-14-08"
+    ]
+   },
+   {
+    "type": "meaning",
+    "prompt": "text",
+    "items": [
+     "w-celiang",
+     "w-ceshi",
+     "w-canshu",
+     "w-famen",
+     "w-guandao",
+     "w-dianya"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "s3-u14-boss",
+  "unitId": "s3-u14",
+  "order": 4,
+  "title": "Обратный отсчёт: Огневые испытания: пуск",
+  "newWords": [],
+  "boss": {
+   "passPercent": 80
+  },
+  "parts": [
+   {
+    "type": "explain",
+    "title": "Огневые испытания: пуск",
+    "body": [
+     "Финал командировки: стенд, отсчёт, зажигание. Отвечай чётко — здесь всё по-настоящему.",
+     "Наберёшь 80% верных ответов — пуск! Не наберёшь — пуск перенесём, без штрафов."
+    ],
+    "mascot": "celebrate"
+   },
+   {
+    "type": "dialogue",
+    "id": "d-s3-u14-boss"
+   }
+  ]
+ }
+]

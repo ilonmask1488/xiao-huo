@@ -75,7 +75,7 @@ export default defineConfig({
   ],
   test: {
     environment: 'node',
-    setupFiles: ['fake-indexeddb/auto'],
+    setupFiles: ['fake-indexeddb/auto', 'src/content/test-setup.ts'],
     include: ['src/**/*.test.ts', 'scripts/**/*.test.ts'],
   },
 })

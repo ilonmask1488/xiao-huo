@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { Content } from '../src/content/types.ts'
 
-export const CONTENT_DIRS = ['src/content', 'src/content/stage1', 'src/content/story', 'src/content/stage2']
+export const CONTENT_DIRS = ['src/content', 'src/content/stage1', 'src/content/story', 'src/content/stage2', 'src/content/stage3']
 
 export function loadContent(root: string): Content {
   const all = <T>(name: string): T[] =>

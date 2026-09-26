@@ -69,12 +69,16 @@ class Player {
     this.current = null
   }
 
-  /** Играет файл; промис завершается, когда звук доиграл или был прерван следующим. */
-  play(url: string, rate = 1): Promise<void> {
+  /**
+    Играет файл; промис завершается, когда звук доиграл или был прерван следующим.
+    maxMs — страховка: если браузер так и не пришлёт ended (бывает на телефоне под нагрузкой), считаем звук законченным.
+  */
+  play(url: string, rate = 1, maxMs = 30_000): Promise<void> {
     this.stop()
     const el = this.element()
     setState('loading')
     return new Promise<void>((resolve, reject) => {
+      let guard: ReturnType<typeof setTimeout> | undefined
       const done = () => {
         cleanup()
         resolve()
@@ -91,6 +95,7 @@ class Player {
         reject(err)
       }
       const cleanup = () => {
+        clearTimeout(guard)
         el.removeEventListener('ended', onEnded)
         el.removeEventListener('error', onError)
         if (this.current?.resolve === done) this.current = null
@@ -98,6 +103,7 @@ class Player {
       this.current = { resolve: done }
       el.addEventListener('ended', onEnded)
       el.addEventListener('error', onError)
+      guard = setTimeout(onEnded, maxMs)
       el.src = url
       el.playbackRate = rate
       el.play().then(

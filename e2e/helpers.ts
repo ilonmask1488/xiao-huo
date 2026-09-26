@@ -57,8 +57,12 @@ export const STAGE0_BEFORE_BOSS = [
 
 const SUMMARY = /^(Урок пройден|Раунд окончен|Пуск!|Пуск перенесён)$/
 
+/** Хоть что-то, на что можно нажать: экран ещё грузится (контент и звук подтягиваются до первого рендера) или играет образец. */
+const ANY_ACTION =
+  'button:has-text("Получилось"), button:has-text("Дальше"), button:has-text("Сказал — дальше"), button:has-text("Показать ответ"), button[data-sentence], button[class*="meaningBtn"], button[class*="choice"]'
+
 type DialogueJson = { id: string; lines: { sentenceId: string; choices?: string[] }[] }
-const dialogues = ['src/content/stage1/dialogues.json', 'src/content/story/dialogues.json'].flatMap(
+const dialogues = ['src/content/stage1/dialogues.json', 'src/content/stage2/dialogues.json', 'src/content/stage3/dialogues.json', 'src/content/story/dialogues.json'].flatMap(
   (f) => JSON.parse(readFileSync(f, 'utf8')) as DialogueJson[],
 )
 /** Верный ответ реплики: «диалог:номер» → id фразы. */
@@ -75,7 +79,7 @@ async function position(page: Page): Promise<string> {
 /** Выполнить действие и дождаться смены экрана (ответ сначала пишется в базу). */
 async function advance(page: Page, before: string, act: () => Promise<void>): Promise<void> {
   await act()
-  await expect.poll(() => position(page), { timeout: 10_000 }).not.toBe(before)
+  await expect.poll(() => position(page), { timeout: 20_000 }).not.toBe(before)
 }
 
 /** Листать экраны («Дальше», «Получилось»), пока не появится нужный текст. */
@@ -96,7 +100,7 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
     } else if (await option.isVisible()) {
       await option.click()
       await advance(page, pos, () => next.click())
-    } else await good.waitFor({ timeout: 10_000 })
+    } else await page.locator(ANY_ACTION).first().waitFor({ timeout: 20_000 })
   }
   await expect(page.getByText(text, { exact: true })).toBeVisible()
 }
@@ -152,7 +156,7 @@ export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | '
       await advance(page, pos, () => next.click())
     } else {
       // «Повтори вслух» ещё проигрывает образец и паузу — ждём самооценку.
-      await good.waitFor({ timeout: 10_000 })
+      await page.locator(ANY_ACTION).first().waitFor({ timeout: 20_000 })
     }
   }
   await expect(page.getByRole('heading', { name: SUMMARY })).toBeVisible()
