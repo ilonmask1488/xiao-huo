@@ -35,23 +35,43 @@ export function listen(lang = 'zh-CN'): Listening {
   if (!Ctor) throw new Error('unsupported')
   const r = new Ctor()
   r.lang = lang
-  r.interimResults = false
+  // Промежуточные результаты нужны Safari на iPhone: при остановке кнопкой он часто не присылает
+  // окончательный — тогда берём последний промежуточный.
+  r.interimResults = true
   r.maxAlternatives = 3
   r.continuous = false
   let alts: string[] = []
+  let finish: (v: string[]) => void = () => {}
   const result = new Promise<string[]>((resolve, reject) => {
+    let done = false
+    finish = (v) => {
+      if (!done) resolve(v)
+      done = true
+    }
     r.onresult = (e) => {
-      const first = e.results[0]
-      alts = first ? Array.from({ length: first.length }, (_, i) => first[i]!.transcript) : []
+      const last = e.results[e.results.length - 1]
+      const got = last ? Array.from({ length: last.length }, (_, i) => last[i]!.transcript).filter((t) => t.trim()) : []
+      if (got.length) alts = got
     }
     r.onerror = (e) => {
-      if (e.error === 'no-speech' || e.error === 'aborted') resolve([])
-      else reject(new Error(e.error))
+      if (e.error === 'no-speech' || e.error === 'aborted') finish(alts)
+      else if (!done) {
+        done = true
+        reject(new Error(e.error))
+      }
     }
-    r.onend = () => resolve(alts)
+    r.onend = () => finish(alts)
   })
   r.start()
-  return { result, stop: () => r.stop(), cancel: () => r.abort() }
+  return {
+    result,
+    stop: () => {
+      r.stop()
+      // Бывает, что конец так и не приходит — не ждём вечно.
+      setTimeout(() => finish(alts), 1500)
+    },
+    cancel: () => r.abort(),
+  }
 }
 
 const DIGITS = '零一二三四五六七八九'

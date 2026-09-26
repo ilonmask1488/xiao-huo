@@ -4,7 +4,7 @@
 */
 import { useEffect, useState } from 'react'
 import { ru } from '../i18n/ru'
-import { curveOf, type CurvePoint } from '../lib/pitch/pitch'
+import { curvesOf, DecodeError, type CurvePoint } from '../lib/pitch/pitch'
 import s from './PitchChart.module.css'
 
 const W = 320
@@ -13,18 +13,19 @@ const PAD = 12
 /** Полутоны от медианы, которые помещаются на график. */
 const RANGE = 9
 
-type State = { sample: CurvePoint[]; mine: CurvePoint[] } | 'loading' | 'error'
+type State = { sample: CurvePoint[]; mine: CurvePoint[] } | 'loading' | { error: string }
 
 export default function PitchChart({ sampleUrl, mineUrl }: { sampleUrl: string; mineUrl: string }) {
   const [state, setState] = useState<State>('loading')
   useEffect(() => {
     let alive = true
     setState('loading')
-    Promise.all([curveOf(sampleUrl), curveOf(mineUrl)]).then(
-      ([sample, mine]) => alive && setState({ sample, mine }),
+    curvesOf(sampleUrl, mineUrl).then(
+      (curves) => alive && setState(curves),
       (e: unknown) => {
-        console.error(e)
-        if (alive) setState('error')
+        if (!alive) return
+        const t = ru.pitch
+        setState({ error: e instanceof DecodeError ? (e.what === 'mine' ? t.errorMine(e.code) : t.errorSample(e.code)) : t.errorMine(String(e)) })
       },
     )
     return () => {
@@ -34,7 +35,7 @@ export default function PitchChart({ sampleUrl, mineUrl }: { sampleUrl: string; 
 
   const t = ru.pitch
   if (state === 'loading') return <p className={s.note}>{t.loading}</p>
-  if (state === 'error') return <p className={s.note}>{t.error}</p>
+  if ('error' in state) return <p className={s.note}>{state.error}</p>
   const empty = !state.mine.some(Boolean)
 
   return (

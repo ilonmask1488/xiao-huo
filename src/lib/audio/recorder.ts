@@ -15,8 +15,11 @@ export class RecorderError extends Error {
   }
 }
 
-/** Форматы по убыванию предпочтения: Chrome/Android — webm/opus, Safari/iOS — mp4 (AAC). */
-const MIME_CANDIDATES = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm', 'audio/ogg;codecs=opus', 'audio/aac']
+/**
+  Форматы по убыванию предпочтения. mp4 (AAC) — первым: это родной формат Safari/iOS, и он надёжно
+  раскодируется для графика тона (новый Safari умеет и webm, но разбирает его хуже). Chrome без mp4 — webm/opus.
+*/
+const MIME_CANDIDATES = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus', 'audio/aac']
 
 export function recordingSupported(): boolean {
   return (

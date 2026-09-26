@@ -14,7 +14,7 @@ import { Hanzi } from './Chinese'
 import s from './SpeechCheck.module.css'
 import ui from './ui.module.css'
 
-type Result = { heard: string; chars: CharMatch[]; ok: number; total: number } | 'nothing' | 'failed'
+type Result = { heard: string; chars: CharMatch[]; ok: number; total: number } | 'nothing' | { failed: string }
 
 function targetOf(item: Item): string | null {
   if (isSentenceItem(item)) {
@@ -54,8 +54,9 @@ export function SpeechCheck({ item, onBusy }: { item: Item; onBusy?: () => void 
       const alts = await session.current.result
       const best = bestAlternative(target, alts)
       setResult(best && best.heard.trim() ? { heard: best.heard, ...best.match } : 'nothing')
-    } catch {
-      setResult('failed')
+    } catch (e) {
+      console.error('asr', e)
+      setResult({ failed: e instanceof Error ? e.message : String(e) })
     } finally {
       session.current = null
       setPhase('idle')
@@ -99,8 +100,8 @@ export function SpeechCheck({ item, onBusy }: { item: Item; onBusy?: () => void 
         <div className={s.result} role="status">
           {result === 'nothing' ? (
             <span>{ru.asr.nothing}</span>
-          ) : result === 'failed' ? (
-            <span>{ru.asr.failed}</span>
+          ) : 'failed' in result ? (
+            <span>{ru.asr.failed(result.failed)}</span>
           ) : (
             <>
               <span>

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { bestAlternative, compareHanzi, hanziOnly, numbersToHanzi, recognitionSupported } from './recognize'
+import { bestAlternative, compareHanzi, hanziOnly, listen, numbersToHanzi, recognitionSupported } from './recognize'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -32,5 +32,31 @@ describe('распознавание речи (бета)', () => {
     expect(best?.heard).toBe('现在3点')
     expect(best?.match.ok).toBe(4)
     expect(bestAlternative('你好', [])).toBeNull()
+  })
+
+  it('Safari: только промежуточный результат и нет конца — берём последний промежуточный', async () => {
+    vi.useFakeTimers()
+    let inst: { onresult: ((e: unknown) => void) | null } | null = null
+    vi.stubGlobal('window', {
+      webkitSpeechRecognition: class {
+        onresult = null
+        onerror = null
+        onend = null
+        constructor() {
+          inst = this
+        }
+        start() {}
+        stop() {}
+        abort() {}
+      },
+    })
+    const l = listen()
+    const res = (items: string[]) => ({ results: [Object.assign(items.map((transcript) => ({ transcript })), { length: items.length })] })
+    inst!.onresult!(res(['你好']))
+    inst!.onresult!(res(['你好我叫萨沙']))
+    l.stop()
+    await vi.advanceTimersByTimeAsync(1600)
+    expect(await l.result).toEqual(['你好我叫萨沙'])
+    vi.useRealTimers()
   })
 })

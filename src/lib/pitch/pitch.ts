@@ -87,25 +87,62 @@ function smooth(curve: CurvePoint[]): CurvePoint[] {
   })
 }
 
-/** Раскодировать звук (образец или запись) в моно-отсчёты. */
+/** Ошибка разбора с понятной причиной: что именно не раскодировалось и код браузера. */
+export class DecodeError extends Error {
+  readonly what: 'sample' | 'mine'
+  readonly code: string
+  constructor(what: 'sample' | 'mine', code: string) {
+    super(`${what}: ${code}`)
+    this.what = what
+    this.code = code
+  }
+}
+
+type OfflineCtor = new (channels: number, length: number, sampleRate: number) => OfflineAudioContext
+
+/**
+  Раскодировать звук (образец или запись) в моно-отсчёты.
+  OfflineAudioContext не трогает динамик и микрофон: на iPhone обычный AudioContext делит аудиосессию
+  с записью и распознаванием и после них может отказывать. Нет Offline — запасной обычный.
+*/
 export async function decodeAudio(url: string): Promise<{ samples: Float32Array; sampleRate: number }> {
-  const buf = await (await fetch(url)).arrayBuffer()
-  const Ctx = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext
-  const ctx = new Ctx()
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const buf = await res.arrayBuffer()
+  if (!buf.byteLength) throw new Error('empty')
+  const w = window as unknown as { OfflineAudioContext?: OfflineCtor; webkitOfflineAudioContext?: OfflineCtor; webkitAudioContext?: typeof AudioContext }
+  const Offline = w.OfflineAudioContext ?? w.webkitOfflineAudioContext
+  const ctx: BaseAudioContext = Offline ? new Offline(1, 1, 44100) : new (window.AudioContext ?? w.webkitAudioContext!)()
   try {
     const audio = await new Promise<AudioBuffer>((resolve, reject) => {
       // Старый Safari знает только форму с колбэками.
-      const r = ctx.decodeAudioData(buf, resolve, reject) as Promise<AudioBuffer> | undefined
+      const r = ctx.decodeAudioData(buf, resolve, (e) => reject(e ?? new Error('decode'))) as Promise<AudioBuffer> | undefined
       r?.then(resolve, reject)
     })
     const ch = audio.getChannelData(0)
     return { samples: new Float32Array(ch), sampleRate: audio.sampleRate }
   } finally {
-    void ctx.close().catch(() => {})
+    if ('close' in ctx) void (ctx as AudioContext).close().catch(() => {})
   }
 }
 
-export async function curveOf(url: string): Promise<CurvePoint[]> {
-  const { samples, sampleRate } = await decodeAudio(url)
-  return toCurve(extractPitch(samples, sampleRate))
+function codeOf(e: unknown): string {
+  if (e instanceof DOMException || e instanceof Error) return e.name === 'Error' ? e.message : e.name
+  return String(e)
+}
+
+/** Кривые образца и записи — по очереди, чтобы не держать два разбора звука сразу. */
+export async function curvesOf(sampleUrl: string, mineUrl: string): Promise<{ sample: CurvePoint[]; mine: CurvePoint[] }> {
+  const one = async (url: string, what: 'sample' | 'mine') => {
+    try {
+      const { samples, sampleRate } = await decodeAudio(url)
+      return toCurve(extractPitch(samples, sampleRate))
+    } catch (e) {
+      console.error(`pitch ${what}`, e)
+      throw new DecodeError(what, codeOf(e))
+    }
+  }
+  const sample = await one(sampleUrl, 'sample')
+  const mine = await one(mineUrl, 'mine')
+  return { sample, mine }
 }

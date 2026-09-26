@@ -10,10 +10,10 @@ describe('запись голоса', () => {
     expect(pickMime()).toBeUndefined()
   })
 
-  it('формат: webm/opus, если есть, иначе mp4 (Safari)', () => {
+  it('формат: mp4, если есть (Safari), иначе webm/opus (Chrome)', () => {
     vi.stubGlobal('MediaRecorder', { isTypeSupported: (m: string) => m === 'audio/webm;codecs=opus' || m === 'audio/mp4' })
-    expect(pickMime()).toBe('audio/webm;codecs=opus')
-    vi.stubGlobal('MediaRecorder', { isTypeSupported: (m: string) => m === 'audio/mp4' })
     expect(pickMime()).toBe('audio/mp4')
+    vi.stubGlobal('MediaRecorder', { isTypeSupported: (m: string) => m === 'audio/webm;codecs=opus' })
+    expect(pickMime()).toBe('audio/webm;codecs=opus')
   })
 })
