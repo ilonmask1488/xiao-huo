@@ -16,6 +16,8 @@ import { LaunchBlockScreen } from '../features/session/LaunchBlockScreen'
 import { LaunchScreen } from '../features/session/LaunchScreen'
 import { SettingsScreen } from '../features/settings/SettingsScreen'
 import { TonesScreen } from '../features/tones/TonesScreen'
+import { TrainScreen } from '../features/train/TrainScreen'
+import { GamesScreen } from '../features/games/GamesScreen'
 import { configureAudio } from '../lib/audio/audio'
 import { configureFeedback } from '../lib/audio/sfx'
 import { applyAppearance, useSettings } from '../lib/settings/settings'
@@ -53,6 +55,8 @@ export function App() {
           <Route path="game/:id" element={<GameRoute />} />
           <Route path="map" element={<CourseScreen />} />
           <Route path="tones" element={<TonesScreen />} />
+          <Route path="train" element={<TrainScreen />} />
+          <Route path="games" element={<GamesScreen />} />
           <Route path="dictionary" element={<DictionaryScreen />} />
           <Route path="word/:id" element={<WordScreen />} />
           <Route path="more" element={<MoreScreen />} />

@@ -1,6 +1,6 @@
 # 小火 · Сяо Хо — PWA для разговорного китайского
 
-- ТЗ: `docs/SPEC.md`. Работаем по фазам (§16); фаза считается готовой, когда зелёные `npm test`, `npm run check:content`, `npm run e2e`, `npm run build`, обновлён README и сняты скриншоты `docs/screens/phaseN/` (Playwright, не панель браузера — она даёт артефакты при прокрутке в эмуляции).
+- ТЗ: `docs/SPEC.md`; ТЗ по понятности интерфейса — `docs/UX.md` (при противоречии прав он). Работаем по фазам (§16); фаза считается готовой, когда зелёные `npm test`, `npm run check:content`, `npm run e2e`, `npm run build`, обновлён README и сняты скриншоты `docs/screens/phaseN/` (Playwright, не панель браузера — она даёт артефакты при прокрутке в эмуляции).
 - Стек: Vite 8 + React 19 + TypeScript 6 (strict), CSS-модули + токены в `src/styles/tokens.css`, Dexie 4, vite-plugin-pwa, HashRouter.
 - Все тексты интерфейса — в `src/i18n/ru.ts`. Иероглифы — только через `<Hanzi>` (lang="zh-CN"), пиньинь — через `<Pinyin numeric="ni3 hao3">`; в данных пиньинь с цифрами, ü = v.
 - База: только JSON-совместимые значения (время — число мс). Схема в `src/lib/db/schema.ts`: старые версии не правим, добавляем новую + фикстуру в `migrations.test.ts` + `migrateBackup`.

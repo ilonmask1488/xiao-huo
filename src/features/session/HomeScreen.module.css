@@ -1,24 +1,24 @@
 .home {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
   min-height: 100dvh;
   padding: calc(var(--safe-top) + var(--space-4)) calc(var(--gutter) + var(--safe-right))
     calc(var(--nav-h) + var(--safe-bottom) + var(--space-4)) calc(var(--gutter) + var(--safe-left));
 }
 
-.telemetry {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  color: var(--ink-2);
-  font-size: var(--fs-caption);
-  font-variant-numeric: tabular-nums;
+.head {
+  display: grid;
+  gap: var(--space-1);
 }
 
-.telemetry strong {
-  color: var(--ink);
-  font-weight: 500;
+.head h1 {
+  font-size: var(--fs-title);
+}
+
+.where {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
 }
 
 .banners {
@@ -26,137 +26,131 @@
   gap: var(--space-2);
 }
 
-/* ——— Маскот и знакомство ——— */
-.hero {
+/* ——— Главная карточка: занятие на сегодня ——— */
+.card {
   display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: end;
   gap: var(--space-3);
-}
-
-.bubble {
-  position: relative;
-  align-self: center;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4);
   border: 1.5px solid var(--ink);
-  border-radius: 14px 14px 14px 2px;
+  border-radius: var(--radius-m);
   background: var(--surface);
-  font-size: var(--fs-small);
-  line-height: 1.45;
 }
 
-.name {
-  display: grid;
-  gap: 2px;
-}
-
-.nameHanzi {
-  font-size: var(--fs-hanzi-card);
-  line-height: 1;
-}
-
-.namePinyin {
+.card h2 {
   font-size: var(--fs-lead);
-  font-weight: 500;
 }
 
-.nameNote {
-  color: var(--ink-2);
-  font-size: var(--fs-caption);
-  max-width: 30em;
-}
-
-/* ——— Циклограмма ——— */
-.timeline h2 {
-  font-size: var(--fs-small);
-  font-weight: 500;
-  color: var(--ink-2);
-  margin-bottom: var(--space-2);
-}
-
-.bar {
-  display: flex;
-  height: 14px;
-  border: 1.5px solid var(--ink);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.segment {
-  border-left: 1.5px solid var(--ink);
-  background-image: repeating-linear-gradient(-45deg, var(--line-strong) 0 1px, transparent 1px 5px);
-}
-
-.segment:first-child {
-  border-left: 0;
-  background: var(--flame);
-}
-
-.rows {
-  margin: var(--space-2) 0 0;
+.plan {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.row {
+.planLine {
   display: grid;
-  grid-template-columns: 3.4em 1fr auto;
-  gap: 0 var(--space-3);
+  grid-template-columns: 1.4em 1fr;
   align-items: baseline;
-  padding: 6px 0;
-  border-bottom: var(--hairline) solid var(--line);
+  gap: var(--space-1);
 }
 
-.row > span:nth-child(2) {
-  display: grid;
-}
-
-.row:last-child {
-  border-bottom: 0;
-}
-
-.row[data-later] {
+.planLine[data-done] {
   color: var(--ink-2);
+  text-decoration: line-through;
+  text-decoration-color: var(--line-strong);
 }
 
-.row[data-later] .blockTitle {
-  font-weight: 400;
+.planMark {
+  color: var(--flame);
+  font-family: var(--font-mono);
+  text-align: center;
 }
 
-.t {
+.planLine[data-done] .planMark {
+  color: var(--t2);
+}
+
+.time {
   color: var(--ink-2);
-  font-size: var(--fs-caption);
+  font-size: var(--fs-small);
 }
 
-.blockTitle {
+.details {
+  justify-self: start;
+  color: var(--ink);
+  font-size: var(--fs-small);
   font-weight: 500;
 }
 
-.blockWhat {
+/* ——— Следующий урок ——— */
+.next {
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: var(--hairline) solid var(--line);
+}
+
+.next h2 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+
+.nextTitle {
+  font-weight: 500;
+}
+
+.hint {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.nextBtn {
+  justify-self: start;
+  width: auto;
+  min-height: var(--tap);
+  font-size: var(--fs-body);
+}
+
+/* ——— Маскот: внизу, маленький ——— */
+.hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.bubble {
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: 12px 12px 12px 2px;
+  background: var(--surface);
+  font-size: var(--fs-small);
+  line-height: 1.4;
+}
+
+.name {
+  margin-top: var(--space-1);
   color: var(--ink-2);
   font-size: var(--fs-caption);
-  line-height: 1.3;
 }
 
-.min {
-  font-size: var(--fs-small);
-  font-variant-numeric: tabular-nums;
-}
-
-/* ——— Кнопка пуска: всегда в зоне большого пальца, над навигацией ——— */
+/* ——— Главная кнопка: всегда в зоне большого пальца, над навигацией ——— */
 .launch {
   position: sticky;
   bottom: calc(var(--nav-h) + var(--safe-bottom));
   z-index: 1;
   display: grid;
   gap: var(--space-2);
-  margin: auto calc(var(--gutter) * -1) calc(var(--space-4) * -1);
-  padding: var(--space-5) var(--gutter) var(--space-3);
-  background: linear-gradient(to bottom, transparent, var(--paper) var(--space-5));
+  justify-items: center;
+  margin: 0 calc(var(--gutter) * -1) calc(var(--space-4) * -1);
+  padding: var(--space-4) var(--gutter) var(--space-3);
+  background: linear-gradient(to bottom, transparent, var(--paper) var(--space-4));
   text-align: center;
 }
 
-.launchHint {
-  color: var(--ink-2);
-  font-size: var(--fs-caption);
+.doneLabel {
+  color: var(--t2);
+  font-weight: 600;
 }

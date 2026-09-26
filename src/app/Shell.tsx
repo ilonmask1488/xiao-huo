@@ -1,19 +1,20 @@
 import { Component, useEffect, useState, type ReactNode } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useRegisterSW } from 'virtual:pwa-register/react'
-import { IconDictionary, IconLaunch, IconMap, IconMore, IconTones } from '../components/Icons'
+import { IconCourse, IconDictionary, IconProfile, IconToday, IconTrain } from '../components/Icons'
 import { Banner } from '../components/ui'
 import ui from '../components/ui.module.css'
 import { ru } from '../i18n/ru'
 import { player } from '../lib/audio/player'
 import s from './Shell.module.css'
 
+// Названия вкладок говорят, что внутри (UX §2.1); адреса старые — ссылки и закладки не ломаются.
 const TABS = [
-  { to: '/', label: ru.nav.launch, icon: <IconLaunch /> },
-  { to: '/map', label: ru.nav.map, icon: <IconMap /> },
-  { to: '/tones', label: ru.nav.tones, icon: <IconTones /> },
+  { to: '/', label: ru.nav.today, icon: <IconToday /> },
+  { to: '/map', label: ru.nav.course, icon: <IconCourse /> },
+  { to: '/train', label: ru.nav.train, icon: <IconTrain /> },
   { to: '/dictionary', label: ru.nav.dictionary, icon: <IconDictionary /> },
-  { to: '/more', label: ru.nav.more, icon: <IconMore /> },
+  { to: '/more', label: ru.nav.profile, icon: <IconProfile /> },
 ]
 
 /** Экраны, где нижняя навигация мешает (урок и игры во весь экран). */

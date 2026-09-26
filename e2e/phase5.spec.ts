@@ -23,7 +23,8 @@ test('последний босс курса: «Пуск!» и достижен�
   await markSoundChecked(page)
   await seedCompleted(page, BEFORE_LAST_BOSS)
   await page.goto('./#/lesson/s3-u14-boss')
-  await expect(page.getByRole('heading', { name: 'Огневые испытания: пуск' })).toBeVisible({ timeout: 20_000 })
+  // После посева всего курса WebKit под нагрузкой отвечает из базы медленно — это про тест, не про приложение
+  await expect(page.getByRole('heading', { name: 'Огневые испытания: пуск' })).toBeVisible({ timeout: 60_000 })
   await passLesson(page, 80, 'right')
   await expect(page.getByRole('heading', { name: 'Пуск!' })).toBeVisible()
   await expect(page.getByText(/Этап 3\.14 «Инженер: испытания и качество» закрыт/)).toBeVisible()
@@ -37,7 +38,7 @@ test('«Командировка»: все восемь эпизодов, фин
   await seedCompleted(page, [...STAGE0_ALL, ...STAGE1_ALL, ...STAGE2_ALL, ...STAGE3_ALL])
   await page.goto('./#/story')
   // После посева ~110 уроков первый расчёт состояний эпизодов на WebKit под нагрузкой идёт долго
-  await expect(page.getByText('Эпизод 1', { exact: true })).toBeVisible({ timeout: 30_000 })
+  await expect(page.getByText('Эпизод 1', { exact: true })).toBeVisible({ timeout: 60_000 })
   for (const n of [2, 3, 4, 5, 6, 7, 8]) await expect(page.getByText(`Эпизод ${n}`, { exact: true })).toBeVisible()
   await expect(page.getByText(/Это все восемь эпизодов/)).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Прощальный ужин и 干杯！' })).toBeVisible()

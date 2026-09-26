@@ -41,7 +41,7 @@ export function LaunchScreen() {
   let t0 = 0
 
   return (
-    <Screen title={t.title} back paper>
+    <Screen title={t.title} subtitle={t.subtitle} back paper>
       {(row.totalDue ?? 0) > DUE_OVERLOAD && <p className={s.capped}>{ru.review.capped(row.totalDue!, cardsTaken)}</p>}
       <ol className={s.blocks}>
         {segments.map((seg) => {

@@ -22,7 +22,7 @@ test('пуск: сегменты по ≤3 минуты, повторение к
   await seedCompleted(page, STAGE0_ALL)
   await page.reload() // при запуске у слов пройденных уроков появляются карточки
   await page.goto('./#/session')
-  await expect(page.getByRole('heading', { level: 1, name: 'Пуск' })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Занятие на сегодня' })).toBeVisible()
   // Первым — разминка-игра, дальше куски повторения не длиннее 3 минут
   const minutes = await page.locator('[class*="min"]').allTextContents()
   expect(minutes.length).toBeGreaterThan(3)

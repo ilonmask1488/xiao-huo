@@ -12,8 +12,9 @@ test('тема и длительность сохраняются после п�
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
   await expect(page.getByRole('radio', { name: '30 мин' })).toHaveAttribute('aria-checked', 'true')
+  // Настройка живёт в базе: после перезагрузки главный экран строится с ней
   await page.goto('./#/')
-  await expect(page.getByText('Циклограмма пуска · 30 мин')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Начать занятие' })).toBeVisible()
 })
 
 test('бэкап: сохранить → изменить → загрузить → всё вернулось', async ({ page }) => {

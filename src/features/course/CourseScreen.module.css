@@ -1,23 +1,21 @@
-.stack {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stage {
+/* ——— Ракета: небольшая иллюстрация прогресса ——— */
+.rocket {
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: var(--space-4);
-  min-height: 128px;
-  scroll-margin-top: var(--space-4);
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
 }
 
-.drawing {
+.rocketSvg {
   display: block;
-  width: 64px;
-  height: 100%;
-  min-height: 128px;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   overflow: visible;
+}
+
+.rocketCaption {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
 }
 
 .part {
@@ -27,13 +25,13 @@
   stroke-dasharray: 4 3;
 }
 
-.stage[data-status='built'] .part {
+g[data-status='built'] .part {
   fill: var(--surface);
   stroke: var(--ink);
   stroke-dasharray: none;
 }
 
-.stage[data-status='partial'] .part {
+g[data-status='partial'] .part {
   stroke: var(--ink-2);
 }
 
@@ -44,17 +42,54 @@
   stroke-width: 1.5;
 }
 
-.text {
+/* ——— Ступени ——— */
+.stages {
   display: grid;
-  align-content: start;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  scroll-margin-top: var(--space-4);
+}
+
+.stageHead {
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  gap: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: 1.5px solid var(--line-strong);
+}
+
+.stage[data-current] .stageHead {
+  border-bottom-color: var(--ink);
+}
+
+.mark {
+  padding-top: 2px;
+  color: var(--ink-2);
+  font-size: var(--fs-lead);
+  text-align: center;
+}
+
+.stage[data-status='built'] .mark {
+  color: var(--t2);
+}
+
+.stage[data-current] .mark {
+  color: var(--flame);
+}
+
+.stageText {
+  display: grid;
   gap: 2px;
-  padding: var(--space-3) 0 var(--space-4);
-  border-bottom: var(--hairline) solid var(--line);
   min-width: 0;
 }
 
-.stage:last-child .text {
-  border-bottom: 0;
+.stageText h2 {
+  font-size: var(--fs-lead);
 }
 
 .num {
@@ -63,6 +98,7 @@
 }
 
 .what {
+  color: var(--ink-2);
   font-size: var(--fs-small);
 }
 
@@ -92,6 +128,14 @@
   background: var(--surface);
 }
 
+.unit[data-current] {
+  border: 1.5px solid var(--ink);
+}
+
+.unit[data-done] {
+  background: transparent;
+}
+
 .unit[data-empty] {
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +158,18 @@
   text-align: left;
 }
 
+.unitMark {
+  color: var(--ink-2);
+}
+
+.unit[data-done] .unitMark {
+  color: var(--t2);
+}
+
+.unit[data-current] .unitMark {
+  color: var(--flame);
+}
+
 .code {
   font-size: var(--fs-small);
   color: var(--ink-2);
@@ -133,8 +189,20 @@
   font-size: var(--fs-caption);
 }
 
+.here {
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  background: var(--flame);
+  color: #fff;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
 .unitAction {
   justify-self: start;
+  width: auto;
+  min-height: var(--tap);
+  font-size: var(--fs-body);
 }
 
 .lessons {
@@ -177,6 +245,7 @@
 
 .offlineBtn {
   justify-self: start;
+  margin-top: var(--space-2);
   padding-left: 0;
   font-size: var(--fs-small);
   font-weight: 500;

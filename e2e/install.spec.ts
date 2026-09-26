@@ -8,6 +8,6 @@ test('iPhone: подсказка «Установи на главный экра
   await banner.getByRole('button', { name: 'Закрыть' }).click()
   await expect(banner).toBeHidden()
   await page.reload()
-  await expect(page.getByRole('button', { name: 'Начать пуск' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Начать занятие' })).toBeVisible()
   await expect(banner).toBeHidden()
 })

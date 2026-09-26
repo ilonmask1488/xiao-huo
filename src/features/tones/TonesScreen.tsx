@@ -1,14 +1,12 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Hanzi, Pinyin } from '../../components/Chinese'
 import { PlayButton } from '../../components/Play'
 import { ToneChart } from '../../components/ToneChart'
 import { Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
-import { content, lessonById } from '../../content'
-import { gameAvailable, gameMaterial, UNLOCKED_BY } from '../../lib/games/games'
-import { completedLessonIds } from '../../lib/lesson/progress'
+import { content } from '../../content'
 import type { Tone, Word } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { db } from '../../lib/db/db'
@@ -35,7 +33,12 @@ export function TonesScreen() {
   const examples = pairExamples()
   const navigate = useNavigate()
   const stats = useLiveQuery(() => db.toneStats.toArray(), [], [])
-  const material = useLiveQuery(async () => gameMaterial(await completedLessonIds()), [])
+  // Из «Тренировки» ведёт ссылка прямо на тепловую карту
+  const { hash } = useLocation()
+  const heatRef = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    if (hash === '#heatmap') heatRef.current?.scrollIntoView({ block: 'start' })
+  }, [hash])
   const [cell, setCell] = useState<string | null>(null)
   const heat = buildHeatmap(stats)
   const hasData = heatmapHasData(stats)
@@ -65,26 +68,11 @@ export function TonesScreen() {
         ))}
       </ul>
 
-      <div className={s.games}>
-        <h2>{t.gamesTitle}</h2>
-        <ul className={s.gameList}>
-          {(['shooter', 'speed', 'pingpong', 'twins', 'assemble'] as const).map((g) => {
-            const open = material ? gameAvailable(g, material) : false
-            return (
-              <li key={g}>
-                <button type="button" className={s.game} data-locked={!open || undefined} onClick={() => navigate(`/game/${g}`)}>
-                  <span className={s.gameTitle}>{ru.games[g].title}</span>
-                  <span className={s.gameWhat}>
-                    {open ? ru.games[g].what : ru.games.lockedShort(lessonById.get(UNLOCKED_BY[g])?.title ?? '')}
-                  </span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <h2 className={s.heatTitle} id="heatmap" ref={heatRef}>
+        {t.heatmapTitle}
+      </h2>
+      <p className={s.hint}>{t.heatmapWhat}</p>
 
-      <h2 className={s.heatTitle}>{t.heatmapTitle}</h2>
       {hasData ? (
         <>
           <p className={s.hint}>{t.heatmapLegend}</p>

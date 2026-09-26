@@ -3,7 +3,7 @@ import { markSoundChecked, passLesson, seedCompleted, STAGE0_BEFORE_BOSS } from 
 
 test('игры закрыты, пока нет пройденного материала, и объясняют почему', async ({ page }) => {
   await markSoundChecked(page)
-  await page.goto('./#/tones')
+  await page.goto('./#/games')
   await expect(page.getByText('откроется после урока «Высоко и вниз: 1-й и 4-й тон»')).toBeVisible()
   await page.goto('./#/game/pingpong')
   await expect(page.getByText(/откроется после урока «Пары с 1-м и 2-м тоном впереди»/)).toBeVisible()

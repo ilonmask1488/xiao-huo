@@ -1,31 +1,58 @@
+/* «Профиль» (UX §2.1): сводка прогресса простыми словами и разделы — статистика, настройки, звук, о приложении. */
+import { useLiveQuery } from 'dexie-react-hooks'
 import { Link } from 'react-router-dom'
 import { IconChevron } from '../../components/Icons'
 import { Mascot } from '../../components/Mascot'
 import { Screen } from '../../components/ui'
 import { ru } from '../../i18n/ru'
 import { manifest } from '../../lib/audio/manifest'
+import { db } from '../../lib/db/db'
+import { computeStreak, localDate } from '../../lib/progress/streak'
 import s from './MoreScreen.module.css'
 
-const ITEMS = ['stats', 'soundCheck', 'echo', 'story', 'settings', 'about'] as const
+const ITEMS = ['stats', 'settings', 'soundCheck', 'about'] as const
 const PATHS: Record<(typeof ITEMS)[number], string> = {
   stats: '/stats',
-  soundCheck: '/sound-check',
-  echo: '/echo',
-  story: '/story',
   settings: '/settings',
+  soundCheck: '/sound-check',
   about: '/about',
 }
 
 export function MoreScreen() {
+  const t = ru.more
+  const summary = useLiveQuery(async () => {
+    const days = await db.days.toArray()
+    return {
+      streak: computeStreak(new Map(days.map((d) => [d.date, d.seconds])), localDate()).days,
+      dv: days.reduce((sum, d) => sum + d.dv, 0),
+      words: (await db.cards.where('kind').equals(1).count()),
+    }
+  }, [])
   return (
-    <Screen title={ru.more.title}>
+    <Screen title={t.title}>
+      <dl className={s.summary}>
+        <div>
+          <dt>{t.streak}</dt>
+          <dd className="mono">{summary?.streak ?? 0}</dd>
+        </div>
+        <div>
+          <dt>
+            {t.points} <span className={s.dim}>· {t.pointsNote}</span>
+          </dt>
+          <dd className="mono">{summary?.dv ?? 0}</dd>
+        </div>
+        <div>
+          <dt>{t.words}</dt>
+          <dd className="mono">{summary?.words ?? 0}</dd>
+        </div>
+      </dl>
       <ul className={s.list}>
         {ITEMS.map((key) => (
           <li key={key}>
             <Link to={PATHS[key]} className={s.item}>
               <span>
-                <span className={s.itemTitle}>{ru.more.items[key].title}</span>
-                <span className={s.itemWhat}>{ru.more.items[key].what}</span>
+                <span className={s.itemTitle}>{t.items[key].title}</span>
+                <span className={s.itemWhat}>{t.items[key].what}</span>
               </span>
               <IconChevron />
             </Link>

@@ -1,28 +1,32 @@
+/*
+  «Курс» (UX §2.3): сначала список ступеней и этапов с чётким статусом (✓ пройдено · ● ты здесь · ○ впереди),
+  ракета — небольшая иллюстрация прогресса сверху. При открытии прокручивается к «Ты здесь».
+*/
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
 import { lessonById, unitsOfStage, wordById } from '../../content'
-import { hanziChars, hanziDataUrl } from '../../lib/hanzi'
 import type { Unit } from '../../content/types'
 import { ru } from '../../i18n/ru'
 import { entriesFor, urlOf } from '../../lib/audio/manifest'
 import { db } from '../../lib/db/db'
 import type { LessonProgressRow } from '../../lib/db/types'
-import { itemsOf, buildLesson } from '../../lib/lesson/build'
+import { hanziChars, hanziDataUrl } from '../../lib/hanzi'
+import { buildLesson, itemsOf } from '../../lib/lesson/build'
 import { nextLessonId } from '../../lib/lesson/progress'
 import s from './CourseScreen.module.css'
 
-/* Контуры частей ракеты, сверху вниз: обтекатель, вторая ступень, первая, стартовый стол. */
+type Status = 'none' | 'partial' | 'built'
+
+/** Части ракеты по ступеням, в координатах 64×128: носовой обтекатель, две ступени, стартовый стол. */
 const PARTS: Record<number, string> = {
   3: 'M32 4 C48 22 56 60 56 128 L8 128 C8 60 16 22 32 4 Z',
   2: 'M8 0 H56 V128 H8 Z',
   1: 'M8 0 H56 V128 H8 Z M8 70 L0 118 L0 128 L8 128 M56 70 L64 118 L64 128 L56 128 M22 128 L42 128',
   0: 'M2 40 H62 V54 H2 Z M10 54 V128 M54 54 V128 M10 90 L54 128 M54 90 L10 128 M26 40 L28 0 M38 40 L36 0',
 }
-
-type Status = 'built' | 'partial' | 'none'
 
 export function CourseScreen() {
   // Ждём прогресс из базы: иначе раскрылся бы «первый» этап вместо текущего.
@@ -31,55 +35,71 @@ export function CourseScreen() {
   const byLesson = new Map(progress.map((p) => [p.lessonId, p]))
   const completed = new Set(progress.filter((p) => p.completedAt).map((p) => p.lessonId))
   const current = nextLessonId(completed)
-  const stages = [...ru.stages].reverse()
   const currentRef = useRef<HTMLLIElement>(null)
   useEffect(() => {
     if (loaded) currentRef.current?.scrollIntoView({ block: 'start' })
   }, [loaded])
 
   if (!loaded) return null
+  const stages = ru.stages.map((st) => {
+    const units = unitsOfStage(st.n)
+    const lessonIds = units.flatMap((u) => u.lessons)
+    const done = lessonIds.filter((id) => completed.has(id)).length
+    const status: Status = lessonIds.length && done === lessonIds.length ? 'built' : done > 0 ? 'partial' : 'none'
+    const isCurrent = units.some((u) => u.lessons.includes(current ?? ''))
+    return { ...st, units, lessonIds, done, status, isCurrent }
+  })
+  const built = stages.filter((st) => st.status === 'built').length
+
   return (
     <Screen title={ru.map.title} subtitle={ru.map.subtitle} paper>
-      <ol className={s.stack}>
-        {stages.map((st) => {
-          const units = unitsOfStage(st.n)
-          const lessonIds = units.flatMap((u) => u.lessons)
-          const done = lessonIds.filter((id) => completed.has(id)).length
-          const status: Status = lessonIds.length && done === lessonIds.length ? 'built' : done > 0 ? 'partial' : 'none'
-          const isCurrent = units.some((u) => u.lessons.includes(current ?? ''))
-          return (
-            <li key={st.n} className={s.stage} data-status={status} ref={isCurrent || (!current && st.n === 0) ? currentRef : undefined}>
-              <svg className={s.drawing} viewBox="0 0 64 128" preserveAspectRatio="none" aria-hidden>
-                {status === 'partial' && (
+      <figure className={s.rocket}>
+        <svg viewBox="0 0 512 64" className={s.rocketSvg} aria-hidden>
+          {/* Ракета нарисована вертикально (нос вверху), здесь лежит на боку носом вправо */}
+          <g transform="translate(448 0) rotate(90) translate(0 -64)">
+            {stages.map((st) => (
+              <g key={st.n} transform={`translate(0 ${(3 - st.n) * 128})`} data-status={st.status}>
+                {st.status === 'partial' && (
                   <clipPath id={`fill-${st.n}`}>
-                    <rect x="0" y={128 - (128 * done) / lessonIds.length} width="64" height="128" />
+                    <rect x="0" y={128 - (128 * st.done) / st.lessonIds.length} width="64" height="128" />
                   </clipPath>
                 )}
                 <path className={s.part} d={PARTS[st.n]} vectorEffect="non-scaling-stroke" />
-                {status === 'partial' && (
-                  <path className={s.partFill} d={PARTS[st.n]} clipPath={`url(#fill-${st.n})`} vectorEffect="non-scaling-stroke" />
-                )}
-              </svg>
-              <div className={s.text}>
-                <span className={`${s.num} mono`}>ступень {st.n}</span>
+                {st.status === 'partial' && <path className={s.partFill} d={PARTS[st.n]} clipPath={`url(#fill-${st.n})`} vectorEffect="non-scaling-stroke" />}
+              </g>
+            ))}
+          </g>
+        </svg>
+        <figcaption className={s.rocketCaption}>{ru.map.rocketCaption(built, stages.length)}</figcaption>
+      </figure>
+
+      <ol className={s.stages}>
+        {stages.map((st) => (
+          <li key={st.n} className={s.stage} data-status={st.status} data-current={st.isCurrent || undefined} ref={st.isCurrent || (!current && st.n === 0) ? currentRef : undefined}>
+            <div className={s.stageHead}>
+              <span className={`${s.mark} mono`} aria-hidden>
+                {st.status === 'built' ? '✓' : st.isCurrent ? '●' : '○'}
+              </span>
+              <div className={s.stageText}>
+                <span className={`${s.num} mono`}>{ru.map.stage(st.n)}</span>
                 <h2>{st.title}</h2>
                 <p className={s.what}>{st.what}</p>
                 <p className={s.meta}>
+                  <span>{st.lessonIds.length ? ru.map.lessonsDone(st.done, st.lessonIds.length) : ru.map.preparing}</span>
                   <span>{st.when}</span>
-                  <span>{lessonIds.length ? ru.map.lessonsDone(done, lessonIds.length) : ru.map.preparing}</span>
                 </p>
-                {units.length > 0 && (
-                  <ul className={s.units}>
-                    {units.map((u) => (
-                      <UnitRow key={u.id} unit={u} completed={completed} progress={byLesson} current={current} />
-                    ))}
-                  </ul>
-                )}
-                {lessonIds.length > 0 && <OfflineAudio lessonIds={lessonIds} />}
               </div>
-            </li>
-          )
-        })}
+            </div>
+            {st.units.length > 0 && (
+              <ul className={s.units}>
+                {st.units.map((u) => (
+                  <UnitRow key={u.id} unit={u} completed={completed} progress={byLesson} current={current} />
+                ))}
+              </ul>
+            )}
+            {st.lessonIds.length > 0 && <OfflineAudio lessonIds={st.lessonIds} />}
+          </li>
+        ))}
       </ol>
     </Screen>
   )
@@ -113,11 +133,16 @@ function UnitRow({
   const firstOpen = unit.lessons.find((id) => !completed.has(id)) ?? unit.lessons[0]!
   const inProgress = unit.lessons.some((id) => (progress.get(id)?.step ?? 0) > 0)
   const action = done === total ? ru.map.redo : done > 0 || inProgress ? ru.map.continue : ru.map.open
+  const mark = done === total ? '✓' : hasCurrent ? '●' : '○'
   return (
-    <li className={s.unit}>
+    <li className={s.unit} data-current={hasCurrent || undefined} data-done={done === total || undefined}>
       <button type="button" className={s.unitHead} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        <span className={`${s.unitMark} mono`} aria-hidden>
+          {mark}
+        </span>
         <span className={`${s.code} mono`}>{unit.code}</span>
         <span className={s.unitTitle}>{unit.title}</span>
+        {hasCurrent && <span className={s.here}>{ru.map.youAreHere}</span>}
         <span className={s.unitMeta}>{ru.map.lessonsDone(done, total)}</span>
       </button>
       {open && (
@@ -140,7 +165,12 @@ function UnitRow({
           })}
         </ol>
       )}
-      {!open && (
+      {hasCurrent && (
+        <button type="button" className={`${ui.primary} ${s.unitAction}`} onClick={() => navigate(`/lesson/${current}`)}>
+          {ru.map.continue}
+        </button>
+      )}
+      {!open && !hasCurrent && (
         <button type="button" className={`${ui.secondary} ${s.unitAction}`} onClick={() => navigate(`/lesson/${firstOpen}`)}>
           {action}
         </button>
@@ -154,13 +184,12 @@ function UnitRow({
   )
 }
 
-/** «Скачать звук ступени для офлайна»: все звуки уроков — в кэш. */
+/** «Скачать звук ступени для офлайна»: все звуки уроков и порядок черт новых слов — в кэш. */
 function OfflineAudio({ lessonIds }: { lessonIds: string[] }) {
   const [state, setState] = useState<{ done: number; total: number } | null>(null)
   const run = async () => {
     const items = new Set(lessonIds.flatMap((id) => buildLesson(lessonById.get(id)!).flatMap(itemsOf)))
     const chars = lessonIds.flatMap((id) => lessonById.get(id)!.newWords.flatMap((w) => hanziChars(wordById.get(w)?.hanzi ?? '')))
-    // Звук уроков и порядок черт новых слов — чтобы в полёте работало всё.
     const urls = [...new Set([...[...items].flatMap((i) => entriesFor(i).map(urlOf)), ...chars.map(hanziDataUrl)])]
     setState({ done: 0, total: urls.length })
     let done = 0

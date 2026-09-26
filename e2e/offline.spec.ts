@@ -4,7 +4,7 @@ test('после первой загрузки приложение открыв
   test.skip(browserName === 'webkit', 'service worker в WebKit-сборке Playwright под Windows не поддерживается')
 
   await page.goto('./')
-  await expect(page.getByRole('button', { name: 'Начать пуск' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Начать занятие' })).toBeVisible()
   // Ждём, пока service worker установится и закэширует оболочку.
   await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.ready
@@ -15,9 +15,9 @@ test('после первой загрузки приложение открыв
 
   await context.setOffline(true)
   await page.reload()
-  await expect(page.getByRole('button', { name: 'Начать пуск' })).toBeVisible()
-  await page.getByRole('navigation').getByRole('link', { name: 'Тоны' }).click()
-  await expect(page.getByRole('heading', { level: 1, name: 'Тренажёр тонов' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Начать занятие' })).toBeVisible()
+  await page.getByRole('navigation').getByRole('link', { name: 'Тренировка' }).click()
+  await expect(page.getByRole('heading', { level: 1, name: 'Тренировка' })).toBeVisible()
   // Шрифт тоже из кэша: ǚ рисуется IBM Plex Sans, а не запасным
   const fontOk = await page.evaluate(() => document.fonts.check('16px "IBM Plex Sans"', 'ǚ'))
   expect(fontOk).toBe(true)

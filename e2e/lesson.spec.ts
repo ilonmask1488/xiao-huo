@@ -15,18 +15,17 @@ test('первый урок от начала до итогов; карта и �
   test.setTimeout(180_000)
   await markSoundChecked(page)
   await page.goto('./')
-  await page.getByRole('button', { name: 'Начать пуск' }).click()
-  await expect(page.getByRole('heading', { level: 1, name: 'Пуск' })).toBeVisible()
-  await page.getByRole('button', { name: 'Начать: Новое' }).click()
+  // «Начать занятие» ведёт сразу в первый блок — для новичка это новый урок
+  await page.getByRole('button', { name: 'Начать занятие' }).click()
   await expect(page.getByRole('heading', { name: 'Один слог — пять слов' })).toBeVisible()
 
   const stats = await passLesson(page)
   expect(stats).toMatch(/Точность/)
   await expect(page.getByText('Зажигание')).toBeVisible()
 
-  await page.getByRole('button', { name: 'Дальше по пуску' }).click()
+  await page.getByRole('button', { name: 'Дальше по занятию' }).click()
   // После первого урока открылись разминка и эхо
-  await expect(page.getByRole('button', { name: /^(Начать|Продолжить): Разминка$/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: /^(Начать|Продолжить): Разминка: игра на тоны$/ })).toBeVisible()
 
   await page.goto('./#/map')
   await expect(page.getByText('1 из 3 уроков').first()).toBeVisible()
@@ -40,7 +39,7 @@ test('урок можно прервать и продолжить с того �
   await page.getByRole('button', { name: 'Дальше', exact: true }).click()
   await expect(page.getByText('3 из 28')).toBeVisible()
   await page.getByRole('button', { name: 'Выйти из урока' }).click()
-  await expect(page.getByRole('heading', { level: 1, name: 'Карта полёта' })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Курс' })).toBeVisible()
   await page.goto('./#/lesson/s0-u1-l1')
   await expect(page.getByText('3 из 28')).toBeVisible()
   await expect(page.locator('[data-start-at]')).toHaveAttribute('data-start-at', '2')

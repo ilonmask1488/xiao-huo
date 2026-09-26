@@ -1,0 +1,40 @@
+.list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 64px;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.item > span {
+  display: grid;
+  gap: 2px;
+}
+
+.item svg {
+  flex: none;
+  color: var(--ink-2);
+}
+
+.itemTitle {
+  font-weight: 600;
+}
+
+.itemWhat {
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
