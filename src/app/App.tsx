@@ -4,10 +4,15 @@ import { CourseScreen } from '../features/course/CourseScreen'
 import { DictionaryScreen } from '../features/dictionary/DictionaryScreen'
 import { AboutScreen, MoreScreen } from '../features/more/MoreScreen'
 import { EchoScreen, StatsScreen, StoryScreen } from '../features/more/PlaceholderScreens'
+import { LessonScreen } from '../features/lesson/LessonScreen'
+import { SoundCheckScreen } from '../features/lesson/SoundCheck'
 import { HomeScreen } from '../features/session/HomeScreen'
-import { SessionScreen } from '../features/session/SessionScreen'
+import { LaunchBlockScreen } from '../features/session/LaunchBlockScreen'
+import { LaunchScreen } from '../features/session/LaunchScreen'
 import { SettingsScreen } from '../features/settings/SettingsScreen'
 import { TonesScreen } from '../features/tones/TonesScreen'
+import { configureAudio } from '../lib/audio/audio'
+import { configureFeedback } from '../lib/audio/sfx'
 import { applyAppearance, useSettings } from '../lib/settings/settings'
 import { Shell } from './Shell'
 
@@ -17,6 +22,10 @@ import { Shell } from './Shell'
 */
 export function App() {
   const settings = useSettings()
+  useEffect(() => {
+    configureAudio(settings)
+    configureFeedback(settings)
+  }, [settings])
   useEffect(() => {
     applyAppearance(settings)
     if (settings.theme !== 'system') return
@@ -31,7 +40,10 @@ export function App() {
       <Routes>
         <Route element={<Shell />}>
           <Route index element={<HomeScreen />} />
-          <Route path="session" element={<SessionScreen />} />
+          <Route path="session" element={<LaunchScreen />} />
+          <Route path="lesson/:id" element={<LessonScreen />} />
+          <Route path="launch/:block" element={<LaunchBlockScreen />} />
+          <Route path="sound-check" element={<SoundCheckScreen />} />
           <Route path="map" element={<CourseScreen />} />
           <Route path="tones" element={<TonesScreen />} />
           <Route path="dictionary" element={<DictionaryScreen />} />

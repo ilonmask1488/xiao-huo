@@ -29,3 +29,9 @@ playwright-report
 blob-report
 .playwright
 
+
+# Python
+.venv
+__pycache__
+scripts/.cache
+

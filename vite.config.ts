@@ -29,8 +29,9 @@ export default defineConfig({
         scope: '.',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#121417',
-        theme_color: '#121417',
+        // Нейтральный графит: не режет глаз ни на светлой, ни на тёмной системе.
+        background_color: '#2b2e33',
+        theme_color: '#2b2e33',
         categories: ['education'],
         icons: [
           { src: 'pwa-64x64.png', sizes: '64x64', type: 'image/png' },

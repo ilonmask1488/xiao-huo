@@ -47,9 +47,13 @@ export function applyAppearance(s: Pick<Settings, 'theme' | 'toneColors'>): void
   if (s.toneColors) delete root.dataset.toneColors
   else root.dataset.toneColors = 'off'
 
-  const dark =
-    s.theme === 'dark' || (s.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#121417' : '#f5f2ea')
+  // Два meta theme-color с media: при «системной» теме браузер выбирает сам,
+  // при ручной — оба получают цвет выбранной темы.
+  const metas = document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]')
+  metas.forEach((m) => {
+    const own = m.media.includes('dark') ? '#121417' : '#f5f2ea'
+    m.content = s.theme === 'system' ? own : s.theme === 'dark' ? '#121417' : '#f5f2ea'
+  })
 
   try {
     localStorage.setItem(MIRROR_KEY, JSON.stringify({ theme: s.theme, toneColors: s.toneColors }))

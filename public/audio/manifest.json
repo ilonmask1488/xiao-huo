@@ -1,0 +1,361 @@
+{
+ "version": 1,
+ "sources": {
+  "chen-wang": {
+   "name": "audio-cmn — слоги, диктор Chen Wang",
+   "url": "https://github.com/hugolpz/audio-cmn",
+   "license": "CC BY-SA",
+   "credit": "Chen Wang; сборка и обработка — Hugo Lopez (PLIDAM, INALCO)"
+  },
+  "yue-tan": {
+   "name": "audio-cmn — слова HSK, диктор Yue Tan (Shtooka, cmn-caen-tan)",
+   "url": "https://github.com/hugolpz/audio-cmn",
+   "license": "CC BY-SA",
+   "credit": "Yue Tan; сборка и обработка — Hugo Lopez (PLIDAM, INALCO)"
+  },
+  "edge-xiaoxiao": {
+   "name": "Синтез речи Microsoft Edge, голос zh-CN-XiaoxiaoNeural",
+   "url": "https://github.com/rany2/edge-tts",
+   "license": "синтез для личного использования",
+   "credit": "Microsoft"
+  },
+  "edge-yunxi": {
+   "name": "Синтез речи Microsoft Edge, голос zh-CN-YunxiNeural",
+   "url": "https://github.com/rany2/edge-tts",
+   "license": "синтез для личного использования",
+   "credit": "Microsoft"
+  }
+ },
+ "syllables": {
+  "ba1": {
+   "file": "syl/ba1-a6124a38.mp3",
+   "source": "chen-wang",
+   "ms": 460
+  },
+  "ba2": {
+   "file": "syl/ba2-047604d9.mp3",
+   "source": "chen-wang",
+   "ms": 690
+  },
+  "ba3": {
+   "file": "syl/ba3-49fb4a00.mp3",
+   "source": "chen-wang",
+   "ms": 1166
+  },
+  "ba4": {
+   "file": "syl/ba4-95c7cd8c.mp3",
+   "source": "chen-wang",
+   "ms": 410
+  },
+  "ba5": {
+   "voice": "female",
+   "file": "syl/ba5-b1960e87.mp3",
+   "source": "edge-xiaoxiao",
+   "ms": 420,
+   "tts": "吧"
+  },
+  "bu1": {
+   "file": "syl/bu1-8b1146ab.mp3",
+   "source": "chen-wang",
+   "ms": 810
+  },
+  "bu2": {
+   "file": "syl/bu2-5d33165b.mp3",
+   "source": "chen-wang",
+   "ms": 980
+  },
+  "bu3": {
+   "file": "syl/bu3-30258e48.mp3",
+   "source": "chen-wang",
+   "ms": 670
+  },
+  "bu4": {
+   "file": "syl/bu4-2610f6df.mp3",
+   "source": "chen-wang",
+   "ms": 310
+  },
+  "da1": {
+   "file": "syl/da1-8e815161.mp3",
+   "source": "chen-wang",
+   "ms": 460
+  },
+  "da2": {
+   "file": "syl/da2-62f4feea.mp3",
+   "source": "chen-wang",
+   "ms": 700
+  },
+  "da3": {
+   "file": "syl/da3-c4d7165b.mp3",
+   "source": "chen-wang",
+   "ms": 630
+  },
+  "da4": {
+   "file": "syl/da4-f637cd6b.mp3",
+   "source": "chen-wang",
+   "ms": 350
+  },
+  "ma1": {
+   "file": "syl/ma1-61f24d60.mp3",
+   "source": "chen-wang",
+   "ms": 520
+  },
+  "ma2": {
+   "file": "syl/ma2-244f8a30.mp3",
+   "source": "chen-wang",
+   "ms": 380
+  },
+  "ma3": {
+   "file": "syl/ma3-046e70f7.mp3",
+   "source": "chen-wang",
+   "ms": 880
+  },
+  "ma4": {
+   "file": "syl/ma4-a5c03d21.mp3",
+   "source": "chen-wang",
+   "ms": 440
+  },
+  "ma5": {
+   "voice": "female",
+   "file": "syl/ma5-1b5a0fef.mp3",
+   "source": "edge-xiaoxiao",
+   "ms": 410,
+   "tts": "吗"
+  },
+  "ni1": {
+   "file": "syl/ni1-ccf760f0.mp3",
+   "source": "chen-wang",
+   "ms": 500
+  },
+  "ni2": {
+   "file": "syl/ni2-c22d10d1.mp3",
+   "source": "chen-wang",
+   "ms": 550
+  },
+  "ni3": {
+   "file": "syl/ni3-33d54f5b.mp3",
+   "source": "chen-wang",
+   "ms": 800
+  },
+  "ni4": {
+   "file": "syl/ni4-a7e3b152.mp3",
+   "source": "chen-wang",
+   "ms": 480
+  },
+  "shi1": {
+   "file": "syl/shi1-a80d3823.mp3",
+   "source": "chen-wang",
+   "ms": 1120
+  },
+  "shi2": {
+   "file": "syl/shi2-dcbe942d.mp3",
+   "source": "chen-wang",
+   "ms": 1224
+  },
+  "shi3": {
+   "file": "syl/shi3-6040260c.mp3",
+   "source": "chen-wang",
+   "ms": 1090
+  },
+  "shi4": {
+   "file": "syl/shi4-39c8ef1f.mp3",
+   "source": "chen-wang",
+   "ms": 610
+  },
+  "wo1": {
+   "file": "syl/wo1-80053cb5.mp3",
+   "source": "chen-wang",
+   "ms": 540
+  },
+  "wo2": {
+   "file": "syl/wo2-7263d969.mp3",
+   "source": "chen-wang",
+   "ms": 510
+  },
+  "wo3": {
+   "file": "syl/wo3-0edf6e5e.mp3",
+   "source": "chen-wang",
+   "ms": 720
+  },
+  "wo4": {
+   "file": "syl/wo4-75d7886b.mp3",
+   "source": "chen-wang",
+   "ms": 490
+  },
+  "wu1": {
+   "file": "syl/wu1-016e6493.mp3",
+   "source": "chen-wang",
+   "ms": 792
+  },
+  "wu2": {
+   "file": "syl/wu2-2d71d00e.mp3",
+   "source": "chen-wang",
+   "ms": 690
+  },
+  "wu3": {
+   "file": "syl/wu3-499db4d7.mp3",
+   "source": "chen-wang",
+   "ms": 1200
+  },
+  "wu4": {
+   "file": "syl/wu4-1fa89632.mp3",
+   "source": "chen-wang",
+   "ms": 550
+  },
+  "yi1": {
+   "file": "syl/yi1-0cedbc9a.mp3",
+   "source": "chen-wang",
+   "ms": 780
+  },
+  "yi2": {
+   "file": "syl/yi2-106ffd96.mp3",
+   "source": "chen-wang",
+   "ms": 830
+  },
+  "yi3": {
+   "file": "syl/yi3-613c8432.mp3",
+   "source": "chen-wang",
+   "ms": 840
+  },
+  "yi4": {
+   "file": "syl/yi4-5c19e203.mp3",
+   "source": "chen-wang",
+   "ms": 440
+  }
+ },
+ "texts": {
+  "不": [
+   {
+    "voice": "native",
+    "file": "w/8fa7401e90-n-a2e868bb.mp3",
+    "source": "yue-tan",
+    "ms": 460
+   },
+   {
+    "voice": "female",
+    "file": "w/8fa7401e90-f-bd5624b5.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 390
+   },
+   {
+    "voice": "male",
+    "file": "w/8fa7401e90-m-3ea183b5.mp3",
+    "source": "edge-yunxi",
+    "ms": 340
+   }
+  ],
+  "你": [
+   {
+    "voice": "native",
+    "file": "w/5630b886f9-n-7c8a7ccd.mp3",
+    "source": "yue-tan",
+    "ms": 720
+   },
+   {
+    "voice": "female",
+    "file": "w/5630b886f9-f-b40d0a82.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 400
+   },
+   {
+    "voice": "male",
+    "file": "w/5630b886f9-m-7c025f54.mp3",
+    "source": "edge-yunxi",
+    "ms": 450
+   }
+  ],
+  "你好": [
+   {
+    "voice": "female",
+    "file": "w/440ee0853a-f-c5f15ba2.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 590
+   },
+   {
+    "voice": "male",
+    "file": "w/440ee0853a-m-4bf388ad.mp3",
+    "source": "edge-yunxi",
+    "ms": 440
+   }
+  ],
+  "是": [
+   {
+    "voice": "native",
+    "file": "w/30160a21b9-n-b16bad0b.mp3",
+    "source": "yue-tan",
+    "ms": 790
+   },
+   {
+    "voice": "female",
+    "file": "w/30160a21b9-f-62c678b1.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 470
+   },
+   {
+    "voice": "male",
+    "file": "w/30160a21b9-m-2f2a677b.mp3",
+    "source": "edge-yunxi",
+    "ms": 490
+   }
+  ],
+  "我": [
+   {
+    "voice": "native",
+    "file": "w/34f201bc50-n-5a5a5095.mp3",
+    "source": "yue-tan",
+    "ms": 970
+   },
+   {
+    "voice": "female",
+    "file": "w/34f201bc50-f-65297b6b.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 400
+   },
+   {
+    "voice": "male",
+    "file": "w/34f201bc50-m-0f6ceb05.mp3",
+    "source": "edge-yunxi",
+    "ms": 530
+   }
+  ],
+  "谢谢": [
+   {
+    "voice": "native",
+    "file": "w/3d43bc74a6-n-98fb7a6e.mp3",
+    "source": "yue-tan",
+    "ms": 750
+   },
+   {
+    "voice": "female",
+    "file": "w/3d43bc74a6-f-5d3c471c.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 630
+   },
+   {
+    "voice": "male",
+    "file": "w/3d43bc74a6-m-cee24d6e.mp3",
+    "source": "edge-yunxi",
+    "ms": 470
+   }
+  ],
+  "再见": [
+   {
+    "voice": "native",
+    "file": "w/82202bb725-n-71259f23.mp3",
+    "source": "yue-tan",
+    "ms": 830
+   },
+   {
+    "voice": "female",
+    "file": "w/82202bb725-f-612324b8.mp3",
+    "source": "edge-xiaoxiao",
+    "ms": 610
+   },
+   {
+    "voice": "male",
+    "file": "w/82202bb725-m-40e43954.mp3",
+    "source": "edge-yunxi",
+    "ms": 550
+   }
+  ]
+ }
+}

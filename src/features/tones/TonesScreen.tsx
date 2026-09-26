@@ -1,47 +1,45 @@
+import { useLiveQuery } from 'dexie-react-hooks'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Hanzi, Pinyin } from '../../components/Chinese'
+import { PlayButton } from '../../components/Play'
+import { ToneChart } from '../../components/ToneChart'
 import { Screen } from '../../components/ui'
+import ui from '../../components/ui.module.css'
+import { content } from '../../content'
+import type { Tone } from '../../content/types'
 import { ru } from '../../i18n/ru'
+import { db } from '../../lib/db/db'
+import { buildHeatmap, heatmapHasData, PAIR_TONES } from '../../lib/progress/heatmap'
 import s from './TonesScreen.module.css'
 
-/* Шкала Чао: уровень 1 (низ) … 5 (верх) → координата y в рисунке 72×52. */
-const X0 = 14
-const X1 = 68
-const y = (level: number) => 46 - (level - 1) * 9.5
-
-const CURVES: Record<number, string> = {
-  1: `M${X0} ${y(5)} L${X1} ${y(5)}`, // 55
-  2: `M${X0} ${y(3)} Q${(X0 + X1) / 2} ${y(3) + 2} ${X1} ${y(5)}`, // 35
-  3: `M${X0} ${y(2)} Q${X0 + 16} ${y(1) + 6} ${X0 + 22} ${y(1)} T${X1} ${y(4)}`, // 214
-  4: `M${X0} ${y(5)} L${X1} ${y(1)}`, // 51
-  5: `M${(X0 + X1) / 2 - 5} ${y(2.5)} L${(X0 + X1) / 2 + 5} ${y(2.3)}`, // короткий, без контура
-}
-
-function Contour({ tone }: { tone: number }) {
-  return (
-    <svg className={`${s.contour} tone-${tone}`} viewBox="0 0 72 52" aria-hidden>
-      {[1, 2, 3, 4, 5].map((l) => (
-        <g key={l}>
-          <line className={s.level} x1={X0} x2={X1} y1={y(l)} y2={y(l)} />
-          <text className={s.levelLabel} x={2} y={y(l) + 2.5}>
-            {l}
-          </text>
-        </g>
-      ))}
-      <path className={s.curve} d={CURVES[tone]} />
-    </svg>
-  )
-}
-
-const PAIR_LABELS = ['1', '2', '3', '4', 'н']
+/** Пример слова для каждой ячейки таблицы тоновых пар (слова с меткой «pair:13»). */
+export const PAIR_EXAMPLES = new Map(
+  content.words.flatMap((w) => {
+    const cell = w.tags.find((t) => t.startsWith('pair:'))?.slice(5)
+    return cell ? [[cell, w] as const] : []
+  }),
+)
 
 export function TonesScreen() {
   const t = ru.tones
+  const navigate = useNavigate()
+  const stats = useLiveQuery(() => db.toneStats.toArray(), [], [])
+  const [cell, setCell] = useState<string | null>(null)
+  const heat = buildHeatmap(stats)
+  const hasData = heatmapHasData(stats)
+  const pingPongReady = PAIR_EXAMPLES.size > 0
+  const selected = cell ? heat.flat().find((c) => c.pair === cell) : undefined
+  const example = cell ? PAIR_EXAMPLES.get(cell) : undefined
+
   return (
     <Screen title={t.title} subtitle={t.subtitle}>
       <ul className={s.list}>
         {t.list.map((tone) => (
           <li key={tone.tone} className={s.tone}>
-            <Contour tone={tone.tone} />
+            <div className={s.contour}>
+              <ToneChart tones={[tone.tone as Tone]} />
+            </div>
             <div>
               <div className={s.name}>{tone.name}</div>
               <div className={s.shape}>{tone.shape}</div>
@@ -50,33 +48,100 @@ export function TonesScreen() {
             <div className={s.example}>
               <Hanzi className={s.exampleHanzi}>{tone.hanzi}</Hanzi>
               <Pinyin numeric={tone.syl} className={s.exampleSyl} />
-              <span className={s.exampleRu}>{tone.ru}</span>
             </div>
+            <PlayButton item={tone.syl} label={`Послушать ${tone.name}`} size="s" />
           </li>
         ))}
       </ul>
 
-      <h2>{t.heatmapTitle}</h2>
-      <div className={s.heatmap} role="table" aria-label={t.heatmapTitle}>
-        <span />
-        {PAIR_LABELS.map((l, i) => (
-          <span key={`c${l}`} className={`${s.hLabel} tone-${i + 1}`} role="columnheader">
-            {l}
-          </span>
-        ))}
-        {PAIR_LABELS.map((row, r) => (
-          <div key={`r${row}`} role="row" style={{ display: 'contents' }}>
-            <span className={`${s.hLabel} tone-${r + 1}`} role="rowheader">
-              {row}
-            </span>
-            {PAIR_LABELS.map((col) => (
-              <span key={col} className={s.cell} role="cell" aria-label={`${row}+${col}: ${t.heatmapEmpty}`} />
+      {pingPongReady && (
+        <div className={s.games}>
+          <h2>{t.gamesTitle}</h2>
+          <div className={s.gameButtons}>
+            <button type="button" className={ui.secondary} onClick={() => navigate('/game/shooter')}>
+              {ru.games.shooter.title}
+            </button>
+            <button type="button" className={ui.secondary} onClick={() => navigate('/game/pingpong')}>
+              {ru.games.pingpong.title}
+            </button>
+            <button type="button" className={ui.secondary} onClick={() => navigate('/game/twins')}>
+              {ru.games.twins.title}
+            </button>
+          </div>
+        </div>
+      )}
+
+      <h2 className={s.heatTitle}>{t.heatmapTitle}</h2>
+      {hasData ? (
+        <>
+          <p className={s.hint}>{t.heatmapLegend}</p>
+          <div className={s.heatmap} role="grid" aria-label={t.heatmapTitle}>
+            <span />
+            {PAIR_TONES.map((b) => (
+              <span key={`c${b}`} className={`${s.hLabel} tone-${b}`} role="columnheader">
+                {ru.lesson.toneShort(Number(b))}
+              </span>
+            ))}
+            {heat.map((row, r) => (
+              <div key={r} role="row" style={{ display: 'contents' }}>
+                <span className={`${s.hLabel} tone-${r + 1}`} role="rowheader">
+                  {ru.lesson.toneShort(r + 1)}
+                </span>
+                {row.map((c) => {
+                  const ex = PAIR_EXAMPLES.get(c.pair)
+                  return (
+                    <button
+                      key={c.pair}
+                      type="button"
+                      role="gridcell"
+                      className={s.cell}
+                      data-empty={c.errorRate === null || undefined}
+                      aria-pressed={cell === c.pair}
+                      style={c.errorRate === null ? undefined : { ['--err' as string]: String(c.errorRate) }}
+                      aria-label={`${c.pair[0]}+${c.pair[1]}: ${c.errorRate === null ? t.heatmapEmpty : t.errorsPct(Math.round(c.errorRate * 100))}`}
+                      disabled={!ex}
+                      onClick={() => setCell(c.pair === cell ? null : c.pair)}
+                    >
+                      {ex && <Hanzi className={s.cellHanzi}>{ex.hanzi}</Hanzi>}
+                    </button>
+                  )
+                })}
+              </div>
             ))}
           </div>
-        ))}
-      </div>
-      <p className={s.hint}>{t.heatmapHint}</p>
-      <p className={s.soon}>{t.soon}</p>
+          <div className={s.legend} aria-hidden>
+            <span>{t.legendLow}</span>
+            <span className={s.legendBar} />
+            <span>{t.legendHigh}</span>
+          </div>
+          {selected && example && (
+            <div className={s.cellPanel}>
+              <PlayButton item={example.id} label={`Послушать ${example.hanzi}`} />
+              <div>
+                <Hanzi className={s.exampleHanzi}>{example.hanzi}</Hanzi> <Pinyin numeric={example.pinyin} className={s.exampleSyl} />
+                <div className={s.shape}>
+                  {example.ru.join(', ')} ·{' '}
+                  {selected.errorRate === null ? t.heatmapEmpty : t.errorsOf(selected.attempts, Math.round(selected.errorRate * 100))}
+                </div>
+              </div>
+              <button type="button" className={ui.primary} onClick={() => navigate(`/game/pingpong?focus=${selected.pair}`)}>
+                {t.trainPair}
+              </button>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className={s.empty}>
+          <p>{t.heatmapEmptyText}</p>
+          {pingPongReady ? (
+            <button type="button" className={ui.primary} onClick={() => navigate('/game/pingpong')}>
+              {t.play}
+            </button>
+          ) : (
+            <p className={s.hint}>{t.heatmapLater}</p>
+          )}
+        </div>
+      )}
     </Screen>
   )
 }

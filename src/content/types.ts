@@ -1,7 +1,16 @@
-/* Модель учебного контента (ТЗ §9.1). Пиньинь хранится с цифрами: «gong1 cheng2 shi1», ü — v. */
+/* Модель учебного контента (ТЗ §9.1 + уроки ступени 0). Пиньинь хранится с цифрами: «gong1 cheng2 shi1», ü — v. */
+/** 1–4 и 5 — нейтральный (тот же тип, что в lib/pinyin). */
+export type Tone = 1 | 2 | 3 | 4 | 5
 
-export type WordId = string
+export type WordId = string // всегда начинается с «w-»
 export type SentenceId = string
+export type LessonId = string
+
+/** Слог с тоном: «ma3», «lv4». Нейтральный — 5. */
+export type Syllable = string
+
+/** Что озвучить: слог («ma3») или слово (id «w-nihao»). */
+export type Item = Syllable | WordId
 
 export type Word = {
   id: WordId
@@ -16,6 +25,7 @@ export type Word = {
   audio?: string
   example?: SentenceId
   mnemonic?: string
+  note?: string
   reviewed: boolean
 }
 
@@ -42,12 +52,54 @@ export type Dialogue = {
   cultureNote?: string
 }
 
+/** Пример в объяснении: слог + иероглиф + перевод (妈 mā — мама). */
+export type Example = { syl: Syllable; hanzi?: string; ru?: string }
+
+/** Контраст для «Какой слог?»: чем различаются варианты. */
+export type Contrast = { label: string; skill: 'initial' | 'final' | 'tone' }
+
+export type LessonPart =
+  | {
+      type: 'explain'
+      title: string
+      body: string[]
+      /** графики тонов по шкале Чао */
+      chart?: Tone[]
+      /** кнопки прослушивания */
+      examples?: Example[]
+      words?: WordId[]
+      /** показать «словарный → как звучит» для этих слов */
+      sandhi?: WordId[]
+      mascot?: 'happy' | 'thinking' | 'wink' | 'oops' | 'celebrate'
+    }
+  | { type: 'listen'; title?: string; series: Item[][] }
+  | { type: 'repeat'; items: Item[] }
+  | { type: 'guessTone'; items: Syllable[]; choices: Tone[] }
+  | { type: 'whichSyllable'; contrast: Contrast; items: { answer: Syllable; options: Syllable[] }[] }
+  | { type: 'guessPair'; items: WordId[] }
+  | { type: 'read'; items: Item[] }
+
+export type Lesson = {
+  id: LessonId
+  unitId: string
+  order: number
+  title: string
+  /** слова, которые урок вводит (попадают в словарь после урока) */
+  newWords: WordId[]
+  parts: LessonPart[]
+  /** «босс» — итоговый тест с порогом успеха */
+  boss?: { passPercent: number }
+}
+
 export type Unit = {
   id: string
   stage: 0 | 1 | 2 | 3
   order: number
+  /** «0.1» — номер для людей */
+  code: string
   title: string
   goals: string[]
+  lessons: LessonId[]
   newWords: WordId[]
   sentences: SentenceId[]
   dialogues: string[]
@@ -55,4 +107,10 @@ export type Unit = {
   boss: string
 }
 
-export type Content = { units: Unit[]; words: Word[]; sentences: Sentence[]; dialogues: Dialogue[] }
+export type Content = {
+  units: Unit[]
+  lessons: Lesson[]
+  words: Word[]
+  sentences: Sentence[]
+  dialogues: Dialogue[]
+}

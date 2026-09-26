@@ -37,8 +37,9 @@ test('навигация по всем разделам', async ({ page }) => {
   }
   await nav.getByRole('link', { name: 'Пуск' }).click()
   await page.getByRole('button', { name: 'Начать пуск' }).click()
-  await expect(page.getByRole('heading', { level: 1, name: /Стартовый стол/ })).toBeVisible()
-  await expect(nav).toBeHidden() // занятие — во весь экран
+  await expect(page.getByRole('heading', { level: 1, name: 'Пуск' })).toBeVisible()
+  await page.getByRole('button', { name: 'Начать: Новое' }).click()
+  await expect(nav).toBeHidden() // урок — во весь экран
 })
 
 test('ни на одном экране нет горизонтальной прокрутки, иероглифы помечены zh-CN', async ({ page }) => {
@@ -49,7 +50,7 @@ test('ни на одном экране нет горизонтальной пр
     expect(overflow, path).toBeLessThanOrEqual(0)
   }
   await page.goto('./#/tones')
-  const hanzi = page.getByText('妈', { exact: true })
+  const hanzi = page.getByText('妈', { exact: true }).first()
   await expect(hanzi).toHaveAttribute('lang', 'zh-CN')
 })
 

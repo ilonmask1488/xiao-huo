@@ -1,10 +1,11 @@
-import { Component, useEffect, type ReactNode } from 'react'
+import { Component, useEffect, useState, type ReactNode } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useRegisterSW } from 'virtual:pwa-register/react'
 import { IconDictionary, IconLaunch, IconMap, IconMore, IconTones } from '../components/Icons'
 import { Banner } from '../components/ui'
 import ui from '../components/ui.module.css'
 import { ru } from '../i18n/ru'
+import { player } from '../lib/audio/player'
 import s from './Shell.module.css'
 
 const TABS = [
@@ -15,18 +16,19 @@ const TABS = [
   { to: '/more', label: ru.nav.more, icon: <IconMore /> },
 ]
 
-/** Экраны, где нижняя навигация мешает (занятие во весь экран). */
-const FULLSCREEN = ['/session']
+/** Экраны, где нижняя навигация мешает (урок и игры во весь экран). */
+const FULLSCREEN = ['/lesson/', '/launch/', '/game/']
 
 export function Shell() {
   const { pathname } = useLocation()
-  const fullscreen = FULLSCREEN.includes(pathname)
+  const fullscreen = FULLSCREEN.some((p) => pathname.startsWith(p))
+  const audioError = useAudioError()
   return (
     <div className={s.app}>
       <ErrorBoundary>
         <Outlet />
       </ErrorBoundary>
-      <UpdateToasts />
+      <UpdateToasts audioError={audioError} />
       {!fullscreen && (
         <nav className={s.nav} aria-label="Разделы">
           <ul className={s.navList}>
@@ -45,7 +47,19 @@ export function Shell() {
   )
 }
 
-function UpdateToasts() {
+/** Последняя ошибка звука — показывается 6 секунд. */
+function useAudioError(): { message: string | null; close: () => void } {
+  const [message, setMessage] = useState<string | null>(null)
+  useEffect(() => player.onError((m) => setMessage(m)), [])
+  useEffect(() => {
+    if (!message) return
+    const t = setTimeout(() => setMessage(null), 6000)
+    return () => clearTimeout(t)
+  }, [message])
+  return { message, close: () => setMessage(null) }
+}
+
+function UpdateToasts({ audioError }: { audioError: { message: string | null; close: () => void } }) {
   const {
     needRefresh: [needRefresh, setNeedRefresh],
     offlineReady: [offlineReady, setOfflineReady],
@@ -58,9 +72,12 @@ function UpdateToasts() {
     const t = setTimeout(() => setOfflineReady(false), 4000)
     return () => clearTimeout(t)
   }, [offlineReady, setOfflineReady])
-  if (!needRefresh && !offlineReady) return null
+  if (!needRefresh && !offlineReady && !audioError.message) return null
   return (
     <div className={s.toasts}>
+      {audioError.message && (
+        <Banner onClose={audioError.close}>{audioError.message}</Banner>
+      )}
       {needRefresh && (
         <Banner
           action={ru.banners.updateAction}

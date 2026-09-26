@@ -9,6 +9,7 @@ import { ru } from '../../i18n/ru'
 import { downloadBackup, shouldRemindBackup } from '../../lib/backup/backup'
 import { db } from '../../lib/db/db'
 import { detectPlatform, isStandalone, useInstallPrompt } from '../../lib/pwa/install'
+import { computeStreak, localDate } from '../../lib/progress/streak'
 import { planSession } from '../../lib/session/plan'
 import { useSettings } from '../../lib/settings/settings'
 import s from './HomeScreen.module.css'
@@ -21,7 +22,8 @@ export function HomeScreen() {
   const plan = planSession(settings.sessionMinutes)
   const telemetry = useLiveQuery(async () => {
     const days = await db.days.toArray()
-    return { days: days.length, dv: days.reduce((sum, d) => sum + d.dv, 0) }
+    const streak = computeStreak(new Map(days.map((d) => [d.date, d.seconds])), localDate())
+    return { days: streak.days, dv: days.reduce((sum, d) => sum + d.dv, 0) }
   }, [])
   const [greeting] = useState(() => ru.greetings[dayOfYear() % ru.greetings.length]!)
 

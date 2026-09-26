@@ -16,7 +16,7 @@
 .filters {
   display: flex;
   gap: var(--space-2);
-  margin-top: var(--space-3);
+  margin: var(--space-3) 0 var(--space-2);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -28,19 +28,30 @@
   border: var(--hairline) solid var(--line-strong);
   border-radius: 22px;
   background: none;
-  color: var(--ink-2);
   font-size: var(--fs-small);
 }
 
-.chip:disabled {
-  cursor: default;
+.chip[aria-checked='true'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.list {
+  display: grid;
+}
+
+.nothing {
+  margin-top: var(--space-5);
+  color: var(--ink-2);
+  text-align: center;
 }
 
 .empty {
   display: grid;
   justify-items: center;
-  gap: var(--space-3);
-  margin-top: var(--space-7);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
   text-align: center;
   color: var(--ink-2);
 }

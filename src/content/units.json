@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "s0-u1", "stage": 0, "order": 1, "code": "0.1", "title": "Четыре тона и нейтральный",
+    "goals": ["различать на слух 4 тона и нейтральный", "произносить их на слогах ma, ba, yi, wu, da", "первые слова: 你好, 谢谢, 再见"],
+    "lessons": ["s0-u1-l1", "s0-u1-l2", "s0-u1-l3"],
+    "newWords": ["w-nihao", "w-xiexie", "w-zaijian", "w-wo", "w-ni", "w-shi", "w-bu"],
+    "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  },
+  {
+    "id": "s0-u2", "stage": 0, "order": 2, "code": "0.2", "title": "Финали",
+    "goals": ["простые, сложные и носовые финали", "ü и особое -i"],
+    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  },
+  {
+    "id": "s0-u3", "stage": 0, "order": 3, "code": "0.3", "title": "Инициали",
+    "goals": ["придыхание: b/p, d/t, g/k", "zh ch sh r против z c s и j q x"],
+    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  },
+  {
+    "id": "s0-u4", "stage": 0, "order": 4, "code": "0.4", "title": "Тоновые пары",
+    "goals": ["все 20 сочетаний тонов на реальных словах"],
+    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  },
+  {
+    "id": "s0-u5", "stage": 0, "order": 5, "code": "0.5", "title": "Изменение тонов",
+    "goals": ["3 + 3 → 2 + 3", "不 и 一 меняют тон"],
+    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  },
+  {
+    "id": "s0-u6", "stage": 0, "order": 6, "code": "0.6", "title": "Предстартовый тест",
+    "goals": ["проверка всей ступени 0"],
+    "lessons": [], "newWords": [], "sentences": [], "dialogues": [], "grammarNotes": [], "boss": ""
+  }
+]

@@ -9,12 +9,14 @@
   grid-template-columns: 64px 1fr;
   gap: var(--space-4);
   min-height: 128px;
+  scroll-margin-top: var(--space-4);
 }
 
 .drawing {
   display: block;
   width: 64px;
   height: 100%;
+  min-height: 128px;
   overflow: visible;
 }
 
@@ -25,18 +27,30 @@
   stroke-dasharray: 4 3;
 }
 
-.built .part {
+.stage[data-status='built'] .part {
   fill: var(--surface);
   stroke: var(--ink);
   stroke-dasharray: none;
 }
 
+.stage[data-status='partial'] .part {
+  stroke: var(--ink-2);
+}
+
+.partFill {
+  fill: var(--flame);
+  fill-opacity: 0.25;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
 .text {
   display: grid;
-  align-content: center;
+  align-content: start;
   gap: 2px;
-  padding: var(--space-3) 0;
+  padding: var(--space-3) 0 var(--space-4);
   border-bottom: var(--hairline) solid var(--line);
+  min-width: 0;
 }
 
 .stage:last-child .text {
@@ -54,7 +68,122 @@
 
 .meta {
   display: flex;
-  gap: var(--space-3);
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
   color: var(--ink-2);
   font-size: var(--fs-caption);
+}
+
+/* ——— Этапы и уроки ——— */
+.units {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unit {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--surface);
+}
+
+.unit[data-empty] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  border-style: dashed;
+  background: transparent;
+  color: var(--ink-2);
+}
+
+.unitHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.code {
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.unitTitle {
+  flex: 1;
+  font-weight: 600;
+}
+
+.unit[data-empty] .unitTitle {
+  font-weight: 500;
+}
+
+.unitMeta {
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
+
+.unitAction {
+  justify-self: start;
+}
+
+.lessons {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson {
+  display: grid;
+  grid-template-columns: 1.5em 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  border-top: var(--hairline) solid var(--line);
+  font-size: var(--fs-small);
+}
+
+.check {
+  font-family: var(--font-mono);
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.lesson[data-done] .check {
+  color: var(--t2);
+}
+
+.lesson[data-current] .check {
+  color: var(--flame);
+}
+
+.lessonTitle {
+  padding: var(--space-2) 0;
+}
+
+.lesson[data-current] .lessonTitle {
+  font-weight: 600;
+}
+
+.offlineBtn {
+  justify-self: start;
+  padding-left: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.offline {
+  margin-top: var(--space-2);
+  color: var(--ink-2);
+  font-size: var(--fs-small);
 }

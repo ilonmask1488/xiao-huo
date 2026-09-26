@@ -1,1 +1,9 @@
-[]
+[
+  { "id": "w-nihao", "hanzi": "你好", "pinyin": "ni3 hao3", "pinyinSpoken": "ni2 hao3", "ru": ["привет", "здравствуй"], "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-xiexie", "hanzi": "谢谢", "pinyin": "xie4 xie5", "ru": ["спасибо"], "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-zaijian", "hanzi": "再见", "pinyin": "zai4 jian4", "ru": ["до свидания", "пока"], "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-wo", "hanzi": "我", "pinyin": "wo3", "ru": ["я"], "pos": "мест.", "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-ni", "hanzi": "你", "pinyin": "ni3", "ru": ["ты"], "pos": "мест.", "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-shi", "hanzi": "是", "pinyin": "shi4", "ru": ["быть, являться", "да, это так"], "pos": "гл.", "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "reviewed": false },
+  { "id": "w-bu", "hanzi": "不", "pinyin": "bu4", "ru": ["не", "нет"], "pos": "нар.", "hsk2": 1, "hsk3": 1, "tags": ["stage0"], "note": "Перед 4-м тоном читается bú: 不是 bú shì.", "reviewed": false }
+]

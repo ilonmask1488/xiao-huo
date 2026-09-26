@@ -2,9 +2,12 @@ import Dexie, { type EntityTable } from 'dexie'
 import { DB_NAME, SCHEMA_VERSIONS } from './schema'
 import type {
   AchievementRow,
+  AnswerRow,
   CardRow,
   DayRow,
   GameRecordRow,
+  LaunchRow,
+  LessonProgressRow,
   MetaKey,
   MetaRow,
   ReviewRow,
@@ -23,6 +26,9 @@ export class AppDB extends Dexie {
   achievements!: EntityTable<AchievementRow, 'id'>
   gameRecords!: EntityTable<GameRecordRow, 'game'>
   unitProgress!: EntityTable<UnitProgressRow, 'unitId'>
+  answers!: EntityTable<AnswerRow, 'id'>
+  lessonProgress!: EntityTable<LessonProgressRow, 'lessonId'>
+  launches!: EntityTable<LaunchRow, 'date'>
 
   constructor(name = DB_NAME) {
     super(name)
@@ -52,6 +58,9 @@ export const PROGRESS_TABLES = [
   'achievements',
   'gameRecords',
   'unitProgress',
+  'answers',
+  'lessonProgress',
+  'launches',
 ] as const
 
 export async function resetProgress(database: AppDB = db): Promise<void> {

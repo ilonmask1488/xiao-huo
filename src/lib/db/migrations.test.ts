@@ -34,6 +34,18 @@ const FIXTURES: Record<number, Record<string, unknown[]>> = {
     unitProgress: [{ unitId: 's0-u1', lessonsDone: 3 }],
   },
 }
+FIXTURES[2] = {
+  ...FIXTURES[1]!,
+  answers: [
+    { id: 1, at: 1_700_000_000_000, kind: 'tone', source: 'lesson', item: 'ma3', expected: '3', given: '2', correct: false, lessonId: 's0-u1-l2' },
+  ],
+  lessonProgress: [
+    { lessonId: 's0-u1-l1', step: 0, results: {}, startedAt: 1, updatedAt: 2, seconds: 600, completedAt: 2, timesCompleted: 1, bestAccuracy: 0.9 },
+  ],
+  launches: [
+    { date: '2026-09-26', blocks: [{ id: 'new', status: 'done', lessonId: 's0-u1-l1' }], startedAt: 1, seconds: 900, dv: 50, correct: 8, total: 10 },
+  ],
+}
 
 let counter = 0
 const names: string[] = []

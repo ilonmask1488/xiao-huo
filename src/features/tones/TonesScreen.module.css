@@ -8,7 +8,7 @@
 
 .tone {
   display: grid;
-  grid-template-columns: 72px 1fr auto;
+  grid-template-columns: 64px 1fr auto auto;
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) 0;
@@ -16,27 +16,7 @@
 }
 
 .contour {
-  width: 72px;
-  height: 52px;
-}
-
-.level {
-  stroke: var(--line);
-  stroke-width: 1;
-}
-
-.levelLabel {
-  fill: var(--ink-2);
-  font-family: var(--font-mono);
-  font-size: 7px;
-}
-
-.curve {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 64px;
 }
 
 .name {
@@ -55,12 +35,12 @@
 
 .example {
   display: grid;
-  justify-items: end;
+  justify-items: center;
   line-height: 1.2;
 }
 
 .exampleHanzi {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 .exampleSyl {
@@ -68,46 +48,108 @@
   font-weight: 600;
 }
 
-.exampleRu {
-  color: var(--ink-2);
-  font-size: var(--fs-caption);
+.games {
+  margin-bottom: var(--space-6);
+}
+
+.gameButtons {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.heatTitle {
+  margin-bottom: var(--space-2);
 }
 
 .heatmap {
   display: grid;
-  grid-template-columns: 2.25em repeat(5, 1fr);
+  grid-template-columns: 2.5em repeat(5, 1fr);
   gap: 3px;
   margin-top: var(--space-3);
-  font-variant-numeric: tabular-nums;
 }
 
 .hLabel {
   display: grid;
   place-items: center;
   font-size: var(--fs-caption);
-  color: var(--ink-2);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .cell {
   display: grid;
   place-items: center;
   aspect-ratio: 1;
-  border: var(--hairline) solid var(--line);
+  min-height: 44px;
+  padding: 0;
+  border: var(--hairline) solid var(--line-strong);
   border-radius: 2px;
-  background-image: repeating-linear-gradient(-45deg, var(--line) 0 1px, transparent 1px 6px);
+  /* Чем краснее, тем чаще ошибаешься: смешиваем фон с цветом ошибки по доле ошибок */
+  background: color-mix(in srgb, var(--danger) calc(var(--err, 0) * 85%), var(--surface));
+  color: var(--ink);
+}
+
+.cell[data-empty] {
+  background: var(--paper);
+  border-style: dashed;
+  color: var(--ink-2);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell[aria-pressed='true'] {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
+.cellHanzi {
+  font-size: 0.8125rem;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  color: var(--ink-2);
+  font-size: var(--fs-caption);
+}
+
+.legendBar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--surface), var(--danger));
+  border: var(--hairline) solid var(--line-strong);
+}
+
+.cellPanel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-m);
+  background: var(--surface);
+}
+
+.cellPanel > button:last-child {
+  grid-column: 1 / -1;
 }
 
 .hint {
-  margin-top: var(--space-2);
   color: var(--ink-2);
   font-size: var(--fs-small);
 }
 
-.soon {
-  margin-top: var(--space-5);
-  padding: var(--space-3) var(--space-4);
-  border-left: 3px solid var(--t3);
-  background: var(--surface);
-  font-size: var(--fs-small);
+.empty {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: var(--hairline) dashed var(--line-strong);
+  border-radius: var(--radius-m);
 }

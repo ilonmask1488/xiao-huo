@@ -31,6 +31,7 @@ export type MetaKey =
   | 'backupReminderDismissedAt'
   | 'installHintDismissedAt'
   | 'storagePersisted'
+  | 'soundChecked'
 
 export type MetaRow = { key: MetaKey; value: number | boolean | string }
 
@@ -80,3 +81,61 @@ export type AchievementRow = { id: string; unlockedAt: number }
 export type GameRecordRow = { game: string; best: number; weekBest: number; weekStart: string }
 
 export type UnitProgressRow = { unitId: string; lessonsDone: number; completedAt?: number }
+
+/* ——— Схема v2 (фаза 1) ——— */
+
+export type AnswerKind = 'tone' | 'syllable' | 'pair' | 'self'
+export type AnswerSource = 'lesson' | 'game' | 'launch'
+
+/** Один ответ в уроке или игре — источник статистики и тепловой карты. */
+export type AnswerRow = {
+  id?: number
+  at: number
+  kind: AnswerKind
+  source: AnswerSource
+  /** что звучало: «ma3», «w-nihao» */
+  item: string
+  expected: string
+  given: string
+  correct: boolean
+  lessonId?: string
+  game?: string
+  /** для «Какой слог?»: навык и контраст («initial», «zh/z») */
+  skill?: 'tone' | 'initial' | 'final' | 'pair'
+  contrast?: string
+}
+
+/** Прогресс урока: где остановился и чем закончил. */
+export type LessonProgressRow = {
+  lessonId: string
+  /** индекс текущего экрана при незаконченном прохождении */
+  step: number
+  /** ответы текущего прохождения: индекс экрана → верно ли */
+  results: Record<string, boolean>
+  startedAt: number
+  updatedAt: number
+  seconds: number
+  completedAt?: number
+  timesCompleted: number
+  bestAccuracy?: number
+}
+
+export type LaunchBlockState = {
+  id: 'warmup' | 'review' | 'new' | 'echo' | 'speak'
+  status: 'pending' | 'done' | 'skipped'
+  lessonId?: string
+  /** пропущен автоматически (не было материала), а не пользователем — пересчитывается */
+  auto?: boolean
+}
+
+/** Ежедневный «пуск»: какие блоки собраны и сколько пройдено. */
+export type LaunchRow = {
+  date: string
+  blocks: LaunchBlockState[]
+  startedAt: number
+  finishedAt?: number
+  seconds: number
+  dv: number
+  correct: number
+  total: number
+}

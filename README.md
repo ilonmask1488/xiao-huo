@@ -4,7 +4,7 @@
 Работает в браузере телефона, ставится на главный экран как обычное приложение и работает без интернета.
 Без аккаунтов, рекламы и аналитики: прогресс хранится только на твоём устройстве.
 
-Техническое задание — [docs/SPEC.md](docs/SPEC.md). Сейчас готова **фаза 0 — каркас**: оболочка, навигация, настройки, база прогресса, бэкап, офлайн-режим и автоматическая публикация. Уроков пока нет: они появятся в фазе 1.
+Техническое задание — [docs/SPEC.md](docs/SPEC.md), уточнения фазы 1 — [docs/PHASE1.md](docs/PHASE1.md). Сейчас идёт **фаза 1 — «Стартовый стол»**: готов этап 0.1 «Четыре тона и нейтральный» (3 урока со звуком), ежедневный «Пуск», карта полёта, словарь, дни на орбите, Δv и достижения.
 
 ---
 
@@ -80,6 +80,30 @@ npm run build              # сборка в папку dist
 
 Скриншоты экранов для проверки дизайна: `$env:SCREENS='phase0'; npx playwright test screens` (Windows) или `SCREENS=phase0 npx playwright test screens` (macOS/Linux) — картинки появятся в `docs/screens/phase0/`.
 
+## 4а. Звук
+
+Готовые файлы уже лежат в `public/audio` — пересоздавать их нужно, только когда меняется учебный контент.
+
+- **Слоги с тонами 1–4 и слова** — записи носителей из открытого набора [hugolpz/audio-cmn](https://github.com/hugolpz/audio-cmn) (лицензия CC BY-SA, дикторы Chen Wang и Yue Tan). Скрипт обрезает тишину и выравнивает громкость.
+- **Нейтральный тон и все слова ещё в двух голосах** — синтез `edge-tts` (женский Xiaoxiao, мужской Yunxi). Это неофициальный доступ к сервису Microsoft для личного использования; интернет нужен **только при сборке звука**, приложению — нет.
+- Что синтез мог прочитать неверно (многозвучные иероглифы, нейтральный тон по одному иероглифу), скрипт выписывает в `docs/audio-review.md` — это стоит послушать.
+
+Один раз подготовить окружение (Windows):
+
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r scripts\requirements.txt
+```
+
+Пересоздать звук:
+
+```powershell
+.venv\Scripts\python.exe scripts\generate_audio.py
+npm run check:content
+```
+
+На macOS/Linux то же самое через `python3 -m venv .venv` и `.venv/bin/python`. Если `edge-tts` не отвечает (сервис Microsoft бывает недоступен из России), скрипт напишет об этом — попробуй позже, из другой сети или через VPN.
+
 ## 5. Публикация на GitHub Pages (постоянный адрес с https)
 
 Один раз:
@@ -142,4 +166,6 @@ public           иконки PWA (из icon.svg: `npm run icons`), будущи
 
 ## 11. Лицензии
 
-Код приложения — для личного использования. Библиотеки: React, React Router, Workbox, vite-plugin-pwa — MIT; Dexie — Apache-2.0. Шрифты IBM Plex Sans и IBM Plex Mono — SIL Open Font License 1.1, лежат внутри проекта (без загрузки из Google Fonts). Атрибуция аудиозаписей появится вместе со звуком в фазе 1.
+Код приложения — для личного использования. Библиотеки: React, React Router, Workbox, vite-plugin-pwa, pinyin-pro — MIT; Dexie — Apache-2.0. Шрифты IBM Plex Sans и IBM Plex Mono — SIL Open Font License 1.1, лежат внутри проекта (без загрузки из Google Fonts).
+
+Звук: записи носителей — [hugolpz/audio-cmn](https://github.com/hugolpz/audio-cmn), CC BY-SA; дикторы Chen Wang (слоги) и Yue Tan (слова HSK, проект Shtooka), сборка и обработка — Hugo Lopez (PLIDAM, INALCO). Обработанные файлы (обрезка тишины, выравнивание громкости) распространяются на тех же условиях. Синтез — Microsoft Edge TTS (голоса Xiaoxiao и Yunxi), для личного использования. Полный список источников — в `public/audio/manifest.json` и на экране «О приложении».

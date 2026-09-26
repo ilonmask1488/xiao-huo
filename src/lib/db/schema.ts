@@ -34,6 +34,16 @@ export const SCHEMA_VERSIONS: SchemaVersion[] = [
       unitProgress: 'unitId',
     },
   },
+  {
+    // Фаза 1: ответы в уроках и играх, прогресс уроков, ежедневный «пуск».
+    // Новые таблицы пустые — существующие данные не меняются, миграция бэкапа не нужна.
+    version: 2,
+    stores: {
+      answers: '++id, at, kind, item, lessonId',
+      lessonProgress: 'lessonId',
+      launches: 'date',
+    },
+  },
 ]
 
 export const CURRENT_SCHEMA_VERSION = SCHEMA_VERSIONS[SCHEMA_VERSIONS.length - 1]!.version
