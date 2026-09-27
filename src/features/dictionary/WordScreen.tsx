@@ -6,6 +6,7 @@ import { lazy, Suspense } from 'react'
 import { useParams } from 'react-router-dom'
 import { MixedText } from '../../components/Chinese'
 import { PlayButton } from '../../components/Play'
+import { Term } from '../../components/Sheet'
 import { Placeholder, Screen } from '../../components/ui'
 import ui from '../../components/ui.module.css'
 import { content, wordById } from '../../content'
@@ -46,7 +47,11 @@ export function WordScreen() {
         <WordLine id={w.id} showSandhi />
         <p className={s.meta}>
           {w.pos && <span>{w.pos}</span>}
-          {hsk && <span className="mono">{t.hsk(settings.hskScale === 'hsk2' ? '2.0' : '3.0', hsk)}</span>}
+          {hsk && (
+            <Term k="hsk" className="mono">
+              {t.hsk(settings.hskScale === 'hsk2' ? '2.0' : '3.0', hsk)}
+            </Term>
+          )}
           {w.tags.includes('engineering') && <span className={s.tag}>{t.engineering}</span>}
         </p>
 

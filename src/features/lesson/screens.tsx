@@ -241,7 +241,8 @@ export function ListenView({ screen, onDone }: Props<'listen'>) {
               ) : isWordItem(item) ? (
                 <>
                   <Hanzi className={s.exHanzi}>{wordById.get(item)?.hanzi ?? ''}</Hanzi>
-                  <Pinyin numeric={wordById.get(item)?.pinyin ?? ''} className={s.exRu} />
+                  <Pinyin numeric={wordById.get(item)?.pinyin ?? ''} className={s.exPinyinSmall} />
+                  <span className={s.exRu}>{wordRu(wordById.get(item) ?? { ru: [] })}</span>
                 </>
               ) : (
                 <Pinyin numeric={item} className={s.exPinyin} />

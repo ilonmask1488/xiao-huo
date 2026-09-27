@@ -92,9 +92,139 @@ test('UX шаг 3: уроки, счётчики, первый запуск', asy
   await shoot(page, 'stats-term', scheme, p)
 })
 
+/* ——— UX §8: прогулка новичка — каждый экран и состояние от первого запуска до конца занятия ——— */
+const SLUG: Record<string, string> = {
+  'Послушай серию': 'listen',
+  'Повтори вслух': 'repeat',
+  'Прочитай вслух': 'read',
+  'Какой тон прозвучал? Выбери': 'guess-tone',
+  'Какой слог прозвучал? Выбери': 'which-syllable',
+  'Какие тоны в слове? Выбери пару': 'guess-pair',
+  'Послушай и выбери, что это значит': 'meaning-audio',
+  'Прочитай и выбери, что это значит': 'meaning-text',
+  'Разбери фразу по словам': 'sentence',
+  'Собери фразу из слов': 'assemble',
+  'Скажи по-китайски': 'say-it',
+}
+
+test('аудит: прогулка новичка', async ({ page }, info) => {
+  test.skip(phase !== 'audit')
+  test.setTimeout(600_000)
+  const p = info.project.name
+  const scheme = 'light'
+  await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })
+  let n = 0
+  const shot = (name: string, heading = true) => shoot(page, `${String(++n).padStart(2, '0')}-${name}`, scheme, p, heading)
+
+  // Первый запуск
+  await page.goto('./')
+  await page.waitForTimeout(5000)
+  const dialog = page.getByRole('dialog', { name: 'Как здесь учиться' })
+  await expect(dialog).toBeVisible()
+  for (let i = 1; i <= 4; i++) {
+    await shot(`welcome-${i}`)
+    await dialog.getByRole('button', { name: i < 4 ? 'Дальше' : 'Начать' }).click()
+  }
+  await shot('today')
+  await page.getByRole('button', { name: /Дни подряд · на орбите: объяснить/ }).click()
+  await shot('today-term-streak')
+  await page.getByRole('button', { name: 'Понятно' }).click()
+  await page.getByRole('link', { name: 'Подробнее о занятии' }).click()
+  await shot('session-plan')
+
+  // Остальные вкладки до занятия
+  for (const [name, path] of [
+    ['course', '/map'],
+    ['train', '/train'],
+    ['tones', '/tones'],
+    ['games-locked', '/games'],
+    ['echo-empty', '/echo'],
+    ['story', '/story'],
+    ['dictionary-empty', '/dictionary'],
+    ['profile', '/more'],
+    ['stats', '/stats'],
+    ['settings', '/settings'],
+    ['how', '/how'],
+    ['about', '/about'],
+  ] as const) {
+    await page.goto(`./#${path}`)
+    await shot(name)
+  }
+
+  // Занятие целиком: проверка звука → урок (каждый тип экрана и отклик) → итоги
+  await page.goto('./#/')
+  await page.getByRole('button', { name: 'Начать занятие' }).click()
+  await shot('sound-check')
+  await page.getByRole('button', { name: /^Послушать/ }).click()
+  await page.getByRole('button', { name: 'Слышу', exact: true }).click()
+  const seenKinds = new Set<string>()
+  let explains = 0
+  const kindOf = async () => {
+    if (await page.locator('h1').first().isVisible()) return 'explain'
+    return (await page.locator('[class*="cardHead"] [class*="kicker"]').first().textContent({ timeout: 2000 }).catch(() => ''))?.trim() ?? ''
+  }
+  await passLesson(page, 80, 'right', {
+    onScreen: async () => {
+      const kind = await kindOf()
+      if (kind === 'explain') {
+        if (explains++ < 2) await shot(`lesson-explain-${explains}`, false)
+        return
+      }
+      const slug = SLUG[kind] ?? 'exercise'
+      if (seenKinds.has(slug)) return
+      seenKinds.add(slug)
+      await shot(`lesson-${slug}`, false)
+      if (slug === 'listen' || slug === 'repeat' || slug === 'guess-tone') {
+        await page.getByRole('button', { name: 'Как работает это упражнение' }).click()
+        await shot(`lesson-${slug}-help`, false)
+        await page.getByRole('button', { name: 'Понятно' }).click()
+      }
+    },
+    afterAnswer: async () => {
+      const slug = SLUG[await kindOf()] ?? 'exercise'
+      if (seenKinds.has(`${slug}-answered`)) return
+      seenKinds.add(`${slug}-answered`)
+      await shot(`lesson-${slug}-answered`, false)
+    },
+  })
+  await shot('lesson-summary')
+  await page.getByRole('button', { name: 'Дальше по занятию' }).click()
+  await shot('session-after-lesson')
+
+  // Разминка-игра (короткий раунд для теста) и «Повтори за диктором»
+  await page.getByRole('button', { name: /^(Начать|Продолжить): Разминка/ }).click()
+  await shot('game-intro')
+  await page.goto(`${page.url()}&seconds=8`)
+  await page.getByRole('button', { name: 'Старт' }).click()
+  await page.waitForTimeout(1500)
+  await shot('game-play', false)
+  await page.getByRole('heading', { name: 'Раунд окончен' }).waitFor({ timeout: 20_000 })
+  await shot('game-end')
+  await page.getByRole('button', { name: 'Дальше по занятию' }).click()
+  await page.getByRole('button', { name: /^(Начать|Продолжить): Повтори за диктором/ }).click()
+  await page.getByRole('button', { name: 'Понятно', exact: true }).click({ timeout: 3000 }).catch(() => {})
+  await shot('echo-block', false)
+  await passLesson(page, 40)
+  await shot('echo-summary')
+  await page.getByRole('button', { name: 'Дальше по занятию' }).click()
+  await shot('session-done')
+  await page.goto('./#/')
+  await shot('today-done')
+
+  // После занятия: словарь наполнился, карточка слова, курс и статистика сдвинулись
+  await page.goto('./#/dictionary')
+  await shot('dictionary')
+  await page.goto('./#/word/w-ni')
+  await shot('word')
+  await page.goto('./#/map')
+  await shot('course-after')
+  await page.goto('./#/stats')
+  await shot('stats-after')
+})
+
 for (const scheme of ['light', 'dark'] as const) {
   test(`экраны, тема ${scheme}`, async ({ page }, info) => {
-    test.skip(!!phase?.startsWith('ux'))
+    test.skip(!!phase?.startsWith('ux') || phase === 'audit')
     test.setTimeout(420_000)
     const p = info.project.name
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' })

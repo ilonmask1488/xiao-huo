@@ -95,6 +95,7 @@ export function ReplyView({ screen, hanziMode, onDone }: Props<'reply'>) {
   const settings = useSettings()
   const voice = voiceFor('me', settings.voice)
   const [given, setGiven] = useState<string | null>(null)
+  const [hintRu, setHintRu] = useState(false)
   const correct = given === screen.sentenceId
   const right = sentenceById.get(screen.sentenceId)
   useEffect(() => () => stopAudio(), [])
@@ -116,6 +117,7 @@ export function ReplyView({ screen, hanziMode, onDone }: Props<'reply'>) {
               return sen ? (
                 <button key={id} type="button" className={s.replyBtn} data-sentence={id} onClick={() => choose(id)}>
                   <SentenceLine sentence={sen} hanziMode={hanziMode} />
+                  {hintRu && <span className={s.replyRu}>{sen.ru}</span>}
                 </button>
               ) : null
             })}
@@ -131,7 +133,14 @@ export function ReplyView({ screen, hanziMode, onDone }: Props<'reply'>) {
             </div>
           </>
         )}
-        {right && !given && <span className={s.hintRu}>{ru.dialogue.hint}</span>}
+        {right && !given && (
+          <>
+            <span className={s.hintRu}>{ru.dialogue.hint}</span>
+            <button type="button" className={`${ui.link} ${s.hintLink}`} onClick={() => setHintRu((v) => !v)} aria-pressed={hintRu}>
+              {hintRu ? ru.dialogue.hideHintRu : ru.dialogue.hintRu}
+            </button>
+          </>
+        )}
       </div>
       <div className={s.actions}>
         {given && (

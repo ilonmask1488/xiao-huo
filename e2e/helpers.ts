@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { expect, type Page } from '@playwright/test'
+import { expect, type Locator, type Page } from '@playwright/test'
 
 /** Пропустить проверку звука перед первым уроком (она проверяется отдельно). */
 export async function markSoundChecked(page: Page): Promise<void> {
@@ -77,6 +77,20 @@ async function position(page: Page): Promise<string> {
   return (await count.textContent({ timeout: 1000 }).catch(() => '')) ?? ''
 }
 
+/**
+  Нажать кнопку. Подсказка нового упражнения может появиться на кадр позже проверки видимости и
+  перекрыть кнопку — тогда закрываем её «Понятно» и нажимаем снова.
+*/
+async function tap(page: Page, target: Locator): Promise<void> {
+  try {
+    await target.click({ timeout: 4000 })
+  } catch {
+    const ok = page.getByRole('button', { name: 'Понятно', exact: true })
+    if (await ok.isVisible()) await ok.click()
+    await target.click({ timeout: 20_000 })
+  }
+}
+
 /** Выполнить действие и дождаться смены экрана (ответ сначала пишется в базу). */
 async function advance(page: Page, before: string, act: () => Promise<void>): Promise<void> {
   await act()
@@ -103,14 +117,14 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
     const reply = page.locator('button[data-sentence]').first()
     // Вопрос с вариантами («угадай значение», «какой тон»): «Дальше» появляется только после выбора.
     const option = page.locator('button[class*="meaningBtn"]:not([disabled]), button[class*="choice"]:not([disabled])').first()
-    if (await good.isVisible()) await advance(page, pos, () => good.click())
-    else if (await next.isVisible()) await advance(page, pos, () => next.click())
+    if (await good.isVisible()) await advance(page, pos, () => tap(page, good))
+    else if (await next.isVisible()) await advance(page, pos, () => tap(page, next))
     else if (await reply.isVisible()) {
-      await reply.click()
-      await advance(page, pos, () => page.getByRole('button', { name: 'Сказал — дальше', exact: true }).click())
+      await tap(page, reply)
+      await advance(page, pos, () => tap(page, page.getByRole('button', { name: 'Сказал — дальше', exact: true })))
     } else if (await option.isVisible()) {
-      await option.click()
-      await advance(page, pos, () => next.click())
+      await tap(page, option)
+      await advance(page, pos, () => tap(page, next))
     } else await page.locator(ANY_ACTION).first().waitFor({ timeout: 20_000 })
   }
   await expect(page.getByText(text, { exact: true })).toBeVisible()
@@ -120,7 +134,14 @@ export async function advanceUntil(page: Page, text: string, maxSteps = 40): Pro
   Пройти открытый урок до итогов: на вопросах выбирается первый вариант,
   на самооценке — «Получилось». Возвращает текст итогов.
 */
-export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | 'wrong' = 'right'): Promise<string> {
+export type LessonHooks = {
+  /** новый экран (после закрытия подсказки), до действия */
+  onScreen?: (pos: string) => Promise<void>
+  /** экран после ответа или проверки — виден отклик */
+  afterAnswer?: (pos: string) => Promise<void>
+}
+
+export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | 'wrong' = 'right', hooks: LessonHooks = {}): Promise<string> {
   const good = page.getByRole('button', { name: 'Получилось', exact: true })
   const check = page.getByRole('button', { name: 'Проверить', exact: true })
   const next = page.getByRole('button', { name: 'Дальше', exact: true })
@@ -132,6 +153,7 @@ export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | '
   const meaning = page.locator('button[class*="meaningBtn"]:not([disabled])').first()
   const poolChip = page.locator('[class*="pool"] button[class*="chipWord"]').first()
   const reply = page.locator('button[data-sentence]').first()
+  let seen = ''
   for (let i = 0; i < maxSteps; i++) {
     const pos = await position(page)
     if (pos === 'summary') break
@@ -140,37 +162,48 @@ export async function passLesson(page: Page, maxSteps = 80, replies: 'right' | '
       await ok.click()
       continue
     }
+    if (hooks.onScreen && pos && pos !== seen) {
+      // Подсказка нового упражнения может прийти на кадр позже заголовка
+      if (await ok.waitFor({ timeout: 700 }).then(() => true, () => false)) await ok.click()
+      seen = pos
+      await hooks.onScreen(pos)
+    }
     if (await check.isVisible()) {
-      await check.click()
+      await tap(page, check)
       await good.waitFor()
+      await hooks.afterAnswer?.(pos)
     }
     if (await show.isVisible()) {
-      await show.click()
-      await advance(page, pos, () => gradeGood.click())
+      await tap(page, show)
+      await hooks.afterAnswer?.(pos)
+      await advance(page, pos, () => tap(page, gradeGood))
     } else if (await good.isVisible()) {
-      await advance(page, pos, () => good.click())
+      await advance(page, pos, () => tap(page, good))
     } else if (await poolChip.isVisible()) {
       // «Сборка»: переносим слова по одному, пока не кончатся, потом «Сказал — дальше»
-      while (await poolChip.isVisible()) await poolChip.click()
-      await advance(page, pos, () => said.click())
+      while (await poolChip.isVisible()) await tap(page, poolChip)
+      await advance(page, pos, () => tap(page, said))
     } else if (await said.isVisible()) {
-      await advance(page, pos, () => said.click())
+      await advance(page, pos, () => tap(page, said))
     } else if (await reply.isVisible()) {
       // Диалог: выбрать верную (или нарочно неверную) реплику, потом «Сказал — дальше»
       const box = page.locator('[data-dialogue]')
       const right = rightReply((await box.getAttribute('data-dialogue')) ?? '', Number(await box.getAttribute('data-line')))
       const ids = await page.locator('button[data-sentence]').evaluateAll((els) => els.map((e) => e.getAttribute('data-sentence') ?? ''))
       const pick = ids.find((id) => (id === right) === (replies === 'right'))!
-      await page.locator(`button[data-sentence="${pick}"]`).click()
-      await advance(page, pos, () => said.click())
+      await tap(page, page.locator(`button[data-sentence="${pick}"]`))
+      await hooks.afterAnswer?.(pos)
+      await advance(page, pos, () => tap(page, said))
     } else if (await meaning.isVisible()) {
-      await meaning.click()
-      await advance(page, pos, () => next.click())
+      await tap(page, meaning)
+      await hooks.afterAnswer?.(pos)
+      await advance(page, pos, () => tap(page, next))
     } else if (await choice.isVisible()) {
-      await choice.click()
-      await advance(page, pos, () => next.click())
+      await tap(page, choice)
+      await hooks.afterAnswer?.(pos)
+      await advance(page, pos, () => tap(page, next))
     } else if (await next.isVisible()) {
-      await advance(page, pos, () => next.click())
+      await advance(page, pos, () => tap(page, next))
     } else {
       // «Повтори вслух» ещё проигрывает образец и паузу — ждём самооценку.
       await page.locator(ANY_ACTION).first().waitFor({ timeout: 20_000 })

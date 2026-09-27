@@ -50,6 +50,9 @@ export function TonesScreen() {
 
   return (
     <Screen title={t.title} subtitle={t.subtitle}>
+      <p className={s.hint}>
+        <Term k="toneColors">{t.colorsNote}</Term>
+      </p>
       <ul className={s.list}>
         {t.list.map((tone) => (
           <li key={tone.tone} className={s.tone}>
@@ -64,6 +67,7 @@ export function TonesScreen() {
             <div className={s.example}>
               <Hanzi className={s.exampleHanzi}>{tone.hanzi}</Hanzi>
               <Pinyin numeric={tone.syl} className={s.exampleSyl} />
+              <span className={s.exampleRu}>{tone.ru}</span>
             </div>
             <PlayButton item={tone.syl} label={`Послушать ${tone.name}`} size="s" />
           </li>

@@ -884,3 +884,15 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Перевод варианта ответа в диалоге — по подсказке */
+.replyRu {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--ink-2);
+  font-size: var(--fs-small);
+}
+
+.exPinyinSmall {
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
